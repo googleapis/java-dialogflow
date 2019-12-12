@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.118.1](https://www.github.com/googleapis/java-dialogflow/compare/v0.118.0...v0.118.1) (2019-12-12)
+
+
+### Documentation
+
+* **regen:** javadoc proto class changes from protoc update ([#33](https://www.github.com/googleapis/java-dialogflow/issues/33)) ([7d81941](https://www.github.com/googleapis/java-dialogflow/commit/7d819418718154ab01477cf2989bac0b31ae8814))
+
 ## [0.118.0](https://www.github.com/googleapis/java-dialogflow/compare/0.117.0...v0.118.0) (2019-12-04)
 
 
