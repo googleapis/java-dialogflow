@@ -79,7 +79,9 @@ public class ITSystemTest {
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final ProjectName PROJECT_NAME = ProjectName.of(PROJECT_ID);
   private static final ProjectAgentName PROJECT_AGENT_NAME = ProjectAgentName.of(PROJECT_ID);
-  private static final String DISPLAY_NAME = "test-agent-" + ID;
+  private static final String DEFAULT_DISPLAY_NAME = "google-cloud-java-tests";
+  private static final String DISPLAY_NAME =
+      System.getProperty("dialogflow.agent", DEFAULT_DISPLAY_NAME);
   private static final String TIME_ZONE = "America/New_York";
   private static final String DEFAULT_LANGUAGE_CODE = "en";
   private static final String ENTITY_NAME = "test-entity-" + ID;
