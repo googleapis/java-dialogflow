@@ -72,8 +72,8 @@ public class ITSystemTest {
   private static EntityTypeName entityTypeName;
   private static IntentsClient intentsClient;
   private static Intent intent;
-  private static String intentName;
-  private static IntentName intent_name;
+  private static String intentId;
+  private static IntentName intentName;
   private static SessionsClient sessionsClient;
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -96,7 +96,7 @@ public class ITSystemTest {
   private static final Integer LIFE_SPAN_COUNT = 10;
 
   @BeforeClass
-  public static void beforeClassTest() throws IOException {
+  public static void setUp() throws IOException {
 
     /* create agent */
     agentsClient = AgentsClient.create();
@@ -145,8 +145,8 @@ public class ITSystemTest {
             .setIntent(createIntent)
             .build();
     intent = intentsClient.createIntent(intentRequest);
-    intentName = intent.getName().substring(intent.getName().lastIndexOf("/")).replace("/", "");
-    intent_name = IntentName.of(PROJECT_ID, intentName);
+    intentId = intent.getName().substring(intent.getName().lastIndexOf("/")).replace("/", "");
+    intentName = IntentName.of(PROJECT_ID, intentId);
 
     /* create session */
     sessionsClient = SessionsClient.create();
@@ -167,7 +167,7 @@ public class ITSystemTest {
   }
 
   @AfterClass
-  public static void afterClassTest() {
+  public static void tearDown() {
 
     /* delete context */
     DeleteContextRequest deleteContextRequest =
@@ -180,7 +180,7 @@ public class ITSystemTest {
 
     /* delete intents */
     DeleteIntentRequest deleteIntentRequest =
-        DeleteIntentRequest.newBuilder().setName(intent_name.toString()).build();
+        DeleteIntentRequest.newBuilder().setName(intentName.toString()).build();
     intentsClient.deleteIntent(deleteIntentRequest);
     intentsClient.close();
 
@@ -201,14 +201,14 @@ public class ITSystemTest {
   public void searchAgentsTest() {
     SearchAgentsRequest request =
         SearchAgentsRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
-    for (Agent actual : agentsClient.searchAgents(request).iterateAll()) {
-      assertEquals(PROJECT_NAME.toString(), actual.getParent());
-      assertEquals(DISPLAY_NAME, actual.getDisplayName());
-      assertEquals(DEFAULT_LANGUAGE_CODE, actual.getDefaultLanguageCode());
-      assertEquals(TIME_ZONE, actual.getTimeZone());
-      assertEquals(Agent.MatchMode.MATCH_MODE_HYBRID, actual.getMatchMode());
-      assertEquals(Agent.ApiVersion.API_VERSION_V2, actual.getApiVersion());
-      assertEquals(Agent.Tier.TIER_STANDARD, actual.getTier());
+    for (Agent actualAgent : agentsClient.searchAgents(request).iterateAll()) {
+      assertEquals(PROJECT_NAME.toString(), actualAgent.getParent());
+      assertEquals(DISPLAY_NAME, actualAgent.getDisplayName());
+      assertEquals(DEFAULT_LANGUAGE_CODE, actualAgent.getDefaultLanguageCode());
+      assertEquals(TIME_ZONE, actualAgent.getTimeZone());
+      assertEquals(Agent.MatchMode.MATCH_MODE_HYBRID, actualAgent.getMatchMode());
+      assertEquals(Agent.ApiVersion.API_VERSION_V2, actualAgent.getApiVersion());
+      assertEquals(Agent.Tier.TIER_STANDARD, actualAgent.getTier());
     }
   }
 
@@ -216,63 +216,62 @@ public class ITSystemTest {
   public void getAgentTest() {
     GetAgentRequest request =
         GetAgentRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
-    Agent actual = agentsClient.getAgent(request);
-    assertEquals(PROJECT_NAME.toString(), actual.getParent());
-    assertEquals(DISPLAY_NAME, actual.getDisplayName());
-    assertEquals(DEFAULT_LANGUAGE_CODE, actual.getDefaultLanguageCode());
-    assertEquals(TIME_ZONE, actual.getTimeZone());
-    assertEquals(Agent.MatchMode.MATCH_MODE_HYBRID, actual.getMatchMode());
-    assertEquals(Agent.ApiVersion.API_VERSION_V2, actual.getApiVersion());
-    assertEquals(Agent.Tier.TIER_STANDARD, actual.getTier());
+    Agent actualAgent = agentsClient.getAgent(request);
+    assertEquals(PROJECT_NAME.toString(), actualAgent.getParent());
+    assertEquals(DISPLAY_NAME, actualAgent.getDisplayName());
+    assertEquals(DEFAULT_LANGUAGE_CODE, actualAgent.getDefaultLanguageCode());
+    assertEquals(TIME_ZONE, actualAgent.getTimeZone());
+    assertEquals(Agent.MatchMode.MATCH_MODE_HYBRID, actualAgent.getMatchMode());
+    assertEquals(Agent.ApiVersion.API_VERSION_V2, actualAgent.getApiVersion());
+    assertEquals(Agent.Tier.TIER_STANDARD, actualAgent.getTier());
   }
 
   @Test
   public void listEntityTypesTest() {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder().setParent(PROJECT_AGENT_NAME.toString()).build();
-    for (EntityType actual : entityTypesClient.listEntityTypes(request).iterateAll()) {
-      if (entityType.getName().equals(actual.getName())) {
-        assertEquals(entityType.getName(), actual.getName());
-        assertEquals(ENTITY_NAME, actual.getDisplayName());
-        assertEquals(entityType.getEntities(0), actual.getEntities(0));
-        assertEquals(1, actual.getEntitiesCount());
+    for (EntityType actualEntity : entityTypesClient.listEntityTypes(request).iterateAll()) {
+      if (entityType.getName().equals(actualEntity.getName())) {
+        assertEquals(entityType.getName(), actualEntity.getName());
+        assertEquals(ENTITY_NAME, actualEntity.getDisplayName());
+        assertEquals(entityType.getEntities(0), actualEntity.getEntities(0));
+        assertEquals(1, actualEntity.getEntitiesCount());
       }
     }
   }
 
   @Test
   public void getEntityTypeTest() {
-    EntityType actual = entityTypesClient.getEntityType(entityTypeName);
-    assertEquals(entityType.getName(), actual.getName());
-    assertEquals(ENTITY_NAME, actual.getDisplayName());
-    assertEquals(entityType.getEntities(0), actual.getEntities(0));
-    assertEquals(1, actual.getEntitiesCount());
+    EntityType actualEntity = entityTypesClient.getEntityType(entityTypeName);
+    assertEquals(entityType.getName(), actualEntity.getName());
+    assertEquals(ENTITY_NAME, actualEntity.getDisplayName());
+    assertEquals(entityType.getEntities(0), actualEntity.getEntities(0));
+    assertEquals(1, actualEntity.getEntitiesCount());
   }
 
   @Test
   public void listIntentsTest() {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder().setParent(PROJECT_AGENT_NAME.toString()).build();
-    for (Intent actual : intentsClient.listIntents(request).iterateAll()) {
-      if (intent.getName().equals(actual.getName())) {
-        assertEquals(intent.getDisplayName(), actual.getDisplayName());
-        assertEquals(intent.getAction(), actual.getAction());
-        assertEquals(intent.getEvents(0), actual.getEvents(0));
-        assertEquals(intent.getEventsCount(), actual.getEventsCount());
+    for (Intent actualIntent : intentsClient.listIntents(request).iterateAll()) {
+      if (intent.getName().equals(actualIntent.getName())) {
+        assertEquals(intent.getDisplayName(), actualIntent.getDisplayName());
+        assertEquals(intent.getAction(), actualIntent.getAction());
+        assertEquals(intent.getEvents(0), actualIntent.getEvents(0));
+        assertEquals(intent.getEventsCount(), actualIntent.getEventsCount());
       }
     }
   }
 
   @Test
   public void getIntentTest() {
-    GetIntentRequest request =
-        GetIntentRequest.newBuilder().setName(intent_name.toString()).build();
-    Intent actual = intentsClient.getIntent(request);
-    assertEquals(intent.getName(), actual.getName());
-    assertEquals(intent.getDisplayName(), actual.getDisplayName());
-    assertEquals(intent.getAction(), actual.getAction());
-    assertEquals(intent.getEvents(0), actual.getEvents(0));
-    assertEquals(intent.getEventsCount(), actual.getEventsCount());
+    GetIntentRequest request = GetIntentRequest.newBuilder().setName(intentName.toString()).build();
+    Intent actualIntent = intentsClient.getIntent(request);
+    assertEquals(intent.getName(), actualIntent.getName());
+    assertEquals(intent.getDisplayName(), actualIntent.getDisplayName());
+    assertEquals(intent.getAction(), actualIntent.getAction());
+    assertEquals(intent.getEvents(0), actualIntent.getEvents(0));
+    assertEquals(intent.getEventsCount(), actualIntent.getEventsCount());
   }
 
   @Test
@@ -308,8 +307,8 @@ public class ITSystemTest {
   public void listContextsTest() {
     ListContextsRequest request =
         ListContextsRequest.newBuilder().setParent(SESSION_NAME.toString()).build();
-    for (Context actual : contextsClient.listContexts(request).iterateAll()) {
-      assertEquals(context.getName(), actual.getName());
+    for (Context actualContext : contextsClient.listContexts(request).iterateAll()) {
+      assertEquals(context.getName(), actualContext.getName());
     }
   }
 
@@ -317,7 +316,7 @@ public class ITSystemTest {
   public void getContextTest() {
     GetContextRequest request =
         GetContextRequest.newBuilder().setName(CONTEXT_NAME.toString()).build();
-    Context actual = contextsClient.getContext(request);
-    assertEquals(context.getName(), actual.getName());
+    Context actualContext = contextsClient.getContext(request);
+    assertEquals(context.getName(), actualContext.getName());
   }
 }
