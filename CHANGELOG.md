@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.119.1](https://www.github.com/googleapis/java-dialogflow/compare/v0.119.0...v0.119.1) (2019-12-19)
+
+
+### Bug Fixes
+
+* **regen:** fix longrunning operation metadata in protos ([#43](https://www.github.com/googleapis/java-dialogflow/issues/43)) ([934c211](https://www.github.com/googleapis/java-dialogflow/commit/934c21144689aa875bf375d111ffb0fa08f615ca))
+
 ## [0.119.0](https://www.github.com/googleapis/java-dialogflow/compare/v0.118.0...v0.119.0) (2019-12-17)
 
 
