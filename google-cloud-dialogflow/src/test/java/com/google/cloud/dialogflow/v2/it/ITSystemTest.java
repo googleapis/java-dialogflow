@@ -26,7 +26,6 @@ import com.google.cloud.dialogflow.v2.ContextsClient;
 import com.google.cloud.dialogflow.v2.CreateContextRequest;
 import com.google.cloud.dialogflow.v2.CreateEntityTypeRequest;
 import com.google.cloud.dialogflow.v2.CreateIntentRequest;
-import com.google.cloud.dialogflow.v2.DeleteAgentRequest;
 import com.google.cloud.dialogflow.v2.DeleteContextRequest;
 import com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest;
 import com.google.cloud.dialogflow.v2.DeleteIntentRequest;
@@ -52,7 +51,6 @@ import com.google.cloud.dialogflow.v2.QueryResult;
 import com.google.cloud.dialogflow.v2.SearchAgentsRequest;
 import com.google.cloud.dialogflow.v2.SessionName;
 import com.google.cloud.dialogflow.v2.SessionsClient;
-import com.google.cloud.dialogflow.v2.SetAgentRequest;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import java.io.IOException;
@@ -100,20 +98,7 @@ public class ITSystemTest {
   @BeforeClass
   public static void setUp() throws IOException {
 
-    /* create agent */
     agentsClient = AgentsClient.create();
-    Agent agent =
-        Agent.newBuilder()
-            .setParent(PROJECT_NAME.toString())
-            .setDisplayName(DISPLAY_NAME)
-            .setDefaultLanguageCode(DEFAULT_LANGUAGE_CODE)
-            .setTimeZone(TIME_ZONE)
-            .setMatchMode(Agent.MatchMode.MATCH_MODE_HYBRID)
-            .setApiVersion(Agent.ApiVersion.API_VERSION_V2)
-            .setTier(Agent.Tier.TIER_STANDARD)
-            .build();
-    SetAgentRequest agentRequest = SetAgentRequest.newBuilder().setAgent(agent).build();
-    agentsClient.setAgent(agentRequest);
 
     /* create entity */
     entityTypesClient = EntityTypesClient.create();
@@ -192,10 +177,6 @@ public class ITSystemTest {
     entityTypesClient.deleteEntityType(deleteEntityTypeRequest);
     entityTypesClient.close();
 
-    /* delete agent */
-    DeleteAgentRequest deleteAgentRequest =
-        DeleteAgentRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
-    agentsClient.deleteAgent(deleteAgentRequest);
     agentsClient.close();
   }
 
