@@ -169,6 +169,12 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client</artifactId>
+        <version>1.33.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
         <version>${gax.version}</version>
