@@ -63,7 +63,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-dialogflow-parent</site.installationModule>
-    <google.core.version>1.91.1</google.core.version>
+    <google.core.version>1.92.0</google.core.version>
     <google.api-common.version>1.8.1</google.api-common.version>
     <google.common-protos.version>1.17.0</google.common-protos.version>
     <gax.version>1.52.0</gax.version>
@@ -166,12 +166,6 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client</artifactId>
-        <version>1.33.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
