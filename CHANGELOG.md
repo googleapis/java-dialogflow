@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.120.3](https://www.github.com/googleapis/java-dialogflow/compare/v0.120.2...v0.120.3) (2020-02-13)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.92.5 ([8deecea](https://www.github.com/googleapis/java-dialogflow/commit/8deecea5d5ca5c4f078c2b07c757d063d55456c6))
+
+
+### Documentation
+
+* **regen:** remove unnecessary example parameters ([#82](https://www.github.com/googleapis/java-dialogflow/issues/82)) ([974e961](https://www.github.com/googleapis/java-dialogflow/commit/974e961ae8c64c67570d4f6d6603dfe86e1ba080))
+* **regen:** update sample code to set total timeout, add API client header test ([3e02b2f](https://www.github.com/googleapis/java-dialogflow/commit/3e02b2f8309a7318f4f04b8845a91e92e166e3f6))
+
 ### [0.120.2](https://www.github.com/googleapis/java-dialogflow/compare/v0.120.1...v0.120.2) (2020-02-06)
 
 
