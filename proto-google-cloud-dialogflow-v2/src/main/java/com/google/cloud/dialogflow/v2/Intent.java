@@ -47230,13 +47230,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique identifier of this intent.
+   * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -47255,13 +47255,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique identifier of this intent.
+   * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -49113,13 +49113,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -49138,13 +49138,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -49163,13 +49163,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -49187,13 +49187,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -49207,13 +49207,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
