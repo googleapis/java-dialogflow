@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
+  <!-- TODO: remove after next version is released. -->
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/dialogflow/v2/*OrBuilder</className>
