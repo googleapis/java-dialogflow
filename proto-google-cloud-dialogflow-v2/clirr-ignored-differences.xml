@@ -16,4 +16,29 @@
     <className>com/google/cloud/dialogflow/v2/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AgentName</className>
+    <method>* getAgent()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AgentName$Builder</className>
+    <method>* getAgent()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AgentName$Builder</className>
+    <method>* setAgent(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AgentName</className>
+    <method>* format(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AgentName</className>
+    <method>* of(*)</method>
+  </difference>
 </differences>
