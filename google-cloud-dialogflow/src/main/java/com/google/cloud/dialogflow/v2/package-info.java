@@ -125,6 +125,24 @@
  * </code>
  * </pre>
  *
+ * ================== EnvironmentsClient ==================
+ *
+ * <p>Service Description: Manages agent environments.
+ *
+ * <p>Sample for EnvironmentsClient:
+ *
+ * <pre>
+ * <code>
+ * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+ *   AgentName parent = AgentName.of("[PROJECT]");
+ *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
+ *     .setParent(parent.toString())
+ *     .build();
+ *   ListEnvironmentsPagedResponse response = environmentsClient.listEnvironmentsPagedCallable(request);
+ * }
+ * </code>
+ * </pre>
+ *
  * ============= IntentsClient =============
  *
  * <p>Service Description: An intent represents a mapping between input from a user and an action to

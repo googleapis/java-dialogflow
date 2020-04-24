@@ -50,6 +50,7 @@ public class IntentsClientTest {
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
   private static MockEntityTypes mockEntityTypes;
+  private static MockEnvironments mockEnvironments;
   private static MockIntents mockIntents;
   private static MockSessionEntityTypes mockSessionEntityTypes;
   private static MockSessions mockSessions;
@@ -62,6 +63,7 @@ public class IntentsClientTest {
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
     mockEntityTypes = new MockEntityTypes();
+    mockEnvironments = new MockEnvironments();
     mockIntents = new MockIntents();
     mockSessionEntityTypes = new MockSessionEntityTypes();
     mockSessions = new MockSessions();
@@ -72,6 +74,7 @@ public class IntentsClientTest {
                 mockAgents,
                 mockContexts,
                 mockEntityTypes,
+                mockEnvironments,
                 mockIntents,
                 mockSessionEntityTypes,
                 mockSessions));
