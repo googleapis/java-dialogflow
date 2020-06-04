@@ -31908,7 +31908,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Rich cards allow you to respond to users with more vivid content, e.g.
      * with media and suggestions.
      * For more details about RBM rich cards, please see:
-     * https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+     * https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
      * If you want to show a single card with more control over the layout,
      * please use [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard] instead.
      * </pre>
@@ -32492,7 +32492,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Rich cards allow you to respond to users with more vivid content, e.g.
        * with media and suggestions.
        * For more details about RBM rich cards, please see:
-       * https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+       * https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
        * If you want to show a single card with more control over the layout,
        * please use [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard] instead.
        * </pre>
@@ -33413,7 +33413,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Rich cards allow you to respond to users with more vivid content, e.g.
      * with media and suggestions.
      * For more details about RBM rich cards, please see:
-     * https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+     * https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
      * You can group multiple rich cards into one using [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard] but
      * carousel cards will give you less control over the card layout.
      * </pre>
@@ -34203,7 +34203,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Rich cards allow you to respond to users with more vivid content, e.g.
        * with media and suggestions.
        * For more details about RBM rich cards, please see:
-       * https://developers.google.com/rcs-business-messaging/rbm/guides/build/send-messages#rich-cards.
+       * https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
        * You can group multiple rich cards into one using [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard] but
        * carousel cards will give you less control over the card layout.
        * </pre>
