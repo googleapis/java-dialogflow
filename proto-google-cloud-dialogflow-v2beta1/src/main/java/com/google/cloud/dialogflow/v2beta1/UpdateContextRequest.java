@@ -142,7 +142,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * Required. The context to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the context field is set.
    */
@@ -156,7 +158,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * Required. The context to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The context.
    */
@@ -172,7 +176,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * Required. The context to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getContextOrBuilder() {
     return getContext();
@@ -187,7 +193,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -201,7 +208,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -215,7 +223,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -593,7 +602,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the context field is set.
      */
@@ -607,7 +618,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The context.
      */
@@ -627,7 +640,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setContext(com.google.cloud.dialogflow.v2beta1.Context value) {
       if (contextBuilder_ == null) {
@@ -649,7 +664,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setContext(com.google.cloud.dialogflow.v2beta1.Context.Builder builderForValue) {
       if (contextBuilder_ == null) {
@@ -668,7 +685,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeContext(com.google.cloud.dialogflow.v2beta1.Context value) {
       if (contextBuilder_ == null) {
@@ -694,7 +713,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearContext() {
       if (contextBuilder_ == null) {
@@ -714,7 +735,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Context.Builder getContextBuilder() {
 
@@ -728,7 +751,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getContextOrBuilder() {
       if (contextBuilder_ != null) {
@@ -746,7 +771,9 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Required. The context to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Context,
@@ -778,7 +805,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -792,7 +820,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -812,7 +841,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -834,7 +864,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -853,7 +884,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -877,7 +909,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -897,7 +930,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -911,7 +945,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -929,7 +964,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

@@ -520,7 +520,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of the training phrase.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for type.
      */
@@ -532,7 +534,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of the training phrase.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The type.
      */
@@ -558,7 +562,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part> getPartsList();
     /**
@@ -581,7 +587,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part getParts(int index);
     /**
@@ -604,7 +612,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     int getPartsCount();
     /**
@@ -627,7 +637,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     java.util.List<
             ? extends com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.PartOrBuilder>
@@ -652,7 +664,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.PartOrBuilder getPartsOrBuilder(
         int index);
@@ -666,7 +680,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * intent or training, this counter is increased.
      * </pre>
      *
-     * <code>int32 times_added_count = 4;</code>
+     * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The timesAddedCount.
      */
@@ -2232,7 +2246,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of the training phrase.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for type.
      */
@@ -2246,7 +2262,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of the training phrase.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The type.
      */
@@ -2281,7 +2299,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part>
         getPartsList() {
@@ -2307,7 +2327,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<
             ? extends com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.PartOrBuilder>
@@ -2334,7 +2356,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getPartsCount() {
       return parts_.size();
@@ -2359,7 +2383,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part getParts(int index) {
       return parts_.get(index);
@@ -2384,7 +2410,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.PartOrBuilder
         getPartsOrBuilder(int index) {
@@ -2402,7 +2430,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * intent or training, this counter is increased.
      * </pre>
      *
-     * <code>int32 times_added_count = 4;</code>
+     * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The timesAddedCount.
      */
@@ -2939,7 +2967,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The enum numeric value on the wire for type.
        */
@@ -2953,7 +2983,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
@@ -2970,7 +3002,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The type.
        */
@@ -2989,7 +3023,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The type to set.
        * @return This builder for chaining.
@@ -3010,7 +3046,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -3059,7 +3097,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part>
@@ -3090,7 +3129,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public int getPartsCount() {
@@ -3120,7 +3160,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part getParts(int index) {
@@ -3150,7 +3191,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder setParts(
@@ -3187,7 +3229,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder setParts(
@@ -3222,7 +3265,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addParts(
@@ -3259,7 +3303,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addParts(
@@ -3296,7 +3341,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addParts(
@@ -3330,7 +3376,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addParts(
@@ -3365,7 +3412,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder addAllParts(
@@ -3401,7 +3449,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder clearParts() {
@@ -3434,7 +3483,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public Builder removeParts(int index) {
@@ -3467,7 +3517,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.Builder getPartsBuilder(
@@ -3494,7 +3545,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.PartOrBuilder
@@ -3525,7 +3577,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -3557,7 +3610,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.Builder
@@ -3587,7 +3641,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.Builder addPartsBuilder(
@@ -3618,7 +3673,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.Builder>
@@ -3653,7 +3709,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * intent or training, this counter is increased.
        * </pre>
        *
-       * <code>int32 times_added_count = 4;</code>
+       * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The timesAddedCount.
        */
@@ -3669,7 +3725,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * intent or training, this counter is increased.
        * </pre>
        *
-       * <code>int32 times_added_count = 4;</code>
+       * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The timesAddedCount to set.
        * @return This builder for chaining.
@@ -3689,7 +3745,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * intent or training, this counter is increased.
        * </pre>
        *
-       * <code>int32 times_added_count = 4;</code>
+       * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -6641,7 +6697,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The platform that this message is intended for.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for platform.
      */
@@ -6653,7 +6711,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The platform that this message is intended for.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The platform.
      */
@@ -59613,7 +59673,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The platform that this message is intended for.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for platform.
      */
@@ -59627,7 +59689,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The platform that this message is intended for.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The platform.
      */
@@ -65068,7 +65132,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The enum numeric value on the wire for platform.
        */
@@ -65082,7 +65148,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The enum numeric value on the wire for platform to set.
        * @return This builder for chaining.
@@ -65099,7 +65167,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The platform.
        */
@@ -65118,7 +65188,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The platform to set.
        * @return This builder for chaining.
@@ -65140,7 +65212,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -66088,13 +66162,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique identifier of this intent.
+   * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -66113,13 +66187,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The unique identifier of this intent.
+   * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -66144,7 +66218,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of this intent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -66166,7 +66240,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of this intent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -66191,7 +66265,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Indicates whether webhooks are enabled for the intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for webhookState.
    */
@@ -66205,7 +66281,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Indicates whether webhooks are enabled for the intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The webhookState.
    */
@@ -66224,7 +66302,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The priority of this intent. Higher numbers represent higher
+   * Optional. The priority of this intent. Higher numbers represent higher
    * priorities.
    * - If the supplied value is unspecified or 0, the service
    *   translates the value to 500,000, which corresponds to the
@@ -66233,7 +66311,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *   in runtime detect intent requests.
    * </pre>
    *
-   * <code>int32 priority = 3;</code>
+   * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The priority.
    */
@@ -66250,7 +66328,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Indicates whether this is a fallback intent.
    * </pre>
    *
-   * <code>bool is_fallback = 4;</code>
+   * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The isFallback.
    */
@@ -66277,7 +66355,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *   ml_enabled = true / ml_disabled = false.
    * </pre>
    *
-   * <code>bool ml_enabled = 5 [deprecated = true];</code>
+   * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The mlEnabled.
    */
@@ -66298,7 +66376,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * auto-markup in the UI is turned off.
    * </pre>
    *
-   * <code>bool ml_disabled = 19;</code>
+   * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The mlDisabled.
    */
@@ -66317,7 +66395,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * to close interaction with an end user. Default is false.
    * </pre>
    *
-   * <code>bool end_interaction = 21;</code>
+   * <code>bool end_interaction = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The endInteraction.
    */
@@ -66336,7 +66414,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the inputContextNames.
    */
@@ -66352,7 +66430,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of inputContextNames.
    */
@@ -66368,7 +66446,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The inputContextNames at the given index.
@@ -66385,7 +66463,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the inputContextNames at the given index.
@@ -66406,7 +66484,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Event names are limited to 150 characters.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the events.
    */
@@ -66423,7 +66501,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Event names are limited to 150 characters.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of events.
    */
@@ -66440,7 +66518,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Event names are limited to 150 characters.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The events at the given index.
@@ -66458,7 +66536,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Event names are limited to 150 characters.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the events at the given index.
@@ -66478,7 +66556,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase>
@@ -66493,7 +66572,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<
@@ -66509,7 +66589,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getTrainingPhrasesCount() {
@@ -66523,7 +66604,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase getTrainingPhrases(int index) {
@@ -66537,7 +66619,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhraseOrBuilder
@@ -66555,7 +66638,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Note: The action name must not contain whitespaces.
    * </pre>
    *
-   * <code>string action = 10;</code>
+   * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The action.
    */
@@ -66578,7 +66661,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Note: The action name must not contain whitespaces.
    * </pre>
    *
-   * <code>string action = 10;</code>
+   * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for action.
    */
@@ -66607,7 +66690,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getOutputContextsList() {
     return outputContexts_;
@@ -66623,7 +66708,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getOutputContextsOrBuilderList() {
@@ -66640,7 +66727,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getOutputContextsCount() {
     return outputContexts_.size();
@@ -66656,7 +66745,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.Context getOutputContexts(int index) {
     return outputContexts_.get(index);
@@ -66672,7 +66763,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getOutputContextsOrBuilder(
       int index) {
@@ -66689,7 +66782,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * session when this intent is matched.
    * </pre>
    *
-   * <code>bool reset_contexts = 12;</code>
+   * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The resetContexts.
    */
@@ -66706,7 +66799,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Parameter> getParametersList() {
     return parameters_;
@@ -66718,7 +66813,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.ParameterOrBuilder>
       getParametersOrBuilderList() {
@@ -66731,7 +66828,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getParametersCount() {
     return parameters_.size();
@@ -66743,7 +66842,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.Intent.Parameter getParameters(int index) {
     return parameters_.get(index);
@@ -66755,7 +66856,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.Intent.ParameterOrBuilder getParametersOrBuilder(
       int index) {
@@ -66858,7 +66961,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the defaultResponsePlatforms.
@@ -66878,7 +66981,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of defaultResponsePlatforms.
@@ -66895,7 +66998,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
@@ -66914,7 +67017,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for defaultResponsePlatforms.
@@ -66931,7 +67034,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -66949,13 +67052,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. The unique identifier of the root intent in the chain of
+   * Output only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
-   * this intent. We populate this field only in the output.
+   * this intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string root_followup_intent_name = 16;</code>
+   * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The rootFollowupIntentName.
    */
@@ -66974,13 +67078,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. The unique identifier of the root intent in the chain of
+   * Output only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
-   * this intent. We populate this field only in the output.
+   * this intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string root_followup_intent_name = 16;</code>
+   * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for rootFollowupIntentName.
    */
@@ -67002,7 +67107,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only after creation. The unique identifier of the parent intent in the
+   * Optional. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
    * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
    * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
@@ -67011,7 +67116,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string parent_followup_intent_name = 17;</code>
+   * <code>string parent_followup_intent_name = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The parentFollowupIntentName.
    */
@@ -67030,7 +67135,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only after creation. The unique identifier of the parent intent in the
+   * Optional. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
    * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
    * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
@@ -67039,7 +67144,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string parent_followup_intent_name = 17;</code>
+   * <code>string parent_followup_intent_name = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for parentFollowupIntentName.
    */
@@ -67062,12 +67167,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo>
@@ -67078,12 +67183,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public java.util.List<
@@ -67095,12 +67200,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public int getFollowupIntentInfoCount() {
@@ -67110,12 +67215,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo getFollowupIntentInfo(
@@ -67126,12 +67231,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfoOrBuilder
@@ -68022,13 +68127,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -68047,13 +68152,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -68072,13 +68177,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -68096,13 +68201,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -68116,13 +68221,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The unique identifier of this intent.
+     * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -68146,7 +68251,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -68168,7 +68273,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -68190,7 +68295,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -68211,7 +68316,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -68228,7 +68333,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -68252,7 +68357,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for webhookState.
      */
@@ -68266,7 +68373,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for webhookState to set.
      * @return This builder for chaining.
@@ -68283,7 +68392,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The webhookState.
      */
@@ -68302,7 +68413,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The webhookState to set.
      * @return This builder for chaining.
@@ -68323,7 +68436,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -68339,7 +68454,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of this intent. Higher numbers represent higher
+     * Optional. The priority of this intent. Higher numbers represent higher
      * priorities.
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
@@ -68348,7 +68463,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   in runtime detect intent requests.
      * </pre>
      *
-     * <code>int32 priority = 3;</code>
+     * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The priority.
      */
@@ -68359,7 +68474,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of this intent. Higher numbers represent higher
+     * Optional. The priority of this intent. Higher numbers represent higher
      * priorities.
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
@@ -68368,7 +68483,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   in runtime detect intent requests.
      * </pre>
      *
-     * <code>int32 priority = 3;</code>
+     * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -68383,7 +68498,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of this intent. Higher numbers represent higher
+     * Optional. The priority of this intent. Higher numbers represent higher
      * priorities.
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
@@ -68392,7 +68507,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   in runtime detect intent requests.
      * </pre>
      *
-     * <code>int32 priority = 3;</code>
+     * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -68411,7 +68526,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether this is a fallback intent.
      * </pre>
      *
-     * <code>bool is_fallback = 4;</code>
+     * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The isFallback.
      */
@@ -68425,7 +68540,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether this is a fallback intent.
      * </pre>
      *
-     * <code>bool is_fallback = 4;</code>
+     * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The isFallback to set.
      * @return This builder for chaining.
@@ -68443,7 +68558,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether this is a fallback intent.
      * </pre>
      *
-     * <code>bool is_fallback = 4;</code>
+     * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -68472,7 +68587,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   ml_enabled = true / ml_disabled = false.
      * </pre>
      *
-     * <code>bool ml_enabled = 5 [deprecated = true];</code>
+     * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The mlEnabled.
      */
@@ -68497,7 +68613,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   ml_enabled = true / ml_disabled = false.
      * </pre>
      *
-     * <code>bool ml_enabled = 5 [deprecated = true];</code>
+     * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The mlEnabled to set.
      * @return This builder for chaining.
@@ -68526,7 +68643,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   ml_enabled = true / ml_disabled = false.
      * </pre>
      *
-     * <code>bool ml_enabled = 5 [deprecated = true];</code>
+     * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -68549,7 +68667,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * auto-markup in the UI is turned off.
      * </pre>
      *
-     * <code>bool ml_disabled = 19;</code>
+     * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The mlDisabled.
      */
@@ -68566,7 +68684,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * auto-markup in the UI is turned off.
      * </pre>
      *
-     * <code>bool ml_disabled = 19;</code>
+     * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The mlDisabled to set.
      * @return This builder for chaining.
@@ -68587,7 +68705,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * auto-markup in the UI is turned off.
      * </pre>
      *
-     * <code>bool ml_disabled = 19;</code>
+     * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -68608,7 +68726,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * to close interaction with an end user. Default is false.
      * </pre>
      *
-     * <code>bool end_interaction = 21;</code>
+     * <code>bool end_interaction = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The endInteraction.
      */
@@ -68624,7 +68742,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * to close interaction with an end user. Default is false.
      * </pre>
      *
-     * <code>bool end_interaction = 21;</code>
+     * <code>bool end_interaction = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The endInteraction to set.
      * @return This builder for chaining.
@@ -68644,7 +68762,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * to close interaction with an end user. Default is false.
      * </pre>
      *
-     * <code>bool end_interaction = 21;</code>
+     * <code>bool end_interaction = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -68673,7 +68791,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the inputContextNames.
      */
@@ -68689,7 +68808,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of inputContextNames.
      */
@@ -68705,7 +68825,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The inputContextNames at the given index.
@@ -68722,7 +68843,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the inputContextNames at the given index.
@@ -68739,7 +68861,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The inputContextNames to set.
@@ -68763,7 +68886,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The inputContextNames to add.
      * @return This builder for chaining.
@@ -68786,7 +68910,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The inputContextNames to add.
      * @return This builder for chaining.
@@ -68806,7 +68931,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -68825,7 +68951,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the inputContextNames to add.
      * @return This builder for chaining.
@@ -68860,7 +68987,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the events.
      */
@@ -68877,7 +69004,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of events.
      */
@@ -68894,7 +69021,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The events at the given index.
@@ -68912,7 +69039,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the events at the given index.
@@ -68930,7 +69057,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The events to set.
@@ -68955,7 +69082,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The events to add.
      * @return This builder for chaining.
@@ -68979,7 +69106,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The events to add.
      * @return This builder for chaining.
@@ -69000,7 +69127,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -69020,7 +69147,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Event names are limited to 150 characters.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the events to add.
      * @return This builder for chaining.
@@ -69062,7 +69189,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase>
@@ -69081,7 +69209,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getTrainingPhrasesCount() {
@@ -69099,7 +69228,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase getTrainingPhrases(int index) {
@@ -69117,7 +69247,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTrainingPhrases(
@@ -69142,7 +69273,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTrainingPhrases(
@@ -69165,7 +69297,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTrainingPhrases(
@@ -69190,7 +69323,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTrainingPhrases(
@@ -69215,7 +69349,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTrainingPhrases(
@@ -69237,7 +69372,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTrainingPhrases(
@@ -69260,7 +69396,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllTrainingPhrases(
@@ -69283,7 +69420,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearTrainingPhrases() {
@@ -69304,7 +69442,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeTrainingPhrases(int index) {
@@ -69325,7 +69464,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Builder
@@ -69340,7 +69480,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhraseOrBuilder
@@ -69359,7 +69500,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -69379,7 +69521,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Builder
@@ -69396,7 +69539,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Builder
@@ -69414,7 +69558,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Builder>
@@ -69451,7 +69596,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The action.
      */
@@ -69474,7 +69619,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for action.
      */
@@ -69497,7 +69642,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The action to set.
      * @return This builder for chaining.
@@ -69519,7 +69664,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -69537,7 +69682,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for action to set.
      * @return This builder for chaining.
@@ -69581,7 +69726,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getOutputContextsList() {
       if (outputContextsBuilder_ == null) {
@@ -69601,7 +69748,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getOutputContextsCount() {
       if (outputContextsBuilder_ == null) {
@@ -69621,7 +69770,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Context getOutputContexts(int index) {
       if (outputContextsBuilder_ == null) {
@@ -69641,7 +69792,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOutputContexts(int index, com.google.cloud.dialogflow.v2beta1.Context value) {
       if (outputContextsBuilder_ == null) {
@@ -69667,7 +69820,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOutputContexts(
         int index, com.google.cloud.dialogflow.v2beta1.Context.Builder builderForValue) {
@@ -69691,7 +69846,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOutputContexts(com.google.cloud.dialogflow.v2beta1.Context value) {
       if (outputContextsBuilder_ == null) {
@@ -69717,7 +69874,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOutputContexts(int index, com.google.cloud.dialogflow.v2beta1.Context value) {
       if (outputContextsBuilder_ == null) {
@@ -69743,7 +69902,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOutputContexts(
         com.google.cloud.dialogflow.v2beta1.Context.Builder builderForValue) {
@@ -69767,7 +69928,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOutputContexts(
         int index, com.google.cloud.dialogflow.v2beta1.Context.Builder builderForValue) {
@@ -69791,7 +69954,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllOutputContexts(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.Context> values) {
@@ -69815,7 +69980,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearOutputContexts() {
       if (outputContextsBuilder_ == null) {
@@ -69838,7 +70005,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeOutputContexts(int index) {
       if (outputContextsBuilder_ == null) {
@@ -69861,7 +70030,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Context.Builder getOutputContextsBuilder(int index) {
       return getOutputContextsFieldBuilder().getBuilder(index);
@@ -69877,7 +70048,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getOutputContextsOrBuilder(
         int index) {
@@ -69898,7 +70071,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
         getOutputContextsOrBuilderList() {
@@ -69919,7 +70094,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Context.Builder addOutputContextsBuilder() {
       return getOutputContextsFieldBuilder()
@@ -69936,7 +70113,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Context.Builder addOutputContextsBuilder(int index) {
       return getOutputContextsFieldBuilder()
@@ -69953,7 +70132,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Context.Builder>
         getOutputContextsBuilderList() {
@@ -69989,7 +70170,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * session when this intent is matched.
      * </pre>
      *
-     * <code>bool reset_contexts = 12;</code>
+     * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The resetContexts.
      */
@@ -70004,7 +70185,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * session when this intent is matched.
      * </pre>
      *
-     * <code>bool reset_contexts = 12;</code>
+     * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The resetContexts to set.
      * @return This builder for chaining.
@@ -70023,7 +70204,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * session when this intent is matched.
      * </pre>
      *
-     * <code>bool reset_contexts = 12;</code>
+     * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -70059,7 +70240,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Parameter>
         getParametersList() {
@@ -70076,7 +70259,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getParametersCount() {
       if (parametersBuilder_ == null) {
@@ -70092,7 +70277,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Parameter getParameters(int index) {
       if (parametersBuilder_ == null) {
@@ -70108,7 +70295,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setParameters(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Parameter value) {
@@ -70131,7 +70320,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setParameters(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder builderForValue) {
@@ -70151,7 +70342,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addParameters(com.google.cloud.dialogflow.v2beta1.Intent.Parameter value) {
       if (parametersBuilder_ == null) {
@@ -70173,7 +70366,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addParameters(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Parameter value) {
@@ -70196,7 +70391,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addParameters(
         com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder builderForValue) {
@@ -70216,7 +70413,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addParameters(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder builderForValue) {
@@ -70236,7 +70435,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllParameters(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.Intent.Parameter> values) {
@@ -70256,7 +70457,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
@@ -70275,7 +70478,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeParameters(int index) {
       if (parametersBuilder_ == null) {
@@ -70294,7 +70499,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder getParametersBuilder(
         int index) {
@@ -70307,7 +70514,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.ParameterOrBuilder getParametersOrBuilder(
         int index) {
@@ -70324,7 +70533,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.ParameterOrBuilder>
         getParametersOrBuilderList() {
@@ -70341,7 +70552,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder addParametersBuilder() {
       return getParametersFieldBuilder()
@@ -70354,7 +70567,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder addParametersBuilder(
         int index) {
@@ -70369,7 +70584,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder>
         getParametersBuilderList() {
@@ -70787,7 +71004,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the defaultResponsePlatforms.
@@ -70807,7 +71024,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The count of defaultResponsePlatforms.
@@ -70824,7 +71041,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the element to return.
@@ -70843,7 +71060,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -70869,7 +71086,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The defaultResponsePlatforms to add.
@@ -70894,7 +71111,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The defaultResponsePlatforms to add.
@@ -70919,7 +71136,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -70939,7 +71156,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for defaultResponsePlatforms.
@@ -70956,7 +71173,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the value to return.
@@ -70974,7 +71191,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the value to return.
@@ -70996,7 +71213,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for defaultResponsePlatforms to add.
@@ -71017,7 +71234,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The enum numeric values on the wire for defaultResponsePlatforms to add.
@@ -71038,13 +71255,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. The unique identifier of the root intent in the chain of
+     * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
-     * this intent. We populate this field only in the output.
+     * this intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The rootFollowupIntentName.
      */
@@ -71063,13 +71281,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. The unique identifier of the root intent in the chain of
+     * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
-     * this intent. We populate this field only in the output.
+     * this intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for rootFollowupIntentName.
      */
@@ -71088,13 +71307,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. The unique identifier of the root intent in the chain of
+     * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
-     * this intent. We populate this field only in the output.
+     * this intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The rootFollowupIntentName to set.
      * @return This builder for chaining.
@@ -71112,13 +71332,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. The unique identifier of the root intent in the chain of
+     * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
-     * this intent. We populate this field only in the output.
+     * this intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -71132,13 +71353,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. The unique identifier of the root intent in the chain of
+     * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
-     * this intent. We populate this field only in the output.
+     * this intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for rootFollowupIntentName to set.
      * @return This builder for chaining.
@@ -71159,7 +71381,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only after creation. The unique identifier of the parent intent in the
+     * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
      * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
@@ -71168,7 +71390,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string parent_followup_intent_name = 17;</code>
+     * <code>string parent_followup_intent_name = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The parentFollowupIntentName.
      */
@@ -71187,7 +71410,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only after creation. The unique identifier of the parent intent in the
+     * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
      * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
@@ -71196,7 +71419,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string parent_followup_intent_name = 17;</code>
+     * <code>string parent_followup_intent_name = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for parentFollowupIntentName.
      */
@@ -71215,7 +71439,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only after creation. The unique identifier of the parent intent in the
+     * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
      * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
@@ -71224,7 +71448,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string parent_followup_intent_name = 17;</code>
+     * <code>string parent_followup_intent_name = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The parentFollowupIntentName to set.
      * @return This builder for chaining.
@@ -71242,7 +71467,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only after creation. The unique identifier of the parent intent in the
+     * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
      * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
@@ -71251,7 +71476,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string parent_followup_intent_name = 17;</code>
+     * <code>string parent_followup_intent_name = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -71265,7 +71491,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only after creation. The unique identifier of the parent intent in the
+     * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
      * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
@@ -71274,7 +71500,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string parent_followup_intent_name = 17;</code>
+     * <code>string parent_followup_intent_name = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for parentFollowupIntentName to set.
      * @return This builder for chaining.
@@ -71312,12 +71539,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo>
@@ -71332,12 +71559,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public int getFollowupIntentInfoCount() {
@@ -71351,12 +71578,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo getFollowupIntentInfo(
@@ -71371,12 +71598,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setFollowupIntentInfo(
@@ -71397,12 +71624,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setFollowupIntentInfo(
@@ -71421,12 +71648,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addFollowupIntentInfo(
@@ -71447,12 +71674,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addFollowupIntentInfo(
@@ -71473,12 +71700,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addFollowupIntentInfo(
@@ -71496,12 +71723,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addFollowupIntentInfo(
@@ -71520,12 +71747,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addAllFollowupIntentInfo(
@@ -71544,12 +71771,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearFollowupIntentInfo() {
@@ -71566,12 +71793,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder removeFollowupIntentInfo(int index) {
@@ -71588,12 +71815,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo.Builder
@@ -71604,12 +71831,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfoOrBuilder
@@ -71624,12 +71851,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<
@@ -71645,12 +71872,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo.Builder
@@ -71663,12 +71890,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo.Builder
@@ -71682,12 +71909,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18;
+     * repeated .google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo.Builder>

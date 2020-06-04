@@ -294,10 +294,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The current state of this operation.
+   * Required. Output only. The current state of this operation.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -308,10 +310,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The current state of this operation.
+   * Required. Output only. The current state of this operation.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -654,10 +658,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The current state of this operation.
+     * Required. Output only. The current state of this operation.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -668,10 +674,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The current state of this operation.
+     * Required. Output only. The current state of this operation.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -685,10 +693,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The current state of this operation.
+     * Required. Output only. The current state of this operation.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -704,10 +714,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The current state of this operation.
+     * Required. Output only. The current state of this operation.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -726,10 +738,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The current state of this operation.
+     * Required. Output only. The current state of this operation.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
