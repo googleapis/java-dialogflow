@@ -312,6 +312,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -449,6 +453,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -721,6 +729,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -750,6 +759,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -1611,6 +1621,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1636,6 +1647,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1661,6 +1673,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1683,6 +1696,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1710,6 +1724,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for kind.
    */
+  @java.lang.Override
   public int getKindValue() {
     return kind_;
   }
@@ -1726,6 +1741,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kind.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.Kind getKind() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.EntityType.Kind result =
@@ -1751,6 +1767,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for autoExpansionMode.
    */
+  @java.lang.Override
   public int getAutoExpansionModeValue() {
     return autoExpansionMode_;
   }
@@ -1768,6 +1785,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The autoExpansionMode.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode getAutoExpansionMode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode result =
@@ -1791,6 +1809,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList() {
     return entities_;
   }
@@ -1805,6 +1824,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList() {
     return entities_;
@@ -1820,6 +1840,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getEntitiesCount() {
     return entities_.size();
   }
@@ -1834,6 +1855,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index) {
     return entities_.get(index);
   }
@@ -1848,6 +1870,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(
       int index) {
     return entities_.get(index);
@@ -1866,6 +1889,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enableFuzzyExtraction.
    */
+  @java.lang.Override
   public boolean getEnableFuzzyExtraction() {
     return enableFuzzyExtraction_;
   }
@@ -2554,6 +2578,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for kind.
      */
+    @java.lang.Override
     public int getKindValue() {
       return kind_;
     }
@@ -2572,6 +2597,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
+
       kind_ = value;
       onChanged();
       return this;
@@ -2589,6 +2615,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The kind.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.EntityType.Kind getKind() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.EntityType.Kind result =
@@ -2655,6 +2682,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for autoExpansionMode.
      */
+    @java.lang.Override
     public int getAutoExpansionModeValue() {
       return autoExpansionMode_;
     }
@@ -2674,6 +2702,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAutoExpansionModeValue(int value) {
+
       autoExpansionMode_ = value;
       onChanged();
       return this;
@@ -2692,6 +2721,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The autoExpansionMode.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode getAutoExpansionMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode result =
@@ -3154,6 +3184,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableFuzzyExtraction.
      */
+    @java.lang.Override
     public boolean getEnableFuzzyExtraction() {
       return enableFuzzyExtraction_;
     }

@@ -230,6 +230,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +256,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -339,6 +341,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return Whether the intentBatchInline field is set.
    */
+  @java.lang.Override
   public boolean hasIntentBatchInline() {
     return intentBatchCase_ == 3;
   }
@@ -353,6 +356,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The intentBatchInline.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentBatch getIntentBatchInline() {
     if (intentBatchCase_ == 3) {
       return (com.google.cloud.dialogflow.v2beta1.IntentBatch) intentBatch_;
@@ -368,6 +372,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.dialogflow.v2beta1.IntentBatch intent_batch_inline = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentBatchOrBuilder getIntentBatchInlineOrBuilder() {
     if (intentBatchCase_ == 3) {
       return (com.google.cloud.dialogflow.v2beta1.IntentBatch) intentBatch_;
@@ -392,6 +397,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -418,6 +424,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -443,6 +450,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -457,6 +465,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -469,6 +478,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * <code>.google.protobuf.FieldMask update_mask = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -486,6 +496,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The enum numeric value on the wire for intentView.
    */
+  @java.lang.Override
   public int getIntentViewValue() {
     return intentView_;
   }
@@ -500,6 +511,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The intentView.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.IntentView result =
@@ -1106,6 +1118,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      * @return The intentBatchUri.
      */
+    @java.lang.Override
     public java.lang.String getIntentBatchUri() {
       java.lang.Object ref = "";
       if (intentBatchCase_ == 2) {
@@ -1135,6 +1148,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      * @return The bytes for intentBatchUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getIntentBatchUriBytes() {
       java.lang.Object ref = "";
       if (intentBatchCase_ == 2) {
@@ -1236,6 +1250,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      * @return Whether the intentBatchInline field is set.
      */
+    @java.lang.Override
     public boolean hasIntentBatchInline() {
       return intentBatchCase_ == 3;
     }
@@ -1250,6 +1265,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      * @return The intentBatchInline.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.IntentBatch getIntentBatchInline() {
       if (intentBatchInlineBuilder_ == null) {
         if (intentBatchCase_ == 3) {
@@ -1383,6 +1399,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.dialogflow.v2beta1.IntentBatch intent_batch_inline = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.IntentBatchOrBuilder
         getIntentBatchInlineOrBuilder() {
       if ((intentBatchCase_ == 3) && (intentBatchInlineBuilder_ != null)) {
@@ -1749,6 +1766,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      * @return The enum numeric value on the wire for intentView.
      */
+    @java.lang.Override
     public int getIntentViewValue() {
       return intentView_;
     }
@@ -1765,6 +1783,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
+
       intentView_ = value;
       onChanged();
       return this;
@@ -1780,6 +1799,7 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
      *
      * @return The intentView.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.IntentView result =

@@ -254,6 +254,10 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -303,6 +307,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -319,6 +324,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State result =
@@ -667,6 +673,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -685,6 +692,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -702,6 +710,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State result =
