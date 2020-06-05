@@ -218,7 +218,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -241,7 +243,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -432,7 +436,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -446,7 +451,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -460,7 +466,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -927,7 +934,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -950,7 +959,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -973,7 +984,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -995,7 +1008,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1013,7 +1028,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -1512,7 +1529,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -1526,7 +1544,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -1546,7 +1565,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1568,7 +1588,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -1587,7 +1608,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1611,7 +1633,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1631,7 +1654,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1645,7 +1669,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1663,7 +1688,8 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

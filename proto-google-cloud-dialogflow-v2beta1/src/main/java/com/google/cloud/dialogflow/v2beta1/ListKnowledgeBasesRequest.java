@@ -134,7 +134,9 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -157,7 +159,9 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -183,7 +187,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * default 10 and at most 100.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -200,7 +204,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * Optional. The next_page_token value returned from a previous list request.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -222,7 +226,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * Optional. The next_page_token value returned from a previous list request.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -600,7 +604,9 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -623,7 +629,9 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -646,7 +654,9 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -668,7 +678,9 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -686,7 +698,9 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -711,7 +725,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * default 10 and at most 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -726,7 +740,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * default 10 and at most 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -745,7 +759,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * default 10 and at most 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -764,7 +778,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Optional. The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -786,7 +800,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Optional. The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -808,7 +822,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Optional. The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -829,7 +843,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Optional. The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -846,7 +860,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * Optional. The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
