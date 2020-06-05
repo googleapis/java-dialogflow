@@ -188,6 +188,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +215,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +241,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 3;
   }
@@ -254,6 +257,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 3) {
       return (com.google.cloud.dialogflow.v2beta1.GcsSource) source_;
@@ -270,6 +274,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 3) {
       return (com.google.cloud.dialogflow.v2beta1.GcsSource) source_;
@@ -798,6 +803,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 3;
     }
@@ -813,6 +819,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 3) {
@@ -951,6 +958,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 3) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();

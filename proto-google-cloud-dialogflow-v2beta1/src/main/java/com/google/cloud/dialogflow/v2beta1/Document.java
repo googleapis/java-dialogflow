@@ -334,6 +334,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -575,6 +579,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the time field is set.
      */
+    @java.lang.Override
     public boolean hasTime() {
       return time_ != null;
     }
@@ -591,6 +596,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The time.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getTime() {
       return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
@@ -605,6 +611,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp time = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
       return getTime();
     }
@@ -622,6 +629,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the status field is set.
      */
+    @java.lang.Override
     public boolean hasStatus() {
       return status_ != null;
     }
@@ -636,6 +644,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
@@ -648,6 +657,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.rpc.Status status = 2;</code>
      */
+    @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
       return getStatus();
     }
@@ -1503,6 +1513,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1528,6 +1539,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1554,6 +1566,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1577,6 +1590,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1602,6 +1616,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -1624,6 +1639,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -1666,6 +1682,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the knowledgeTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
       getKnowledgeTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -1685,6 +1702,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of knowledgeTypes.
    */
+  @java.lang.Override
   public int getKnowledgeTypesCount() {
     return knowledgeTypes_.size();
   }
@@ -1702,6 +1720,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The knowledgeTypes at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index) {
     return knowledgeTypes_converter_.convert(knowledgeTypes_.get(index));
   }
@@ -1718,6 +1737,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for knowledgeTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getKnowledgeTypesValueList() {
     return knowledgeTypes_;
   }
@@ -1735,6 +1755,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of knowledgeTypes at the given index.
    */
+  @java.lang.Override
   public int getKnowledgeTypesValue(int index) {
     return knowledgeTypes_.get(index);
   }
@@ -1886,6 +1907,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rawContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRawContent() {
     if (sourceCase_ == 9) {
       return (com.google.protobuf.ByteString) source_;
@@ -1918,6 +1940,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enableAutoReload.
    */
+  @java.lang.Override
   public boolean getEnableAutoReload() {
     return enableAutoReload_;
   }
@@ -1939,6 +1962,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the latestReloadStatus field is set.
    */
+  @java.lang.Override
   public boolean hasLatestReloadStatus() {
     return latestReloadStatus_ != null;
   }
@@ -1957,6 +1981,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The latestReloadStatus.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus getLatestReloadStatus() {
     return latestReloadStatus_ == null
         ? com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.getDefaultInstance()
@@ -1975,6 +2000,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder
       getLatestReloadStatusOrBuilder() {
     return getLatestReloadStatus();
@@ -3124,6 +3150,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The contentUri.
      */
+    @java.lang.Override
     public java.lang.String getContentUri() {
       java.lang.Object ref = "";
       if (sourceCase_ == 5) {
@@ -3157,6 +3184,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for contentUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getContentUriBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 5) {
@@ -3268,6 +3296,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The content.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.lang.String getContent() {
       java.lang.Object ref = "";
@@ -3299,6 +3328,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for content.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
@@ -3476,6 +3506,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableAutoReload.
      */
+    @java.lang.Override
     public boolean getEnableAutoReload() {
       return enableAutoReload_;
     }

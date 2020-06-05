@@ -148,6 +148,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Override
   public boolean hasDocument() {
     return document_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The document.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Document getDocument() {
     return document_ == null
         ? com.google.cloud.dialogflow.v2beta1.Document.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
@@ -200,6 +203,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -217,6 +221,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -232,6 +237,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
