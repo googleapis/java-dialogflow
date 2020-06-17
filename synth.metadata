@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow.git",
-        "sha": "1e3d4b2f15ac27f95fa028b521d724bc653f2128"
+        "sha": "7ee78233a2da6176bb63c9dc6a9b916c531edbd0"
       }
     },
     {
