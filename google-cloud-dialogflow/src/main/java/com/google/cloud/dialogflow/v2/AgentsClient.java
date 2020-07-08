@@ -41,30 +41,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Agents are best described as Natural Language Understanding (NLU) modules
- * that transform user requests into actionable data. You can include agents in your app, product,
- * or service to determine user intent and respond to the user in a natural way.
- *
- * <p>After you create an agent, you can add [Intents][google.cloud.dialogflow.v2.Intents],
- * [Contexts][google.cloud.dialogflow.v2.Contexts], [Entity
- * Types][google.cloud.dialogflow.v2.EntityTypes],
- * [Webhooks][google.cloud.dialogflow.v2.WebhookRequest], and so on to manage the flow of a
- * conversation and match user input to predefined intents and actions.
- *
- * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
- * Edition. For details, see [Dialogflow
- * Editions](https://cloud.google.com/dialogflow/docs/editions).
- *
- * <p>You can save your agent for backup or versioning by exporting the agent by using the
- * [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved agent
- * by using the [ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent] method.
- *
- * <p>Dialogflow provides several [prebuilt
- * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt) for common conversation
- * scenarios such as determining a date and time, converting currency, and so on.
- *
- * <p>For more information about agents, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
+ * Service Description: Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -72,8 +49,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   Agent agent = Agent.newBuilder().build();
- *   Agent response = agentsClient.setAgent(agent);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Agent response = agentsClient.getAgent(parent);
  * }
  * </code>
  * </pre>
@@ -191,6 +168,96 @@ public class AgentsClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Agent response = agentsClient.getAgent(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The project that the agent to fetch is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAgent(ProjectName parent) {
+    GetAgentRequest request =
+        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return getAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Agent response = agentsClient.getAgent(parent.toString());
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The project that the agent to fetch is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAgent(String parent) {
+    GetAgentRequest request = GetAgentRequest.newBuilder().setParent(parent).build();
+    return getAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GetAgentRequest request = GetAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   Agent response = agentsClient.getAgent(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAgent(GetAgentRequest request) {
+    return getAgentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GetAgentRequest request = GetAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;Agent&gt; future = agentsClient.getAgentCallable().futureCall(request);
+   *   // Do something
+   *   Agent response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
+    return stub.getAgentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -783,188 +850,19 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Restores the specified agent from a ZIP file.
-   *
-   * <p>Replaces the current agent version with a new one. All the intents and entity types in the
-   * older version are deleted.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   agentsClient.restoreAgentAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> restoreAgentAsync(RestoreAgentRequest request) {
-    return restoreAgentOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Restores the specified agent from a ZIP file.
-   *
-   * <p>Replaces the current agent version with a new one. All the intents and entity types in the
-   * older version are deleted.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.restoreAgentOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<RestoreAgentRequest, Empty, Struct>
-      restoreAgentOperationCallable() {
-    return stub.restoreAgentOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Restores the specified agent from a ZIP file.
-   *
-   * <p>Replaces the current agent version with a new one. All the intents and entity types in the
-   * older version are deleted.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = agentsClient.restoreAgentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
-    return stub.restoreAgentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Agent response = agentsClient.getAgent(parent);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The project that the agent to fetch is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Agent getAgent(ProjectName parent) {
-    GetAgentRequest request =
-        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
-    return getAgent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Agent response = agentsClient.getAgent(parent.toString());
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The project that the agent to fetch is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Agent getAgent(String parent) {
-    GetAgentRequest request = GetAgentRequest.newBuilder().setParent(parent).build();
-    return getAgent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   GetAgentRequest request = GetAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   Agent response = agentsClient.getAgent(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Agent getAgent(GetAgentRequest request) {
-    return getAgentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   GetAgentRequest request = GetAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Agent&gt; future = agentsClient.getAgentCallable().futureCall(request);
-   *   // Do something
-   *   Agent response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
-    return stub.getAgentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Imports the specified agent from a ZIP file.
    *
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   * types with the same name are replaced with the new versions from
+   * [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the
+   * imported draft agent will be trained automatically (unless disabled in agent settings).
+   * However, once the import is done, training may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when importing is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
@@ -992,9 +890,16 @@ public class AgentsClient implements BackgroundResource {
    * Imports the specified agent from a ZIP file.
    *
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   * types with the same name are replaced with the new versions from
+   * [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the
+   * imported draft agent will be trained automatically (unless disabled in agent settings).
+   * However, once the import is done, training may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when importing is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
@@ -1020,9 +925,16 @@ public class AgentsClient implements BackgroundResource {
    * Imports the specified agent from a ZIP file.
    *
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   * types with the same name are replaced with the new versions from
+   * [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the
+   * imported draft agent will be trained automatically (unless disabled in agent settings).
+   * However, once the import is done, training may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when importing is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
@@ -1040,6 +952,110 @@ public class AgentsClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportAgentRequest, Operation> importAgentCallable() {
     return stub.importAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Restores the specified agent from a ZIP file.
+   *
+   * <p>Replaces the current agent version with a new one. All the intents and entity types in the
+   * older version are deleted. After the restore, the restored draft agent will be trained
+   * automatically (unless disabled in agent settings). However, once the restore is done, training
+   * may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   agentsClient.restoreAgentAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> restoreAgentAsync(RestoreAgentRequest request) {
+    return restoreAgentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Restores the specified agent from a ZIP file.
+   *
+   * <p>Replaces the current agent version with a new one. All the intents and entity types in the
+   * older version are deleted. After the restore, the restored draft agent will be trained
+   * automatically (unless disabled in agent settings). However, once the restore is done, training
+   * may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.restoreAgentOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<RestoreAgentRequest, Empty, Struct>
+      restoreAgentOperationCallable() {
+    return stub.restoreAgentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Restores the specified agent from a ZIP file.
+   *
+   * <p>Replaces the current agent version with a new one. All the intents and entity types in the
+   * older version are deleted. After the restore, the restored draft agent will be trained
+   * automatically (unless disabled in agent settings). However, once the restore is done, training
+   * may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = agentsClient.restoreAgentCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
+    return stub.restoreAgentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

@@ -21,38 +21,15 @@
  *
  * <p>============ AgentsClient ============
  *
- * <p>Service Description: Agents are best described as Natural Language Understanding (NLU) modules
- * that transform user requests into actionable data. You can include agents in your app, product,
- * or service to determine user intent and respond to the user in a natural way.
- *
- * <p>After you create an agent, you can add [Intents][google.cloud.dialogflow.v2.Intents],
- * [Contexts][google.cloud.dialogflow.v2.Contexts], [Entity
- * Types][google.cloud.dialogflow.v2.EntityTypes],
- * [Webhooks][google.cloud.dialogflow.v2.WebhookRequest], and so on to manage the flow of a
- * conversation and match user input to predefined intents and actions.
- *
- * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
- * Edition. For details, see [Dialogflow
- * Editions](https://cloud.google.com/dialogflow/docs/editions).
- *
- * <p>You can save your agent for backup or versioning by exporting the agent by using the
- * [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved agent
- * by using the [ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent] method.
- *
- * <p>Dialogflow provides several [prebuilt
- * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt) for common conversation
- * scenarios such as determining a date and time, converting currency, and so on.
- *
- * <p>For more information about agents, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
+ * <p>Service Description: Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
  *
  * <p>Sample for AgentsClient:
  *
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   Agent agent = Agent.newBuilder().build();
- *   Agent response = agentsClient.setAgent(agent);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Agent response = agentsClient.getAgent(parent);
  * }
  * </code>
  * </pre>
@@ -81,7 +58,7 @@
  * <code>
  * try (ContextsClient contextsClient = ContextsClient.create()) {
  *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
- *   contextsClient.deleteContext(name);
+ *   Context response = contextsClient.getContext(name);
  * }
  * </code>
  * </pre>
@@ -120,7 +97,7 @@
  * <code>
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
  *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
- *   entityTypesClient.deleteEntityType(name);
+ *   EntityType response = entityTypesClient.getEntityType(name);
  * }
  * </code>
  * </pre>
@@ -179,7 +156,7 @@
  * <code>
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
- *   intentsClient.deleteIntent(name);
+ *   Intent response = intentsClient.getIntent(name);
  * }
  * </code>
  * </pre>
@@ -206,7 +183,7 @@
  * <code>
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
  *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
- *   sessionEntityTypesClient.deleteSessionEntityType(name);
+ *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
  * }
  * </code>
  * </pre>

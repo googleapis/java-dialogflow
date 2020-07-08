@@ -202,6 +202,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return The responseId.
    */
+  @java.lang.Override
   public java.lang.String getResponseId() {
     java.lang.Object ref = responseId_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +226,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return The bytes for responseId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResponseIdBytes() {
     java.lang.Object ref = responseId_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +252,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return Whether the recognitionResult field is set.
    */
+  @java.lang.Override
   public boolean hasRecognitionResult() {
     return recognitionResult_ != null;
   }
@@ -264,6 +267,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return The recognitionResult.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.StreamingRecognitionResult getRecognitionResult() {
     return recognitionResult_ == null
         ? com.google.cloud.dialogflow.v2.StreamingRecognitionResult.getDefaultInstance()
@@ -278,6 +282,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult recognition_result = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.StreamingRecognitionResultOrBuilder
       getRecognitionResultOrBuilder() {
     return getRecognitionResult();
@@ -296,6 +301,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return Whether the queryResult field is set.
    */
+  @java.lang.Override
   public boolean hasQueryResult() {
     return queryResult_ != null;
   }
@@ -310,6 +316,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return The queryResult.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryResult getQueryResult() {
     return queryResult_ == null
         ? com.google.cloud.dialogflow.v2.QueryResult.getDefaultInstance()
@@ -324,6 +331,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryResultOrBuilder getQueryResultOrBuilder() {
     return getQueryResult();
   }
@@ -341,6 +349,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return Whether the webhookStatus field is set.
    */
+  @java.lang.Override
   public boolean hasWebhookStatus() {
     return webhookStatus_ != null;
   }
@@ -355,6 +364,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return The webhookStatus.
    */
+  @java.lang.Override
   public com.google.rpc.Status getWebhookStatus() {
     return webhookStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : webhookStatus_;
   }
@@ -367,6 +377,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <code>.google.rpc.Status webhook_status = 4;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getWebhookStatusOrBuilder() {
     return getWebhookStatus();
   }
@@ -383,12 +394,16 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * multiple default text responses exist, they will be concatenated when
    * generating audio. If no default platform text responses exist, the
    * generated audio content will be empty.
+   * In some scenarios, multiple output audio fields may be present in the
+   * response structure. In these cases, only the top-most-level audio output
+   * has content.
    * </pre>
    *
    * <code>bytes output_audio = 5;</code>
    *
    * @return The outputAudio.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutputAudio() {
     return outputAudio_;
   }
@@ -406,6 +421,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return Whether the outputAudioConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputAudioConfig() {
     return outputAudioConfig_ != null;
   }
@@ -420,6 +436,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * @return The outputAudioConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
     return outputAudioConfig_ == null
         ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
@@ -434,6 +451,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
     return getOutputAudioConfig();
   }
@@ -1568,12 +1586,16 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     * In some scenarios, multiple output audio fields may be present in the
+     * response structure. In these cases, only the top-most-level audio output
+     * has content.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
      *
      * @return The outputAudio.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getOutputAudio() {
       return outputAudio_;
     }
@@ -1587,6 +1609,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     * In some scenarios, multiple output audio fields may be present in the
+     * response structure. In these cases, only the top-most-level audio output
+     * has content.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
@@ -1613,6 +1638,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     * In some scenarios, multiple output audio fields may be present in the
+     * response structure. In these cases, only the top-most-level audio output
+     * has content.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>

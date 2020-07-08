@@ -28,8 +28,10 @@ public interface EnvironmentOrBuilder
    *
    * <pre>
    * Output only. The unique identifier of this agent environment.
-   * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-   * For Environment ID, "-" is reserved for 'draft' environment.
+   * Format:
+   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -42,8 +44,10 @@ public interface EnvironmentOrBuilder
    *
    * <pre>
    * Output only. The unique identifier of this agent environment.
-   * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-   * For Environment ID, "-" is reserved for 'draft' environment.
+   * Format:
+   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -87,9 +91,7 @@ public interface EnvironmentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
    * </pre>
    *
-   * <code>
-   * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The agentVersion.
    */
@@ -102,9 +104,7 @@ public interface EnvironmentOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
    * </pre>
    *
-   * <code>
-   * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for agentVersion.
    */
