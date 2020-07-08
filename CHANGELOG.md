@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-dialogflow/compare/v2.1.0...v2.1.1) (2020-07-08)
+
+
+### Bug Fixes
+
+* update grpc config for retry ([#230](https://www.github.com/googleapis/java-dialogflow/issues/230)) ([4447393](https://www.github.com/googleapis/java-dialogflow/commit/4447393cd9a4aa2b9ad31cad31e7aca74aca32ad))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#240](https://www.github.com/googleapis/java-dialogflow/issues/240)) ([c871b9b](https://www.github.com/googleapis/java-dialogflow/commit/c871b9bb6f765f42a4d77b2088e4205f19d10603))
+
 ## [2.1.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.0.0...v2.1.0) (2020-06-22)
 
 
