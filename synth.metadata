@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "be0c5a9b1b88ca3bb8ad993ae7b2e6affde7fee2",
-        "internalRef": "322420178"
+        "sha": "1d3ca22734bfd1c00d229e49009547c43f2d7a48",
+        "internalRef": "322667213"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "be0c5a9b1b88ca3bb8ad993ae7b2e6affde7fee2",
-        "internalRef": "322420178"
+        "sha": "1d3ca22734bfd1c00d229e49009547c43f2d7a48",
+        "internalRef": "322667213"
       }
     },
     {
@@ -476,6 +476,7 @@
     "proto-google-cloud-dialogflow-v2/src/main/proto/google/cloud/dialogflow/v2/validation_result.proto",
     "proto-google-cloud-dialogflow-v2/src/main/proto/google/cloud/dialogflow/v2/webhook.proto",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/Agent.java",
+    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentProto.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AudioConfigProto.java",
@@ -545,12 +546,9 @@
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EntityTypeOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EntityTypeProto.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/Environment.java",
-    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentContextName.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentName.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentProto.java",
-    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionEntityTypeName.java",
-    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EventInput.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EventInputOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ExportAgentRequest.java",
@@ -623,12 +621,12 @@
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ListSessionEntityTypesRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ListSessionEntityTypesResponse.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ListSessionEntityTypesResponseOrBuilder.java",
+    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/LocationName.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/OriginalDetectIntentRequest.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/OriginalDetectIntentRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/OutputAudioConfig.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/OutputAudioConfigOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/OutputAudioEncoding.java",
-    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectName.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/QueryInput.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/QueryInputOrBuilder.java",
