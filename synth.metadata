@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow.git",
-        "sha": "977dab89984fa91a643a45fb896e062b5024eb5c"
+        "sha": "4b4eb67cb8d4f6938f7802ce7244dcdac72fbdc7"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "80003a3de2d8a75f5b47cb2e77e018f7f0f776cc"
+        "sha": "916c10e8581804df2b48a0f0457d848f3faa582e"
       }
     }
   ],
@@ -109,7 +109,6 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "README.md",
     "codecov.yaml",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/AgentsClient.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/AgentsSettings.java",
