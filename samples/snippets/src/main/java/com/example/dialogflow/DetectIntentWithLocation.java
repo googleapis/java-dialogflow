@@ -16,7 +16,7 @@
 
 package com.example.dialogflow;
 
-// [START dialogflow_detect_intent_text]
+// [START dialogflow_detect_intent_with_location]
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2beta1.DetectIntentResponse;
