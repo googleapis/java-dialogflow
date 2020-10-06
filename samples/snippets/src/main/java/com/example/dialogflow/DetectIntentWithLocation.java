@@ -76,4 +76,4 @@ public class DetectIntentWithLocation {
     return queryResults;
   }
 }
-// [END dialogflow_detect_intent_text]
+// [END dialogflow_detect_intent_with_location]
