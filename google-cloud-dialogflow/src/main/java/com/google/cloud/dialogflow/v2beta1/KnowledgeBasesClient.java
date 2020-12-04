@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1;
 
 import com.google.api.core.ApiFunction;
@@ -32,10 +33,11 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for managing
  * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
@@ -43,16 +45,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
- *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
- *   KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the knowledgeBasesClient object to clean up resources such
+ * <p>Note: close() needs to be called on the KnowledgeBasesClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +73,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * KnowledgeBasesSettings knowledgeBasesSettings =
  *     KnowledgeBasesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * KnowledgeBasesClient knowledgeBasesClient =
- *     KnowledgeBasesClient.create(knowledgeBasesSettings);
- * </code>
- * </pre>
+ * KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create(knowledgeBasesSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * KnowledgeBasesSettings knowledgeBasesSettings =
  *     KnowledgeBasesSettings.newBuilder().setEndpoint(myEndpoint).build();
- * KnowledgeBasesClient knowledgeBasesClient =
- *     KnowledgeBasesClient.create(knowledgeBasesSettings);
- * </code>
- * </pre>
+ * KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create(knowledgeBasesSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class KnowledgeBasesClient implements BackgroundResource {
   private final KnowledgeBasesSettings settings;
   private final KnowledgeBasesStub stub;
@@ -124,7 +113,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of KnowledgeBasesClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use KnowledgeBasesSettings}.
+   * for advanced usage - prefer using create(KnowledgeBasesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final KnowledgeBasesClient create(KnowledgeBasesStub stub) {
@@ -156,23 +145,12 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all knowledge bases of the specified agent.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   for (KnowledgeBase element : knowledgeBasesClient.listKnowledgeBases(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The project to list of knowledge bases for. Format:
    *     `projects/&lt;Project ID&gt;`.
@@ -181,28 +159,17 @@ public class KnowledgeBasesClient implements BackgroundResource {
   public final ListKnowledgeBasesPagedResponse listKnowledgeBases(ProjectName parent) {
     ListKnowledgeBasesRequest request =
         ListKnowledgeBasesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(Objects.isNull(parent) ? null : parent.toString())
             .build();
     return listKnowledgeBases(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all knowledge bases of the specified agent.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   for (KnowledgeBase element : knowledgeBasesClient.listKnowledgeBases(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The project to list of knowledge bases for. Format:
    *     `projects/&lt;Project ID&gt;`.
@@ -214,26 +181,12 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return listKnowledgeBases(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all knowledge bases of the specified agent.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListKnowledgeBasesRequest request = ListKnowledgeBasesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (KnowledgeBase element : knowledgeBasesClient.listKnowledgeBases(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -243,7 +196,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return listKnowledgeBasesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all knowledge bases of the specified agent.
    *
@@ -251,27 +204,13 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListKnowledgeBasesRequest request = ListKnowledgeBasesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListKnowledgeBasesPagedResponse&gt; future = knowledgeBasesClient.listKnowledgeBasesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (KnowledgeBase element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesPagedResponse>
       listKnowledgeBasesPagedCallable() {
     return stub.listKnowledgeBasesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all knowledge bases of the specified agent.
    *
@@ -279,48 +218,18 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListKnowledgeBasesRequest request = ListKnowledgeBasesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListKnowledgeBasesResponse response = knowledgeBasesClient.listKnowledgeBasesCallable().call(request);
-   *     for (KnowledgeBase element : response.getKnowledgeBasesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
       listKnowledgeBasesCallable() {
     return stub.listKnowledgeBasesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
-   *   KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the knowledge base to retrieve. Format `projects/&lt;Project
    *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
@@ -328,25 +237,18 @@ public class KnowledgeBasesClient implements BackgroundResource {
    */
   public final KnowledgeBase getKnowledgeBase(KnowledgeBaseName name) {
     GetKnowledgeBaseRequest request =
-        GetKnowledgeBaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        GetKnowledgeBaseRequest.newBuilder()
+            .setName(Objects.isNull(name) ? null : name.toString())
+            .build();
     return getKnowledgeBase(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
-   *   KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the knowledge base to retrieve. Format `projects/&lt;Project
    *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
@@ -357,24 +259,12 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return getKnowledgeBase(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
-   *   GetKnowledgeBaseRequest request = GetKnowledgeBaseRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -383,7 +273,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return getKnowledgeBaseCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified knowledge base.
    *
@@ -391,74 +281,42 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
-   *   GetKnowledgeBaseRequest request = GetKnowledgeBaseRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;KnowledgeBase&gt; future = knowledgeBasesClient.getKnowledgeBaseCallable().futureCall(request);
-   *   // Do something
-   *   KnowledgeBase response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetKnowledgeBaseRequest, KnowledgeBase> getKnowledgeBaseCallable() {
     return stub.getKnowledgeBaseCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
-   *   KnowledgeBase response = knowledgeBasesClient.createKnowledgeBase(parent, knowledgeBase);
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The project to create a knowledge base for. Format:
    *     `projects/&lt;Project ID&gt;`.
-   * @param knowledgeBase Required. The knowledge base to create.
+   * @param knowledge_base Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase createKnowledgeBase(ProjectName parent, KnowledgeBase knowledgeBase) {
     CreateKnowledgeBaseRequest request =
         CreateKnowledgeBaseRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(Objects.isNull(parent) ? null : parent.toString())
             .setKnowledgeBase(knowledgeBase)
             .build();
     return createKnowledgeBase(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
-   *   KnowledgeBase response = knowledgeBasesClient.createKnowledgeBase(parent.toString(), knowledgeBase);
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The project to create a knowledge base for. Format:
    *     `projects/&lt;Project ID&gt;`.
-   * @param knowledgeBase Required. The knowledge base to create.
+   * @param knowledge_base Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase createKnowledgeBase(String parent, KnowledgeBase knowledgeBase) {
@@ -470,26 +328,12 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return createKnowledgeBase(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
-   *   CreateKnowledgeBaseRequest request = CreateKnowledgeBaseRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setKnowledgeBase(knowledgeBase)
-   *     .build();
-   *   KnowledgeBase response = knowledgeBasesClient.createKnowledgeBase(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -498,7 +342,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return createKnowledgeBaseCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a knowledge base.
    *
@@ -506,41 +350,18 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
-   *   CreateKnowledgeBaseRequest request = CreateKnowledgeBaseRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setKnowledgeBase(knowledgeBase)
-   *     .build();
-   *   ApiFuture&lt;KnowledgeBase&gt; future = knowledgeBasesClient.createKnowledgeBaseCallable().futureCall(request);
-   *   // Do something
-   *   KnowledgeBase response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateKnowledgeBaseRequest, KnowledgeBase>
       createKnowledgeBaseCallable() {
     return stub.createKnowledgeBaseCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
-   *   knowledgeBasesClient.deleteKnowledgeBase(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the knowledge base to delete. Format: `projects/&lt;Project
    *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
@@ -549,26 +370,17 @@ public class KnowledgeBasesClient implements BackgroundResource {
   public final void deleteKnowledgeBase(KnowledgeBaseName name) {
     DeleteKnowledgeBaseRequest request =
         DeleteKnowledgeBaseRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(Objects.isNull(name) ? null : name.toString())
             .build();
     deleteKnowledgeBase(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
-   *   knowledgeBasesClient.deleteKnowledgeBase(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the knowledge base to delete. Format: `projects/&lt;Project
    *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
@@ -580,24 +392,12 @@ public class KnowledgeBasesClient implements BackgroundResource {
     deleteKnowledgeBase(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
-   *   DeleteKnowledgeBaseRequest request = DeleteKnowledgeBaseRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   knowledgeBasesClient.deleteKnowledgeBase(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -606,7 +406,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
     deleteKnowledgeBaseCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified knowledge base.
    *
@@ -614,42 +414,36 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
-   *   DeleteKnowledgeBaseRequest request = DeleteKnowledgeBaseRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = knowledgeBasesClient.deleteKnowledgeBaseCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseCallable() {
     return stub.deleteKnowledgeBaseCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
    *
-   * <p>Sample code:
+   * @param knowledge_base Required. The knowledge base to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KnowledgeBase updateKnowledgeBase(KnowledgeBase knowledgeBase) {
+    UpdateKnowledgeBaseRequest request =
+        UpdateKnowledgeBaseRequest.newBuilder().setKnowledgeBase(knowledgeBase).build();
+    return updateKnowledgeBase(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified knowledge base.
    *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(knowledgeBase, updateMask);
-   * }
-   * </code></pre>
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
    *
-   * @param knowledgeBase Required. The knowledge base to update.
-   * @param updateMask Optional. Not specified means `update all`. Currently, only `display_name`
+   * @param knowledge_base Required. The knowledge base to update.
+   * @param update_mask Optional. Not specified means `update all`. Currently, only `display_name`
    *     can be updated, an InvalidArgument will be returned for attempting to update other fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -663,49 +457,12 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return updateKnowledgeBase(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified knowledge base.
    *
    * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
    * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
-   *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(knowledgeBase);
-   * }
-   * </code></pre>
-   *
-   * @param knowledgeBase Required. The knowledge base to update.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final KnowledgeBase updateKnowledgeBase(KnowledgeBase knowledgeBase) {
-    UpdateKnowledgeBaseRequest request =
-        UpdateKnowledgeBaseRequest.newBuilder().setKnowledgeBase(knowledgeBase).build();
-    return updateKnowledgeBase(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified knowledge base.
-   *
-   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
-   * `projects.knowledgeBases`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
-   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder()
-   *     .setKnowledgeBase(knowledgeBase)
-   *     .build();
-   *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -714,7 +471,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return updateKnowledgeBaseCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified knowledge base.
    *
@@ -722,18 +479,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
-   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder()
-   *     .setKnowledgeBase(knowledgeBase)
-   *     .build();
-   *   ApiFuture&lt;KnowledgeBase&gt; future = knowledgeBasesClient.updateKnowledgeBaseCallable().futureCall(request);
-   *   // Do something
-   *   KnowledgeBase response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateKnowledgeBaseRequest, KnowledgeBase>
       updateKnowledgeBaseCallable() {
