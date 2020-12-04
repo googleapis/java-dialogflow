@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service for managing [Contexts][google.cloud.dialogflow.v2.Context].
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2/context.proto")
@@ -343,22 +337,10 @@ public final class ContextsGrpc {
     return ContextsFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Contexts][google.cloud.dialogflow.v2.Context].
-   * </pre>
-   */
+  /** */
   public abstract static class ContextsImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all contexts in the specified session.
-     * </pre>
-     */
+    /** */
     public void listContexts(
         com.google.cloud.dialogflow.v2.ListContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListContextsResponse>
@@ -366,66 +348,35 @@ public final class ContextsGrpc {
       asyncUnimplementedUnaryCall(getListContextsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified context.
-     * </pre>
-     */
+    /** */
     public void getContext(
         com.google.cloud.dialogflow.v2.GetContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Context> responseObserver) {
       asyncUnimplementedUnaryCall(getGetContextMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a context.
-     * If the specified context already exists, overrides the context.
-     * </pre>
-     */
+    /** */
     public void createContext(
         com.google.cloud.dialogflow.v2.CreateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Context> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateContextMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified context.
-     * </pre>
-     */
+    /** */
     public void updateContext(
         com.google.cloud.dialogflow.v2.UpdateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Context> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateContextMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified context.
-     * </pre>
-     */
+    /** */
     public void deleteContext(
         com.google.cloud.dialogflow.v2.DeleteContextRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteContextMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes all active contexts in the specified session.
-     * </pre>
-     */
+    /** */
     public void deleteAllContexts(
         com.google.cloud.dialogflow.v2.DeleteAllContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -476,13 +427,7 @@ public final class ContextsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Contexts][google.cloud.dialogflow.v2.Context].
-   * </pre>
-   */
+  /** */
   public static final class ContextsStub extends io.grpc.stub.AbstractAsyncStub<ContextsStub> {
     private ContextsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -493,13 +438,7 @@ public final class ContextsGrpc {
       return new ContextsStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all contexts in the specified session.
-     * </pre>
-     */
+    /** */
     public void listContexts(
         com.google.cloud.dialogflow.v2.ListContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListContextsResponse>
@@ -510,13 +449,7 @@ public final class ContextsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified context.
-     * </pre>
-     */
+    /** */
     public void getContext(
         com.google.cloud.dialogflow.v2.GetContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Context> responseObserver) {
@@ -524,14 +457,7 @@ public final class ContextsGrpc {
           getChannel().newCall(getGetContextMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a context.
-     * If the specified context already exists, overrides the context.
-     * </pre>
-     */
+    /** */
     public void createContext(
         com.google.cloud.dialogflow.v2.CreateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Context> responseObserver) {
@@ -541,13 +467,7 @@ public final class ContextsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified context.
-     * </pre>
-     */
+    /** */
     public void updateContext(
         com.google.cloud.dialogflow.v2.UpdateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Context> responseObserver) {
@@ -557,13 +477,7 @@ public final class ContextsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified context.
-     * </pre>
-     */
+    /** */
     public void deleteContext(
         com.google.cloud.dialogflow.v2.DeleteContextRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -573,13 +487,7 @@ public final class ContextsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes all active contexts in the specified session.
-     * </pre>
-     */
+    /** */
     public void deleteAllContexts(
         com.google.cloud.dialogflow.v2.DeleteAllContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -590,13 +498,7 @@ public final class ContextsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Contexts][google.cloud.dialogflow.v2.Context].
-   * </pre>
-   */
+  /** */
   public static final class ContextsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ContextsBlockingStub> {
     private ContextsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -608,74 +510,37 @@ public final class ContextsGrpc {
       return new ContextsBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all contexts in the specified session.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2.ListContextsResponse listContexts(
         com.google.cloud.dialogflow.v2.ListContextsRequest request) {
       return blockingUnaryCall(getChannel(), getListContextsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified context.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2.Context getContext(
         com.google.cloud.dialogflow.v2.GetContextRequest request) {
       return blockingUnaryCall(getChannel(), getGetContextMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a context.
-     * If the specified context already exists, overrides the context.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2.Context createContext(
         com.google.cloud.dialogflow.v2.CreateContextRequest request) {
       return blockingUnaryCall(getChannel(), getCreateContextMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified context.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2.Context updateContext(
         com.google.cloud.dialogflow.v2.UpdateContextRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateContextMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified context.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteContext(
         com.google.cloud.dialogflow.v2.DeleteContextRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteContextMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes all active contexts in the specified session.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteAllContexts(
         com.google.cloud.dialogflow.v2.DeleteAllContextsRequest request) {
       return blockingUnaryCall(
@@ -683,13 +548,7 @@ public final class ContextsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Contexts][google.cloud.dialogflow.v2.Context].
-   * </pre>
-   */
+  /** */
   public static final class ContextsFutureStub
       extends io.grpc.stub.AbstractFutureStub<ContextsFutureStub> {
     private ContextsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -701,13 +560,7 @@ public final class ContextsGrpc {
       return new ContextsFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all contexts in the specified session.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.ListContextsResponse>
         listContexts(com.google.cloud.dialogflow.v2.ListContextsRequest request) {
@@ -715,13 +568,7 @@ public final class ContextsGrpc {
           getChannel().newCall(getListContextsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified context.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.Context>
         getContext(com.google.cloud.dialogflow.v2.GetContextRequest request) {
@@ -729,14 +576,7 @@ public final class ContextsGrpc {
           getChannel().newCall(getGetContextMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a context.
-     * If the specified context already exists, overrides the context.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.Context>
         createContext(com.google.cloud.dialogflow.v2.CreateContextRequest request) {
@@ -744,13 +584,7 @@ public final class ContextsGrpc {
           getChannel().newCall(getCreateContextMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified context.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.Context>
         updateContext(com.google.cloud.dialogflow.v2.UpdateContextRequest request) {
@@ -758,26 +592,14 @@ public final class ContextsGrpc {
           getChannel().newCall(getUpdateContextMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified context.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteContext(com.google.cloud.dialogflow.v2.DeleteContextRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteContextMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes all active contexts in the specified session.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAllContexts(com.google.cloud.dialogflow.v2.DeleteAllContextsRequest request) {
       return futureUnaryCall(
