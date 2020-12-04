@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2/agent.proto")
@@ -458,31 +464,66 @@ public final class AgentsGrpc {
     return AgentsFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
+   * </pre>
+   */
   public abstract static class AgentsImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified agent.
+     * </pre>
+     */
     public void getAgent(
         com.google.cloud.dialogflow.v2.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAgentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * </pre>
+     */
     public void setAgent(
         com.google.cloud.dialogflow.v2.SetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent> responseObserver) {
       asyncUnimplementedUnaryCall(getSetAgentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
     public void deleteAgent(
         com.google.cloud.dialogflow.v2.DeleteAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteAgentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of agents.
+     * Since there is at most one conversational agent per project, this method is
+     * useful primarily for listing all agents across projects the caller has
+     * access to. One can achieve that with a wildcard project collection id "-".
+     * Refer to [List
+     * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
+     * </pre>
+     */
     public void searchAgents(
         com.google.cloud.dialogflow.v2.SearchAgentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SearchAgentsResponse>
@@ -490,35 +531,87 @@ public final class AgentsGrpc {
       asyncUnimplementedUnaryCall(getSearchAgentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified agent.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * </pre>
+     */
     public void trainAgent(
         com.google.cloud.dialogflow.v2.TrainAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getTrainAgentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified agent to a ZIP file.
+     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
+     * </pre>
+     */
     public void exportAgent(
         com.google.cloud.dialogflow.v2.ExportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getExportAgentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified agent from a ZIP file.
+     * Uploads new intents and entity types without deleting the existing ones.
+     * Intents and entity types with the same name are replaced with the new
+     * versions from [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the imported draft
+     * agent will be trained automatically (unless disabled in agent settings).
+     * However, once the import is done, training may not be completed yet. Please
+     * call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it returns in order to train
+     * explicitly.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * An operation which tracks when importing is complete. It only tracks
+     * when the draft agent is updated not when it is done training.
+     * </pre>
+     */
     public void importAgent(
         com.google.cloud.dialogflow.v2.ImportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getImportAgentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Restores the specified agent from a ZIP file.
+     * Replaces the current agent version with a new one. All the intents and
+     * entity types in the older version are deleted. After the restore, the
+     * restored draft agent will be trained automatically (unless disabled in
+     * agent settings). However, once the restore is done, training may not be
+     * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+     * returns in order to train explicitly.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * An operation which tracks when restoring is complete. It only tracks
+     * when the draft agent is updated not when it is done training.
+     * </pre>
+     */
     public void restoreAgent(
         com.google.cloud.dialogflow.v2.RestoreAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getRestoreAgentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets agent validation result. Agent validation is performed during
+     * training time and is updated automatically when training is completed.
+     * </pre>
+     */
     public void getValidationResult(
         com.google.cloud.dialogflow.v2.GetValidationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ValidationResult>
@@ -589,7 +682,13 @@ public final class AgentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
+   * </pre>
+   */
   public static final class AgentsStub extends io.grpc.stub.AbstractAsyncStub<AgentsStub> {
     private AgentsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -600,7 +699,13 @@ public final class AgentsGrpc {
       return new AgentsStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified agent.
+     * </pre>
+     */
     public void getAgent(
         com.google.cloud.dialogflow.v2.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent> responseObserver) {
@@ -608,7 +713,13 @@ public final class AgentsGrpc {
           getChannel().newCall(getGetAgentMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * </pre>
+     */
     public void setAgent(
         com.google.cloud.dialogflow.v2.SetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Agent> responseObserver) {
@@ -616,7 +727,13 @@ public final class AgentsGrpc {
           getChannel().newCall(getSetAgentMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
     public void deleteAgent(
         com.google.cloud.dialogflow.v2.DeleteAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -626,7 +743,18 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of agents.
+     * Since there is at most one conversational agent per project, this method is
+     * useful primarily for listing all agents across projects the caller has
+     * access to. One can achieve that with a wildcard project collection id "-".
+     * Refer to [List
+     * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
+     * </pre>
+     */
     public void searchAgents(
         com.google.cloud.dialogflow.v2.SearchAgentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SearchAgentsResponse>
@@ -637,7 +765,14 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified agent.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * </pre>
+     */
     public void trainAgent(
         com.google.cloud.dialogflow.v2.TrainAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -645,7 +780,14 @@ public final class AgentsGrpc {
           getChannel().newCall(getTrainAgentMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified agent to a ZIP file.
+     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
+     * </pre>
+     */
     public void exportAgent(
         com.google.cloud.dialogflow.v2.ExportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -655,7 +797,23 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified agent from a ZIP file.
+     * Uploads new intents and entity types without deleting the existing ones.
+     * Intents and entity types with the same name are replaced with the new
+     * versions from [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the imported draft
+     * agent will be trained automatically (unless disabled in agent settings).
+     * However, once the import is done, training may not be completed yet. Please
+     * call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it returns in order to train
+     * explicitly.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * An operation which tracks when importing is complete. It only tracks
+     * when the draft agent is updated not when it is done training.
+     * </pre>
+     */
     public void importAgent(
         com.google.cloud.dialogflow.v2.ImportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -665,7 +823,22 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Restores the specified agent from a ZIP file.
+     * Replaces the current agent version with a new one. All the intents and
+     * entity types in the older version are deleted. After the restore, the
+     * restored draft agent will be trained automatically (unless disabled in
+     * agent settings). However, once the restore is done, training may not be
+     * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+     * returns in order to train explicitly.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * An operation which tracks when restoring is complete. It only tracks
+     * when the draft agent is updated not when it is done training.
+     * </pre>
+     */
     public void restoreAgent(
         com.google.cloud.dialogflow.v2.RestoreAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -675,7 +848,14 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets agent validation result. Agent validation is performed during
+     * training time and is updated automatically when training is completed.
+     * </pre>
+     */
     public void getValidationResult(
         com.google.cloud.dialogflow.v2.GetValidationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ValidationResult>
@@ -687,7 +867,13 @@ public final class AgentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
+   * </pre>
+   */
   public static final class AgentsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AgentsBlockingStub> {
     private AgentsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -699,55 +885,136 @@ public final class AgentsGrpc {
       return new AgentsBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified agent.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2.Agent getAgent(
         com.google.cloud.dialogflow.v2.GetAgentRequest request) {
       return blockingUnaryCall(getChannel(), getGetAgentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2.Agent setAgent(
         com.google.cloud.dialogflow.v2.SetAgentRequest request) {
       return blockingUnaryCall(getChannel(), getSetAgentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteAgent(
         com.google.cloud.dialogflow.v2.DeleteAgentRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteAgentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of agents.
+     * Since there is at most one conversational agent per project, this method is
+     * useful primarily for listing all agents across projects the caller has
+     * access to. One can achieve that with a wildcard project collection id "-".
+     * Refer to [List
+     * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2.SearchAgentsResponse searchAgents(
         com.google.cloud.dialogflow.v2.SearchAgentsRequest request) {
       return blockingUnaryCall(getChannel(), getSearchAgentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified agent.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * </pre>
+     */
     public com.google.longrunning.Operation trainAgent(
         com.google.cloud.dialogflow.v2.TrainAgentRequest request) {
       return blockingUnaryCall(getChannel(), getTrainAgentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified agent to a ZIP file.
+     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
+     * </pre>
+     */
     public com.google.longrunning.Operation exportAgent(
         com.google.cloud.dialogflow.v2.ExportAgentRequest request) {
       return blockingUnaryCall(getChannel(), getExportAgentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified agent from a ZIP file.
+     * Uploads new intents and entity types without deleting the existing ones.
+     * Intents and entity types with the same name are replaced with the new
+     * versions from [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the imported draft
+     * agent will be trained automatically (unless disabled in agent settings).
+     * However, once the import is done, training may not be completed yet. Please
+     * call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it returns in order to train
+     * explicitly.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * An operation which tracks when importing is complete. It only tracks
+     * when the draft agent is updated not when it is done training.
+     * </pre>
+     */
     public com.google.longrunning.Operation importAgent(
         com.google.cloud.dialogflow.v2.ImportAgentRequest request) {
       return blockingUnaryCall(getChannel(), getImportAgentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Restores the specified agent from a ZIP file.
+     * Replaces the current agent version with a new one. All the intents and
+     * entity types in the older version are deleted. After the restore, the
+     * restored draft agent will be trained automatically (unless disabled in
+     * agent settings). However, once the restore is done, training may not be
+     * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+     * returns in order to train explicitly.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * An operation which tracks when restoring is complete. It only tracks
+     * when the draft agent is updated not when it is done training.
+     * </pre>
+     */
     public com.google.longrunning.Operation restoreAgent(
         com.google.cloud.dialogflow.v2.RestoreAgentRequest request) {
       return blockingUnaryCall(getChannel(), getRestoreAgentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets agent validation result. Agent validation is performed during
+     * training time and is updated automatically when training is completed.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2.ValidationResult getValidationResult(
         com.google.cloud.dialogflow.v2.GetValidationResultRequest request) {
       return blockingUnaryCall(
@@ -755,7 +1022,13 @@ public final class AgentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
+   * </pre>
+   */
   public static final class AgentsFutureStub
       extends io.grpc.stub.AbstractFutureStub<AgentsFutureStub> {
     private AgentsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -767,26 +1040,55 @@ public final class AgentsGrpc {
       return new AgentsFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified agent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.Agent>
         getAgent(com.google.cloud.dialogflow.v2.GetAgentRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetAgentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.Agent>
         setAgent(com.google.cloud.dialogflow.v2.SetAgentRequest request) {
       return futureUnaryCall(getChannel().newCall(getSetAgentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAgent(com.google.cloud.dialogflow.v2.DeleteAgentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteAgentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of agents.
+     * Since there is at most one conversational agent per project, this method is
+     * useful primarily for listing all agents across projects the caller has
+     * access to. One can achieve that with a wildcard project collection id "-".
+     * Refer to [List
+     * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.SearchAgentsResponse>
         searchAgents(com.google.cloud.dialogflow.v2.SearchAgentsRequest request) {
@@ -794,35 +1096,87 @@ public final class AgentsGrpc {
           getChannel().newCall(getSearchAgentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified agent.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         trainAgent(com.google.cloud.dialogflow.v2.TrainAgentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getTrainAgentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified agent to a ZIP file.
+     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportAgent(com.google.cloud.dialogflow.v2.ExportAgentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getExportAgentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified agent from a ZIP file.
+     * Uploads new intents and entity types without deleting the existing ones.
+     * Intents and entity types with the same name are replaced with the new
+     * versions from [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the imported draft
+     * agent will be trained automatically (unless disabled in agent settings).
+     * However, once the import is done, training may not be completed yet. Please
+     * call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it returns in order to train
+     * explicitly.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * An operation which tracks when importing is complete. It only tracks
+     * when the draft agent is updated not when it is done training.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importAgent(com.google.cloud.dialogflow.v2.ImportAgentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getImportAgentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Restores the specified agent from a ZIP file.
+     * Replaces the current agent version with a new one. All the intents and
+     * entity types in the older version are deleted. After the restore, the
+     * restored draft agent will be trained automatically (unless disabled in
+     * agent settings). However, once the restore is done, training may not be
+     * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+     * returns in order to train explicitly.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * An operation which tracks when restoring is complete. It only tracks
+     * when the draft agent is updated not when it is done training.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         restoreAgent(com.google.cloud.dialogflow.v2.RestoreAgentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getRestoreAgentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets agent validation result. Agent validation is performed during
+     * training time and is updated automatically when training is completed.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.ValidationResult>
         getValidationResult(com.google.cloud.dialogflow.v2.GetValidationResultRequest request) {

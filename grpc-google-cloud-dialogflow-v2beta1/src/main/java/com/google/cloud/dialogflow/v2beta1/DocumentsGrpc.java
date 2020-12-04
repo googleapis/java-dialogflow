@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2beta1/document.proto")
@@ -344,10 +350,24 @@ public final class DocumentsGrpc {
     return DocumentsFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
+   * </pre>
+   */
   public abstract static class DocumentsImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void listDocuments(
         com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse>
@@ -355,7 +375,15 @@ public final class DocumentsGrpc {
       asyncUnimplementedUnaryCall(getListDocumentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void getDocument(
         com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Document>
@@ -363,28 +391,66 @@ public final class DocumentsGrpc {
       asyncUnimplementedUnaryCall(getGetDocumentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void createDocument(
         com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateDocumentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void deleteDocument(
         com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteDocumentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void updateDocument(
         com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateDocumentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void reloadDocument(
         com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -435,7 +501,13 @@ public final class DocumentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
+   * </pre>
+   */
   public static final class DocumentsStub extends io.grpc.stub.AbstractAsyncStub<DocumentsStub> {
     private DocumentsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -446,7 +518,15 @@ public final class DocumentsGrpc {
       return new DocumentsStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void listDocuments(
         com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse>
@@ -457,7 +537,15 @@ public final class DocumentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void getDocument(
         com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Document>
@@ -468,7 +556,15 @@ public final class DocumentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void createDocument(
         com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -478,7 +574,15 @@ public final class DocumentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void deleteDocument(
         com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -488,7 +592,15 @@ public final class DocumentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void updateDocument(
         com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -498,7 +610,21 @@ public final class DocumentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public void reloadDocument(
         com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -509,7 +635,13 @@ public final class DocumentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
+   * </pre>
+   */
   public static final class DocumentsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DocumentsBlockingStub> {
     private DocumentsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -522,44 +654,104 @@ public final class DocumentsGrpc {
       return new DocumentsBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse listDocuments(
         com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request) {
       return blockingUnaryCall(getChannel(), getListDocumentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2beta1.Document getDocument(
         com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request) {
       return blockingUnaryCall(getChannel(), getGetDocumentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.longrunning.Operation createDocument(
         com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request) {
       return blockingUnaryCall(getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteDocument(
         com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.longrunning.Operation updateDocument(
         com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.longrunning.Operation reloadDocument(
         com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request) {
       return blockingUnaryCall(getChannel(), getReloadDocumentMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
+   * </pre>
+   */
   public static final class DocumentsFutureStub
       extends io.grpc.stub.AbstractFutureStub<DocumentsFutureStub> {
     private DocumentsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -571,7 +763,15 @@ public final class DocumentsGrpc {
       return new DocumentsFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse>
         listDocuments(com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request) {
@@ -579,7 +779,15 @@ public final class DocumentsGrpc {
           getChannel().newCall(getListDocumentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.Document>
         getDocument(com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request) {
@@ -587,28 +795,66 @@ public final class DocumentsGrpc {
           getChannel().newCall(getGetDocumentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createDocument(com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteDocument(com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteDocumentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateDocument(com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateDocumentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         reloadDocument(com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request) {
       return futureUnaryCall(
