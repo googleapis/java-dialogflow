@@ -38,7 +38,6 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -168,7 +167,7 @@ public class IntentsClient implements BackgroundResource {
   public final ListIntentsPagedResponse listIntents(AgentName parent) {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listIntents(request);
   }
@@ -201,7 +200,7 @@ public class IntentsClient implements BackgroundResource {
   public final ListIntentsPagedResponse listIntents(AgentName parent, String languageCode) {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setLanguageCode(languageCode)
             .build();
     return listIntents(request);
@@ -268,9 +267,7 @@ public class IntentsClient implements BackgroundResource {
    */
   public final Intent getIntent(IntentName name) {
     GetIntentRequest request =
-        GetIntentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIntent(request);
   }
 
@@ -304,7 +301,7 @@ public class IntentsClient implements BackgroundResource {
   public final Intent getIntent(IntentName name, String languageCode) {
     GetIntentRequest request =
         GetIntentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setLanguageCode(languageCode)
             .build();
     return getIntent(request);
@@ -363,7 +360,7 @@ public class IntentsClient implements BackgroundResource {
   public final Intent createIntent(AgentName parent, Intent intent) {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setIntent(intent)
             .build();
     return createIntent(request);
@@ -402,7 +399,7 @@ public class IntentsClient implements BackgroundResource {
   public final Intent createIntent(AgentName parent, Intent intent, String languageCode) {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setIntent(intent)
             .setLanguageCode(languageCode)
             .build();
@@ -553,9 +550,7 @@ public class IntentsClient implements BackgroundResource {
    */
   public final void deleteIntent(IntentName name) {
     DeleteIntentRequest request =
-        DeleteIntentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteIntent(request);
   }
 
@@ -614,7 +609,7 @@ public class IntentsClient implements BackgroundResource {
       AgentName parent, IntentBatch intentBatchInline) {
     BatchUpdateIntentsRequest request =
         BatchUpdateIntentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setIntentBatchInline(intentBatchInline)
             .build();
     return batchUpdateIntentsAsync(request);
@@ -640,7 +635,7 @@ public class IntentsClient implements BackgroundResource {
       AgentName parent, String intentBatchUri) {
     BatchUpdateIntentsRequest request =
         BatchUpdateIntentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setIntentBatchUri(intentBatchUri)
             .build();
     return batchUpdateIntentsAsync(request);
@@ -756,7 +751,7 @@ public class IntentsClient implements BackgroundResource {
       AgentName parent, List<Intent> intents) {
     BatchDeleteIntentsRequest request =
         BatchDeleteIntentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllIntents(intents)
             .build();
     return batchDeleteIntentsAsync(request);

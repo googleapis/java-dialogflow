@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -167,9 +166,7 @@ public class AgentsClient implements BackgroundResource {
    */
   public final Agent getAgent(LocationName parent) {
     GetAgentRequest request =
-        GetAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return getAgent(request);
   }
 
@@ -184,9 +181,7 @@ public class AgentsClient implements BackgroundResource {
    */
   public final Agent getAgent(ProjectName parent) {
     GetAgentRequest request =
-        GetAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return getAgent(request);
   }
 
@@ -270,7 +265,7 @@ public class AgentsClient implements BackgroundResource {
   public final void deleteAgent(LocationName parent) {
     DeleteAgentRequest request =
         DeleteAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     deleteAgent(request);
   }
@@ -287,7 +282,7 @@ public class AgentsClient implements BackgroundResource {
   public final void deleteAgent(ProjectName parent) {
     DeleteAgentRequest request =
         DeleteAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     deleteAgent(request);
   }
@@ -341,7 +336,7 @@ public class AgentsClient implements BackgroundResource {
   public final SearchAgentsPagedResponse searchAgents(LocationName parent) {
     SearchAgentsRequest request =
         SearchAgentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return searchAgents(request);
   }
@@ -360,7 +355,7 @@ public class AgentsClient implements BackgroundResource {
   public final SearchAgentsPagedResponse searchAgents(ProjectName parent) {
     SearchAgentsRequest request =
         SearchAgentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return searchAgents(request);
   }
@@ -435,9 +430,7 @@ public class AgentsClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, Struct> trainAgentAsync(LocationName parent) {
     TrainAgentRequest request =
-        TrainAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        TrainAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return trainAgentAsync(request);
   }
 
@@ -454,9 +447,7 @@ public class AgentsClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, Struct> trainAgentAsync(ProjectName parent) {
     TrainAgentRequest request =
-        TrainAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        TrainAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return trainAgentAsync(request);
   }
 
@@ -528,7 +519,7 @@ public class AgentsClient implements BackgroundResource {
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(LocationName parent) {
     ExportAgentRequest request =
         ExportAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return exportAgentAsync(request);
   }
@@ -548,7 +539,7 @@ public class AgentsClient implements BackgroundResource {
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(ProjectName parent) {
     ExportAgentRequest request =
         ExportAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return exportAgentAsync(request);
   }

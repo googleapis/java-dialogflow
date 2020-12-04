@@ -54,7 +54,6 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -144,7 +143,7 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
 
             @Override
             public Iterable<KnowledgeBase> extractResources(ListKnowledgeBasesResponse payload) {
-              return Objects.isNull(payload.getKnowledgeBasesList())
+              return payload.getKnowledgeBasesList() == null
                   ? ImmutableList.<KnowledgeBase>of()
                   : payload.getKnowledgeBasesList();
             }
