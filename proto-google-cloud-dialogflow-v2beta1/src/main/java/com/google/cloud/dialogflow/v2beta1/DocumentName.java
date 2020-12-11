@@ -16,7 +16,9 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,22 +34,39 @@ public class DocumentName implements ResourceName {
   private static final PathTemplate PROJECT_KNOWLEDGE_BASE_DOCUMENT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
+  private static final PathTemplate PROJECT_LOCATION_KNOWLEDGE_BASE_DOCUMENT =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/knowledgeBases/{knowledge_base}/documents/{document}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String knowledgeBase;
   private final String document;
+  private final String location;
 
   @Deprecated
   protected DocumentName() {
     project = null;
     knowledgeBase = null;
     document = null;
+    location = null;
   }
 
   private DocumentName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     knowledgeBase = Preconditions.checkNotNull(builder.getKnowledgeBase());
     document = Preconditions.checkNotNull(builder.getDocument());
+    location = null;
+    pathTemplate = PROJECT_KNOWLEDGE_BASE_DOCUMENT;
+  }
+
+  private DocumentName(ProjectLocationKnowledgeBaseDocumentBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    knowledgeBase = Preconditions.checkNotNull(builder.getKnowledgeBase());
+    document = Preconditions.checkNotNull(builder.getDocument());
+    pathTemplate = PROJECT_LOCATION_KNOWLEDGE_BASE_DOCUMENT;
   }
 
   public String getProject() {
@@ -62,8 +81,23 @@ public class DocumentName implements ResourceName {
     return document;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectKnowledgeBaseDocumentBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationKnowledgeBaseDocumentBuilder
+      newProjectLocationKnowledgeBaseDocumentBuilder() {
+    return new ProjectLocationKnowledgeBaseDocumentBuilder();
   }
 
   public Builder toBuilder() {
@@ -78,9 +112,53 @@ public class DocumentName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static DocumentName ofProjectKnowledgeBaseDocumentName(
+      String project, String knowledgeBase, String document) {
+    return newBuilder()
+        .setProject(project)
+        .setKnowledgeBase(knowledgeBase)
+        .setDocument(document)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static DocumentName ofProjectLocationKnowledgeBaseDocumentName(
+      String project, String location, String knowledgeBase, String document) {
+    return newProjectLocationKnowledgeBaseDocumentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setKnowledgeBase(knowledgeBase)
+        .setDocument(document)
+        .build();
+  }
+
   public static String format(String project, String knowledgeBase, String document) {
     return newBuilder()
         .setProject(project)
+        .setKnowledgeBase(knowledgeBase)
+        .setDocument(document)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectKnowledgeBaseDocumentName(
+      String project, String knowledgeBase, String document) {
+    return newBuilder()
+        .setProject(project)
+        .setKnowledgeBase(knowledgeBase)
+        .setDocument(document)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationKnowledgeBaseDocumentName(
+      String project, String location, String knowledgeBase, String document) {
+    return newProjectLocationKnowledgeBaseDocumentBuilder()
+        .setProject(project)
+        .setLocation(location)
         .setKnowledgeBase(knowledgeBase)
         .setDocument(document)
         .build()
@@ -91,10 +169,20 @@ public class DocumentName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_KNOWLEDGE_BASE_DOCUMENT.validatedMatch(
-            formattedString, "DocumentName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("knowledge_base"), matchMap.get("document"));
+    if (PROJECT_KNOWLEDGE_BASE_DOCUMENT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_KNOWLEDGE_BASE_DOCUMENT.match(formattedString);
+      return ofProjectKnowledgeBaseDocumentName(
+          matchMap.get("project"), matchMap.get("knowledge_base"), matchMap.get("document"));
+    } else if (PROJECT_LOCATION_KNOWLEDGE_BASE_DOCUMENT.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_KNOWLEDGE_BASE_DOCUMENT.match(formattedString);
+      return ofProjectLocationKnowledgeBaseDocumentName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("knowledge_base"),
+          matchMap.get("document"));
+    }
+    throw new ValidationException("DocumentName.parse: formattedString not in valid format");
   }
 
   public static List<DocumentName> parseList(List<String> formattedStrings) {
@@ -118,7 +206,8 @@ public class DocumentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_KNOWLEDGE_BASE_DOCUMENT.matches(formattedString);
+    return PROJECT_KNOWLEDGE_BASE_DOCUMENT.matches(formattedString)
+        || PROJECT_LOCATION_KNOWLEDGE_BASE_DOCUMENT.matches(formattedString);
   }
 
   @Override
@@ -136,6 +225,9 @@ public class DocumentName implements ResourceName {
           if (document != null) {
             fieldMapBuilder.put("document", document);
           }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,8 +241,7 @@ public class DocumentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_KNOWLEDGE_BASE_DOCUMENT.instantiate(
-        "project", project, "knowledge_base", knowledgeBase, "document", document);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -162,7 +253,8 @@ public class DocumentName implements ResourceName {
       DocumentName that = ((DocumentName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.knowledgeBase, that.knowledgeBase)
-          && Objects.equals(this.document, that.document);
+          && Objects.equals(this.document, that.document)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -171,11 +263,15 @@ public class DocumentName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(knowledgeBase);
     h *= 1000003;
     h ^= Objects.hashCode(document);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -215,9 +311,66 @@ public class DocumentName implements ResourceName {
     }
 
     private Builder(DocumentName documentName) {
+      Preconditions.checkArgument(
+          Objects.equals(documentName.pathTemplate, PROJECT_KNOWLEDGE_BASE_DOCUMENT),
+          "toBuilder is only supported when DocumentName has the pattern of projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
       project = documentName.project;
       knowledgeBase = documentName.knowledgeBase;
       document = documentName.document;
+    }
+
+    public DocumentName build() {
+      return new DocumentName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/knowledgeBases/{knowledge_base}/documents/{document}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationKnowledgeBaseDocumentBuilder {
+    private String project;
+    private String location;
+    private String knowledgeBase;
+    private String document;
+
+    protected ProjectLocationKnowledgeBaseDocumentBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getKnowledgeBase() {
+      return knowledgeBase;
+    }
+
+    public String getDocument() {
+      return document;
+    }
+
+    public ProjectLocationKnowledgeBaseDocumentBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationKnowledgeBaseDocumentBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationKnowledgeBaseDocumentBuilder setKnowledgeBase(String knowledgeBase) {
+      this.knowledgeBase = knowledgeBase;
+      return this;
+    }
+
+    public ProjectLocationKnowledgeBaseDocumentBuilder setDocument(String document) {
+      this.document = document;
+      return this;
     }
 
     public DocumentName build() {
