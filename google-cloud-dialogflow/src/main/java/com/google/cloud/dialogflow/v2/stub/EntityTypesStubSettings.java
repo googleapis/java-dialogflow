@@ -66,7 +66,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -174,7 +173,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
             @Override
             public Iterable<EntityType> extractResources(ListEntityTypesResponse payload) {
-              return Objects.isNull(payload.getEntityTypesList())
+              return payload.getEntityTypesList() == null
                   ? ImmutableList.<EntityType>of()
                   : payload.getEntityTypesList();
             }

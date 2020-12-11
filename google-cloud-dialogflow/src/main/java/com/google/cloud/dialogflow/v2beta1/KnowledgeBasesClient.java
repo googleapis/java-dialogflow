@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -159,7 +158,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
   public final ListKnowledgeBasesPagedResponse listKnowledgeBases(ProjectName parent) {
     ListKnowledgeBasesRequest request =
         ListKnowledgeBasesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listKnowledgeBases(request);
   }
@@ -237,9 +236,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    */
   public final KnowledgeBase getKnowledgeBase(KnowledgeBaseName name) {
     GetKnowledgeBaseRequest request =
-        GetKnowledgeBaseRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetKnowledgeBaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKnowledgeBase(request);
   }
 
@@ -301,7 +298,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
   public final KnowledgeBase createKnowledgeBase(ProjectName parent, KnowledgeBase knowledgeBase) {
     CreateKnowledgeBaseRequest request =
         CreateKnowledgeBaseRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setKnowledgeBase(knowledgeBase)
             .build();
     return createKnowledgeBase(request);
@@ -370,7 +367,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
   public final void deleteKnowledgeBase(KnowledgeBaseName name) {
     DeleteKnowledgeBaseRequest request =
         DeleteKnowledgeBaseRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     deleteKnowledgeBase(request);
   }

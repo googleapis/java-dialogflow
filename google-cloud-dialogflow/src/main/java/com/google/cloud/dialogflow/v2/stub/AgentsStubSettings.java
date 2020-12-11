@@ -66,7 +66,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -161,7 +160,7 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
             @Override
             public Iterable<Agent> extractResources(SearchAgentsResponse payload) {
-              return Objects.isNull(payload.getAgentsList())
+              return payload.getAgentsList() == null
                   ? ImmutableList.<Agent>of()
                   : payload.getAgentsList();
             }

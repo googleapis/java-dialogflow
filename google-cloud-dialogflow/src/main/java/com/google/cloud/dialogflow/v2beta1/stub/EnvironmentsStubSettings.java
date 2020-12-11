@@ -49,7 +49,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -133,7 +132,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
             @Override
             public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
-              return Objects.isNull(payload.getEnvironmentsList())
+              return payload.getEnvironmentsList() == null
                   ? ImmutableList.<Environment>of()
                   : payload.getEnvironmentsList();
             }
