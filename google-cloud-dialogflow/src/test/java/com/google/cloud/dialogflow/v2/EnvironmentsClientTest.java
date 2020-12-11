@@ -92,7 +92,7 @@ public class EnvironmentsClientTest {
         ListEnvironmentsRequest.newBuilder()
             .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
             .setPageSize(883849137)
-            .setPageToken("page_token1630607433")
+            .setPageToken("pageToken873572522")
             .build();
 
     ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(request);
@@ -125,7 +125,7 @@ public class EnvironmentsClientTest {
           ListEnvironmentsRequest.newBuilder()
               .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
               .setPageSize(883849137)
-              .setPageToken("page_token1630607433")
+              .setPageToken("pageToken873572522")
               .build();
       client.listEnvironments(request);
       Assert.fail("No exception raised");

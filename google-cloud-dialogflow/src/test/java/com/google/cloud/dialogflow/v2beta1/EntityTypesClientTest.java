@@ -184,7 +184,7 @@ public class EntityTypesClientTest {
     mockEntityTypes.addResponse(expectedResponse);
 
     AgentName parent = AgentName.ofProjectName("[PROJECT]");
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent, languageCode);
 
@@ -212,7 +212,7 @@ public class EntityTypesClientTest {
 
     try {
       AgentName parent = AgentName.ofProjectName("[PROJECT]");
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.listEntityTypes(parent, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -231,7 +231,7 @@ public class EntityTypesClientTest {
     mockEntityTypes.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent, languageCode);
 
@@ -259,7 +259,7 @@ public class EntityTypesClientTest {
 
     try {
       String parent = "parent-995424086";
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.listEntityTypes(parent, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -273,7 +273,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
@@ -315,7 +315,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
@@ -357,14 +357,14 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityTypeName name = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     EntityType actualResponse = client.getEntityType(name, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -388,7 +388,7 @@ public class EntityTypesClientTest {
 
     try {
       EntityTypeName name = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.getEntityType(name, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -402,14 +402,14 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     String name = "name3373707";
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     EntityType actualResponse = client.getEntityType(name, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -433,7 +433,7 @@ public class EntityTypesClientTest {
 
     try {
       String name = "name3373707";
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.getEntityType(name, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -447,7 +447,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
@@ -492,7 +492,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
@@ -537,7 +537,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
@@ -545,7 +545,7 @@ public class EntityTypesClientTest {
 
     AgentName parent = AgentName.ofProjectName("[PROJECT]");
     EntityType entityType = EntityType.newBuilder().build();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     EntityType actualResponse = client.createEntityType(parent, entityType, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -571,7 +571,7 @@ public class EntityTypesClientTest {
     try {
       AgentName parent = AgentName.ofProjectName("[PROJECT]");
       EntityType entityType = EntityType.newBuilder().build();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.createEntityType(parent, entityType, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -585,7 +585,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
@@ -593,7 +593,7 @@ public class EntityTypesClientTest {
 
     String parent = "parent-995424086";
     EntityType entityType = EntityType.newBuilder().build();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     EntityType actualResponse = client.createEntityType(parent, entityType, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -619,7 +619,7 @@ public class EntityTypesClientTest {
     try {
       String parent = "parent-995424086";
       EntityType entityType = EntityType.newBuilder().build();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.createEntityType(parent, entityType, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -633,7 +633,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
@@ -675,14 +675,14 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityType entityType = EntityType.newBuilder().build();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     EntityType actualResponse = client.updateEntityType(entityType, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -706,7 +706,7 @@ public class EntityTypesClientTest {
 
     try {
       EntityType entityType = EntityType.newBuilder().build();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.updateEntityType(entityType, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -720,14 +720,14 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .setEnableFuzzyExtraction(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityType entityType = EntityType.newBuilder().build();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     EntityType actualResponse = client.updateEntityType(entityType, languageCode, updateMask);
@@ -753,7 +753,7 @@ public class EntityTypesClientTest {
 
     try {
       EntityType entityType = EntityType.newBuilder().build();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEntityType(entityType, languageCode, updateMask);
       Assert.fail("No exception raised");
@@ -848,7 +848,7 @@ public class EntityTypesClientTest {
         BatchUpdateEntityTypesRequest.newBuilder()
             .setParent(
                 EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-            .setLanguageCode("language_code-412800396")
+            .setLanguageCode("languageCode-2092349083")
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
@@ -883,7 +883,7 @@ public class EntityTypesClientTest {
           BatchUpdateEntityTypesRequest.newBuilder()
               .setParent(
                   EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
-              .setLanguageCode("language_code-412800396")
+              .setLanguageCode("languageCode-2092349083")
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.batchUpdateEntityTypesAsync(request).get();
@@ -1090,7 +1090,7 @@ public class EntityTypesClientTest {
 
     EntityTypeName parent = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
     List<EntityType.Entity> entities = new ArrayList<>();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     client.batchCreateEntitiesAsync(parent, entities, languageCode).get();
 
@@ -1115,7 +1115,7 @@ public class EntityTypesClientTest {
     try {
       EntityTypeName parent = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
       List<EntityType.Entity> entities = new ArrayList<>();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.batchCreateEntitiesAsync(parent, entities, languageCode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1138,7 +1138,7 @@ public class EntityTypesClientTest {
 
     String parent = "parent-995424086";
     List<EntityType.Entity> entities = new ArrayList<>();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     client.batchCreateEntitiesAsync(parent, entities, languageCode).get();
 
@@ -1163,7 +1163,7 @@ public class EntityTypesClientTest {
     try {
       String parent = "parent-995424086";
       List<EntityType.Entity> entities = new ArrayList<>();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.batchCreateEntitiesAsync(parent, entities, languageCode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1276,7 +1276,7 @@ public class EntityTypesClientTest {
 
     EntityTypeName parent = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
     List<EntityType.Entity> entities = new ArrayList<>();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     client.batchUpdateEntitiesAsync(parent, entities, languageCode).get();
 
@@ -1301,7 +1301,7 @@ public class EntityTypesClientTest {
     try {
       EntityTypeName parent = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
       List<EntityType.Entity> entities = new ArrayList<>();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.batchUpdateEntitiesAsync(parent, entities, languageCode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1324,7 +1324,7 @@ public class EntityTypesClientTest {
 
     String parent = "parent-995424086";
     List<EntityType.Entity> entities = new ArrayList<>();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     client.batchUpdateEntitiesAsync(parent, entities, languageCode).get();
 
@@ -1349,7 +1349,7 @@ public class EntityTypesClientTest {
     try {
       String parent = "parent-995424086";
       List<EntityType.Entity> entities = new ArrayList<>();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.batchUpdateEntitiesAsync(parent, entities, languageCode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1462,7 +1462,7 @@ public class EntityTypesClientTest {
 
     EntityTypeName parent = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
     List<String> entityValues = new ArrayList<>();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     client.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
 
@@ -1487,7 +1487,7 @@ public class EntityTypesClientTest {
     try {
       EntityTypeName parent = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
       List<String> entityValues = new ArrayList<>();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1510,7 +1510,7 @@ public class EntityTypesClientTest {
 
     String parent = "parent-995424086";
     List<String> entityValues = new ArrayList<>();
-    String languageCode = "language_code-412800396";
+    String languageCode = "languageCode-2092349083";
 
     client.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
 
@@ -1535,7 +1535,7 @@ public class EntityTypesClientTest {
     try {
       String parent = "parent-995424086";
       List<String> entityValues = new ArrayList<>();
-      String languageCode = "language_code-412800396";
+      String languageCode = "languageCode-2092349083";
       client.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
