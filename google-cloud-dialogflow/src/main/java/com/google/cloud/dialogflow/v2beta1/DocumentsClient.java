@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -172,7 +171,7 @@ public class DocumentsClient implements BackgroundResource {
   public final ListDocumentsPagedResponse listDocuments(KnowledgeBaseName parent) {
     ListDocumentsRequest request =
         ListDocumentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listDocuments(request);
   }
@@ -247,9 +246,7 @@ public class DocumentsClient implements BackgroundResource {
    */
   public final Document getDocument(DocumentName name) {
     GetDocumentRequest request =
-        GetDocumentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDocument(request);
   }
 
@@ -312,7 +309,7 @@ public class DocumentsClient implements BackgroundResource {
       KnowledgeBaseName parent, Document document) {
     CreateDocumentRequest request =
         CreateDocumentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setDocument(document)
             .build();
     return createDocumentAsync(request);
@@ -393,9 +390,7 @@ public class DocumentsClient implements BackgroundResource {
   public final OperationFuture<Empty, KnowledgeOperationMetadata> deleteDocumentAsync(
       DocumentName name) {
     DeleteDocumentRequest request =
-        DeleteDocumentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDocumentAsync(request);
   }
 
@@ -557,7 +552,7 @@ public class DocumentsClient implements BackgroundResource {
       DocumentName name, GcsSource gcsSource) {
     ReloadDocumentRequest request =
         ReloadDocumentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setGcsSource(gcsSource)
             .build();
     return reloadDocumentAsync(request);

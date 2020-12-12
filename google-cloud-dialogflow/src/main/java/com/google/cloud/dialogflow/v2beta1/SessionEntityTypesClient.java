@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -170,7 +169,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
   public final ListSessionEntityTypesPagedResponse listSessionEntityTypes(SessionName parent) {
     ListSessionEntityTypesRequest request =
         ListSessionEntityTypesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listSessionEntityTypes(request);
   }
@@ -267,7 +266,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
   public final SessionEntityType getSessionEntityType(SessionEntityTypeName name) {
     GetSessionEntityTypeRequest request =
         GetSessionEntityTypeRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getSessionEntityType(request);
   }
@@ -353,7 +352,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
       SessionName parent, SessionEntityType sessionEntityType) {
     CreateSessionEntityTypeRequest request =
         CreateSessionEntityTypeRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSessionEntityType(sessionEntityType)
             .build();
     return createSessionEntityType(request);
@@ -512,7 +511,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
   public final void deleteSessionEntityType(SessionEntityTypeName name) {
     DeleteSessionEntityTypeRequest request =
         DeleteSessionEntityTypeRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     deleteSessionEntityType(request);
   }
