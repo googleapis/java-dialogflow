@@ -89,12 +89,12 @@ public class AgentsClientTest {
     Agent expectedResponse =
         Agent.newBuilder()
             .setParent(ProjectName.of("[PROJECT]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDefaultLanguageCode("default_language_code856575222")
+            .setDisplayName("displayName1714148973")
+            .setDefaultLanguageCode("defaultLanguageCode2069633606")
             .addAllSupportedLanguageCodes(new ArrayList<String>())
-            .setTimeZone("time_zone36848094")
+            .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
-            .setAvatarUri("avatar_uri-402824826")
+            .setAvatarUri("avatarUri-428646061")
             .setEnableLogging(true)
             .setClassificationThreshold(1115810642)
             .build();
@@ -135,12 +135,12 @@ public class AgentsClientTest {
     Agent expectedResponse =
         Agent.newBuilder()
             .setParent(ProjectName.of("[PROJECT]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDefaultLanguageCode("default_language_code856575222")
+            .setDisplayName("displayName1714148973")
+            .setDefaultLanguageCode("defaultLanguageCode2069633606")
             .addAllSupportedLanguageCodes(new ArrayList<String>())
-            .setTimeZone("time_zone36848094")
+            .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
-            .setAvatarUri("avatar_uri-402824826")
+            .setAvatarUri("avatarUri-428646061")
             .setEnableLogging(true)
             .setClassificationThreshold(1115810642)
             .build();
@@ -181,12 +181,12 @@ public class AgentsClientTest {
     Agent expectedResponse =
         Agent.newBuilder()
             .setParent(ProjectName.of("[PROJECT]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDefaultLanguageCode("default_language_code856575222")
+            .setDisplayName("displayName1714148973")
+            .setDefaultLanguageCode("defaultLanguageCode2069633606")
             .addAllSupportedLanguageCodes(new ArrayList<String>())
-            .setTimeZone("time_zone36848094")
+            .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
-            .setAvatarUri("avatar_uri-402824826")
+            .setAvatarUri("avatarUri-428646061")
             .setEnableLogging(true)
             .setClassificationThreshold(1115810642)
             .build();
@@ -651,7 +651,7 @@ public class AgentsClientTest {
     GetValidationResultRequest request =
         GetValidationResultRequest.newBuilder()
             .setParent(AgentName.of("[PROJECT]").toString())
-            .setLanguageCode("language_code-412800396")
+            .setLanguageCode("languageCode-2092349083")
             .build();
 
     ValidationResult actualResponse = client.getValidationResult(request);
@@ -678,7 +678,7 @@ public class AgentsClientTest {
       GetValidationResultRequest request =
           GetValidationResultRequest.newBuilder()
               .setParent(AgentName.of("[PROJECT]").toString())
-              .setLanguageCode("language_code-412800396")
+              .setLanguageCode("languageCode-2092349083")
               .build();
       client.getValidationResult(request);
       Assert.fail("No exception raised");

@@ -88,7 +88,7 @@ public class SessionsClientTest {
   public void detectIntentTest() throws Exception {
     DetectIntentResponse expectedResponse =
         DetectIntentResponse.newBuilder()
-            .setResponseId("response_id1847552473")
+            .setResponseId("responseId-633138884")
             .setQueryResult(QueryResult.newBuilder().build())
             .addAllAlternativeQueryResults(new ArrayList<QueryResult>())
             .setWebhookStatus(Status.newBuilder().build())
@@ -134,7 +134,7 @@ public class SessionsClientTest {
   public void detectIntentTest2() throws Exception {
     DetectIntentResponse expectedResponse =
         DetectIntentResponse.newBuilder()
-            .setResponseId("response_id1847552473")
+            .setResponseId("responseId-633138884")
             .setQueryResult(QueryResult.newBuilder().build())
             .addAllAlternativeQueryResults(new ArrayList<QueryResult>())
             .setWebhookStatus(Status.newBuilder().build())
@@ -180,7 +180,7 @@ public class SessionsClientTest {
   public void streamingDetectIntentTest() throws Exception {
     StreamingDetectIntentResponse expectedResponse =
         StreamingDetectIntentResponse.newBuilder()
-            .setResponseId("response_id1847552473")
+            .setResponseId("responseId-633138884")
             .setRecognitionResult(StreamingRecognitionResult.newBuilder().build())
             .setQueryResult(QueryResult.newBuilder().build())
             .addAllAlternativeQueryResults(new ArrayList<QueryResult>())
