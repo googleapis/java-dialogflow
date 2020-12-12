@@ -197,7 +197,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to list all entity types from. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent`
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -219,7 +219,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to list all entity types from. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent`
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -300,7 +300,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @param name Required. The name of the entity type. Supported formats: - `projects/&lt;Project
    *     ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` - `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -322,7 +322,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @param name Required. The name of the entity type. Supported formats: - `projects/&lt;Project
    *     ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` - `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -362,7 +362,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to create a entity type for. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent`
-   * @param entity_type Required. The entity type to create.
+   * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(AgentName parent, EntityType entityType) {
@@ -381,7 +381,7 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to create a entity type for. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent`
-   * @param entity_type Required. The entity type to create.
+   * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(String parent, EntityType entityType) {
@@ -397,8 +397,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to create a entity type for. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent`
-   * @param entity_type Required. The entity type to create.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param entityType Required. The entity type to create.
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -422,8 +422,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to create a entity type for. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent`
-   * @param entity_type Required. The entity type to create.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param entityType Required. The entity type to create.
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -465,7 +465,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
-   * @param entity_type Required. The entity type to update.
+   * @param entityType Required. The entity type to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType) {
@@ -478,8 +478,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
-   * @param entity_type Required. The entity type to update.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param entityType Required. The entity type to update.
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -498,12 +498,12 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
-   * @param entity_type Required. The entity type to update.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param entityType Required. The entity type to update.
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
-   * @param update_mask Optional. The mask to control which fields get updated.
+   * @param updateMask Optional. The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(
@@ -636,8 +636,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The name of the agent to delete all entities types for. Supported
    *     formats: - `projects/&lt;Project ID&gt;/agent`, - `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agent`.
-   * @param entity_type_names Required. The names entity types to delete. All names must point to
-   *     the same agent as `parent`.
+   * @param entityTypeNames Required. The names entity types to delete. All names must point to the
+   *     same agent as `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
@@ -658,8 +658,8 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The name of the agent to delete all entities types for. Supported
    *     formats: - `projects/&lt;Project ID&gt;/agent`, - `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agent`.
-   * @param entity_type_names Required. The names entity types to delete. All names must point to
-   *     the same agent as `parent`.
+   * @param entityTypeNames Required. The names entity types to delete. All names must point to the
+   *     same agent as `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
@@ -763,7 +763,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
    *     Type ID&gt;`
    * @param entities Required. The entities to create.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -791,7 +791,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
    *     Type ID&gt;`
    * @param entities Required. The entities to create.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -904,7 +904,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
    *     Type ID&gt;`
    * @param entities Required. The entities to update or create.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -933,7 +933,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
    *     Type ID&gt;`
    * @param entities Required. The entities to update or create.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -1002,9 +1002,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
    *     Type ID&gt;`
-   * @param entity_values Required. The reference `values` of the entities to delete. Note that
-   *     these are not fully-qualified names, i.e. they don't start with `projects/&lt;Project
-   *     ID&gt;`.
+   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
@@ -1027,9 +1026,8 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
    *     Type ID&gt;`
-   * @param entity_values Required. The reference `values` of the entities to delete. Note that
-   *     these are not fully-qualified names, i.e. they don't start with `projects/&lt;Project
-   *     ID&gt;`.
+   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
@@ -1052,10 +1050,9 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
    *     Type ID&gt;`
-   * @param entity_values Required. The reference `values` of the entities to delete. Note that
-   *     these are not fully-qualified names, i.e. they don't start with `projects/&lt;Project
-   *     ID&gt;`.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
@@ -1082,10 +1079,9 @@ public class EntityTypesClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
    *     Type ID&gt;`
-   * @param entity_values Required. The reference `values` of the entities to delete. Note that
-   *     these are not fully-qualified names, i.e. they don't start with `projects/&lt;Project
-   *     ID&gt;`.
-   * @param language_code Optional. The language used to access language-specific data. If not
+   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
+   * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
    *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).

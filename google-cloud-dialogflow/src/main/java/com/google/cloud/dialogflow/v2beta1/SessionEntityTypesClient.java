@@ -345,7 +345,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
    *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
    *     assume default '-' user.
-   * @param session_entity_type Required. The session entity type to create.
+   * @param sessionEntityType Required. The session entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType createSessionEntityType(
@@ -377,7 +377,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
    *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
    *     assume default '-' user.
-   * @param session_entity_type Required. The session entity type to create.
+   * @param sessionEntityType Required. The session entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType createSessionEntityType(
@@ -429,7 +429,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
-   * @param session_entity_type Required. The session entity type to update.
+   * @param sessionEntityType Required. The session entity type to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType updateSessionEntityType(SessionEntityType sessionEntityType) {
@@ -445,8 +445,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
-   * @param session_entity_type Required. The session entity type to update.
-   * @param update_mask Optional. The mask to control which fields get updated.
+   * @param sessionEntityType Required. The session entity type to update.
+   * @param updateMask Optional. The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType updateSessionEntityType(
