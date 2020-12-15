@@ -159,7 +159,7 @@ public class SessionsClient implements BackgroundResource {
    *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
    *     <p>Note: Always use agent versions for production traffic. See [Versions and
    *     environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
-   * @param query_input Required. The input specification. It can be set to:
+   * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
    *     <p>2. a conversational query in the form of text, or
@@ -200,7 +200,7 @@ public class SessionsClient implements BackgroundResource {
    *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
    *     <p>Note: Always use agent versions for production traffic. See [Versions and
    *     environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
-   * @param query_input Required. The input specification. It can be set to:
+   * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
    *     <p>2. a conversational query in the form of text, or
