@@ -183,8 +183,8 @@ public class DocumentsClientTest {
                 DocumentName.ofProjectKnowledgeBaseDocumentName(
                         "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setMimeType("mime_type-196041627")
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
             .build();
@@ -232,8 +232,8 @@ public class DocumentsClientTest {
                 DocumentName.ofProjectKnowledgeBaseDocumentName(
                         "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setMimeType("mime_type-196041627")
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
             .build();
@@ -277,8 +277,8 @@ public class DocumentsClientTest {
                 DocumentName.ofProjectKnowledgeBaseDocumentName(
                         "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setMimeType("mime_type-196041627")
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
             .build();
@@ -335,8 +335,8 @@ public class DocumentsClientTest {
                 DocumentName.ofProjectKnowledgeBaseDocumentName(
                         "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setMimeType("mime_type-196041627")
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
             .build();
@@ -479,8 +479,8 @@ public class DocumentsClientTest {
                 DocumentName.ofProjectKnowledgeBaseDocumentName(
                         "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setMimeType("mime_type-196041627")
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
             .build();
@@ -532,8 +532,8 @@ public class DocumentsClientTest {
                 DocumentName.ofProjectKnowledgeBaseDocumentName(
                         "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setMimeType("mime_type-196041627")
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
             .build();
@@ -588,8 +588,8 @@ public class DocumentsClientTest {
                 DocumentName.ofProjectKnowledgeBaseDocumentName(
                         "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setMimeType("mime_type-196041627")
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
             .build();
@@ -648,8 +648,8 @@ public class DocumentsClientTest {
                 DocumentName.ofProjectKnowledgeBaseDocumentName(
                         "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setMimeType("mime_type-196041627")
+            .setDisplayName("displayName1714148973")
+            .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
             .build();

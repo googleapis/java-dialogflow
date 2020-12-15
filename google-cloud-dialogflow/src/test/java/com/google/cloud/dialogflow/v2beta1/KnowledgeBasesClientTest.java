@@ -219,8 +219,8 @@ public class KnowledgeBasesClientTest {
             .setName(
                 KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setLanguageCode("language_code-412800396")
+            .setDisplayName("displayName1714148973")
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
@@ -263,8 +263,8 @@ public class KnowledgeBasesClientTest {
             .setName(
                 KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setLanguageCode("language_code-412800396")
+            .setDisplayName("displayName1714148973")
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
@@ -305,8 +305,8 @@ public class KnowledgeBasesClientTest {
             .setName(
                 KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setLanguageCode("language_code-412800396")
+            .setDisplayName("displayName1714148973")
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
@@ -350,8 +350,8 @@ public class KnowledgeBasesClientTest {
             .setName(
                 KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setLanguageCode("language_code-412800396")
+            .setDisplayName("displayName1714148973")
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
@@ -395,8 +395,8 @@ public class KnowledgeBasesClientTest {
             .setName(
                 KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setLanguageCode("language_code-412800396")
+            .setDisplayName("displayName1714148973")
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
@@ -510,8 +510,8 @@ public class KnowledgeBasesClientTest {
             .setName(
                 KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setLanguageCode("language_code-412800396")
+            .setDisplayName("displayName1714148973")
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
@@ -552,8 +552,8 @@ public class KnowledgeBasesClientTest {
             .setName(
                 KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setLanguageCode("language_code-412800396")
+            .setDisplayName("displayName1714148973")
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
