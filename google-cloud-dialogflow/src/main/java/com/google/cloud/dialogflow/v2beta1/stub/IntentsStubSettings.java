@@ -63,7 +63,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -151,7 +150,7 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
 
             @Override
             public Iterable<Intent> extractResources(ListIntentsResponse payload) {
-              return Objects.isNull(payload.getIntentsList())
+              return payload.getIntentsList() == null
                   ? ImmutableList.<Intent>of()
                   : payload.getIntentsList();
             }

@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -161,7 +160,7 @@ public class ContextsClient implements BackgroundResource {
   public final ListContextsPagedResponse listContexts(SessionName parent) {
     ListContextsRequest request =
         ListContextsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listContexts(request);
   }
@@ -238,9 +237,7 @@ public class ContextsClient implements BackgroundResource {
    */
   public final Context getContext(ContextName name) {
     GetContextRequest request =
-        GetContextRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContext(request);
   }
 
@@ -309,7 +306,7 @@ public class ContextsClient implements BackgroundResource {
   public final Context createContext(SessionName parent, Context context) {
     CreateContextRequest request =
         CreateContextRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setContext(context)
             .build();
     return createContext(request);
@@ -431,9 +428,7 @@ public class ContextsClient implements BackgroundResource {
    */
   public final void deleteContext(ContextName name) {
     DeleteContextRequest request =
-        DeleteContextRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteContext(request);
   }
 
@@ -499,7 +494,7 @@ public class ContextsClient implements BackgroundResource {
   public final void deleteAllContexts(SessionName parent) {
     DeleteAllContextsRequest request =
         DeleteAllContextsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     deleteAllContexts(request);
   }
