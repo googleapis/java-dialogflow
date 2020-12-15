@@ -152,7 +152,26 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * @param parent Required. The project to list of knowledge bases for. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKnowledgeBasesPagedResponse listKnowledgeBases(LocationName parent) {
+    ListKnowledgeBasesRequest request =
+        ListKnowledgeBasesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listKnowledgeBases(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all knowledge bases of the specified agent.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
+   * @param parent Required. The project to list of knowledge bases for. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKnowledgeBasesPagedResponse listKnowledgeBases(ProjectName parent) {
@@ -171,7 +190,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * @param parent Required. The project to list of knowledge bases for. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKnowledgeBasesPagedResponse listKnowledgeBases(String parent) {
@@ -231,7 +250,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * @param name Required. The name of the knowledge base to retrieve. Format `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase getKnowledgeBase(KnowledgeBaseName name) {
@@ -248,7 +267,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * @param name Required. The name of the knowledge base to retrieve. Format `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final KnowledgeBase getKnowledgeBase(String name) {
@@ -291,7 +310,28 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * @param parent Required. The project to create a knowledge base for. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param knowledge_base Required. The knowledge base to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KnowledgeBase createKnowledgeBase(LocationName parent, KnowledgeBase knowledgeBase) {
+    CreateKnowledgeBaseRequest request =
+        CreateKnowledgeBaseRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setKnowledgeBase(knowledgeBase)
+            .build();
+    return createKnowledgeBase(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a knowledge base.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
+   * @param parent Required. The project to create a knowledge base for. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @param knowledge_base Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -312,7 +352,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * @param parent Required. The project to create a knowledge base for. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @param knowledge_base Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -361,7 +401,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * @param name Required. The name of the knowledge base to delete. Format: `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteKnowledgeBase(KnowledgeBaseName name) {
@@ -380,7 +420,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * `projects.knowledgeBases`.
    *
    * @param name Required. The name of the knowledge base to delete. Format: `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteKnowledgeBase(String name) {
