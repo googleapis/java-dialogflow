@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class DocumentName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_KNOWLEDGE_BASE_DOCUMENT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String knowledgeBase;
   private final String document;
+
+  @Deprecated
+  protected DocumentName() {
+    project = null;
+    knowledgeBase = null;
+    document = null;
+  }
+
+  private DocumentName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    knowledgeBase = Preconditions.checkNotNull(builder.getKnowledgeBase());
+    document = Preconditions.checkNotNull(builder.getDocument());
+  }
 
   public String getProject() {
     return project;
@@ -56,12 +68,6 @@ public class DocumentName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private DocumentName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    knowledgeBase = Preconditions.checkNotNull(builder.getKnowledgeBase());
-    document = Preconditions.checkNotNull(builder.getDocument());
   }
 
   public static DocumentName of(String project, String knowledgeBase, String document) {
@@ -86,7 +92,7 @@ public class DocumentName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_KNOWLEDGE_BASE_DOCUMENT.validatedMatch(
             formattedString, "DocumentName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("knowledge_base"), matchMap.get("document"));
   }
@@ -100,9 +106,9 @@ public class DocumentName implements ResourceName {
   }
 
   public static List<String> toStringList(List<DocumentName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (DocumentName value : values) {
-      if (value == null) {
+      if (Objects.isNull(value)) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -112,17 +118,24 @@ public class DocumentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_KNOWLEDGE_BASE_DOCUMENT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
-    if (fieldValuesMap == null) {
+    if (Objects.isNull(fieldValuesMap)) {
       synchronized (this) {
-        if (fieldValuesMap == null) {
+        if (Objects.isNull(fieldValuesMap)) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("knowledgeBase", knowledgeBase);
-          fieldMapBuilder.put("document", document);
+          if (!Objects.isNull(project)) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (!Objects.isNull(knowledgeBase)) {
+            fieldMapBuilder.put("knowledge_base", knowledgeBase);
+          }
+          if (!Objects.isNull(document)) {
+            fieldMapBuilder.put("document", document);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -136,16 +149,43 @@ public class DocumentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_KNOWLEDGE_BASE_DOCUMENT.instantiate(
         "project", project, "knowledge_base", knowledgeBase, "document", document);
   }
 
-  /** Builder for DocumentName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      DocumentName that = ((DocumentName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.knowledgeBase, that.knowledgeBase)
+          && Objects.equals(this.document, that.document);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(knowledgeBase);
+    h *= 1000003;
+    h ^= Objects.hashCode(document);
+    return h;
+  }
+
+  /** Builder for projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}. */
+  public static class Builder {
     private String project;
     private String knowledgeBase;
     private String document;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -174,8 +214,6 @@ public class DocumentName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(DocumentName documentName) {
       project = documentName.project;
       knowledgeBase = documentName.knowledgeBase;
@@ -185,31 +223,5 @@ public class DocumentName implements ResourceName {
     public DocumentName build() {
       return new DocumentName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof DocumentName) {
-      DocumentName that = (DocumentName) o;
-      return (this.project.equals(that.project))
-          && (this.knowledgeBase.equals(that.knowledgeBase))
-          && (this.document.equals(that.document));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= knowledgeBase.hashCode();
-    h *= 1000003;
-    h ^= document.hashCode();
-    return h;
   }
 }
