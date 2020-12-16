@@ -90,7 +90,7 @@ public class KnowledgeBasesClientTest {
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListKnowledgeBasesPagedResponse pagedListResponse = client.listKnowledgeBases(parent);
 
@@ -116,7 +116,7 @@ public class KnowledgeBasesClientTest {
     mockKnowledgeBases.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       client.listKnowledgeBases(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -126,6 +126,50 @@ public class KnowledgeBasesClientTest {
 
   @Test
   public void listKnowledgeBasesTest2() throws Exception {
+    KnowledgeBase responsesElement = KnowledgeBase.newBuilder().build();
+    ListKnowledgeBasesResponse expectedResponse =
+        ListKnowledgeBasesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllKnowledgeBases(Arrays.asList(responsesElement))
+            .build();
+    mockKnowledgeBases.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListKnowledgeBasesPagedResponse pagedListResponse = client.listKnowledgeBases(parent);
+
+    List<KnowledgeBase> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKnowledgeBasesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKnowledgeBases.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListKnowledgeBasesRequest actualRequest = ((ListKnowledgeBasesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listKnowledgeBasesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKnowledgeBases.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listKnowledgeBases(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listKnowledgeBasesTest3() throws Exception {
     KnowledgeBase responsesElement = KnowledgeBase.newBuilder().build();
     ListKnowledgeBasesResponse expectedResponse =
         ListKnowledgeBasesResponse.newBuilder()
@@ -155,7 +199,7 @@ public class KnowledgeBasesClientTest {
   }
 
   @Test
-  public void listKnowledgeBasesExceptionTest2() throws Exception {
+  public void listKnowledgeBasesExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockKnowledgeBases.addException(exception);
 
@@ -172,13 +216,16 @@ public class KnowledgeBasesClientTest {
   public void getKnowledgeBaseTest() throws Exception {
     KnowledgeBase expectedResponse =
         KnowledgeBase.newBuilder()
-            .setName(KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]").toString())
+            .setName(
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setLanguageCode("language_code-412800396")
             .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
-    KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+    KnowledgeBaseName name =
+        KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
 
     KnowledgeBase actualResponse = client.getKnowledgeBase(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -200,7 +247,8 @@ public class KnowledgeBasesClientTest {
     mockKnowledgeBases.addException(exception);
 
     try {
-      KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+      KnowledgeBaseName name =
+          KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
       client.getKnowledgeBase(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -212,7 +260,9 @@ public class KnowledgeBasesClientTest {
   public void getKnowledgeBaseTest2() throws Exception {
     KnowledgeBase expectedResponse =
         KnowledgeBase.newBuilder()
-            .setName(KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]").toString())
+            .setName(
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setLanguageCode("language_code-412800396")
             .build();
@@ -252,7 +302,54 @@ public class KnowledgeBasesClientTest {
   public void createKnowledgeBaseTest() throws Exception {
     KnowledgeBase expectedResponse =
         KnowledgeBase.newBuilder()
-            .setName(KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]").toString())
+            .setName(
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                    .toString())
+            .setDisplayName("display_name1615086568")
+            .setLanguageCode("language_code-412800396")
+            .build();
+    mockKnowledgeBases.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+
+    KnowledgeBase actualResponse = client.createKnowledgeBase(parent, knowledgeBase);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKnowledgeBases.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateKnowledgeBaseRequest actualRequest = ((CreateKnowledgeBaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(knowledgeBase, actualRequest.getKnowledgeBase());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createKnowledgeBaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKnowledgeBases.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+      client.createKnowledgeBase(parent, knowledgeBase);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createKnowledgeBaseTest2() throws Exception {
+    KnowledgeBase expectedResponse =
+        KnowledgeBase.newBuilder()
+            .setName(
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setLanguageCode("language_code-412800396")
             .build();
@@ -277,7 +374,7 @@ public class KnowledgeBasesClientTest {
   }
 
   @Test
-  public void createKnowledgeBaseExceptionTest() throws Exception {
+  public void createKnowledgeBaseExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockKnowledgeBases.addException(exception);
 
@@ -292,10 +389,12 @@ public class KnowledgeBasesClientTest {
   }
 
   @Test
-  public void createKnowledgeBaseTest2() throws Exception {
+  public void createKnowledgeBaseTest3() throws Exception {
     KnowledgeBase expectedResponse =
         KnowledgeBase.newBuilder()
-            .setName(KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]").toString())
+            .setName(
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setLanguageCode("language_code-412800396")
             .build();
@@ -320,7 +419,7 @@ public class KnowledgeBasesClientTest {
   }
 
   @Test
-  public void createKnowledgeBaseExceptionTest2() throws Exception {
+  public void createKnowledgeBaseExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockKnowledgeBases.addException(exception);
 
@@ -339,7 +438,8 @@ public class KnowledgeBasesClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
-    KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+    KnowledgeBaseName name =
+        KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
 
     client.deleteKnowledgeBase(name);
 
@@ -360,7 +460,8 @@ public class KnowledgeBasesClientTest {
     mockKnowledgeBases.addException(exception);
 
     try {
-      KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+      KnowledgeBaseName name =
+          KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
       client.deleteKnowledgeBase(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -406,7 +507,9 @@ public class KnowledgeBasesClientTest {
   public void updateKnowledgeBaseTest() throws Exception {
     KnowledgeBase expectedResponse =
         KnowledgeBase.newBuilder()
-            .setName(KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]").toString())
+            .setName(
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setLanguageCode("language_code-412800396")
             .build();
@@ -446,7 +549,9 @@ public class KnowledgeBasesClientTest {
   public void updateKnowledgeBaseTest2() throws Exception {
     KnowledgeBase expectedResponse =
         KnowledgeBase.newBuilder()
-            .setName(KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]").toString())
+            .setName(
+                KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setLanguageCode("language_code-412800396")
             .build();
