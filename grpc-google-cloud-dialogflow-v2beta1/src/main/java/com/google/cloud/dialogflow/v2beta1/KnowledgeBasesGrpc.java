@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2beta1/knowledge_base.proto")
@@ -319,24 +313,10 @@ public final class KnowledgeBasesGrpc {
     return KnowledgeBasesFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
-   * </pre>
-   */
+  /** */
   public abstract static class KnowledgeBasesImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all knowledge bases of the specified agent.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void listKnowledgeBases(
         com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
@@ -344,15 +324,7 @@ public final class KnowledgeBasesGrpc {
       asyncUnimplementedUnaryCall(getListKnowledgeBasesMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void getKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -360,15 +332,7 @@ public final class KnowledgeBasesGrpc {
       asyncUnimplementedUnaryCall(getGetKnowledgeBaseMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void createKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -376,30 +340,14 @@ public final class KnowledgeBasesGrpc {
       asyncUnimplementedUnaryCall(getCreateKnowledgeBaseMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void deleteKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteKnowledgeBaseMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void updateKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -448,13 +396,7 @@ public final class KnowledgeBasesGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
-   * </pre>
-   */
+  /** */
   public static final class KnowledgeBasesStub
       extends io.grpc.stub.AbstractAsyncStub<KnowledgeBasesStub> {
     private KnowledgeBasesStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -466,15 +408,7 @@ public final class KnowledgeBasesGrpc {
       return new KnowledgeBasesStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all knowledge bases of the specified agent.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void listKnowledgeBases(
         com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
@@ -485,15 +419,7 @@ public final class KnowledgeBasesGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void getKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -504,15 +430,7 @@ public final class KnowledgeBasesGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void createKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -523,15 +441,7 @@ public final class KnowledgeBasesGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void deleteKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -541,15 +451,7 @@ public final class KnowledgeBasesGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public void updateKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
@@ -561,13 +463,7 @@ public final class KnowledgeBasesGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
-   * </pre>
-   */
+  /** */
   public static final class KnowledgeBasesBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<KnowledgeBasesBlockingStub> {
     private KnowledgeBasesBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -580,75 +476,35 @@ public final class KnowledgeBasesGrpc {
       return new KnowledgeBasesBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all knowledge bases of the specified agent.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse listKnowledgeBases(
         com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request) {
       return blockingUnaryCall(
           getChannel(), getListKnowledgeBasesMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase createKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase updateKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request) {
       return blockingUnaryCall(
@@ -656,13 +512,7 @@ public final class KnowledgeBasesGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
-   * </pre>
-   */
+  /** */
   public static final class KnowledgeBasesFutureStub
       extends io.grpc.stub.AbstractFutureStub<KnowledgeBasesFutureStub> {
     private KnowledgeBasesFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -675,15 +525,7 @@ public final class KnowledgeBasesGrpc {
       return new KnowledgeBasesFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all knowledge bases of the specified agent.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>
         listKnowledgeBases(com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request) {
@@ -691,15 +533,7 @@ public final class KnowledgeBasesGrpc {
           getChannel().newCall(getListKnowledgeBasesMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
         getKnowledgeBase(com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request) {
@@ -707,15 +541,7 @@ public final class KnowledgeBasesGrpc {
           getChannel().newCall(getGetKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
         createKnowledgeBase(
@@ -724,15 +550,7 @@ public final class KnowledgeBasesGrpc {
           getChannel().newCall(getCreateKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteKnowledgeBase(
             com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request) {
@@ -740,15 +558,7 @@ public final class KnowledgeBasesGrpc {
           getChannel().newCall(getDeleteKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified knowledge base.
-     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
-     * only use `projects.knowledgeBases`.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase>
         updateKnowledgeBase(

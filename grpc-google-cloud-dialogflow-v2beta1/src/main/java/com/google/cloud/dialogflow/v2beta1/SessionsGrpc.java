@@ -25,15 +25,7 @@ import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * A service used for session interactions.
- * For more information, see the [API interactions
- * guide](https://cloud.google.com/dialogflow/docs/api-overview).
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2beta1/session.proto")
@@ -179,27 +171,10 @@ public final class SessionsGrpc {
     return SessionsFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service used for session interactions.
-   * For more information, see the [API interactions
-   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
-   * </pre>
-   */
+  /** */
   public abstract static class SessionsImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Processes a natural language query and returns structured, actionable data
-     * as a result. This method is not idempotent, because it may cause contexts
-     * and session entity types to be updated, which in turn might affect
-     * results of future queries.
-     * </pre>
-     */
+    /** */
     public void detectIntent(
         com.google.cloud.dialogflow.v2beta1.DetectIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.DetectIntentResponse>
@@ -207,15 +182,7 @@ public final class SessionsGrpc {
       asyncUnimplementedUnaryCall(getDetectIntentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Processes a natural language query in audio format in a streaming fashion
-     * and returns structured, actionable data as a result. This method is only
-     * available via the gRPC API (not REST).
-     * </pre>
-     */
+    /** */
     public io.grpc.stub.StreamObserver<
             com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest>
         streamingDetectIntent(
@@ -246,15 +213,7 @@ public final class SessionsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service used for session interactions.
-   * For more information, see the [API interactions
-   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
-   * </pre>
-   */
+  /** */
   public static final class SessionsStub extends io.grpc.stub.AbstractAsyncStub<SessionsStub> {
     private SessionsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -265,16 +224,7 @@ public final class SessionsGrpc {
       return new SessionsStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Processes a natural language query and returns structured, actionable data
-     * as a result. This method is not idempotent, because it may cause contexts
-     * and session entity types to be updated, which in turn might affect
-     * results of future queries.
-     * </pre>
-     */
+    /** */
     public void detectIntent(
         com.google.cloud.dialogflow.v2beta1.DetectIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.DetectIntentResponse>
@@ -285,15 +235,7 @@ public final class SessionsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Processes a natural language query in audio format in a streaming fashion
-     * and returns structured, actionable data as a result. This method is only
-     * available via the gRPC API (not REST).
-     * </pre>
-     */
+    /** */
     public io.grpc.stub.StreamObserver<
             com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest>
         streamingDetectIntent(
@@ -306,15 +248,7 @@ public final class SessionsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service used for session interactions.
-   * For more information, see the [API interactions
-   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
-   * </pre>
-   */
+  /** */
   public static final class SessionsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<SessionsBlockingStub> {
     private SessionsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -326,31 +260,14 @@ public final class SessionsGrpc {
       return new SessionsBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Processes a natural language query and returns structured, actionable data
-     * as a result. This method is not idempotent, because it may cause contexts
-     * and session entity types to be updated, which in turn might affect
-     * results of future queries.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2beta1.DetectIntentResponse detectIntent(
         com.google.cloud.dialogflow.v2beta1.DetectIntentRequest request) {
       return blockingUnaryCall(getChannel(), getDetectIntentMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A service used for session interactions.
-   * For more information, see the [API interactions
-   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
-   * </pre>
-   */
+  /** */
   public static final class SessionsFutureStub
       extends io.grpc.stub.AbstractFutureStub<SessionsFutureStub> {
     private SessionsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -362,16 +279,7 @@ public final class SessionsGrpc {
       return new SessionsFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Processes a natural language query and returns structured, actionable data
-     * as a result. This method is not idempotent, because it may cause contexts
-     * and session entity types to be updated, which in turn might affect
-     * results of future queries.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.DetectIntentResponse>
         detectIntent(com.google.cloud.dialogflow.v2beta1.DetectIntentRequest request) {
