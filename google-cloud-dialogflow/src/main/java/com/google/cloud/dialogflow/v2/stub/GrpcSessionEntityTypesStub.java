@@ -142,11 +142,21 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
         SessionEntityTypesStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcSessionEntityTypesStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcSessionEntityTypesStub(
       SessionEntityTypesStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcSessionEntityTypesCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcSessionEntityTypesStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcSessionEntityTypesStub(
       SessionEntityTypesStubSettings settings,
       ClientContext clientContext,
