@@ -134,11 +134,19 @@ public class GrpcContextsStub extends ContextsStub {
         ContextsStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcContextsStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
   protected GrpcContextsStub(ContextsStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcContextsCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcContextsStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
   protected GrpcContextsStub(
       ContextsStubSettings settings,
       ClientContext clientContext,

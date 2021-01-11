@@ -379,7 +379,7 @@ public class ContextsClient implements BackgroundResource {
    * Updates the specified context.
    *
    * @param context Required. The context to update.
-   * @param update_mask Optional. The mask to control which fields get updated.
+   * @param updateMask Optional. The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context updateContext(Context context, FieldMask updateMask) {
