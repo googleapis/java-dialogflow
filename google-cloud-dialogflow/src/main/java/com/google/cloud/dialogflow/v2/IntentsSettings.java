@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.IntentsClient.ListIntentsPagedResponse;
@@ -38,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
+// AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
  * Settings class to configure an instance of {@link IntentsClient}.
  *
@@ -55,23 +54,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getIntent to 30 seconds:
  *
- * <pre>{@code
- * IntentsSettings.Builder intentsSettingsBuilder = IntentsSettings.newBuilder();
+ * <pre>
+ * <code>
+ * IntentsSettings.Builder intentsSettingsBuilder =
+ *     IntentsSettings.newBuilder();
  * intentsSettingsBuilder
  *     .getIntentSettings()
  *     .setRetrySettings(
- *         intentsSettingsBuilder
- *             .getIntentSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IntentsSettings intentsSettings = intentsSettingsBuilder.build();
- * }</pre>
+ * </code>
+ * </pre>
  */
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
+@BetaApi
 public class IntentsSettings extends ClientSettings<IntentsSettings> {
-
   /** Returns the object with the settings used for calls to listIntents. */
   public PagedCallSettings<ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
       listIntentsSettings() {
@@ -104,6 +103,8 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchUpdateIntents. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationSettings() {
     return ((IntentsStubSettings) getStubSettings()).batchUpdateIntentsOperationSettings();
@@ -115,6 +116,8 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchDeleteIntents. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationSettings() {
     return ((IntentsStubSettings) getStubSettings()).batchDeleteIntentsOperationSettings();
@@ -179,13 +182,16 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
 
   /** Builder for IntentsSettings. */
   public static class Builder extends ClientSettings.Builder<IntentsSettings, Builder> {
-
     protected Builder() throws IOException {
-      this(((ClientContext) null));
+      this((ClientContext) null);
     }
 
     protected Builder(ClientContext clientContext) {
       super(IntentsStubSettings.newBuilder(clientContext));
+    }
+
+    private static Builder createDefault() {
+      return new Builder(IntentsStubSettings.newBuilder());
     }
 
     protected Builder(IntentsSettings settings) {
@@ -196,15 +202,11 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
       super(stubSettings);
     }
 
-    private static Builder createDefault() {
-      return new Builder(IntentsStubSettings.newBuilder());
-    }
-
     public IntentsStubSettings.Builder getStubSettingsBuilder() {
       return ((IntentsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'.
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -251,6 +253,8 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateIntents. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
         batchUpdateIntentsOperationSettings() {
@@ -264,6 +268,8 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteIntents. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
         batchDeleteIntentsOperationSettings() {
       return getStubSettingsBuilder().batchDeleteIntentsOperationSettings();

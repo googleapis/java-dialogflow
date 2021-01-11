@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.dialogflow.v2beta1;
 
 import static com.google.cloud.dialogflow.v2beta1.DocumentsClient.ListDocumentsPagedResponse;
@@ -37,7 +36,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
+// AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
  * Settings class to configure an instance of {@link DocumentsClient}.
  *
@@ -54,23 +53,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getDocument to 30 seconds:
  *
- * <pre>{@code
- * DocumentsSettings.Builder documentsSettingsBuilder = DocumentsSettings.newBuilder();
+ * <pre>
+ * <code>
+ * DocumentsSettings.Builder documentsSettingsBuilder =
+ *     DocumentsSettings.newBuilder();
  * documentsSettingsBuilder
  *     .getDocumentSettings()
  *     .setRetrySettings(
- *         documentsSettingsBuilder
- *             .getDocumentSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         documentsSettingsBuilder.getDocumentSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DocumentsSettings documentsSettings = documentsSettingsBuilder.build();
- * }</pre>
+ * </code>
+ * </pre>
  */
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
+@BetaApi
 public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
-
   /** Returns the object with the settings used for calls to listDocuments. */
   public PagedCallSettings<ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
       listDocumentsSettings() {
@@ -88,6 +87,8 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to createDocument. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
       createDocumentOperationSettings() {
     return ((DocumentsStubSettings) getStubSettings()).createDocumentOperationSettings();
@@ -99,6 +100,8 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteDocument. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationSettings() {
     return ((DocumentsStubSettings) getStubSettings()).deleteDocumentOperationSettings();
@@ -110,6 +113,8 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to updateDocument. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
       updateDocumentOperationSettings() {
     return ((DocumentsStubSettings) getStubSettings()).updateDocumentOperationSettings();
@@ -121,6 +126,8 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to reloadDocument. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
       reloadDocumentOperationSettings() {
     return ((DocumentsStubSettings) getStubSettings()).reloadDocumentOperationSettings();
@@ -185,13 +192,16 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
 
   /** Builder for DocumentsSettings. */
   public static class Builder extends ClientSettings.Builder<DocumentsSettings, Builder> {
-
     protected Builder() throws IOException {
-      this(((ClientContext) null));
+      this((ClientContext) null);
     }
 
     protected Builder(ClientContext clientContext) {
       super(DocumentsStubSettings.newBuilder(clientContext));
+    }
+
+    private static Builder createDefault() {
+      return new Builder(DocumentsStubSettings.newBuilder());
     }
 
     protected Builder(DocumentsSettings settings) {
@@ -202,15 +212,11 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
       super(stubSettings);
     }
 
-    private static Builder createDefault() {
-      return new Builder(DocumentsStubSettings.newBuilder());
-    }
-
     public DocumentsStubSettings.Builder getStubSettingsBuilder() {
       return ((DocumentsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'.
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -241,6 +247,8 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createDocument. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDocumentRequest, Document, KnowledgeOperationMetadata>
         createDocumentOperationSettings() {
@@ -253,6 +261,8 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteDocument. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
         deleteDocumentOperationSettings() {
       return getStubSettingsBuilder().deleteDocumentOperationSettings();
@@ -264,6 +274,8 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateDocument. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
         updateDocumentOperationSettings() {
@@ -276,6 +288,8 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to reloadDocument. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
         reloadDocumentOperationSettings() {

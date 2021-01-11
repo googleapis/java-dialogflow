@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.dialogflow.v2beta1;
 
 import static com.google.cloud.dialogflow.v2beta1.SessionEntityTypesClient.ListSessionEntityTypesPagedResponse;
@@ -28,14 +27,12 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.FieldMask;
+import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -43,31 +40,57 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@Generated("by gapic-generator-java")
+@javax.annotation.Generated("by GAPIC")
 public class SessionEntityTypesClientTest {
+  private static MockEnvironments mockEnvironments;
+  private static MockAgents mockAgents;
+  private static MockContexts mockContexts;
+  private static MockDocuments mockDocuments;
+  private static MockEntityTypes mockEntityTypes;
+  private static MockIntents mockIntents;
+  private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
-  private static MockServiceHelper mockServiceHelper;
+  private static MockSessions mockSessions;
+  private static MockServiceHelper serviceHelper;
   private SessionEntityTypesClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
+    mockEnvironments = new MockEnvironments();
+    mockAgents = new MockAgents();
+    mockContexts = new MockContexts();
+    mockDocuments = new MockDocuments();
+    mockEntityTypes = new MockEntityTypes();
+    mockIntents = new MockIntents();
+    mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
-    mockServiceHelper =
+    mockSessions = new MockSessions();
+    serviceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockSessionEntityTypes));
-    mockServiceHelper.start();
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(
+                mockEnvironments,
+                mockAgents,
+                mockContexts,
+                mockDocuments,
+                mockEntityTypes,
+                mockIntents,
+                mockKnowledgeBases,
+                mockSessionEntityTypes,
+                mockSessions));
+    serviceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    mockServiceHelper.stop();
+    serviceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+    serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     SessionEntityTypesSettings settings =
         SessionEntityTypesSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -82,12 +105,15 @@ public class SessionEntityTypesClientTest {
   }
 
   @Test
-  public void listSessionEntityTypesTest() throws Exception {
-    SessionEntityType responsesElement = SessionEntityType.newBuilder().build();
+  @SuppressWarnings("all")
+  public void listSessionEntityTypesTest() {
+    String nextPageToken = "";
+    SessionEntityType sessionEntityTypesElement = SessionEntityType.newBuilder().build();
+    List<SessionEntityType> sessionEntityTypes = Arrays.asList(sessionEntityTypesElement);
     ListSessionEntityTypesResponse expectedResponse =
         ListSessionEntityTypesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllSessionEntityTypes(Arrays.asList(responsesElement))
+            .setNextPageToken(nextPageToken)
+            .addAllSessionEntityTypes(sessionEntityTypes)
             .build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
@@ -96,16 +122,15 @@ public class SessionEntityTypesClientTest {
     ListSessionEntityTypesPagedResponse pagedListResponse = client.listSessionEntityTypes(parent);
 
     List<SessionEntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSessionEntityTypesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListSessionEntityTypesRequest actualRequest =
-        ((ListSessionEntityTypesRequest) actualRequests.get(0));
+        (ListSessionEntityTypesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -113,74 +138,29 @@ public class SessionEntityTypesClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void listSessionEntityTypesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSessionEntityTypes.addException(exception);
 
     try {
       SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+
       client.listSessionEntityTypes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void listSessionEntityTypesTest2() throws Exception {
-    SessionEntityType responsesElement = SessionEntityType.newBuilder().build();
-    ListSessionEntityTypesResponse expectedResponse =
-        ListSessionEntityTypesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllSessionEntityTypes(Arrays.asList(responsesElement))
-            .build();
-    mockSessionEntityTypes.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-
-    ListSessionEntityTypesPagedResponse pagedListResponse = client.listSessionEntityTypes(parent);
-
-    List<SessionEntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getSessionEntityTypesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListSessionEntityTypesRequest actualRequest =
-        ((ListSessionEntityTypesRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listSessionEntityTypesExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockSessionEntityTypes.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      client.listSessionEntityTypes(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getSessionEntityTypeTest() throws Exception {
+  @SuppressWarnings("all")
+  public void getSessionEntityTypeTest() {
+    SessionEntityTypeName name2 =
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
     SessionEntityType expectedResponse =
-        SessionEntityType.newBuilder()
-            .setName(
-                SessionEntityTypeName.ofProjectSessionEntityTypeName(
-                        "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-                    .toString())
-            .addAllEntities(new ArrayList<EntityType.Entity>())
-            .build();
+        SessionEntityType.newBuilder().setName(name2.toString()).build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
     SessionEntityTypeName name =
@@ -192,10 +172,9 @@ public class SessionEntityTypesClientTest {
 
     List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetSessionEntityTypeRequest actualRequest =
-        ((GetSessionEntityTypeRequest) actualRequests.get(0));
+    GetSessionEntityTypeRequest actualRequest = (GetSessionEntityTypeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(name, SessionEntityTypeName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -203,74 +182,31 @@ public class SessionEntityTypesClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void getSessionEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSessionEntityTypes.addException(exception);
 
     try {
       SessionEntityTypeName name =
           SessionEntityTypeName.ofProjectSessionEntityTypeName(
               "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+
       client.getSessionEntityType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void getSessionEntityTypeTest2() throws Exception {
+  @SuppressWarnings("all")
+  public void createSessionEntityTypeTest() {
+    SessionEntityTypeName name =
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
     SessionEntityType expectedResponse =
-        SessionEntityType.newBuilder()
-            .setName(
-                SessionEntityTypeName.ofProjectSessionEntityTypeName(
-                        "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-                    .toString())
-            .addAllEntities(new ArrayList<EntityType.Entity>())
-            .build();
-    mockSessionEntityTypes.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    SessionEntityType actualResponse = client.getSessionEntityType(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetSessionEntityTypeRequest actualRequest =
-        ((GetSessionEntityTypeRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getSessionEntityTypeExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockSessionEntityTypes.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.getSessionEntityType(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createSessionEntityTypeTest() throws Exception {
-    SessionEntityType expectedResponse =
-        SessionEntityType.newBuilder()
-            .setName(
-                SessionEntityTypeName.ofProjectSessionEntityTypeName(
-                        "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-                    .toString())
-            .addAllEntities(new ArrayList<EntityType.Entity>())
-            .build();
+        SessionEntityType.newBuilder().setName(name.toString()).build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
     SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
@@ -282,9 +218,9 @@ public class SessionEntityTypesClientTest {
     List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateSessionEntityTypeRequest actualRequest =
-        ((CreateSessionEntityTypeRequest) actualRequests.get(0));
+        (CreateSessionEntityTypeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertEquals(sessionEntityType, actualRequest.getSessionEntityType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -293,76 +229,30 @@ public class SessionEntityTypesClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void createSessionEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSessionEntityTypes.addException(exception);
 
     try {
       SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
       SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+
       client.createSessionEntityType(parent, sessionEntityType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void createSessionEntityTypeTest2() throws Exception {
+  @SuppressWarnings("all")
+  public void updateSessionEntityTypeTest() {
+    SessionEntityTypeName name =
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
     SessionEntityType expectedResponse =
-        SessionEntityType.newBuilder()
-            .setName(
-                SessionEntityTypeName.ofProjectSessionEntityTypeName(
-                        "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-                    .toString())
-            .addAllEntities(new ArrayList<EntityType.Entity>())
-            .build();
-    mockSessionEntityTypes.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-    SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-
-    SessionEntityType actualResponse = client.createSessionEntityType(parent, sessionEntityType);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateSessionEntityTypeRequest actualRequest =
-        ((CreateSessionEntityTypeRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(sessionEntityType, actualRequest.getSessionEntityType());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createSessionEntityTypeExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockSessionEntityTypes.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-      client.createSessionEntityType(parent, sessionEntityType);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void updateSessionEntityTypeTest() throws Exception {
-    SessionEntityType expectedResponse =
-        SessionEntityType.newBuilder()
-            .setName(
-                SessionEntityTypeName.ofProjectSessionEntityTypeName(
-                        "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-                    .toString())
-            .addAllEntities(new ArrayList<EntityType.Entity>())
-            .build();
+        SessionEntityType.newBuilder().setName(name.toString()).build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
     SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
@@ -373,7 +263,7 @@ public class SessionEntityTypesClientTest {
     List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateSessionEntityTypeRequest actualRequest =
-        ((UpdateSessionEntityTypeRequest) actualRequests.get(0));
+        (UpdateSessionEntityTypeRequest) actualRequests.get(0);
 
     Assert.assertEquals(sessionEntityType, actualRequest.getSessionEntityType());
     Assert.assertTrue(
@@ -383,45 +273,42 @@ public class SessionEntityTypesClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void updateSessionEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSessionEntityTypes.addException(exception);
 
     try {
       SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+
       client.updateSessionEntityType(sessionEntityType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void updateSessionEntityTypeTest2() throws Exception {
+  @SuppressWarnings("all")
+  public void updateSessionEntityTypeTest2() {
+    SessionEntityTypeName name =
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
     SessionEntityType expectedResponse =
-        SessionEntityType.newBuilder()
-            .setName(
-                SessionEntityTypeName.ofProjectSessionEntityTypeName(
-                        "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
-                    .toString())
-            .addAllEntities(new ArrayList<EntityType.Entity>())
-            .build();
+        SessionEntityType.newBuilder().setName(name.toString()).build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
     SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    SessionEntityType actualResponse =
-        client.updateSessionEntityType(sessionEntityType, updateMask);
+    SessionEntityType actualResponse = client.updateSessionEntityType(sessionEntityType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateSessionEntityTypeRequest actualRequest =
-        ((UpdateSessionEntityTypeRequest) actualRequests.get(0));
+        (UpdateSessionEntityTypeRequest) actualRequests.get(0);
 
     Assert.assertEquals(sessionEntityType, actualRequest.getSessionEntityType());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -429,22 +316,24 @@ public class SessionEntityTypesClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void updateSessionEntityTypeExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSessionEntityTypes.addException(exception);
 
     try {
       SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-      client.updateSessionEntityType(sessionEntityType, updateMask);
+
+      client.updateSessionEntityType(sessionEntityType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void deleteSessionEntityTypeTest() throws Exception {
+  @SuppressWarnings("all")
+  public void deleteSessionEntityTypeTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
@@ -457,9 +346,9 @@ public class SessionEntityTypesClientTest {
     List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteSessionEntityTypeRequest actualRequest =
-        ((DeleteSessionEntityTypeRequest) actualRequests.get(0));
+        (DeleteSessionEntityTypeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(name, SessionEntityTypeName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -467,53 +356,20 @@ public class SessionEntityTypesClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void deleteSessionEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSessionEntityTypes.addException(exception);
 
     try {
       SessionEntityTypeName name =
           SessionEntityTypeName.ofProjectSessionEntityTypeName(
               "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+
       client.deleteSessionEntityType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteSessionEntityTypeTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockSessionEntityTypes.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    client.deleteSessionEntityType(name);
-
-    List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteSessionEntityTypeRequest actualRequest =
-        ((DeleteSessionEntityTypeRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteSessionEntityTypeExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockSessionEntityTypes.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.deleteSessionEntityType(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 }

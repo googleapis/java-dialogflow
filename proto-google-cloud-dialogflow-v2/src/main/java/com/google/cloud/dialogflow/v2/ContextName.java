@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,52 +26,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
-@Generated("by gapic-generator-java")
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
+@javax.annotation.Generated("by GAPIC protoc plugin")
 public class ContextName implements ResourceName {
-  private static final PathTemplate PROJECT_SESSION_CONTEXT =
+
+  @Deprecated
+  protected ContextName() {}
+
+  private static final PathTemplate PROJECT_SESSION_CONTEXT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/agent/sessions/{session}/contexts/{context}");
-  private static final PathTemplate PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT =
+  private static final PathTemplate PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
+
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
-  private final String project;
-  private final String session;
-  private final String context;
-  private final String environment;
-  private final String user;
 
-  @Deprecated
-  protected ContextName() {
-    project = null;
-    session = null;
-    context = null;
-    environment = null;
-    user = null;
-  }
-
-  private ContextName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    session = Preconditions.checkNotNull(builder.getSession());
-    context = Preconditions.checkNotNull(builder.getContext());
-    environment = null;
-    user = null;
-    pathTemplate = PROJECT_SESSION_CONTEXT;
-  }
-
-  private ContextName(ProjectEnvironmentUserSessionContextBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    environment = Preconditions.checkNotNull(builder.getEnvironment());
-    user = Preconditions.checkNotNull(builder.getUser());
-    session = Preconditions.checkNotNull(builder.getSession());
-    context = Preconditions.checkNotNull(builder.getContext());
-    pathTemplate = PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT;
-  }
+  private String project;
+  private String session;
+  private String context;
+  private String environment;
+  private String user;
 
   public String getProject() {
     return project;
@@ -91,6 +69,22 @@ public class ContextName implements ResourceName {
 
   public String getUser() {
     return user;
+  }
+
+  private ContextName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    session = Preconditions.checkNotNull(builder.getSession());
+    context = Preconditions.checkNotNull(builder.getContext());
+    pathTemplate = PROJECT_SESSION_CONTEXT_PATH_TEMPLATE;
+  }
+
+  private ContextName(ProjectEnvironmentUserSessionContextBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    user = Preconditions.checkNotNull(builder.getUser());
+    session = Preconditions.checkNotNull(builder.getSession());
+    context = Preconditions.checkNotNull(builder.getContext());
+    pathTemplate = PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -113,13 +107,21 @@ public class ContextName implements ResourceName {
   }
 
   public static ContextName of(String project, String session, String context) {
-    return newBuilder().setProject(project).setSession(session).setContext(context).build();
+    return newProjectSessionContextBuilder()
+        .setProject(project)
+        .setSession(session)
+        .setContext(context)
+        .build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ContextName ofProjectSessionContextName(
       String project, String session, String context) {
-    return newBuilder().setProject(project).setSession(session).setContext(context).build();
+    return newProjectSessionContextBuilder()
+        .setProject(project)
+        .setSession(session)
+        .setContext(context)
+        .build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -171,13 +173,13 @@ public class ContextName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_SESSION_CONTEXT.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_SESSION_CONTEXT.match(formattedString);
+    if (PROJECT_SESSION_CONTEXT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SESSION_CONTEXT_PATH_TEMPLATE.match(formattedString);
       return ofProjectSessionContextName(
           matchMap.get("project"), matchMap.get("session"), matchMap.get("context"));
-    } else if (PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT.matches(formattedString)) {
+    } else if (PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE.matches(formattedString)) {
       Map<String, String> matchMap =
-          PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT.match(formattedString);
+          PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE.match(formattedString);
       return ofProjectEnvironmentUserSessionContextName(
           matchMap.get("project"),
           matchMap.get("environment"),
@@ -185,7 +187,7 @@ public class ContextName implements ResourceName {
           matchMap.get("session"),
           matchMap.get("context"));
     }
-    throw new ValidationException("ContextName.parse: formattedString not in valid format");
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<ContextName> parseList(List<String> formattedStrings) {
@@ -209,8 +211,8 @@ public class ContextName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SESSION_CONTEXT.matches(formattedString)
-        || PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT.matches(formattedString);
+    return PROJECT_SESSION_CONTEXT_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT_PATH_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -250,42 +252,9 @@ public class ContextName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      ContextName that = ((ContextName) o);
-      return Objects.equals(this.project, that.project)
-          && Objects.equals(this.session, that.session)
-          && Objects.equals(this.context, that.context)
-          && Objects.equals(this.environment, that.environment)
-          && Objects.equals(this.user, that.user);
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(session);
-    h *= 1000003;
-    h ^= Objects.hashCode(context);
-    h *= 1000003;
-    h ^= Objects.hashCode(environment);
-    h *= 1000003;
-    h ^= Objects.hashCode(user);
-    return h;
-  }
-
   /** Builder for projects/{project}/agent/sessions/{session}/contexts/{context}. */
   public static class Builder {
+
     private String project;
     private String session;
     private String context;
@@ -321,8 +290,9 @@ public class ContextName implements ResourceName {
 
     private Builder(ContextName contextName) {
       Preconditions.checkArgument(
-          Objects.equals(contextName.pathTemplate, PROJECT_SESSION_CONTEXT),
-          "toBuilder is only supported when ContextName has the pattern of projects/{project}/agent/sessions/{session}/contexts/{context}");
+          contextName.pathTemplate == PROJECT_SESSION_CONTEXT_PATH_TEMPLATE,
+          "toBuilder is only supported when ContextName has the pattern of "
+              + "projects/{project}/agent/sessions/{session}/contexts/{context}.");
       project = contextName.project;
       session = contextName.session;
       context = contextName.context;
@@ -339,13 +309,14 @@ public class ContextName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectEnvironmentUserSessionContextBuilder {
+
     private String project;
     private String environment;
     private String user;
     private String session;
     private String context;
 
-    protected ProjectEnvironmentUserSessionContextBuilder() {}
+    private ProjectEnvironmentUserSessionContextBuilder() {}
 
     public String getProject() {
       return project;
@@ -395,5 +366,39 @@ public class ContextName implements ResourceName {
     public ContextName build() {
       return new ContextName(this);
     }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ContextName that = (ContextName) o;
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.session, that.session))
+          && (Objects.equals(this.context, that.context))
+          && (Objects.equals(this.environment, that.environment))
+          && (Objects.equals(this.user, that.user));
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(session);
+    h *= 1000003;
+    h ^= Objects.hashCode(context);
+    h *= 1000003;
+    h ^= Objects.hashCode(environment);
+    h *= 1000003;
+    h ^= Objects.hashCode(user);
+    return h;
   }
 }

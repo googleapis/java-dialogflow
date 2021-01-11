@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.dialogflow.v2beta1;
 
 import static com.google.cloud.dialogflow.v2beta1.ContextsClient.ListContextsPagedResponse;
@@ -29,13 +28,12 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.Struct;
+import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -43,31 +41,57 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@Generated("by gapic-generator-java")
+@javax.annotation.Generated("by GAPIC")
 public class ContextsClientTest {
-  private static MockServiceHelper mockServiceHelper;
+  private static MockEnvironments mockEnvironments;
+  private static MockAgents mockAgents;
   private static MockContexts mockContexts;
+  private static MockDocuments mockDocuments;
+  private static MockEntityTypes mockEntityTypes;
+  private static MockIntents mockIntents;
+  private static MockKnowledgeBases mockKnowledgeBases;
+  private static MockSessionEntityTypes mockSessionEntityTypes;
+  private static MockSessions mockSessions;
+  private static MockServiceHelper serviceHelper;
   private ContextsClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
+    mockEnvironments = new MockEnvironments();
+    mockAgents = new MockAgents();
     mockContexts = new MockContexts();
-    mockServiceHelper =
+    mockDocuments = new MockDocuments();
+    mockEntityTypes = new MockEntityTypes();
+    mockIntents = new MockIntents();
+    mockKnowledgeBases = new MockKnowledgeBases();
+    mockSessionEntityTypes = new MockSessionEntityTypes();
+    mockSessions = new MockSessions();
+    serviceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockContexts));
-    mockServiceHelper.start();
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(
+                mockEnvironments,
+                mockAgents,
+                mockContexts,
+                mockDocuments,
+                mockEntityTypes,
+                mockIntents,
+                mockKnowledgeBases,
+                mockSessionEntityTypes,
+                mockSessions));
+    serviceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    mockServiceHelper.stop();
+    serviceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+    serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     ContextsSettings settings =
         ContextsSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -82,12 +106,15 @@ public class ContextsClientTest {
   }
 
   @Test
-  public void listContextsTest() throws Exception {
-    Context responsesElement = Context.newBuilder().build();
+  @SuppressWarnings("all")
+  public void listContextsTest() {
+    String nextPageToken = "";
+    Context contextsElement = Context.newBuilder().build();
+    List<Context> contexts = Arrays.asList(contextsElement);
     ListContextsResponse expectedResponse =
         ListContextsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllContexts(Arrays.asList(responsesElement))
+            .setNextPageToken(nextPageToken)
+            .addAllContexts(contexts)
             .build();
     mockContexts.addResponse(expectedResponse);
 
@@ -96,15 +123,14 @@ public class ContextsClientTest {
     ListContextsPagedResponse pagedListResponse = client.listContexts(parent);
 
     List<Context> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getContextsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockContexts.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListContextsRequest actualRequest = ((ListContextsRequest) actualRequests.get(0));
+    ListContextsRequest actualRequest = (ListContextsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -112,73 +138,29 @@ public class ContextsClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void listContextsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockContexts.addException(exception);
 
     try {
       SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+
       client.listContexts(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void listContextsTest2() throws Exception {
-    Context responsesElement = Context.newBuilder().build();
-    ListContextsResponse expectedResponse =
-        ListContextsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllContexts(Arrays.asList(responsesElement))
-            .build();
-    mockContexts.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-
-    ListContextsPagedResponse pagedListResponse = client.listContexts(parent);
-
-    List<Context> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getContextsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockContexts.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListContextsRequest actualRequest = ((ListContextsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listContextsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockContexts.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      client.listContexts(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getContextTest() throws Exception {
+  @SuppressWarnings("all")
+  public void getContextTest() {
+    ContextName name2 =
+        ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder()
-            .setName(
-                ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-                    .toString())
-            .setLifespanCount(1178775510)
-            .setParameters(Struct.newBuilder().build())
-            .build();
+        Context.newBuilder().setName(name2.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     ContextName name =
@@ -189,9 +171,9 @@ public class ContextsClientTest {
 
     List<AbstractMessage> actualRequests = mockContexts.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetContextRequest actualRequest = ((GetContextRequest) actualRequests.get(0));
+    GetContextRequest actualRequest = (GetContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(name, ContextName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -199,72 +181,30 @@ public class ContextsClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void getContextExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockContexts.addException(exception);
 
     try {
       ContextName name =
           ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+
       client.getContext(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void getContextTest2() throws Exception {
+  @SuppressWarnings("all")
+  public void createContextTest() {
+    ContextName name =
+        ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder()
-            .setName(
-                ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-                    .toString())
-            .setLifespanCount(1178775510)
-            .setParameters(Struct.newBuilder().build())
-            .build();
-    mockContexts.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    Context actualResponse = client.getContext(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockContexts.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetContextRequest actualRequest = ((GetContextRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getContextExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockContexts.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.getContext(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createContextTest() throws Exception {
-    Context expectedResponse =
-        Context.newBuilder()
-            .setName(
-                ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-                    .toString())
-            .setLifespanCount(1178775510)
-            .setParameters(Struct.newBuilder().build())
-            .build();
+        Context.newBuilder().setName(name.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
@@ -275,9 +215,9 @@ public class ContextsClientTest {
 
     List<AbstractMessage> actualRequests = mockContexts.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateContextRequest actualRequest = ((CreateContextRequest) actualRequests.get(0));
+    CreateContextRequest actualRequest = (CreateContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertEquals(context, actualRequest.getContext());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -286,117 +226,30 @@ public class ContextsClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void createContextExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockContexts.addException(exception);
 
     try {
       SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
       Context context = Context.newBuilder().build();
+
       client.createContext(parent, context);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void createContextTest2() throws Exception {
+  @SuppressWarnings("all")
+  public void updateContextTest() {
+    ContextName name =
+        ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder()
-            .setName(
-                ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-                    .toString())
-            .setLifespanCount(1178775510)
-            .setParameters(Struct.newBuilder().build())
-            .build();
-    mockContexts.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-    Context context = Context.newBuilder().build();
-
-    Context actualResponse = client.createContext(parent, context);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockContexts.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateContextRequest actualRequest = ((CreateContextRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(context, actualRequest.getContext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createContextExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockContexts.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      Context context = Context.newBuilder().build();
-      client.createContext(parent, context);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void updateContextTest() throws Exception {
-    Context expectedResponse =
-        Context.newBuilder()
-            .setName(
-                ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-                    .toString())
-            .setLifespanCount(1178775510)
-            .setParameters(Struct.newBuilder().build())
-            .build();
-    mockContexts.addResponse(expectedResponse);
-
-    Context context = Context.newBuilder().build();
-
-    Context actualResponse = client.updateContext(context);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockContexts.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateContextRequest actualRequest = ((UpdateContextRequest) actualRequests.get(0));
-
-    Assert.assertEquals(context, actualRequest.getContext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void updateContextExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockContexts.addException(exception);
-
-    try {
-      Context context = Context.newBuilder().build();
-      client.updateContext(context);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void updateContextTest2() throws Exception {
-    Context expectedResponse =
-        Context.newBuilder()
-            .setName(
-                ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
-                    .toString())
-            .setLifespanCount(1178775510)
-            .setParameters(Struct.newBuilder().build())
-            .build();
+        Context.newBuilder().setName(name.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     Context context = Context.newBuilder().build();
@@ -407,7 +260,7 @@ public class ContextsClientTest {
 
     List<AbstractMessage> actualRequests = mockContexts.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateContextRequest actualRequest = ((UpdateContextRequest) actualRequests.get(0));
+    UpdateContextRequest actualRequest = (UpdateContextRequest) actualRequests.get(0);
 
     Assert.assertEquals(context, actualRequest.getContext());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -418,22 +271,70 @@ public class ContextsClientTest {
   }
 
   @Test
-  public void updateContextExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+  @SuppressWarnings("all")
+  public void updateContextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockContexts.addException(exception);
 
     try {
       Context context = Context.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
+
       client.updateContext(context, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void deleteContextTest() throws Exception {
+  @SuppressWarnings("all")
+  public void updateContextTest2() {
+    ContextName name =
+        ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+    int lifespanCount = 1178775510;
+    Context expectedResponse =
+        Context.newBuilder().setName(name.toString()).setLifespanCount(lifespanCount).build();
+    mockContexts.addResponse(expectedResponse);
+
+    Context context = Context.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Context actualResponse = client.updateContext(context, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContexts.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateContextRequest actualRequest = (UpdateContextRequest) actualRequests.get(0);
+
+    Assert.assertEquals(context, actualRequest.getContext());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateContextExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockContexts.addException(exception);
+
+    try {
+      Context context = Context.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateContext(context, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteContextTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockContexts.addResponse(expectedResponse);
 
@@ -444,9 +345,9 @@ public class ContextsClientTest {
 
     List<AbstractMessage> actualRequests = mockContexts.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteContextRequest actualRequest = ((DeleteContextRequest) actualRequests.get(0));
+    DeleteContextRequest actualRequest = (DeleteContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(name, ContextName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -454,56 +355,25 @@ public class ContextsClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void deleteContextExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockContexts.addException(exception);
 
     try {
       ContextName name =
           ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+
       client.deleteContext(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 
   @Test
-  public void deleteContextTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockContexts.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    client.deleteContext(name);
-
-    List<AbstractMessage> actualRequests = mockContexts.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteContextRequest actualRequest = ((DeleteContextRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteContextExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockContexts.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.deleteContext(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteAllContextsTest() throws Exception {
+  @SuppressWarnings("all")
+  public void deleteAllContextsTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockContexts.addResponse(expectedResponse);
 
@@ -513,9 +383,9 @@ public class ContextsClientTest {
 
     List<AbstractMessage> actualRequests = mockContexts.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteAllContextsRequest actualRequest = ((DeleteAllContextsRequest) actualRequests.get(0));
+    DeleteAllContextsRequest actualRequest = (DeleteAllContextsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -523,50 +393,18 @@ public class ContextsClientTest {
   }
 
   @Test
+  @SuppressWarnings("all")
   public void deleteAllContextsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockContexts.addException(exception);
 
     try {
       SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+
       client.deleteAllContexts(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteAllContextsTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockContexts.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-
-    client.deleteAllContexts(parent);
-
-    List<AbstractMessage> actualRequests = mockContexts.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteAllContextsRequest actualRequest = ((DeleteAllContextsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteAllContextsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockContexts.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      client.deleteAllContexts(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
+      // Expected exception
     }
   }
 }

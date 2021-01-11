@@ -28,8 +28,7 @@ public interface DeleteKnowledgeBaseRequestOrBuilder
    *
    * <pre>
    * Required. The name of the knowledge base to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -44,8 +43,7 @@ public interface DeleteKnowledgeBaseRequestOrBuilder
    *
    * <pre>
    * Required. The name of the knowledge base to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>

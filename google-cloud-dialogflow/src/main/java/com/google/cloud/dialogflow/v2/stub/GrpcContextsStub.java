@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.ContextsClient.ListContextsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -34,7 +34,6 @@ import com.google.cloud.dialogflow.v2.ListContextsRequest;
 import com.google.cloud.dialogflow.v2.ListContextsResponse;
 import com.google.cloud.dialogflow.v2.UpdateContextRequest;
 import com.google.common.collect.ImmutableMap;
-import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -43,14 +42,16 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
+// AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for the Contexts service API.
+ * gRPC stub implementation for Dialogflow API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcContextsStub extends ContextsStub {
+
   private static final MethodDescriptor<ListContextsRequest, ListContextsResponse>
       listContextsMethodDescriptor =
           MethodDescriptor.<ListContextsRequest, ListContextsResponse>newBuilder()
@@ -60,7 +61,6 @@ public class GrpcContextsStub extends ContextsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListContextsResponse.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<GetContextRequest, Context> getContextMethodDescriptor =
       MethodDescriptor.<GetContextRequest, Context>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -68,7 +68,6 @@ public class GrpcContextsStub extends ContextsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetContextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
           .build();
-
   private static final MethodDescriptor<CreateContextRequest, Context>
       createContextMethodDescriptor =
           MethodDescriptor.<CreateContextRequest, Context>newBuilder()
@@ -78,7 +77,6 @@ public class GrpcContextsStub extends ContextsStub {
                   ProtoUtils.marshaller(CreateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<UpdateContextRequest, Context>
       updateContextMethodDescriptor =
           MethodDescriptor.<UpdateContextRequest, Context>newBuilder()
@@ -88,7 +86,6 @@ public class GrpcContextsStub extends ContextsStub {
                   ProtoUtils.marshaller(UpdateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<DeleteContextRequest, Empty> deleteContextMethodDescriptor =
       MethodDescriptor.<DeleteContextRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -96,7 +93,6 @@ public class GrpcContextsStub extends ContextsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteContextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
-
   private static final MethodDescriptor<DeleteAllContextsRequest, Empty>
       deleteAllContextsMethodDescriptor =
           MethodDescriptor.<DeleteAllContextsRequest, Empty>newBuilder()
@@ -107,6 +103,8 @@ public class GrpcContextsStub extends ContextsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private final BackgroundResource backgroundResources;
+
   private final UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable;
   private final UnaryCallable<ListContextsRequest, ListContextsPagedResponse>
       listContextsPagedCallable;
@@ -116,8 +114,6 @@ public class GrpcContextsStub extends ContextsStub {
   private final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable;
   private final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable;
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcContextsStub create(ContextsStubSettings settings) throws IOException {
@@ -153,7 +149,6 @@ public class GrpcContextsStub extends ContextsStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
-    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
         GrpcCallSettings.<ListContextsRequest, ListContextsResponse>newBuilder()
@@ -258,20 +253,15 @@ public class GrpcContextsStub extends ContextsStub {
             settings.deleteAllContextsSettings(),
             clientContext);
 
-    this.backgroundResources =
-        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public GrpcOperationsStub getOperationsStub() {
-    return operationsStub;
-  }
-
-  public UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable() {
-    return listContextsCallable;
+    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   public UnaryCallable<ListContextsRequest, ListContextsPagedResponse> listContextsPagedCallable() {
     return listContextsPagedCallable;
+  }
+
+  public UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable() {
+    return listContextsCallable;
   }
 
   public UnaryCallable<GetContextRequest, Context> getContextCallable() {

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.SessionEntityTypesClient.ListSessionEntityTypesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,7 +33,6 @@ import com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse;
 import com.google.cloud.dialogflow.v2beta1.SessionEntityType;
 import com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest;
 import com.google.common.collect.ImmutableMap;
-import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -42,14 +41,16 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
+// AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for the SessionEntityTypes service API.
+ * gRPC stub implementation for Dialogflow API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
+
   private static final MethodDescriptor<
           ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
       listSessionEntityTypesMethodDescriptor =
@@ -63,7 +64,6 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSessionEntityTypesResponse.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<GetSessionEntityTypeRequest, SessionEntityType>
       getSessionEntityTypeMethodDescriptor =
           MethodDescriptor.<GetSessionEntityTypeRequest, SessionEntityType>newBuilder()
@@ -74,7 +74,6 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                   ProtoUtils.marshaller(GetSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionEntityType.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<CreateSessionEntityTypeRequest, SessionEntityType>
       createSessionEntityTypeMethodDescriptor =
           MethodDescriptor.<CreateSessionEntityTypeRequest, SessionEntityType>newBuilder()
@@ -85,7 +84,6 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                   ProtoUtils.marshaller(CreateSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionEntityType.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeMethodDescriptor =
           MethodDescriptor.<UpdateSessionEntityTypeRequest, SessionEntityType>newBuilder()
@@ -96,7 +94,6 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                   ProtoUtils.marshaller(UpdateSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionEntityType.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<DeleteSessionEntityTypeRequest, Empty>
       deleteSessionEntityTypeMethodDescriptor =
           MethodDescriptor.<DeleteSessionEntityTypeRequest, Empty>newBuilder()
@@ -107,6 +104,8 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                   ProtoUtils.marshaller(DeleteSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
+  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
       listSessionEntityTypesCallable;
@@ -121,8 +120,6 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
   private final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
       deleteSessionEntityTypeCallable;
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcSessionEntityTypesStub create(SessionEntityTypesStubSettings settings)
@@ -163,7 +160,6 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
-    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
         listSessionEntityTypesTransportSettings =
@@ -270,22 +266,17 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
             settings.deleteSessionEntityTypeSettings(),
             clientContext);
 
-    this.backgroundResources =
-        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public GrpcOperationsStub getOperationsStub() {
-    return operationsStub;
-  }
-
-  public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
-      listSessionEntityTypesCallable() {
-    return listSessionEntityTypesCallable;
+    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesPagedCallable() {
     return listSessionEntityTypesPagedCallable;
+  }
+
+  public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
+      listSessionEntityTypesCallable() {
+    return listSessionEntityTypesCallable;
   }
 
   public UnaryCallable<GetSessionEntityTypeRequest, SessionEntityType>

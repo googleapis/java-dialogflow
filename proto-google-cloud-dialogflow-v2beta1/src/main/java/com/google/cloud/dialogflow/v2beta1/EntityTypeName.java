@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,43 +26,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
-@Generated("by gapic-generator-java")
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
+@javax.annotation.Generated("by GAPIC protoc plugin")
 public class EntityTypeName implements ResourceName {
-  private static final PathTemplate PROJECT_ENTITY_TYPE =
+
+  @Deprecated
+  protected EntityTypeName() {}
+
+  private static final PathTemplate PROJECT_ENTITY_TYPE_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/entityTypes/{entity_type}");
-  private static final PathTemplate PROJECT_LOCATION_ENTITY_TYPE =
+  private static final PathTemplate PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agent/entityTypes/{entity_type}");
+
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
-  private final String project;
-  private final String entityType;
-  private final String location;
 
-  @Deprecated
-  protected EntityTypeName() {
-    project = null;
-    entityType = null;
-    location = null;
-  }
-
-  private EntityTypeName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    entityType = Preconditions.checkNotNull(builder.getEntityType());
-    location = null;
-    pathTemplate = PROJECT_ENTITY_TYPE;
-  }
-
-  private EntityTypeName(ProjectLocationEntityTypeBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    entityType = Preconditions.checkNotNull(builder.getEntityType());
-    pathTemplate = PROJECT_LOCATION_ENTITY_TYPE;
-  }
+  private String project;
+  private String entityType;
+  private String location;
 
   public String getProject() {
     return project;
@@ -74,6 +58,19 @@ public class EntityTypeName implements ResourceName {
 
   public String getLocation() {
     return location;
+  }
+
+  private EntityTypeName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    entityType = Preconditions.checkNotNull(builder.getEntityType());
+    pathTemplate = PROJECT_ENTITY_TYPE_PATH_TEMPLATE;
+  }
+
+  private EntityTypeName(ProjectLocationEntityTypeBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    entityType = Preconditions.checkNotNull(builder.getEntityType());
+    pathTemplate = PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -95,12 +92,12 @@ public class EntityTypeName implements ResourceName {
   }
 
   public static EntityTypeName of(String project, String entityType) {
-    return newBuilder().setProject(project).setEntityType(entityType).build();
+    return newProjectEntityTypeBuilder().setProject(project).setEntityType(entityType).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EntityTypeName ofProjectEntityTypeName(String project, String entityType) {
-    return newBuilder().setProject(project).setEntityType(entityType).build();
+    return newProjectEntityTypeBuilder().setProject(project).setEntityType(entityType).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -137,15 +134,16 @@ public class EntityTypeName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_ENTITY_TYPE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_ENTITY_TYPE.match(formattedString);
+    if (PROJECT_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_ENTITY_TYPE_PATH_TEMPLATE.match(formattedString);
       return ofProjectEntityTypeName(matchMap.get("project"), matchMap.get("entity_type"));
-    } else if (PROJECT_LOCATION_ENTITY_TYPE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_LOCATION_ENTITY_TYPE.match(formattedString);
+    } else if (PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE.match(formattedString);
       return ofProjectLocationEntityTypeName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("entity_type"));
     }
-    throw new ValidationException("EntityTypeName.parse: formattedString not in valid format");
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<EntityTypeName> parseList(List<String> formattedStrings) {
@@ -169,8 +167,8 @@ public class EntityTypeName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_ENTITY_TYPE.matches(formattedString)
-        || PROJECT_LOCATION_ENTITY_TYPE.matches(formattedString);
+    return PROJECT_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -204,36 +202,9 @@ public class EntityTypeName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      EntityTypeName that = ((EntityTypeName) o);
-      return Objects.equals(this.project, that.project)
-          && Objects.equals(this.entityType, that.entityType)
-          && Objects.equals(this.location, that.location);
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(entityType);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
-  }
-
   /** Builder for projects/{project}/agent/entityTypes/{entity_type}. */
   public static class Builder {
+
     private String project;
     private String entityType;
 
@@ -259,8 +230,9 @@ public class EntityTypeName implements ResourceName {
 
     private Builder(EntityTypeName entityTypeName) {
       Preconditions.checkArgument(
-          Objects.equals(entityTypeName.pathTemplate, PROJECT_ENTITY_TYPE),
-          "toBuilder is only supported when EntityTypeName has the pattern of projects/{project}/agent/entityTypes/{entity_type}");
+          entityTypeName.pathTemplate == PROJECT_ENTITY_TYPE_PATH_TEMPLATE,
+          "toBuilder is only supported when EntityTypeName has the pattern of "
+              + "projects/{project}/agent/entityTypes/{entity_type}.");
       project = entityTypeName.project;
       entityType = entityTypeName.entityType;
     }
@@ -273,11 +245,12 @@ public class EntityTypeName implements ResourceName {
   /** Builder for projects/{project}/locations/{location}/agent/entityTypes/{entity_type}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationEntityTypeBuilder {
+
     private String project;
     private String location;
     private String entityType;
 
-    protected ProjectLocationEntityTypeBuilder() {}
+    private ProjectLocationEntityTypeBuilder() {}
 
     public String getProject() {
       return project;
@@ -309,5 +282,33 @@ public class EntityTypeName implements ResourceName {
     public EntityTypeName build() {
       return new EntityTypeName(this);
     }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      EntityTypeName that = (EntityTypeName) o;
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.entityType, that.entityType))
+          && (Objects.equals(this.location, that.location));
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(entityType);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
   }
 }

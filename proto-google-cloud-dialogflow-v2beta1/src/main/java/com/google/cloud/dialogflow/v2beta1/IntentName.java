@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,43 +26,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
-@Generated("by gapic-generator-java")
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
+@javax.annotation.Generated("by GAPIC protoc plugin")
 public class IntentName implements ResourceName {
-  private static final PathTemplate PROJECT_INTENT =
+
+  @Deprecated
+  protected IntentName() {}
+
+  private static final PathTemplate PROJECT_INTENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/intents/{intent}");
-  private static final PathTemplate PROJECT_LOCATION_INTENT =
+  private static final PathTemplate PROJECT_LOCATION_INTENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agent/intents/{intent}");
+
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
-  private final String project;
-  private final String intent;
-  private final String location;
 
-  @Deprecated
-  protected IntentName() {
-    project = null;
-    intent = null;
-    location = null;
-  }
-
-  private IntentName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    intent = Preconditions.checkNotNull(builder.getIntent());
-    location = null;
-    pathTemplate = PROJECT_INTENT;
-  }
-
-  private IntentName(ProjectLocationIntentBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    intent = Preconditions.checkNotNull(builder.getIntent());
-    pathTemplate = PROJECT_LOCATION_INTENT;
-  }
+  private String project;
+  private String intent;
+  private String location;
 
   public String getProject() {
     return project;
@@ -74,6 +58,19 @@ public class IntentName implements ResourceName {
 
   public String getLocation() {
     return location;
+  }
+
+  private IntentName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    intent = Preconditions.checkNotNull(builder.getIntent());
+    pathTemplate = PROJECT_INTENT_PATH_TEMPLATE;
+  }
+
+  private IntentName(ProjectLocationIntentBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    intent = Preconditions.checkNotNull(builder.getIntent());
+    pathTemplate = PROJECT_LOCATION_INTENT_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -95,12 +92,12 @@ public class IntentName implements ResourceName {
   }
 
   public static IntentName of(String project, String intent) {
-    return newBuilder().setProject(project).setIntent(intent).build();
+    return newProjectIntentBuilder().setProject(project).setIntent(intent).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static IntentName ofProjectIntentName(String project, String intent) {
-    return newBuilder().setProject(project).setIntent(intent).build();
+    return newProjectIntentBuilder().setProject(project).setIntent(intent).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -137,15 +134,15 @@ public class IntentName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_INTENT.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_INTENT.match(formattedString);
+    if (PROJECT_INTENT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_INTENT_PATH_TEMPLATE.match(formattedString);
       return ofProjectIntentName(matchMap.get("project"), matchMap.get("intent"));
-    } else if (PROJECT_LOCATION_INTENT.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_LOCATION_INTENT.match(formattedString);
+    } else if (PROJECT_LOCATION_INTENT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_INTENT_PATH_TEMPLATE.match(formattedString);
       return ofProjectLocationIntentName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("intent"));
     }
-    throw new ValidationException("IntentName.parse: formattedString not in valid format");
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<IntentName> parseList(List<String> formattedStrings) {
@@ -169,8 +166,8 @@ public class IntentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_INTENT.matches(formattedString)
-        || PROJECT_LOCATION_INTENT.matches(formattedString);
+    return PROJECT_INTENT_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_INTENT_PATH_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -204,36 +201,9 @@ public class IntentName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      IntentName that = ((IntentName) o);
-      return Objects.equals(this.project, that.project)
-          && Objects.equals(this.intent, that.intent)
-          && Objects.equals(this.location, that.location);
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(intent);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
-  }
-
   /** Builder for projects/{project}/agent/intents/{intent}. */
   public static class Builder {
+
     private String project;
     private String intent;
 
@@ -259,8 +229,9 @@ public class IntentName implements ResourceName {
 
     private Builder(IntentName intentName) {
       Preconditions.checkArgument(
-          Objects.equals(intentName.pathTemplate, PROJECT_INTENT),
-          "toBuilder is only supported when IntentName has the pattern of projects/{project}/agent/intents/{intent}");
+          intentName.pathTemplate == PROJECT_INTENT_PATH_TEMPLATE,
+          "toBuilder is only supported when IntentName has the pattern of "
+              + "projects/{project}/agent/intents/{intent}.");
       project = intentName.project;
       intent = intentName.intent;
     }
@@ -273,11 +244,12 @@ public class IntentName implements ResourceName {
   /** Builder for projects/{project}/locations/{location}/agent/intents/{intent}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationIntentBuilder {
+
     private String project;
     private String location;
     private String intent;
 
-    protected ProjectLocationIntentBuilder() {}
+    private ProjectLocationIntentBuilder() {}
 
     public String getProject() {
       return project;
@@ -309,5 +281,33 @@ public class IntentName implements ResourceName {
     public IntentName build() {
       return new IntentName(this);
     }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      IntentName that = (IntentName) o;
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.intent, that.intent))
+          && (Objects.equals(this.location, that.location));
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(intent);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
   }
 }

@@ -60,10 +60,6 @@ service Sessions {
   // as a result. This method is not idempotent, because it may cause contexts
   // and session entity types to be updated, which in turn might affect
   // results of future queries.
-  //
-  // Note: Always use agent versions for production traffic.
-  // See [Versions and
-  // environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
   rpc DetectIntent(DetectIntentRequest) returns (DetectIntentResponse) {
     option (google.api.http) = {
       post: "/v2beta1/{session=projects/*/agent/sessions/*}:detectIntent"
@@ -87,10 +83,6 @@ service Sessions {
   // Processes a natural language query in audio format in a streaming fashion
   // and returns structured, actionable data as a result. This method is only
   // available via the gRPC API (not REST).
-  //
-  // Note: Always use agent versions for production traffic.
-  // See [Versions and
-  // environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
   rpc StreamingDetectIntent(stream StreamingDetectIntentRequest) returns (stream StreamingDetectIntentResponse) {
   }
 }
@@ -115,10 +107,6 @@ message DetectIntentRequest {
   // The length of the `Session ID` and `User ID` must not exceed 36 characters.
   // For more information, see the [API interactions
   // guide](https://cloud.google.com/dialogflow/docs/api-overview).
-  //
-  // Note: Always use agent versions for production traffic.
-  // See [Versions and
-  // environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
   string session = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -246,7 +234,7 @@ message QueryParameters {
   repeated SubAgent sub_agents = 13;
 
   // This field can be used to pass HTTP headers for a webhook
-  // call. These headers will be sent to webhook along with the headers that
+  // call. These headers will be sent to webhook alone with the headers that
   // have been configured through Dialogflow web console. The headers defined
   // within this field will overwrite the headers configured through Dialogflow
   // console if there is a conflict. Header names are case-insensitive.
@@ -499,10 +487,6 @@ message StreamingDetectIntentRequest {
   //
   // For more information, see the [API interactions
   // guide](https://cloud.google.com/dialogflow/docs/api-overview).
-  //
-  // Note: Always use agent versions for production traffic.
-  // See [Versions and
-  // environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
   string session = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {

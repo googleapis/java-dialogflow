@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient.ListKnowledgeBasesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,7 +33,6 @@ import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest;
 import com.google.common.collect.ImmutableMap;
-import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -42,14 +41,16 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS.
+// AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for the KnowledgeBases service API.
+ * gRPC stub implementation for Dialogflow API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
+@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
+
   private static final MethodDescriptor<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
       listKnowledgeBasesMethodDescriptor =
           MethodDescriptor.<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>newBuilder()
@@ -61,7 +62,6 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListKnowledgeBasesResponse.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<GetKnowledgeBaseRequest, KnowledgeBase>
       getKnowledgeBaseMethodDescriptor =
           MethodDescriptor.<GetKnowledgeBaseRequest, KnowledgeBase>newBuilder()
@@ -71,7 +71,6 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   ProtoUtils.marshaller(GetKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KnowledgeBase.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<CreateKnowledgeBaseRequest, KnowledgeBase>
       createKnowledgeBaseMethodDescriptor =
           MethodDescriptor.<CreateKnowledgeBaseRequest, KnowledgeBase>newBuilder()
@@ -82,7 +81,6 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   ProtoUtils.marshaller(CreateKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KnowledgeBase.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<DeleteKnowledgeBaseRequest, Empty>
       deleteKnowledgeBaseMethodDescriptor =
           MethodDescriptor.<DeleteKnowledgeBaseRequest, Empty>newBuilder()
@@ -93,7 +91,6 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   ProtoUtils.marshaller(DeleteKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
   private static final MethodDescriptor<UpdateKnowledgeBaseRequest, KnowledgeBase>
       updateKnowledgeBaseMethodDescriptor =
           MethodDescriptor.<UpdateKnowledgeBaseRequest, KnowledgeBase>newBuilder()
@@ -104,6 +101,8 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   ProtoUtils.marshaller(UpdateKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KnowledgeBase.getDefaultInstance()))
               .build();
+
+  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
       listKnowledgeBasesCallable;
@@ -116,8 +115,6 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
   private final UnaryCallable<UpdateKnowledgeBaseRequest, KnowledgeBase>
       updateKnowledgeBaseCallable;
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcKnowledgeBasesStub create(KnowledgeBasesStubSettings settings)
@@ -158,7 +155,6 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
-    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
         listKnowledgeBasesTransportSettings =
@@ -260,22 +256,17 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
             settings.updateKnowledgeBaseSettings(),
             clientContext);
 
-    this.backgroundResources =
-        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public GrpcOperationsStub getOperationsStub() {
-    return operationsStub;
-  }
-
-  public UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
-      listKnowledgeBasesCallable() {
-    return listKnowledgeBasesCallable;
+    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   public UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesPagedResponse>
       listKnowledgeBasesPagedCallable() {
     return listKnowledgeBasesPagedCallable;
+  }
+
+  public UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
+      listKnowledgeBasesCallable() {
+    return listKnowledgeBasesCallable;
   }
 
   public UnaryCallable<GetKnowledgeBaseRequest, KnowledgeBase> getKnowledgeBaseCallable() {

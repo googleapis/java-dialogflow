@@ -142,8 +142,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The knowledge base resource name.
    * The name must be empty when creating a knowledge base.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -168,8 +167,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The knowledge base resource name.
    * The name must be empty when creating a knowledge base.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -657,8 +655,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The knowledge base resource name.
      * The name must be empty when creating a knowledge base.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -682,8 +679,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The knowledge base resource name.
      * The name must be empty when creating a knowledge base.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -707,8 +703,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The knowledge base resource name.
      * The name must be empty when creating a knowledge base.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -731,8 +726,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The knowledge base resource name.
      * The name must be empty when creating a knowledge base.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -751,8 +745,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The knowledge base resource name.
      * The name must be empty when creating a knowledge base.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>

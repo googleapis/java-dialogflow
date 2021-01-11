@@ -28,8 +28,7 @@ public interface CreateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The knowledge base to create a document for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -44,8 +43,7 @@ public interface CreateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The knowledge base to create a document for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -96,18 +94,4 @@ public interface CreateDocumentRequestOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Whether to import custom metadata from Google Cloud Storage.
-   * Only valid when the document source is Google Cloud Storage URI.
-   * </pre>
-   *
-   * <code>bool import_gcs_custom_metadata = 3;</code>
-   *
-   * @return The importGcsCustomMetadata.
-   */
-  boolean getImportGcsCustomMetadata();
 }
