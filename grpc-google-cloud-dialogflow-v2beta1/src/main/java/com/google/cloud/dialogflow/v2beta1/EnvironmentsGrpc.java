@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2beta1/environment.proto")
@@ -127,22 +121,10 @@ public final class EnvironmentsGrpc {
     return EnvironmentsFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
-   * </pre>
-   */
+  /** */
   public abstract static class EnvironmentsImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all non-draft environments of the specified agent.
-     * </pre>
-     */
+    /** */
     public void listEnvironments(
         com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>
@@ -164,13 +146,7 @@ public final class EnvironmentsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
-   * </pre>
-   */
+  /** */
   public static final class EnvironmentsStub
       extends io.grpc.stub.AbstractAsyncStub<EnvironmentsStub> {
     private EnvironmentsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -182,13 +158,7 @@ public final class EnvironmentsGrpc {
       return new EnvironmentsStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all non-draft environments of the specified agent.
-     * </pre>
-     */
+    /** */
     public void listEnvironments(
         com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>
@@ -200,13 +170,7 @@ public final class EnvironmentsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
-   * </pre>
-   */
+  /** */
   public static final class EnvironmentsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<EnvironmentsBlockingStub> {
     private EnvironmentsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -219,13 +183,7 @@ public final class EnvironmentsGrpc {
       return new EnvironmentsBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all non-draft environments of the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse listEnvironments(
         com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request) {
       return blockingUnaryCall(
@@ -233,13 +191,7 @@ public final class EnvironmentsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
-   * </pre>
-   */
+  /** */
   public static final class EnvironmentsFutureStub
       extends io.grpc.stub.AbstractFutureStub<EnvironmentsFutureStub> {
     private EnvironmentsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -252,13 +204,7 @@ public final class EnvironmentsGrpc {
       return new EnvironmentsFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all non-draft environments of the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>
         listEnvironments(com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request) {
