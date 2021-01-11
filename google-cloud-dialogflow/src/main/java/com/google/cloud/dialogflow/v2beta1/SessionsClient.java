@@ -140,6 +140,9 @@ public class SessionsClient implements BackgroundResource {
    * method is not idempotent, because it may cause contexts and session entity types to be updated,
    * which in turn might affect results of future queries.
    *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
    * @param session Required. The name of the session this query is sent to. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
@@ -154,6 +157,8 @@ public class SessionsClient implements BackgroundResource {
    *     hashed). The length of the `Session ID` and `User ID` must not exceed 36 characters. For
    *     more information, see the [API interactions
    *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   *     <p>Note: Always use agent versions for production traffic. See [Versions and
+   *     environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    * @param query_input Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -176,6 +181,9 @@ public class SessionsClient implements BackgroundResource {
    * method is not idempotent, because it may cause contexts and session entity types to be updated,
    * which in turn might affect results of future queries.
    *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
    * @param session Required. The name of the session this query is sent to. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
@@ -190,6 +198,8 @@ public class SessionsClient implements BackgroundResource {
    *     hashed). The length of the `Session ID` and `User ID` must not exceed 36 characters. For
    *     more information, see the [API interactions
    *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   *     <p>Note: Always use agent versions for production traffic. See [Versions and
+   *     environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    * @param query_input Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -209,6 +219,9 @@ public class SessionsClient implements BackgroundResource {
    * method is not idempotent, because it may cause contexts and session entity types to be updated,
    * which in turn might affect results of future queries.
    *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -222,6 +235,9 @@ public class SessionsClient implements BackgroundResource {
    * method is not idempotent, because it may cause contexts and session entity types to be updated,
    * which in turn might affect results of future queries.
    *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
    * <p>Sample code:
    */
   public final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
@@ -233,6 +249,9 @@ public class SessionsClient implements BackgroundResource {
    * Processes a natural language query in audio format in a streaming fashion and returns
    * structured, actionable data as a result. This method is only available via the gRPC API (not
    * REST).
+   *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    */
