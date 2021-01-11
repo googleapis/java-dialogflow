@@ -172,7 +172,7 @@ public class SessionName implements ResourceName {
   public static List<String> toStringList(List<SessionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SessionName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -188,20 +188,20 @@ public class SessionName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(session)) {
+          if (session != null) {
             fieldMapBuilder.put("session", session);
           }
-          if (!Objects.isNull(environment)) {
+          if (environment != null) {
             fieldMapBuilder.put("environment", environment);
           }
-          if (!Objects.isNull(user)) {
+          if (user != null) {
             fieldMapBuilder.put("user", user);
           }
           fieldValuesMap = fieldMapBuilder.build();
@@ -217,7 +217,7 @@ public class SessionName implements ResourceName {
 
   @Override
   public String toString() {
-    return !Objects.isNull(fixedValue) ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override

@@ -23,7 +23,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.SessionsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.SessionsStubSettings;
 import java.io.IOException;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -165,7 +164,7 @@ public class SessionsClient implements BackgroundResource {
   public final DetectIntentResponse detectIntent(SessionName session, QueryInput queryInput) {
     DetectIntentRequest request =
         DetectIntentRequest.newBuilder()
-            .setSession(Objects.isNull(session) ? null : session.toString())
+            .setSession(session == null ? null : session.toString())
             .setQueryInput(queryInput)
             .build();
     return detectIntent(request);

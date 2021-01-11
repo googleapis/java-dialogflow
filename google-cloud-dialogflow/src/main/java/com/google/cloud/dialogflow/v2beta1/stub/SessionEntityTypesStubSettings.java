@@ -54,7 +54,6 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -152,7 +151,7 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
             @Override
             public Iterable<SessionEntityType> extractResources(
                 ListSessionEntityTypesResponse payload) {
-              return Objects.isNull(payload.getSessionEntityTypesList())
+              return payload.getSessionEntityTypesList() == null
                   ? ImmutableList.<SessionEntityType>of()
                   : payload.getSessionEntityTypesList();
             }
