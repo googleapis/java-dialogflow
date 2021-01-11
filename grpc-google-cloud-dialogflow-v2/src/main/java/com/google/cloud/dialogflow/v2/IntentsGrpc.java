@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/v2/intent.proto")
@@ -380,10 +386,22 @@ public final class IntentsGrpc {
     return IntentsFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
+   * </pre>
+   */
   public abstract static class IntentsImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all intents in the specified agent.
+     * </pre>
+     */
     public void listIntents(
         com.google.cloud.dialogflow.v2.ListIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListIntentsResponse>
@@ -391,42 +409,80 @@ public final class IntentsGrpc {
       asyncUnimplementedUnaryCall(getListIntentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified intent.
+     * </pre>
+     */
     public void getIntent(
         com.google.cloud.dialogflow.v2.GetIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
       asyncUnimplementedUnaryCall(getGetIntentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an intent in the specified agent.
+     * </pre>
+     */
     public void createIntent(
         com.google.cloud.dialogflow.v2.CreateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateIntentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified intent.
+     * </pre>
+     */
     public void updateIntent(
         com.google.cloud.dialogflow.v2.UpdateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateIntentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified intent and its direct or indirect followup intents.
+     * </pre>
+     */
     public void deleteIntent(
         com.google.cloud.dialogflow.v2.DeleteIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteIntentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates/Creates multiple intents in the specified agent.
+     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+     * </pre>
+     */
     public void batchUpdateIntents(
         com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getBatchUpdateIntentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes intents in the specified agent.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * </pre>
+     */
     public void batchDeleteIntents(
         com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -483,7 +539,13 @@ public final class IntentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
+   * </pre>
+   */
   public static final class IntentsStub extends io.grpc.stub.AbstractAsyncStub<IntentsStub> {
     private IntentsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -494,7 +556,13 @@ public final class IntentsGrpc {
       return new IntentsStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all intents in the specified agent.
+     * </pre>
+     */
     public void listIntents(
         com.google.cloud.dialogflow.v2.ListIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListIntentsResponse>
@@ -505,7 +573,13 @@ public final class IntentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified intent.
+     * </pre>
+     */
     public void getIntent(
         com.google.cloud.dialogflow.v2.GetIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
@@ -513,7 +587,13 @@ public final class IntentsGrpc {
           getChannel().newCall(getGetIntentMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an intent in the specified agent.
+     * </pre>
+     */
     public void createIntent(
         com.google.cloud.dialogflow.v2.CreateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
@@ -523,7 +603,13 @@ public final class IntentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified intent.
+     * </pre>
+     */
     public void updateIntent(
         com.google.cloud.dialogflow.v2.UpdateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
@@ -533,7 +619,13 @@ public final class IntentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified intent and its direct or indirect followup intents.
+     * </pre>
+     */
     public void deleteIntent(
         com.google.cloud.dialogflow.v2.DeleteIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -543,7 +635,14 @@ public final class IntentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates/Creates multiple intents in the specified agent.
+     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+     * </pre>
+     */
     public void batchUpdateIntents(
         com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -553,7 +652,14 @@ public final class IntentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes intents in the specified agent.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * </pre>
+     */
     public void batchDeleteIntents(
         com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -564,7 +670,13 @@ public final class IntentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
+   * </pre>
+   */
   public static final class IntentsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<IntentsBlockingStub> {
     private IntentsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -576,44 +688,88 @@ public final class IntentsGrpc {
       return new IntentsBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all intents in the specified agent.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2.ListIntentsResponse listIntents(
         com.google.cloud.dialogflow.v2.ListIntentsRequest request) {
       return blockingUnaryCall(getChannel(), getListIntentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified intent.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2.Intent getIntent(
         com.google.cloud.dialogflow.v2.GetIntentRequest request) {
       return blockingUnaryCall(getChannel(), getGetIntentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an intent in the specified agent.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2.Intent createIntent(
         com.google.cloud.dialogflow.v2.CreateIntentRequest request) {
       return blockingUnaryCall(getChannel(), getCreateIntentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified intent.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.v2.Intent updateIntent(
         com.google.cloud.dialogflow.v2.UpdateIntentRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateIntentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified intent and its direct or indirect followup intents.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteIntent(
         com.google.cloud.dialogflow.v2.DeleteIntentRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteIntentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates/Creates multiple intents in the specified agent.
+     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+     * </pre>
+     */
     public com.google.longrunning.Operation batchUpdateIntents(
         com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchUpdateIntentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes intents in the specified agent.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * </pre>
+     */
     public com.google.longrunning.Operation batchDeleteIntents(
         com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest request) {
       return blockingUnaryCall(
@@ -621,7 +777,13 @@ public final class IntentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
+   * </pre>
+   */
   public static final class IntentsFutureStub
       extends io.grpc.stub.AbstractFutureStub<IntentsFutureStub> {
     private IntentsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -633,7 +795,13 @@ public final class IntentsGrpc {
       return new IntentsFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all intents in the specified agent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.ListIntentsResponse>
         listIntents(com.google.cloud.dialogflow.v2.ListIntentsRequest request) {
@@ -641,41 +809,79 @@ public final class IntentsGrpc {
           getChannel().newCall(getListIntentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified intent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.Intent>
         getIntent(com.google.cloud.dialogflow.v2.GetIntentRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetIntentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an intent in the specified agent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.Intent>
         createIntent(com.google.cloud.dialogflow.v2.CreateIntentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateIntentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified intent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.Intent>
         updateIntent(com.google.cloud.dialogflow.v2.UpdateIntentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateIntentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified intent and its direct or indirect followup intents.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteIntent(com.google.cloud.dialogflow.v2.DeleteIntentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteIntentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates/Creates multiple intents in the specified agent.
+     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchUpdateIntents(com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getBatchUpdateIntentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes intents in the specified agent.
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchDeleteIntents(com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest request) {
       return futureUnaryCall(
