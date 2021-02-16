@@ -53,7 +53,7 @@ public class AgentName implements ResourceName {
     pathTemplate = PROJECT;
   }
 
-  private AgentName(ProjectLocationBuilder builder) {
+  private AgentName(ProjectLocationAgentBuilder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     pathTemplate = PROJECT_LOCATION;
@@ -72,13 +72,13 @@ public class AgentName implements ResourceName {
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static Builder newProjectBuilder() {
+  public static Builder newProjectAgentBuilder() {
     return new Builder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static ProjectLocationBuilder newProjectLocationBuilder() {
-    return new ProjectLocationBuilder();
+  public static ProjectLocationAgentBuilder newProjectLocationAgentBuilder() {
+    return new ProjectLocationAgentBuilder();
   }
 
   public Builder toBuilder() {
@@ -90,13 +90,13 @@ public class AgentName implements ResourceName {
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static AgentName ofProjectName(String project) {
+  public static AgentName ofProjectAgentName(String project) {
     return newBuilder().setProject(project).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static AgentName ofProjectLocationName(String project, String location) {
-    return newProjectLocationBuilder().setProject(project).setLocation(location).build();
+  public static AgentName ofProjectLocationAgentName(String project, String location) {
+    return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
   }
 
   public static String format(String project) {
@@ -104,13 +104,13 @@ public class AgentName implements ResourceName {
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectName(String project) {
+  public static String formatProjectAgentName(String project) {
     return newBuilder().setProject(project).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectLocationName(String project, String location) {
-    return newProjectLocationBuilder().setProject(project).setLocation(location).build().toString();
+  public static String formatProjectLocationAgentName(String project, String location) {
+    return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build().toString();
   }
 
   public static AgentName parse(String formattedString) {
@@ -119,10 +119,10 @@ public class AgentName implements ResourceName {
     }
     if (PROJECT.matches(formattedString)) {
       Map<String, String> matchMap = PROJECT.match(formattedString);
-      return ofProjectName(matchMap.get("project"));
+      return ofProjectAgentName(matchMap.get("project"));
     } else if (PROJECT_LOCATION.matches(formattedString)) {
       Map<String, String> matchMap = PROJECT_LOCATION.match(formattedString);
-      return ofProjectLocationName(matchMap.get("project"), matchMap.get("location"));
+      return ofProjectLocationAgentName(matchMap.get("project"), matchMap.get("location"));
     }
     throw new ValidationException("AgentName.parse: formattedString not in valid format");
   }
@@ -233,11 +233,11 @@ public class AgentName implements ResourceName {
 
   /** Builder for projects/{project}/locations/{location}/agent. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class ProjectLocationBuilder {
+  public static class ProjectLocationAgentBuilder {
     private String project;
     private String location;
 
-    protected ProjectLocationBuilder() {}
+    protected ProjectLocationAgentBuilder() {}
 
     public String getProject() {
       return project;
@@ -247,12 +247,12 @@ public class AgentName implements ResourceName {
       return location;
     }
 
-    public ProjectLocationBuilder setProject(String project) {
+    public ProjectLocationAgentBuilder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public ProjectLocationBuilder setLocation(String location) {
+    public ProjectLocationAgentBuilder setLocation(String location) {
       this.location = location;
       return this;
     }

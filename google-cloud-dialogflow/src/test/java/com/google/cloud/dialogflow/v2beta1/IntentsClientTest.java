@@ -95,7 +95,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
 
     ListIntentsPagedResponse pagedListResponse = client.listIntents(parent);
 
@@ -121,7 +121,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       client.listIntents(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -183,7 +183,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     String languageCode = "languageCode-2092349083";
 
     ListIntentsPagedResponse pagedListResponse = client.listIntents(parent, languageCode);
@@ -211,7 +211,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       String languageCode = "languageCode-2092349083";
       client.listIntents(parent, languageCode);
       Assert.fail("No exception raised");
@@ -523,7 +523,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     Intent intent = Intent.newBuilder().build();
 
     Intent actualResponse = client.createIntent(parent, intent);
@@ -547,7 +547,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       Intent intent = Intent.newBuilder().build();
       client.createIntent(parent, intent);
       Assert.fail("No exception raised");
@@ -641,7 +641,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     Intent intent = Intent.newBuilder().build();
     String languageCode = "languageCode-2092349083";
 
@@ -667,7 +667,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       Intent intent = Intent.newBuilder().build();
       String languageCode = "languageCode-2092349083";
       client.createIntent(parent, intent, languageCode);
@@ -1055,7 +1055,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(resultOperation);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
 
     BatchUpdateIntentsResponse actualResponse =
@@ -1080,7 +1080,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
       client.batchUpdateIntentsAsync(parent, intentBatchInline).get();
       Assert.fail("No exception raised");
@@ -1103,7 +1103,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(resultOperation);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     String intentBatchUri = "intentBatchUri544125582";
 
     BatchUpdateIntentsResponse actualResponse =
@@ -1128,7 +1128,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       String intentBatchUri = "intentBatchUri544125582";
       client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
       Assert.fail("No exception raised");
@@ -1246,7 +1246,7 @@ public class IntentsClientTest {
             .build();
     mockIntents.addResponse(resultOperation);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     List<Intent> intents = new ArrayList<>();
 
     client.batchDeleteIntentsAsync(parent, intents).get();
@@ -1269,7 +1269,7 @@ public class IntentsClientTest {
     mockIntents.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       List<Intent> intents = new ArrayList<>();
       client.batchDeleteIntentsAsync(parent, intents).get();
       Assert.fail("No exception raised");

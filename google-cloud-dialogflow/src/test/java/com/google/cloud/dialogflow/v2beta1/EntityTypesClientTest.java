@@ -95,7 +95,7 @@ public class EntityTypesClientTest {
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
 
     ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
 
@@ -121,7 +121,7 @@ public class EntityTypesClientTest {
     mockEntityTypes.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       client.listEntityTypes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -183,7 +183,7 @@ public class EntityTypesClientTest {
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     String languageCode = "languageCode-2092349083";
 
     ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent, languageCode);
@@ -211,7 +211,7 @@ public class EntityTypesClientTest {
     mockEntityTypes.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       String languageCode = "languageCode-2092349083";
       client.listEntityTypes(parent, languageCode);
       Assert.fail("No exception raised");
@@ -453,7 +453,7 @@ public class EntityTypesClientTest {
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     EntityType entityType = EntityType.newBuilder().build();
 
     EntityType actualResponse = client.createEntityType(parent, entityType);
@@ -477,7 +477,7 @@ public class EntityTypesClientTest {
     mockEntityTypes.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       EntityType entityType = EntityType.newBuilder().build();
       client.createEntityType(parent, entityType);
       Assert.fail("No exception raised");
@@ -543,7 +543,7 @@ public class EntityTypesClientTest {
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     EntityType entityType = EntityType.newBuilder().build();
     String languageCode = "languageCode-2092349083";
 
@@ -569,7 +569,7 @@ public class EntityTypesClientTest {
     mockEntityTypes.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       EntityType entityType = EntityType.newBuilder().build();
       String languageCode = "languageCode-2092349083";
       client.createEntityType(parent, entityType, languageCode);
@@ -906,7 +906,7 @@ public class EntityTypesClientTest {
             .build();
     mockEntityTypes.addResponse(resultOperation);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     List<String> entityTypeNames = new ArrayList<>();
 
     client.batchDeleteEntityTypesAsync(parent, entityTypeNames).get();
@@ -930,7 +930,7 @@ public class EntityTypesClientTest {
     mockEntityTypes.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       List<String> entityTypeNames = new ArrayList<>();
       client.batchDeleteEntityTypesAsync(parent, entityTypeNames).get();
       Assert.fail("No exception raised");

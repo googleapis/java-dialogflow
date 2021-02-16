@@ -88,7 +88,7 @@ public class EnvironmentsClientTest {
             .build();
     mockEnvironments.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
 
     ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
 
@@ -114,7 +114,7 @@ public class EnvironmentsClientTest {
     mockEnvironments.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       client.listEnvironments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
