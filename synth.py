@@ -68,5 +68,6 @@ s.replace(
   'ofProjectName',
   'ofProjectAgentName'
 )
+java.format_code('proto-google-cloud-dialogflow-v2beta1/src')
 
 java.common_templates()

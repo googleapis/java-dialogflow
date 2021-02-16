@@ -110,7 +110,11 @@ public class AgentName implements ResourceName {
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationAgentName(String project, String location) {
-    return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build().toString();
+    return newProjectLocationAgentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .build()
+        .toString();
   }
 
   public static AgentName parse(String formattedString) {
