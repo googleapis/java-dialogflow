@@ -485,7 +485,7 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param document Required. The document to update.
-   * @param update_mask Optional. Not specified means `update all`. Currently, only `display_name`
+   * @param updateMask Optional. Not specified means `update all`. Currently, only `display_name`
    *     can be updated, an InvalidArgument will be returned for attempting to update other fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -553,7 +553,7 @@ public class DocumentsClient implements BackgroundResource {
    * @param name Required. The name of the document to reload. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
    *     ID&gt;/documents/&lt;Document ID&gt;`
-   * @param gcs_source The path for a Cloud Storage source file for reloading document content. If
+   * @param gcsSource The path for a Cloud Storage source file for reloading document content. If
    *     not provided, the Document's existing source will be reloaded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -582,7 +582,7 @@ public class DocumentsClient implements BackgroundResource {
    * @param name Required. The name of the document to reload. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
    *     ID&gt;/documents/&lt;Document ID&gt;`
-   * @param gcs_source The path for a Cloud Storage source file for reloading document content. If
+   * @param gcsSource The path for a Cloud Storage source file for reloading document content. If
    *     not provided, the Document's existing source will be reloaded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

@@ -137,11 +137,21 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
         KnowledgeBasesStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcKnowledgeBasesStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcKnowledgeBasesStub(KnowledgeBasesStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcKnowledgeBasesCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcKnowledgeBasesStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcKnowledgeBasesStub(
       KnowledgeBasesStubSettings settings,
       ClientContext clientContext,
