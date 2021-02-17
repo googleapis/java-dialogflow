@@ -95,7 +95,8 @@ public class DocumentsClientTest {
             .build();
     mockDocuments.addResponse(expectedResponse);
 
-    KnowledgeBaseName parent = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+    KnowledgeBaseName parent =
+        KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
 
     ListDocumentsPagedResponse pagedListResponse = client.listDocuments(parent);
 
@@ -121,7 +122,8 @@ public class DocumentsClientTest {
     mockDocuments.addException(exception);
 
     try {
-      KnowledgeBaseName parent = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+      KnowledgeBaseName parent =
+          KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
       client.listDocuments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -177,7 +179,10 @@ public class DocumentsClientTest {
   public void getDocumentTest() throws Exception {
     Document expectedResponse =
         Document.newBuilder()
-            .setName(DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]").toString())
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setMimeType("mime_type-196041627")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
@@ -185,7 +190,9 @@ public class DocumentsClientTest {
             .build();
     mockDocuments.addResponse(expectedResponse);
 
-    DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+    DocumentName name =
+        DocumentName.ofProjectKnowledgeBaseDocumentName(
+            "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
 
     Document actualResponse = client.getDocument(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -207,7 +214,9 @@ public class DocumentsClientTest {
     mockDocuments.addException(exception);
 
     try {
-      DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+      DocumentName name =
+          DocumentName.ofProjectKnowledgeBaseDocumentName(
+              "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
       client.getDocument(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -219,7 +228,10 @@ public class DocumentsClientTest {
   public void getDocumentTest2() throws Exception {
     Document expectedResponse =
         Document.newBuilder()
-            .setName(DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]").toString())
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setMimeType("mime_type-196041627")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
@@ -261,7 +273,10 @@ public class DocumentsClientTest {
   public void createDocumentTest() throws Exception {
     Document expectedResponse =
         Document.newBuilder()
-            .setName(DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]").toString())
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setMimeType("mime_type-196041627")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
@@ -275,7 +290,8 @@ public class DocumentsClientTest {
             .build();
     mockDocuments.addResponse(resultOperation);
 
-    KnowledgeBaseName parent = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+    KnowledgeBaseName parent =
+        KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
     Document document = Document.newBuilder().build();
 
     Document actualResponse = client.createDocumentAsync(parent, document).get();
@@ -299,7 +315,8 @@ public class DocumentsClientTest {
     mockDocuments.addException(exception);
 
     try {
-      KnowledgeBaseName parent = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+      KnowledgeBaseName parent =
+          KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
       Document document = Document.newBuilder().build();
       client.createDocumentAsync(parent, document).get();
       Assert.fail("No exception raised");
@@ -314,7 +331,10 @@ public class DocumentsClientTest {
   public void createDocumentTest2() throws Exception {
     Document expectedResponse =
         Document.newBuilder()
-            .setName(DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]").toString())
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setMimeType("mime_type-196041627")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
@@ -374,7 +394,9 @@ public class DocumentsClientTest {
             .build();
     mockDocuments.addResponse(resultOperation);
 
-    DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+    DocumentName name =
+        DocumentName.ofProjectKnowledgeBaseDocumentName(
+            "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
 
     client.deleteDocumentAsync(name).get();
 
@@ -395,7 +417,9 @@ public class DocumentsClientTest {
     mockDocuments.addException(exception);
 
     try {
-      DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+      DocumentName name =
+          DocumentName.ofProjectKnowledgeBaseDocumentName(
+              "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
       client.deleteDocumentAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -451,7 +475,10 @@ public class DocumentsClientTest {
   public void updateDocumentTest() throws Exception {
     Document expectedResponse =
         Document.newBuilder()
-            .setName(DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]").toString())
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setMimeType("mime_type-196041627")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
@@ -501,7 +528,10 @@ public class DocumentsClientTest {
   public void updateDocumentTest2() throws Exception {
     Document expectedResponse =
         Document.newBuilder()
-            .setName(DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]").toString())
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setMimeType("mime_type-196041627")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
@@ -554,7 +584,10 @@ public class DocumentsClientTest {
   public void reloadDocumentTest() throws Exception {
     Document expectedResponse =
         Document.newBuilder()
-            .setName(DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]").toString())
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setMimeType("mime_type-196041627")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
@@ -568,7 +601,9 @@ public class DocumentsClientTest {
             .build();
     mockDocuments.addResponse(resultOperation);
 
-    DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+    DocumentName name =
+        DocumentName.ofProjectKnowledgeBaseDocumentName(
+            "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
     GcsSource gcsSource = GcsSource.newBuilder().build();
 
     Document actualResponse = client.reloadDocumentAsync(name, gcsSource).get();
@@ -592,7 +627,9 @@ public class DocumentsClientTest {
     mockDocuments.addException(exception);
 
     try {
-      DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+      DocumentName name =
+          DocumentName.ofProjectKnowledgeBaseDocumentName(
+              "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
       GcsSource gcsSource = GcsSource.newBuilder().build();
       client.reloadDocumentAsync(name, gcsSource).get();
       Assert.fail("No exception raised");
@@ -607,7 +644,10 @@ public class DocumentsClientTest {
   public void reloadDocumentTest2() throws Exception {
     Document expectedResponse =
         Document.newBuilder()
-            .setName(DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]").toString())
+            .setName(
+                DocumentName.ofProjectKnowledgeBaseDocumentName(
+                        "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+                    .toString())
             .setDisplayName("display_name1615086568")
             .setMimeType("mime_type-196041627")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())

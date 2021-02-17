@@ -16,7 +16,9 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -31,19 +33,35 @@ import javax.annotation.Generated;
 public class KnowledgeBaseName implements ResourceName {
   private static final PathTemplate PROJECT_KNOWLEDGE_BASE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/knowledgeBases/{knowledge_base}");
+  private static final PathTemplate PROJECT_LOCATION_KNOWLEDGE_BASE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/knowledgeBases/{knowledge_base}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String knowledgeBase;
+  private final String location;
 
   @Deprecated
   protected KnowledgeBaseName() {
     project = null;
     knowledgeBase = null;
+    location = null;
   }
 
   private KnowledgeBaseName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     knowledgeBase = Preconditions.checkNotNull(builder.getKnowledgeBase());
+    location = null;
+    pathTemplate = PROJECT_KNOWLEDGE_BASE;
+  }
+
+  private KnowledgeBaseName(ProjectLocationKnowledgeBaseBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    knowledgeBase = Preconditions.checkNotNull(builder.getKnowledgeBase());
+    pathTemplate = PROJECT_LOCATION_KNOWLEDGE_BASE;
   }
 
   public String getProject() {
@@ -54,8 +72,22 @@ public class KnowledgeBaseName implements ResourceName {
     return knowledgeBase;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectKnowledgeBaseBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationKnowledgeBaseBuilder newProjectLocationKnowledgeBaseBuilder() {
+    return new ProjectLocationKnowledgeBaseBuilder();
   }
 
   public Builder toBuilder() {
@@ -66,18 +98,54 @@ public class KnowledgeBaseName implements ResourceName {
     return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static KnowledgeBaseName ofProjectKnowledgeBaseName(String project, String knowledgeBase) {
+    return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static KnowledgeBaseName ofProjectLocationKnowledgeBaseName(
+      String project, String location, String knowledgeBase) {
+    return newProjectLocationKnowledgeBaseBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setKnowledgeBase(knowledgeBase)
+        .build();
+  }
+
   public static String format(String project, String knowledgeBase) {
     return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectKnowledgeBaseName(String project, String knowledgeBase) {
+    return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationKnowledgeBaseName(
+      String project, String location, String knowledgeBase) {
+    return newProjectLocationKnowledgeBaseBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setKnowledgeBase(knowledgeBase)
+        .build()
+        .toString();
   }
 
   public static KnowledgeBaseName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_KNOWLEDGE_BASE.validatedMatch(
-            formattedString, "KnowledgeBaseName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("knowledge_base"));
+    if (PROJECT_KNOWLEDGE_BASE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_KNOWLEDGE_BASE.match(formattedString);
+      return ofProjectKnowledgeBaseName(matchMap.get("project"), matchMap.get("knowledge_base"));
+    } else if (PROJECT_LOCATION_KNOWLEDGE_BASE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_KNOWLEDGE_BASE.match(formattedString);
+      return ofProjectLocationKnowledgeBaseName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("knowledge_base"));
+    }
+    throw new ValidationException("KnowledgeBaseName.parse: formattedString not in valid format");
   }
 
   public static List<KnowledgeBaseName> parseList(List<String> formattedStrings) {
@@ -101,7 +169,8 @@ public class KnowledgeBaseName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_KNOWLEDGE_BASE.matches(formattedString);
+    return PROJECT_KNOWLEDGE_BASE.matches(formattedString)
+        || PROJECT_LOCATION_KNOWLEDGE_BASE.matches(formattedString);
   }
 
   @Override
@@ -116,6 +185,9 @@ public class KnowledgeBaseName implements ResourceName {
           if (knowledgeBase != null) {
             fieldMapBuilder.put("knowledge_base", knowledgeBase);
           }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -129,7 +201,7 @@ public class KnowledgeBaseName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_KNOWLEDGE_BASE.instantiate("project", project, "knowledge_base", knowledgeBase);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -140,7 +212,8 @@ public class KnowledgeBaseName implements ResourceName {
     if (o != null || getClass() == o.getClass()) {
       KnowledgeBaseName that = ((KnowledgeBaseName) o);
       return Objects.equals(this.project, that.project)
-          && Objects.equals(this.knowledgeBase, that.knowledgeBase);
+          && Objects.equals(this.knowledgeBase, that.knowledgeBase)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -149,9 +222,13 @@ public class KnowledgeBaseName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(knowledgeBase);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -181,8 +258,52 @@ public class KnowledgeBaseName implements ResourceName {
     }
 
     private Builder(KnowledgeBaseName knowledgeBaseName) {
+      Preconditions.checkArgument(
+          Objects.equals(knowledgeBaseName.pathTemplate, PROJECT_KNOWLEDGE_BASE),
+          "toBuilder is only supported when KnowledgeBaseName has the pattern of projects/{project}/knowledgeBases/{knowledge_base}");
       project = knowledgeBaseName.project;
       knowledgeBase = knowledgeBaseName.knowledgeBase;
+    }
+
+    public KnowledgeBaseName build() {
+      return new KnowledgeBaseName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}/knowledgeBases/{knowledge_base}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationKnowledgeBaseBuilder {
+    private String project;
+    private String location;
+    private String knowledgeBase;
+
+    protected ProjectLocationKnowledgeBaseBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getKnowledgeBase() {
+      return knowledgeBase;
+    }
+
+    public ProjectLocationKnowledgeBaseBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationKnowledgeBaseBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationKnowledgeBaseBuilder setKnowledgeBase(String knowledgeBase) {
+      this.knowledgeBase = knowledgeBase;
+      return this;
     }
 
     public KnowledgeBaseName build() {

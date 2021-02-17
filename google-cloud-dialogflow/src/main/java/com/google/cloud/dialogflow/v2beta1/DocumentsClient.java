@@ -165,7 +165,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param parent Required. The knowledge base to list all documents for. Format:
-   *     `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge
+   *     Base ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDocumentsPagedResponse listDocuments(KnowledgeBaseName parent) {
@@ -184,7 +185,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param parent Required. The knowledge base to list all documents for. Format:
-   *     `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge
+   *     Base ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDocumentsPagedResponse listDocuments(String parent) {
@@ -241,7 +243,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param name Required. The name of the document to retrieve. Format `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
+   *     ID&gt;/documents/&lt;Document ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(DocumentName name) {
@@ -258,7 +261,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param name Required. The name of the document to retrieve. Format `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
+   *     ID&gt;/documents/&lt;Document ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(String name) {
@@ -301,7 +305,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param parent Required. The knowledge base to create a document for. Format:
-   *     `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge
+   *     Base ID&gt;`.
    * @param document Required. The document to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -323,7 +328,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param parent Required. The knowledge base to create a document for. Format:
-   *     `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge
+   *     Base ID&gt;`.
    * @param document Required. The document to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -384,7 +390,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param name Required. The name of the document to delete. Format: `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
+   *     ID&gt;/documents/&lt;Document ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, KnowledgeOperationMetadata> deleteDocumentAsync(
@@ -402,7 +409,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param name Required. The name of the document to delete. Format: `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
+   *     ID&gt;/documents/&lt;Document ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, KnowledgeOperationMetadata> deleteDocumentAsync(String name) {
@@ -543,7 +551,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param name Required. The name of the document to reload. Format: `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
+   *     ID&gt;/documents/&lt;Document ID&gt;`
    * @param gcs_source The path for a Cloud Storage source file for reloading document content. If
    *     not provided, the Document's existing source will be reloaded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -571,7 +580,8 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * @param name Required. The name of the document to reload. Format: `projects/&lt;Project
-   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+   *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
+   *     ID&gt;/documents/&lt;Document ID&gt;`
    * @param gcs_source The path for a Cloud Storage source file for reloading document content. If
    *     not provided, the Document's existing source will be reloaded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
