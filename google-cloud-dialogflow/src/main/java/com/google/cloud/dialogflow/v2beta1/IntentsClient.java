@@ -289,6 +289,7 @@ public class IntentsClient implements BackgroundResource {
    *       ListIntentsRequest.newBuilder()
    *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -317,6 +318,7 @@ public class IntentsClient implements BackgroundResource {
    *       ListIntentsRequest.newBuilder()
    *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -480,6 +482,7 @@ public class IntentsClient implements BackgroundResource {
    *       GetIntentRequest.newBuilder()
    *           .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   Intent response = intentsClient.getIntent(request);
    * }
@@ -504,6 +507,7 @@ public class IntentsClient implements BackgroundResource {
    *       GetIntentRequest.newBuilder()
    *           .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   ApiFuture<Intent> future = intentsClient.getIntentCallable().futureCall(request);
    *   // Do something.
@@ -653,6 +657,7 @@ public class IntentsClient implements BackgroundResource {
    *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setIntent(Intent.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   Intent response = intentsClient.createIntent(request);
    * }
@@ -678,6 +683,7 @@ public class IntentsClient implements BackgroundResource {
    *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setIntent(Intent.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   ApiFuture<Intent> future = intentsClient.createIntentCallable().futureCall(request);
    *   // Do something.
@@ -807,6 +813,7 @@ public class IntentsClient implements BackgroundResource {
    *           .setIntent(Intent.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   Intent response = intentsClient.updateIntent(request);
    * }
@@ -832,6 +839,7 @@ public class IntentsClient implements BackgroundResource {
    *           .setIntent(Intent.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   ApiFuture<Intent> future = intentsClient.updateIntentCallable().futureCall(request);
    *   // Do something.
@@ -1099,6 +1107,7 @@ public class IntentsClient implements BackgroundResource {
    *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(request).get();
    * }
@@ -1128,6 +1137,7 @@ public class IntentsClient implements BackgroundResource {
    *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   OperationFuture<BatchUpdateIntentsResponse, Struct> future =
    *       intentsClient.batchUpdateIntentsOperationCallable().futureCall(request);
@@ -1157,6 +1167,7 @@ public class IntentsClient implements BackgroundResource {
    *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIntentView(IntentView.forNumber(0))
    *           .build();
    *   ApiFuture<Operation> future = intentsClient.batchUpdateIntentsCallable().futureCall(request);
    *   // Do something.

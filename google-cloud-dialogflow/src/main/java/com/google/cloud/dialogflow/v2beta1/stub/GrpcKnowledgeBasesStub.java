@@ -270,28 +270,34 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
       listKnowledgeBasesCallable() {
     return listKnowledgeBasesCallable;
   }
 
+  @Override
   public UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesPagedResponse>
       listKnowledgeBasesPagedCallable() {
     return listKnowledgeBasesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetKnowledgeBaseRequest, KnowledgeBase> getKnowledgeBaseCallable() {
     return getKnowledgeBaseCallable;
   }
 
+  @Override
   public UnaryCallable<CreateKnowledgeBaseRequest, KnowledgeBase> createKnowledgeBaseCallable() {
     return createKnowledgeBaseCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseCallable() {
     return deleteKnowledgeBaseCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateKnowledgeBaseRequest, KnowledgeBase> updateKnowledgeBaseCallable() {
     return updateKnowledgeBaseCallable;
   }
