@@ -61,7 +61,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -153,7 +152,7 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
 
             @Override
             public Iterable<Document> extractResources(ListDocumentsResponse payload) {
-              return Objects.isNull(payload.getDocumentsList())
+              return payload.getDocumentsList() == null
                   ? ImmutableList.<Document>of()
                   : payload.getDocumentsList();
             }

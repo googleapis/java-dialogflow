@@ -38,7 +38,6 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -172,7 +171,7 @@ public class EntityTypesClient implements BackgroundResource {
   public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent) {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listEntityTypes(request);
   }
@@ -207,7 +206,7 @@ public class EntityTypesClient implements BackgroundResource {
   public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent, String languageCode) {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setLanguageCode(languageCode)
             .build();
     return listEntityTypes(request);
@@ -276,9 +275,7 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final EntityType getEntityType(EntityTypeName name) {
     GetEntityTypeRequest request =
-        GetEntityTypeRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntityType(request);
   }
 
@@ -312,7 +309,7 @@ public class EntityTypesClient implements BackgroundResource {
   public final EntityType getEntityType(EntityTypeName name, String languageCode) {
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setLanguageCode(languageCode)
             .build();
     return getEntityType(request);
@@ -371,7 +368,7 @@ public class EntityTypesClient implements BackgroundResource {
   public final EntityType createEntityType(AgentName parent, EntityType entityType) {
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setEntityType(entityType)
             .build();
     return createEntityType(request);
@@ -411,7 +408,7 @@ public class EntityTypesClient implements BackgroundResource {
       AgentName parent, EntityType entityType, String languageCode) {
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setEntityType(entityType)
             .setLanguageCode(languageCode)
             .build();
@@ -553,9 +550,7 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final void deleteEntityType(EntityTypeName name) {
     DeleteEntityTypeRequest request =
-        DeleteEntityTypeRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEntityType(request);
   }
 
@@ -649,7 +644,7 @@ public class EntityTypesClient implements BackgroundResource {
       AgentName parent, List<String> entityTypeNames) {
     BatchDeleteEntityTypesRequest request =
         BatchDeleteEntityTypesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntityTypeNames(entityTypeNames)
             .build();
     return batchDeleteEntityTypesAsync(request);
@@ -731,7 +726,7 @@ public class EntityTypesClient implements BackgroundResource {
       EntityTypeName parent, List<EntityType.Entity> entities) {
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntities(entities)
             .build();
     return batchCreateEntitiesAsync(request);
@@ -778,7 +773,7 @@ public class EntityTypesClient implements BackgroundResource {
       EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntities(entities)
             .setLanguageCode(languageCode)
             .build();
@@ -870,7 +865,7 @@ public class EntityTypesClient implements BackgroundResource {
       EntityTypeName parent, List<EntityType.Entity> entities) {
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntities(entities)
             .build();
     return batchUpdateEntitiesAsync(request);
@@ -919,7 +914,7 @@ public class EntityTypesClient implements BackgroundResource {
       EntityTypeName parent, List<EntityType.Entity> entities, String languageCode) {
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntities(entities)
             .setLanguageCode(languageCode)
             .build();
@@ -1016,7 +1011,7 @@ public class EntityTypesClient implements BackgroundResource {
       EntityTypeName parent, List<String> entityValues) {
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntityValues(entityValues)
             .build();
     return batchDeleteEntitiesAsync(request);
@@ -1070,7 +1065,7 @@ public class EntityTypesClient implements BackgroundResource {
       EntityTypeName parent, List<String> entityValues, String languageCode) {
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntityValues(entityValues)
             .setLanguageCode(languageCode)
             .build();
