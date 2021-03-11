@@ -1,5 +1,21 @@
 # Changelog
 
+### [2.6.1](https://www.github.com/googleapis/java-dialogflow/compare/v2.6.0...v2.6.1) (2021-03-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#472](https://www.github.com/googleapis/java-dialogflow/issues/472)) ([7b6b5c2](https://www.github.com/googleapis/java-dialogflow/commit/7b6b5c271425297f83fbe691d68fd4d43ce253d3))
+
+## [2.6.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.5.1...v2.6.0) (2021-03-09)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#457](https://www.github.com/googleapis/java-dialogflow/issues/457)) ([59574d7](https://www.github.com/googleapis/java-dialogflow/commit/59574d76d5181582e4da4122cc61a7af7c661bf8))
+* **v2:** add Agent Assist Smart Reply and Sentiment Analysis ([#466](https://www.github.com/googleapis/java-dialogflow/issues/466)) ([478c197](https://www.github.com/googleapis/java-dialogflow/commit/478c197fe2fc7fd245958c72bfaf720a47bc4c1a))
+* **v2beta1:** add Agent Assist Smart Reply and Sentiment Analysis ([478c197](https://www.github.com/googleapis/java-dialogflow/commit/478c197fe2fc7fd245958c72bfaf720a47bc4c1a))
+
 ### [2.5.1](https://www.github.com/googleapis/java-dialogflow/compare/v2.5.0...v2.5.1) (2021-02-25)
 
 
