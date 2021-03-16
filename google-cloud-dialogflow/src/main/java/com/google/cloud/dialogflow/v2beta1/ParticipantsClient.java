@@ -496,6 +496,15 @@ public class ParticipantsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ListParticipantsRequest request =
+   *       ListParticipantsRequest.newBuilder()
+   *           .setParent(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListParticipantsResponse response =
    *         participantsClient.listParticipantsCallable().call(request);
@@ -1402,6 +1411,13 @@ public class ParticipantsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ListSuggestionsRequest request =
+   *       ListSuggestionsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListSuggestionsResponse response =
    *         participantsClient.listSuggestionsCallable().call(request);
