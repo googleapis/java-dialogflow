@@ -604,7 +604,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -640,7 +640,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -676,7 +676,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -712,7 +712,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -748,7 +748,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -781,7 +781,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
