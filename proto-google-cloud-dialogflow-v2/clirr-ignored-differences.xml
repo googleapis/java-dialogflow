@@ -54,6 +54,10 @@
     <className>com/google/cloud/dialogflow/v2/AudioInput*</className>
   </difference>
   <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2/ConversationModelName*</className>
+  </difference>
+  <difference>
     <differenceType>7002</differenceType>
     <className>com/google/cloud/dialogflow/v2/AnalyzeContentRequest*</className>
     <method>* *AudioInput*(*)</method>

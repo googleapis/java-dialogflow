@@ -50,6 +50,10 @@
   </difference>
   <difference>
     <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/ConversationModelName*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
     <className>com/google/cloud/dialogflow/v2beta1/StreamingAnalyzeContent*</className>
   </difference>
   <difference>
