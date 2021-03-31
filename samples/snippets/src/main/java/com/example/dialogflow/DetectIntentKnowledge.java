@@ -80,7 +80,8 @@ public class DetectIntentKnowledge {
         System.out.format(
             "Detected Intent: %s (confidence: %f)\n",
             queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
-        System.out.format("Fulfillment Text: '%s'\n", queryResult.getFulfillmentText());
+        System.out.format(
+            "Fulfillment Text: '%s'\n", queryResult.getFulfillmentMessages(0).getText());
         KnowledgeAnswers knowledgeAnswers = queryResult.getKnowledgeAnswers();
         for (Answer answer : knowledgeAnswers.getAnswersList()) {
           System.out.format(" - Answer: '%s'\n", answer.getAnswer());

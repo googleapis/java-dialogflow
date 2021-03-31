@@ -81,7 +81,8 @@ public class DetectIntentWithTextToSpeechResponse {
         System.out.format(
             "Detected Intent: %s (confidence: %f)\n",
             queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
-        System.out.format("Fulfillment Text: '%s'\n", queryResult.getFulfillmentText());
+        System.out.format(
+            "Fulfillment Text: '%s'\n", queryResult.getFulfillmentMessages(0).getText());
 
         queryResults.put(text, queryResult);
       }
