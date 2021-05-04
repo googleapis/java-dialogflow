@@ -97,7 +97,7 @@ class DetectIntentStream {
             "Detected Intent: %s (confidence: %f)\n",
             queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
         System.out.format(
-            "Fulfillment Text: '%s'\n", queryResult.getFulfillmentMessages(0).getText());
+            "Fulfillment Text: '%s'\n", queryResult.getFulfillmentMessages(0).getText().lenght() ? 0 : "Empty fulfillment");
       }
     }
   }
