@@ -97,7 +97,10 @@ class DetectIntentStream {
             "Detected Intent: %s (confidence: %f)\n",
             queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
         System.out.format(
-            "Fulfillment Text: '%s'\n", queryResult.getFulfillmentMessages(0).getText().lenght() ? 0 : "Empty fulfillment");
+            "Fulfillment Text: '%s'\n",
+            queryResult.getIntent().getIsFallback()
+                ? "Triggered Default Fallback Intent"
+                : queryResult.getFulfillmentMessages(0).getText());
       }
     }
   }
