@@ -80,11 +80,7 @@ public class DetectIntentKnowledge {
         System.out.format(
             "Detected Intent: %s (confidence: %f)\n",
             queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
-        System.out.format(
-            "Fulfillment Text: '%s'\n",
-            queryResult.getIntent().getIsFallback()
-                ? "Triggered Default Fallback Intent"
-                : queryResult.getFulfillmentMessages(0).getText());
+        System.out.format("Fulfillment Text: '%s'\n", queryResult.getFulfillmentText());
         KnowledgeAnswers knowledgeAnswers = queryResult.getKnowledgeAnswers();
         for (Answer answer : knowledgeAnswers.getAnswersList()) {
           System.out.format(" - Answer: '%s'\n", answer.getAnswer());
