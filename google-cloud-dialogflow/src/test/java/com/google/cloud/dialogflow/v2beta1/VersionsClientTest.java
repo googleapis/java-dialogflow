@@ -91,7 +91,7 @@ public class VersionsClientTest {
             .build();
     mockVersions.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
 
     ListVersionsPagedResponse pagedListResponse = client.listVersions(parent);
 
@@ -117,7 +117,7 @@ public class VersionsClientTest {
     mockVersions.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       client.listVersions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -262,7 +262,7 @@ public class VersionsClientTest {
             .build();
     mockVersions.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectName("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     Version version = Version.newBuilder().build();
 
     Version actualResponse = client.createVersion(parent, version);
@@ -286,7 +286,7 @@ public class VersionsClientTest {
     mockVersions.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectName("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       Version version = Version.newBuilder().build();
       client.createVersion(parent, version);
       Assert.fail("No exception raised");
