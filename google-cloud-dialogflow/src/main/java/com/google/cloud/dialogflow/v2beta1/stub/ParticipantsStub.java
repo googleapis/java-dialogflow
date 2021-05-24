@@ -21,7 +21,6 @@ import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListSuggest
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
@@ -34,8 +33,6 @@ import com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse;
 import com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse;
 import com.google.cloud.dialogflow.v2beta1.Participant;
-import com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest;
-import com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest;
@@ -81,11 +78,6 @@ public abstract class ParticipantsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: analyzeContentCallable()");
   }
 
-  public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentCallable() {
-    throw new UnsupportedOperationException("Not implemented: streamingAnalyzeContentCallable()");
-  }
-
   public UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse> suggestArticlesCallable() {
     throw new UnsupportedOperationException("Not implemented: suggestArticlesCallable()");
   }
@@ -100,15 +92,18 @@ public abstract class ParticipantsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: suggestSmartRepliesCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListSuggestionsRequest, ListSuggestionsPagedResponse>
       listSuggestionsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSuggestionsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListSuggestionsRequest, ListSuggestionsResponse> listSuggestionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listSuggestionsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CompileSuggestionRequest, CompileSuggestionResponse>
       compileSuggestionCallable() {
     throw new UnsupportedOperationException("Not implemented: compileSuggestionCallable()");

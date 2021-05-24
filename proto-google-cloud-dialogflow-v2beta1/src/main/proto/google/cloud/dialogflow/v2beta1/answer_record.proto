@@ -310,12 +310,7 @@ message ListAnswerRecordsResponse {
 // Request message for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord].
 message UpdateAnswerRecordRequest {
   // Required. Answer record to update.
-  AnswerRecord answer_record = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "dialogflow.googleapis.com/AnswerRecord"
-    }
-  ];
+  AnswerRecord answer_record = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The mask to control which fields get updated.
   google.protobuf.FieldMask update_mask = 2;

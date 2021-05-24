@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.ParticipantsStub;
@@ -607,43 +606,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-   *   ParticipantName participant =
-   *       ParticipantName.ofProjectConversationParticipantName(
-   *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
-   *   AudioInput audioInput = AudioInput.newBuilder().build();
-   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
-   * }
-   * }</pre>
-   *
-   * @param participant Required. The name of the participant this text comes from. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
-   *     ID&gt;/participants/&lt;Participant ID&gt;`.
-   * @param audioInput The natural language speech audio to be processed.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AnalyzeContentResponse analyzeContent(
-      ParticipantName participant, AudioInput audioInput) {
-    AnalyzeContentRequest request =
-        AnalyzeContentRequest.newBuilder()
-            .setParticipant(participant == null ? null : participant.toString())
-            .setAudioInput(audioInput)
-            .build();
-    return analyzeContent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
-   * participant into the conversation.
-   *
-   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -679,7 +642,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -715,43 +678,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-   *   String participant =
-   *       ParticipantName.ofProjectConversationParticipantName(
-   *               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
-   *           .toString();
-   *   AudioInput audioInput = AudioInput.newBuilder().build();
-   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
-   * }
-   * }</pre>
-   *
-   * @param participant Required. The name of the participant this text comes from. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
-   *     ID&gt;/participants/&lt;Participant ID&gt;`.
-   * @param audioInput The natural language speech audio to be processed.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AnalyzeContentResponse analyzeContent(String participant, AudioInput audioInput) {
-    AnalyzeContentRequest request =
-        AnalyzeContentRequest.newBuilder()
-            .setParticipant(participant)
-            .setAudioInput(audioInput)
-            .build();
-    return analyzeContent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
-   * participant into the conversation.
-   *
-   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -787,7 +714,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -823,7 +750,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -857,7 +784,7 @@ public class ParticipantsClient implements BackgroundResource {
    * participant into the conversation.
    *
    * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
    *
@@ -884,49 +811,6 @@ public class ParticipantsClient implements BackgroundResource {
   public final UnaryCallable<AnalyzeContentRequest, AnalyzeContentResponse>
       analyzeContentCallable() {
     return stub.analyzeContentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Adds a text (e.g., chat) or audio (e.g., phone recording) message from a participant into the
-   * conversation. Note: This method is only available through the gRPC API (not REST).
-   *
-   * <p>The top-level message sent to the client by the server is `StreamingAnalyzeContentResponse`.
-   * Multiple response messages can be returned in order. The first one or more messages contain the
-   * `recognition_result` field. Each result represents a more complete transcript of what the user
-   * said. The next message contains the `reply_text` field, and potentially the `reply_audio`
-   * and/or the `automated_agent_reply` fields.
-   *
-   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-   *   BidiStream<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse> bidiStream =
-   *       participantsClient.streamingAnalyzeContentCallable().call();
-   *   StreamingAnalyzeContentRequest request =
-   *       StreamingAnalyzeContentRequest.newBuilder()
-   *           .setParticipant(
-   *               ParticipantName.ofProjectConversationParticipantName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
-   *                   .toString())
-   *           .setReplyAudioConfig(OutputAudioConfig.newBuilder().build())
-   *           .setQueryParams(QueryParameters.newBuilder().build())
-   *           .setEnableExtendedStreaming(true)
-   *           .build();
-   *   bidiStream.send(request);
-   *   for (StreamingAnalyzeContentResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
-   * }
-   * }</pre>
-   */
-  public final BidiStreamingCallable<
-          StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentCallable() {
-    return stub.streamingAnalyzeContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1315,12 +1199,12 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>This method should be used by human agent client software to fetch auto generated
    * suggestions in real-time, while the conversation with an end user is in progress. The
    * functionality is implemented in terms of the [list
-   * pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination) design
-   * pattern. The client app should use the `next_page_token` field to fetch the next batch of
-   * suggestions. `suggestions` are sorted by `create_time` in descending order. To fetch latest
-   * suggestion, just set `page_size` to 1. To fetch new suggestions without duplication, send
-   * request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous
-   * request]` and empty page_token.
+   * pagination](/apis/design/design_patterns#list_pagination) design pattern. The client app should
+   * use the `next_page_token` field to fetch the next batch of suggestions. `suggestions` are
+   * sorted by `create_time` in descending order. To fetch latest suggestion, just set `page_size`
+   * to 1. To fetch new suggestions without duplication, send request with filter
+   * `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty
+   * page_token.
    *
    * <p>Sample code:
    *
@@ -1341,7 +1225,9 @@ public class ParticipantsClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListSuggestionsPagedResponse listSuggestions(ListSuggestionsRequest request) {
     return listSuggestionsPagedCallable().call(request);
   }
@@ -1357,12 +1243,12 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>This method should be used by human agent client software to fetch auto generated
    * suggestions in real-time, while the conversation with an end user is in progress. The
    * functionality is implemented in terms of the [list
-   * pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination) design
-   * pattern. The client app should use the `next_page_token` field to fetch the next batch of
-   * suggestions. `suggestions` are sorted by `create_time` in descending order. To fetch latest
-   * suggestion, just set `page_size` to 1. To fetch new suggestions without duplication, send
-   * request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous
-   * request]` and empty page_token.
+   * pagination](/apis/design/design_patterns#list_pagination) design pattern. The client app should
+   * use the `next_page_token` field to fetch the next batch of suggestions. `suggestions` are
+   * sorted by `create_time` in descending order. To fetch latest suggestion, just set `page_size`
+   * to 1. To fetch new suggestions without duplication, send request with filter
+   * `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty
+   * page_token.
    *
    * <p>Sample code:
    *
@@ -1383,7 +1269,10 @@ public class ParticipantsClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListSuggestionsRequest, ListSuggestionsPagedResponse>
       listSuggestionsPagedCallable() {
     return stub.listSuggestionsPagedCallable();
@@ -1400,12 +1289,12 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>This method should be used by human agent client software to fetch auto generated
    * suggestions in real-time, while the conversation with an end user is in progress. The
    * functionality is implemented in terms of the [list
-   * pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination) design
-   * pattern. The client app should use the `next_page_token` field to fetch the next batch of
-   * suggestions. `suggestions` are sorted by `create_time` in descending order. To fetch latest
-   * suggestion, just set `page_size` to 1. To fetch new suggestions without duplication, send
-   * request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous
-   * request]` and empty page_token.
+   * pagination](/apis/design/design_patterns#list_pagination) design pattern. The client app should
+   * use the `next_page_token` field to fetch the next batch of suggestions. `suggestions` are
+   * sorted by `create_time` in descending order. To fetch latest suggestion, just set `page_size`
+   * to 1. To fetch new suggestions without duplication, send request with filter
+   * `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty
+   * page_token.
    *
    * <p>Sample code:
    *
@@ -1433,7 +1322,10 @@ public class ParticipantsClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListSuggestionsRequest, ListSuggestionsResponse>
       listSuggestionsCallable() {
     return stub.listSuggestionsCallable();
@@ -1468,7 +1360,9 @@ public class ParticipantsClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final CompileSuggestionResponse compileSuggestion(CompileSuggestionRequest request) {
     return compileSuggestionCallable().call(request);
   }
@@ -1502,7 +1396,10 @@ public class ParticipantsClient implements BackgroundResource {
    *   CompileSuggestionResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CompileSuggestionRequest, CompileSuggestionResponse>
       compileSuggestionCallable() {
     return stub.compileSuggestionCallable();

@@ -28,7 +28,6 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.ParticipantsStubSettings;
@@ -98,12 +97,6 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     return ((ParticipantsStubSettings) getStubSettings()).analyzeContentSettings();
   }
 
-  /** Returns the object with the settings used for calls to streamingAnalyzeContent. */
-  public StreamingCallSettings<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentSettings() {
-    return ((ParticipantsStubSettings) getStubSettings()).streamingAnalyzeContentSettings();
-  }
-
   /** Returns the object with the settings used for calls to suggestArticles. */
   public UnaryCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesSettings() {
@@ -122,14 +115,24 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     return ((ParticipantsStubSettings) getStubSettings()).suggestSmartRepliesSettings();
   }
 
-  /** Returns the object with the settings used for calls to listSuggestions. */
+  /**
+   * Returns the object with the settings used for calls to listSuggestions.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListSuggestionsRequest, ListSuggestionsResponse, ListSuggestionsPagedResponse>
       listSuggestionsSettings() {
     return ((ParticipantsStubSettings) getStubSettings()).listSuggestionsSettings();
   }
 
-  /** Returns the object with the settings used for calls to compileSuggestion. */
+  /**
+   * Returns the object with the settings used for calls to compileSuggestion.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CompileSuggestionRequest, CompileSuggestionResponse>
       compileSuggestionSettings() {
     return ((ParticipantsStubSettings) getStubSettings()).compileSuggestionSettings();
@@ -263,13 +266,6 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
       return getStubSettingsBuilder().analyzeContentSettings();
     }
 
-    /** Returns the builder for the settings used for calls to streamingAnalyzeContent. */
-    public StreamingCallSettings.Builder<
-            StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-        streamingAnalyzeContentSettings() {
-      return getStubSettingsBuilder().streamingAnalyzeContentSettings();
-    }
-
     /** Returns the builder for the settings used for calls to suggestArticles. */
     public UnaryCallSettings.Builder<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesSettings() {
@@ -288,14 +284,24 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
       return getStubSettingsBuilder().suggestSmartRepliesSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listSuggestions. */
+    /**
+     * Returns the builder for the settings used for calls to listSuggestions.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListSuggestionsRequest, ListSuggestionsResponse, ListSuggestionsPagedResponse>
         listSuggestionsSettings() {
       return getStubSettingsBuilder().listSuggestionsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to compileSuggestion. */
+    /**
+     * Returns the builder for the settings used for calls to compileSuggestion.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CompileSuggestionRequest, CompileSuggestionResponse>
         compileSuggestionSettings() {
       return getStubSettingsBuilder().compileSuggestionSettings();

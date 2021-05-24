@@ -1,5 +1,93 @@
 # Changelog
 
+## [3.1.0](https://www.github.com/googleapis/java-dialogflow/compare/v3.0.2...v3.1.0) (2021-05-14)
+
+
+### Features
+
+* added Fulfillment service ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+* added Fulfillment service ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+* added location in some resource patterns ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+* added more Environment RPCs ([#540](https://www.github.com/googleapis/java-dialogflow/issues/540)) ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+* added more Environment RPCs for v1beta1 ([#543](https://www.github.com/googleapis/java-dialogflow/issues/543)) ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+* added TextToSpeechSettings ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+* added TextToSpeechSettings ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+* added Versions service ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+* added Versions service ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+
+
+### Bug Fixes
+
+* removed incorrect resource annotation for UpdateEnvironmentRequest ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#549](https://www.github.com/googleapis/java-dialogflow/issues/549)) ([905ec97](https://www.github.com/googleapis/java-dialogflow/commit/905ec977e0a9c03fde8304b967fcd7efdfbc40ae))
+
+### [3.0.2](https://www.github.com/googleapis/java-dialogflow/compare/v3.0.1...v3.0.2) (2021-04-27)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#518](https://www.github.com/googleapis/java-dialogflow/issues/518)) ([6aab8ea](https://www.github.com/googleapis/java-dialogflow/commit/6aab8ea0b67b843a58de11f27cb06dfe74e73cfc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.8 ([#528](https://www.github.com/googleapis/java-dialogflow/issues/528)) ([90e42fb](https://www.github.com/googleapis/java-dialogflow/commit/90e42fb27203cc32d45f8d4c87c8dc09826f9f1e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#521](https://www.github.com/googleapis/java-dialogflow/issues/521)) ([122d52c](https://www.github.com/googleapis/java-dialogflow/commit/122d52c2f89d0e831926eabe6ff43a614523041a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#529](https://www.github.com/googleapis/java-dialogflow/issues/529)) ([9f072c7](https://www.github.com/googleapis/java-dialogflow/commit/9f072c7bd3d48b5721301a15f3daaae90ac96561))
+
+### [3.0.1](https://www.github.com/googleapis/java-dialogflow/compare/v3.0.0...v3.0.1) (2021-04-13)
+
+
+### Bug Fixes
+
+* remove unused proto InputText, InputAudio ([#500](https://www.github.com/googleapis/java-dialogflow/issues/500)) ([cf09a67](https://www.github.com/googleapis/java-dialogflow/commit/cf09a67e0cff62969423a6251da095a1b64943d1))
+* typo ([#513](https://www.github.com/googleapis/java-dialogflow/issues/513)) ([bc6c51a](https://www.github.com/googleapis/java-dialogflow/commit/bc6c51ace6f3173f6fd991da3e1c5aa321ef52fc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.6 ([#501](https://www.github.com/googleapis/java-dialogflow/issues/501)) ([391b215](https://www.github.com/googleapis/java-dialogflow/commit/391b215f34b5ef72a06336eb322d3f638c10c5f7))
+* update dependency com.google.cloud:google-cloud-core to v1.94.7 ([#508](https://www.github.com/googleapis/java-dialogflow/issues/508)) ([d7c1b01](https://www.github.com/googleapis/java-dialogflow/commit/d7c1b0102af95750c2f66bbebd847ca04c522b4a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#504](https://www.github.com/googleapis/java-dialogflow/issues/504)) ([a768703](https://www.github.com/googleapis/java-dialogflow/commit/a7687036ee296e60bfe08d8cce9708dcbd38560e))
+
+## [3.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.6.2...v3.0.0) (2021-03-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove StreamingAnalyzeContent, CreateCallMatcher, ListCallMatchers, DeleteCallMatcher rpc from v2/v2beta1
+* remove `input_audio` field from AnalyzeContentRequest from v2/v2beta1
+* Remove resource_reference from UpdateAnswerRecord
+* remove proto message CreateCallMatcherRequest, CreateCallMatcherResponse, ListCallMatchersRequest, ListCallMatchersResponse, DeleteCallMatcherRequest, DeleteCallMatcherResponse, CallMatcher, StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse, AudioInput from v2/v2beta1, TelephonyDtmfEvents, TelephonyDtmf from v2
+* remove rpc or fields that are unintended to release (#491)
+* remove resource_reference for invisible resources (#483)
+
+### Features
+
+* expose MP3_64_KBPS and MULAW for output audio encodings ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* **v2beta1:** remote MixedAudio from ResponseMessage ([#469](https://www.github.com/googleapis/java-dialogflow/issues/469)) ([b111739](https://www.github.com/googleapis/java-dialogflow/commit/b1117395748b501ef7c504a58a556d607f1b668a))
+
+
+### Bug Fixes
+
+* Add all missing regional HTTP bindings in DF API ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove `input_audio` field from AnalyzeContentRequest from v2/v2beta1 ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove proto message CreateCallMatcherRequest, CreateCallMatcherResponse, ListCallMatchersRequest, ListCallMatchersResponse, DeleteCallMatcherRequest, DeleteCallMatcherResponse, CallMatcher, StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse, AudioInput from v2/v2beta1, TelephonyDtmfEvents, TelephonyDtmf from v2 ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove resource_reference for invisible resources ([#483](https://www.github.com/googleapis/java-dialogflow/issues/483)) ([33aa424](https://www.github.com/googleapis/java-dialogflow/commit/33aa424ef5fe5ac10785aed13e863f2382f53c66))
+* Remove resource_reference from UpdateAnswerRecord ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove rpc or fields that are unintended to release ([#491](https://www.github.com/googleapis/java-dialogflow/issues/491)) ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove StreamingAnalyzeContent, CreateCallMatcher, ListCallMatchers, DeleteCallMatcher rpc from v2/v2beta1 ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+
+
+### Documentation
+
+* fix broken link in doc string ([33aa424](https://www.github.com/googleapis/java-dialogflow/commit/33aa424ef5fe5ac10785aed13e863f2382f53c66))
+* fix link for version and environment in participant doc ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+
 ### [2.6.2](https://www.github.com/googleapis/java-dialogflow/compare/v2.6.1...v2.6.2) (2021-03-15)
 
 
