@@ -100,7 +100,7 @@ class DetectIntentStream {
             "Fulfillment Text: '%s'\n",
             queryResult.getFulfillmentMessagesCount() > 0
                 ? queryResult.getFulfillmentMessages(0).getText()
-                : "Default Fallback Intent Triggered");
+                : "Triggered Default Fallback Intent");
       }
     }
   }
