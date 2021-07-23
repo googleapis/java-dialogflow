@@ -89,19 +89,17 @@ public class AgentName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static AgentName ofProjectName(String project) {
-    return newBuilder().setProject(project).build();
-  }
-
   /** @deprecated Please use {@link #ofProjectName()} instead */
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   @Deprecated
   public static AgentName ofProjectAgentName(String project) {
     return newBuilder().setProject(project).build();
   }
 
+  /** @deprecated Please use {@link #ofProjectLocationName()} instead */
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static AgentName ofProjectLocationName(String project, String location) {
+  @Deprecated
+  public static AgentName ofProjectLocationAgentName(String project, String location) {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
   }
 
@@ -129,10 +127,10 @@ public class AgentName implements ResourceName {
     }
     if (PROJECT.matches(formattedString)) {
       Map<String, String> matchMap = PROJECT.match(formattedString);
-      return ofProjectName(matchMap.get("project"));
+      return ofProjectAgentName(matchMap.get("project"));
     } else if (PROJECT_LOCATION.matches(formattedString)) {
       Map<String, String> matchMap = PROJECT_LOCATION.match(formattedString);
-      return ofProjectLocationName(matchMap.get("project"), matchMap.get("location"));
+      return ofProjectLocationAgentName(matchMap.get("project"), matchMap.get("location"));
     }
     throw new ValidationException("AgentName.parse: formattedString not in valid format");
   }

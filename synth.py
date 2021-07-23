@@ -51,6 +51,11 @@ s.replace(
 
 DEPRECATION_JAVADOC = """Please use {{@link #{new_method}()}} instead"""
 
+s.replace(
+  'proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+  'ofProjectName',
+  'ofProjectAgentName'
+)
 java.copy_and_rename_method(
   'proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
   'public static AgentName ofProjectName(String project)', 
@@ -63,9 +68,14 @@ java.deprecate_method(
   DEPRECATION_JAVADOC.format(new_method='ofProjectName')
   )
 
+s.replace(
+  'proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
+  'ofProjectLocationName',
+  'ofProjectLocationAgentName'
+  )
 java.copy_and_rename_method(
   'proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
-  'public static AgentName ofProjectLocationAgentName(String project, String location)', 
+  'public static AgentName ofProjectLocationName(String project, String location)', 
   'ofProjectLocationName', 
   'ofProjectLocationAgentName'
   )
