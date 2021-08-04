@@ -16,11 +16,9 @@
 
 package com.example.dialogflow;
 
-import java.io.IOException;
-
-import com.google.cloud.dialogflow.v2.*;
 import com.google.cloud.dialogflow.v2.Intent.Builder;
 import com.google.protobuf.FieldMask;
+import java.io.IOException;
 
 public class UpdateIntent {
 
