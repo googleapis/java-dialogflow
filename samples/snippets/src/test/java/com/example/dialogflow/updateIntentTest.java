@@ -20,14 +20,13 @@ import com.google.cloud.dialogflow.v2.AgentName;
 import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.IntentsClient;
 
+
 import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
+
 public class UpdateIntentTest {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
@@ -51,7 +50,7 @@ public class UpdateIntentTest {
   @Test
   public void agentCreation() throws IOException {
     String actualDisplayName = UpdateIntent.updateIntent(PROJECT_ID, IntentID, "global", 
-      "Update Intent Test").getDisplayName();
+        "Update Intent Test").getDisplayName();
     String expectedDisplayName = "Update Intent Test";
     Assert.assertEquals(actualDisplayName, expectedDisplayName);
   }
