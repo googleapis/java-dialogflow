@@ -20,8 +20,8 @@ import com.google.cloud.dialogflow.v2.AgentName;
 import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.IntentsClient;
 
-
 import java.io.IOException;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
