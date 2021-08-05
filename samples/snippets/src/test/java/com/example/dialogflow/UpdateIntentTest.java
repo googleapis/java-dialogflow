@@ -40,7 +40,7 @@ public class UpdateIntentTest {
       // Performs the list intents request
 
       for (Intent intent : intentsClient.listIntents(parent).iterateAll()) {
-        IntentID = intent.getName().split("/")[6];
+        IntentID = intent.getName().split("/")[4];
       }
     }
   }
