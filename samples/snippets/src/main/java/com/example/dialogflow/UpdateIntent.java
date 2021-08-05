@@ -20,6 +20,7 @@ import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.Intent.Builder;
 import com.google.cloud.dialogflow.v2.IntentsClient;
 import com.google.cloud.dialogflow.v2.UpdateIntentRequest;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 
 public class UpdateIntent {
