@@ -21,6 +21,7 @@ import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.Intent.Builder;
 import com.google.cloud.dialogflow.v2.IntentsClient;
 import java.io.IOException;
+import java.util.UUID;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,9 +49,17 @@ public class UpdateIntentTest {
 
   @Test
   public void agentCreation() throws IOException {
-    String actualDisplayName = UpdateIntent.updateIntent(PROJECT_ID, IntentID, "global", 
-        "Update Intent Test").getDisplayName();
-    String expectedDisplayName = "Update Intent Test";
-    Assert.assertEquals(actualDisplayName, expectedDisplayName);
+
+    String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
+
+    Intent actualResponse = UpdateIntent.updateIntent(PROJECT_ID, IntentID, "global", 
+        fakeIntent);
+
+    try (IntentsClient intentsClient = IntentsClient.create()) {
+      // Set the project agent name using the projectID (my-project-id)
+      intentsClient.deleteIntent(actualResponse.getName());
+    }
+
+    Assert.assertEquals(actualResponse.getDisplayName(), fakeIntent);
   }
 }
