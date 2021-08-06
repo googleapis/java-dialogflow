@@ -48,7 +48,7 @@ public class UpdateIntentTest {
   }
 
   @Test
-  public void agentCreation() throws IOException {
+  public void testUpdateIntent() throws IOException {
 
     String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
 
