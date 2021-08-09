@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-dialogflow.git",
-        "sha": "66020b91aafeed0f925c0d695b456b664c6533c0"
+        "remote": "https://github.com/googleapis/java-dialogflow.git",
+        "sha": "3ec0202217da764401d7e7238bb5551fa5bbaec9"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "dd05f9d12f134871c9e45282349c9856fbebecdd"
+        "sha": "1a2878d6909dd10ca4e3c1b5943d6622e996054e"
       }
     }
   ],
