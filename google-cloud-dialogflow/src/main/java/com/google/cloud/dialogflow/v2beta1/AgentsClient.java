@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1268,12 +1267,7 @@ public class AgentsClient implements BackgroundResource {
           SearchAgentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchAgentsPage, SearchAgentsPagedResponse>() {
-            @Override
-            public SearchAgentsPagedResponse apply(SearchAgentsPage input) {
-              return new SearchAgentsPagedResponse(input);
-            }
-          },
+          input -> new SearchAgentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
