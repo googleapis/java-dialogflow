@@ -152,7 +152,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of all non-draft environments of the specified agent.
+   * Returns the list of all non-default environments of the specified agent.
    *
    * <p>Sample code:
    *
@@ -165,9 +165,9 @@ public class EnvironmentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all environments from. Format: -
-   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agent`
+   * @param parent Required. The agent to list all environments from. Format:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEnvironmentsPagedResponse listEnvironments(AgentName parent) {
@@ -180,7 +180,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of all non-draft environments of the specified agent.
+   * Returns the list of all non-default environments of the specified agent.
    *
    * <p>Sample code:
    *
@@ -194,9 +194,9 @@ public class EnvironmentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all environments from. Format: -
-   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agent`
+   * @param parent Required. The agent to list all environments from. Format:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEnvironmentsPagedResponse listEnvironments(String parent) {
@@ -207,7 +207,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of all non-draft environments of the specified agent.
+   * Returns the list of all non-default environments of the specified agent.
    *
    * <p>Sample code:
    *
@@ -235,7 +235,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of all non-draft environments of the specified agent.
+   * Returns the list of all non-default environments of the specified agent.
    *
    * <p>Sample code:
    *
@@ -264,7 +264,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of all non-draft environments of the specified agent.
+   * Returns the list of all non-default environments of the specified agent.
    *
    * <p>Sample code:
    *
@@ -404,12 +404,12 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <p>This method allows you to deploy new agent versions into the environment. When an
    * environment is pointed to a new agent version by setting `environment.agent_version`, the
-   * environment is temporarily set to the `LOADING` state. During that time, the environment keeps
-   * on serving the previous version of the agent. After the new agent version is done loading, the
-   * environment is set back to the `RUNNING` state. You can use "-" as Environment ID in
-   * environment name to update version in "draft" environment. WARNING: this will negate all recent
-   * changes to draft and can't be undone. You may want to save the draft to a version before
-   * calling this function.
+   * environment is temporarily set to the `LOADING` state. During that time, the environment
+   * continues serving the previous version of the agent. After the new agent version is done
+   * loading, the environment is set back to the `RUNNING` state. You can use "-" as Environment ID
+   * in environment name to update an agent version in the default environment. WARNING: this will
+   * negate all recent changes to the draft agent and can't be undone. You may want to save the
+   * draft agent to a version before calling this method.
    *
    * <p>Sample code:
    *
@@ -438,12 +438,12 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <p>This method allows you to deploy new agent versions into the environment. When an
    * environment is pointed to a new agent version by setting `environment.agent_version`, the
-   * environment is temporarily set to the `LOADING` state. During that time, the environment keeps
-   * on serving the previous version of the agent. After the new agent version is done loading, the
-   * environment is set back to the `RUNNING` state. You can use "-" as Environment ID in
-   * environment name to update version in "draft" environment. WARNING: this will negate all recent
-   * changes to draft and can't be undone. You may want to save the draft to a version before
-   * calling this function.
+   * environment is temporarily set to the `LOADING` state. During that time, the environment
+   * continues serving the previous version of the agent. After the new agent version is done
+   * loading, the environment is set back to the `RUNNING` state. You can use "-" as Environment ID
+   * in environment name to update an agent version in the default environment. WARNING: this will
+   * negate all recent changes to the draft agent and can't be undone. You may want to save the
+   * draft agent to a version before calling this method.
    *
    * <p>Sample code:
    *

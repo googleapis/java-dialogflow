@@ -161,9 +161,9 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all versions from. Supported formats: -
-   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agent`
+   * @param parent Required. The agent to list all versions from. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVersionsPagedResponse listVersions(AgentName parent) {
@@ -189,9 +189,9 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all versions from. Supported formats: -
-   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agent`
+   * @param parent Required. The agent to list all versions from. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVersionsPagedResponse listVersions(String parent) {
@@ -299,9 +299,10 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the version. Supported formats: - `projects/&lt;Project
-   *     ID&gt;/agent/versions/&lt;Version ID&gt;` - `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * @param name Required. The name of the version. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *     ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version getVersion(VersionName name) {
@@ -323,9 +324,10 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the version. Supported formats: - `projects/&lt;Project
-   *     ID&gt;/agent/versions/&lt;Version ID&gt;` - `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * @param name Required. The name of the version. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *     ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version getVersion(String name) {
@@ -394,9 +396,9 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a version for. Supported formats: -
-   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agent`
+   * @param parent Required. The agent to create a version for. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @param version Required. The version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -425,9 +427,9 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a version for. Supported formats: -
-   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agent`
+   * @param parent Required. The agent to create a version for. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @param version Required. The version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -505,9 +507,10 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param version Required. The version to update. Supported formats: - `projects/&lt;Project
-   *     ID&gt;/agent/versions/&lt;Version ID&gt;` - `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * @param version Required. The version to update. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *     ID&gt;`
    * @param updateMask Required. The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -583,9 +586,10 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the version to delete. Supported formats: -
-   *     `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;` - `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * @param name Required. The name of the version to delete. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *     ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteVersion(VersionName name) {
@@ -607,9 +611,10 @@ public class VersionsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the version to delete. Supported formats: -
-   *     `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;` - `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * @param name Required. The name of the version to delete. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *     ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteVersion(String name) {
