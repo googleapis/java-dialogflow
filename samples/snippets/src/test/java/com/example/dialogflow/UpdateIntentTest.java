@@ -35,7 +35,7 @@ import org.junit.Test;
 public class UpdateIntentTest {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private static String parent = "";
+  private static String parent = "projects/" + PROJECT_ID + "locations/global/agent/";
   private static String intentID = "";
   private static String intentPath = "";
 
@@ -52,7 +52,7 @@ public class UpdateIntentTest {
       intent.setDisplayName("temp_intent_" + UUID.randomUUID().toString());
 
       UpdateIntentTest.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
-      UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[4];
+      UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[6];
     }
   }
 
@@ -63,7 +63,7 @@ public class UpdateIntentTest {
 
     IntentsClient client = IntentsClient.create();
 
-    String intentPath = "projects/" + PROJECT_ID + "/agents/intents/" + UpdateIntentTest.intentID;
+    String intentPath = "projects/" + PROJECT_ID + "locations/global/agent/intents/" + UpdateIntentTest.intentID;
 
     client.deleteIntent(intentPath);
   }
