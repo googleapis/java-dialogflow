@@ -63,7 +63,7 @@ public class UpdateIntentTest {
 
     IntentsClient client = IntentsClient.create();
 
-    String intentPath = "projects/"+PROJECT_ID+"/agents/intents/"+UpdateIntent.intentID;
+    String intentPath = "projects/" + PROJECT_ID + "/agents/intents/" + UpdateIntent.intentID;
 
     client.deleteIntent(intentPath)
   }
