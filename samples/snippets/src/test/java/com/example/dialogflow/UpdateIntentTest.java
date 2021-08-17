@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dialogflow.cx;
+package com.example.dialogflow;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -48,7 +48,7 @@ public class UpdateIntentTest {
     System.setOut(new PrintStream(stdOut));
 
     try (IntentsClient intentsClient = IntentsClient.create()) {
-      com.google.cloud.dialogflow.cx.v3.Intent.Builder intent = Intent.newBuilder();
+      com.google.cloud.dialogflow.v2.Intent.Builder intent = Intent.newBuilder();
       intent.setDisplayName("temp_intent_" + UUID.randomUUID().toString());
 
       UpdateIntentTest.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
