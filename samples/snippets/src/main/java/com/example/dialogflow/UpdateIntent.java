@@ -47,7 +47,7 @@ public class UpdateIntent {
               + projectId
               + "/locations/"
               + location
-              + "/agents/intents/"
+              + "/agent/intents/"
               + intentId;
 
       Builder intentBuilder = client.getIntent(intentPath).toBuilder();
