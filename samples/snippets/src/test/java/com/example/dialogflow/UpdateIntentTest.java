@@ -52,7 +52,7 @@ public class UpdateIntentTest {
       intent.setDisplayName("temp_intent_" + UUID.randomUUID().toString());
 
       UpdateIntentTest.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
-      UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[7];
+      UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[4];
     }
   }
 
@@ -63,7 +63,7 @@ public class UpdateIntentTest {
 
     IntentsClient client = IntentsClient.create();
 
-    String intentPath = "projects/" + PROJECT_ID + "/agents/intents/" + UpdateIntent.intentID;
+    String intentPath = "projects/" + PROJECT_ID + "/agents/intents/" + UpdateIntentTest.intentID;
 
     client.deleteIntent(intentPath);
   }
