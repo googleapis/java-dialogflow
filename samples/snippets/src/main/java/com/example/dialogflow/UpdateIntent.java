@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,26 +23,50 @@ import com.google.cloud.dialogflow.v2.UpdateIntentRequest;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 
+// [START dialogflow_es_update_intent]
+
+
 public class UpdateIntent {
 
-  public static Intent updateIntent(String projectId, String intentId, String location,
-      String displayName) throws IOException {
-    IntentsClient client = IntentsClient.create();
+  public static void main(String[] args) throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String intentId = "my-intent-id";
+    String location = "my-location";
+    String displayName = "my-display-name";
+    updateIntent(projectId, intentId, location, displayName);
+  }
 
-    String intentPath =
-        "projects/" + projectId + "/locations/" + location + "/agent/intents/" + intentId;
+  // DialogFlow API Update Intent sample.
+  public static void updateIntent(
+      String projectId, String intentId, String location, String displayName)
+      throws IOException {
+    try (IntentsClient client = IntentsClient.create()) {
+      String intentPath =
+          "projects/"
+              + projectId
+              + "/locations/"
+              + location
+              + "/agents/intents/"
+              + intentId;
 
-    Builder intentBuilder = client.getIntent(intentPath).toBuilder();
+      Builder intentBuilder = client.getIntent(intentPath).toBuilder();
 
-    intentBuilder.setDisplayName(displayName);
-    FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
+      intentBuilder.setDisplayName(displayName);
+      FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
 
-    Intent intent = intentBuilder.build();
-    UpdateIntentRequest request = UpdateIntentRequest.newBuilder()
-        .setIntent(intent)
-        .setLanguageCode("en")
-        .setUpdateMask(fieldMask)
-        .build();
-    return client.updateIntent(request);
+      Intent intent = intentBuilder.build();
+      UpdateIntentRequest request =
+          UpdateIntentRequest.newBuilder()
+              .setIntent(intent)
+              .setLanguageCode("en")
+              .setUpdateMask(fieldMask)
+              .build();
+
+      // Make API request to update intent using fieldmask
+      Intent response = client.updateIntent(request);
+      System.out.println(response);
+    }
   }
 }
+// [END dialogflow_es_update_intent]

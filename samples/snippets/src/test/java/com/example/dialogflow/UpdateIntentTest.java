@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,37 +14,58 @@
  * limitations under the License.
  */
 
-package com.example.dialogflow;
+package dialogflow.cx;
 
-import com.google.cloud.dialogflow.v2.AgentName;
+import static com.google.common.truth.Truth.assertThat;
+
+import com.google.cloud.dialogflow.v2.Agent;
+import com.google.cloud.dialogflow.v2.Agent.Builder;
+import com.google.cloud.dialogflow.v2.AgentsClient;
+import com.google.cloud.dialogflow.v2.AgentsSettings;
 import com.google.cloud.dialogflow.v2.Intent;
-import com.google.cloud.dialogflow.v2.Intent.Builder;
 import com.google.cloud.dialogflow.v2.IntentsClient;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.UUID;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 
 public class UpdateIntentTest {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private static String IntentID = "";
+  private static String parent = "";
+  private static String intentID = "";
+  private static String intentPath = "";
+
+  private ByteArrayOutputStream stdOut;
 
   @Before
   public void setUp() throws IOException {
 
+    stdOut = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(stdOut));
+
     try (IntentsClient intentsClient = IntentsClient.create()) {
-      // Set the project agent name using the projectID (my-project-id)
-      AgentName parent = AgentName.of(PROJECT_ID);
+      com.google.cloud.dialogflow.cx.v3.Intent.Builder intent = Intent.newBuilder();
+      intent.setDisplayName("temp_intent_" + UUID.randomUUID().toString());
 
-      // Performs the list intents request
-
-      for (Intent intent : intentsClient.listIntents(parent).iterateAll()) {
-        IntentID = intent.getName().split("/")[4];
-      }
+      UpdateIntentTest.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
+      UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[7];
     }
+  }
+
+  @After
+  public void tearDown() throws IOException {
+    stdOut = null;
+    System.setOut(null);
+
+    IntentsClient client = IntentsClient.create();
+
+    String intentPath = "projects/"+PROJECT_ID+"/agents/intents/"+UpdateIntent.intentID;
+
+    client.deleteIntent(intentPath)
   }
 
   @Test
@@ -52,14 +73,9 @@ public class UpdateIntentTest {
 
     String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
 
-    Intent actualResponse = UpdateIntent.updateIntent(PROJECT_ID, IntentID, "global", 
-        fakeIntent);
+    UpdateIntent.updateIntent(
+        PROJECT_ID, UpdateIntentTest.intentID, "global", fakeIntent);
 
-    try (IntentsClient intentsClient = IntentsClient.create()) {
-      // Set the project agent name using the projectID (my-project-id)
-      intentsClient.deleteIntent(actualResponse.getName());
-    }
-
-    Assert.assertEquals(actualResponse.getDisplayName(), fakeIntent);
+    assertThat(stdOut.toString()).contains(fakeIntent);
   }
 }
