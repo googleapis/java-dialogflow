@@ -16,9 +16,8 @@
 
 package com.example.dialogflow;
 
-import org.junit.Test;
-
 import org.junit.Assert;
+import org.junit.Test;
 
 /*
  * We cannot test setAgent because Dialogflow ES can only have one agent 
