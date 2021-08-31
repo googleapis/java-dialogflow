@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow</artifactId>
-  <version>3.3.0</version>
+  <version>4.1.0</version>
 </dependency>
 
 ```
@@ -56,13 +56,13 @@ compile 'com.google.cloud:google-cloud-dialogflow'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-dialogflow:4.1.0'
+compile 'com.google.cloud:google-cloud-dialogflow:4.1.1'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "4.1.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "4.1.1"
 ```
 
 ## Authentication
