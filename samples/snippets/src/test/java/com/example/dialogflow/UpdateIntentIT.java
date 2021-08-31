@@ -32,10 +32,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UpdateIntentTest {
+public class UpdateIntentIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  
+
   private static String parent = "projects/" + PROJECT_ID + "/locations/global/agent";
   private static String intentID = "";
   private static String intentPath = "";
