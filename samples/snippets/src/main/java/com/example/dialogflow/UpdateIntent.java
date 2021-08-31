@@ -54,7 +54,7 @@ public class UpdateIntent {
       intentBuilder.setDisplayName(displayName);
       FieldMask fieldMask = FieldMask.newBuilder()
         .addPaths("display_name")
-        .build()
+        .build();
 
       Intent intent = intentBuilder.build();
       UpdateIntentRequest request =
