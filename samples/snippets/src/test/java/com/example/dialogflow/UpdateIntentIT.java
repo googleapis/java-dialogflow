@@ -52,8 +52,8 @@ public class UpdateIntentIT {
       com.google.cloud.dialogflow.v2.Intent.Builder intent = Intent.newBuilder();
       intent.setDisplayName("temp_intent_" + UUID.randomUUID().toString());
 
-      UpdateIntentTest.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
-      UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[6];
+      UpdateIntentIT.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
+      UpdateIntentIT.intentID = UpdateIntentIT.intentPath.split("/")[6];
     }
   }
 
@@ -68,7 +68,7 @@ public class UpdateIntentIT {
         "projects/"
             + PROJECT_ID
             + "/locations/global/agent/intents/"
-            + UpdateIntentTest.intentID;
+            + UpdateIntentIT.intentID;
 
     client.deleteIntent(intentPath);
   }
@@ -79,7 +79,7 @@ public class UpdateIntentIT {
     String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
 
     UpdateIntent.updateIntent(
-        PROJECT_ID, UpdateIntentTest.intentID, "global", fakeIntent);
+        PROJECT_ID, UpdateIntentIT.intentID, "global", fakeIntent);
 
     assertThat(stdOut.toString()).contains(fakeIntent);
   }
