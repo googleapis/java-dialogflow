@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>21.0.0</version>
+      <version>22.0.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -49,20 +49,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:21.0.0')
+implementation platform('com.google.cloud:libraries-bom:22.0.0')
 
-compile 'com.google.cloud:google-cloud-dialogflow'
+implementation 'com.google.cloud:google-cloud-dialogflow'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-compile 'com.google.cloud:google-cloud-dialogflow:4.1.0'
+implementation 'com.google.cloud:google-cloud-dialogflow:4.1.1'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "4.1.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "4.1.1"
 ```
 
 ## Authentication
@@ -116,6 +116,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-dialogflow/tr
 | Document Management | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/DocumentManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/DocumentManagement.java) |
 | Intent Management | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/IntentManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/IntentManagement.java) |
 | Knowledge Base Management | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/KnowledgeBaseManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/KnowledgeBaseManagement.java) |
+| Update Intent | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/UpdateIntent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/UpdateIntent.java) |
 
 
 

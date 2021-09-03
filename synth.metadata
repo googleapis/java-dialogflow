@@ -4,30 +4,30 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow.git",
-        "sha": "fb3627e132c014910c7f04fabebf9812009b40aa"
+        "sha": "553525434a20fe1f45d2b5d8e17278cebf31ddb4"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4c984f3be8e1bd85eb8fe78a2911a83b9785a7ea",
-        "internalRef": "389905442"
+        "sha": "cd16abbf04752a0d2d1ae1c4050a36ba725fedd1",
+        "internalRef": "394302922"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4c984f3be8e1bd85eb8fe78a2911a83b9785a7ea",
-        "internalRef": "389905442"
+        "sha": "cd16abbf04752a0d2d1ae1c4050a36ba725fedd1",
+        "internalRef": "394302922"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ff01716e16d2c6e87eaf87197b753ac9fcbbed5d"
+        "sha": "9a238a0623879c3de129a376c6085d4a862f6eb9"
       }
     }
   ],
@@ -61,6 +61,7 @@
     ".github/generated-files-bot.yml",
     ".github/readme/synth.py",
     ".github/release-please.yml",
+    ".github/release-trigger.yml",
     ".github/snippet-bot.yml",
     ".github/sync-repo-settings.yaml",
     ".github/trusted-contribution.yml",
