@@ -32,7 +32,7 @@ public class SetAgentIT {
   @Test
   public void testCreateAgent()  {
     try {
-      SetAgent.setAgent(PROJECT_ID,"")
+      SetAgent.setAgent(PROJECT_ID, "");
       Assert.assertTrue(false);
     } catch (Exception e) {
       Assert.assertTrue(true);
