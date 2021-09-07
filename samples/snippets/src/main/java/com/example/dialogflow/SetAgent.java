@@ -27,7 +27,6 @@ import java.io.IOException;
 public class SetAgent {
 
   public static void main(String[] args) throws IOException {
-
     String projectId = "my-project-id";
     String displayName = "my-display-name";
 
