@@ -34,7 +34,6 @@ public class SetAgent {
   }
 
   public static Agent setAgent(String parent, String displayName) throws IOException {
-
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
