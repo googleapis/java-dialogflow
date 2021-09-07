@@ -28,7 +28,6 @@ import org.junit.Test;
 public class SetAgentIT {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
 
-
   @Test
   public void testCreateAgent()  {
     try {
