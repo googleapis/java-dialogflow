@@ -26,9 +26,16 @@ import org.junit.Test;
  */
 
 public class SetAgentIT {
+  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+
 
   @Test
   public void testCreateAgent()  {
-    Assert.assertTrue(true);
+    try {
+      SetAgent.setAgent(PROJECT_ID,"")
+      Assert.assertTrue(false);
+    } catch (Exception e) {
+      Assert.assertTrue(true);
+    }
   }
 }
