@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.dialogflow;
+package dialogflow;
 
 // [START dialogflow_es_create_agent]
 

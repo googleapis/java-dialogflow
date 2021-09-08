@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.dialogflow;
+package dialogflow;
 
 import org.junit.Assert;
 import org.junit.Test;
