@@ -28,24 +28,22 @@ public class SetAgent {
 
   public static void main(String[] args) throws IOException {
     String projectId = "my-project-id";
+
+    // The display name will set the name of your agent
     String displayName = "my-display-name";
 
     setAgent(projectId, displayName);
   }
 
   public static Agent setAgent(String parent, String displayName) throws IOException {
-    String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
-    AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
+    AgentsSettings agentsSettings = AgentsSettings.newBuilder().build();
     try (AgentsClient client = AgentsClient.create(agentsSettings)) {
       // Set the details of the Agent to create
       Builder build = Agent.newBuilder();
 
       build.setDefaultLanguageCode("en");
       build.setDisplayName(displayName);
-      // Correct format for timezone is location/city
-      // For example America/Los_Angeles, Europe/Madrid, Asia/Tokyo
-      build.setTimeZone("America/Los_Angeles");
 
       Agent agent = build.build();
 
