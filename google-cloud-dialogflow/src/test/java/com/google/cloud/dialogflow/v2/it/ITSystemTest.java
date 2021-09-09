@@ -87,8 +87,9 @@ public class ITSystemTest {
       EntityType.Entity.newBuilder().addSynonyms("test-entity").setValue("test-entity").build();
   private static final String INTENT_NAME = "test-intent-" + ID;
   private static final String EVENT_NAME = "test-event";
-  private static final String ACTION_NAME = "test-action";
   private static Random rn = new Random();
+  private static String[] ACTION_NAME_ARR = {"test-action1", "test-action2", "test-action3", "test-action4", "test-action5"};  
+  private static String ACTION_NAME = ACTION_NAME_ARR[rn.nextInt(5)];
   private static final String SESSION_ID = UUID.randomUUID().toString();
   private static final SessionName SESSION_NAME = SessionName.of(PROJECT_ID, SESSION_ID);
   private static final String CONTEXT_ID = "test-context-" + ID;
