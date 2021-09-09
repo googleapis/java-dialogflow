@@ -60,7 +60,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ITSystemTest {
-  
   private static AgentsClient agentsClient;
   private static ContextsClient contextsClient;
   private static Context context;
