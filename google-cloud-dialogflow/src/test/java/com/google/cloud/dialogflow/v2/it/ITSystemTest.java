@@ -85,8 +85,8 @@ public class ITSystemTest {
   private static final EntityType.Entity ENTITY =
       EntityType.Entity.newBuilder().addSynonyms("test-entity").setValue("test-entity").build();
   private static final String INTENT_NAME = "test-intent-" + ID;
-  private static final String EVENT_NAME = "test-event";
-  private static final String ACTION_NAME = "test-action-" + UUID.randomUUID().toString();
+  private static final String EVENT_NAME = "test-event-" + + UUID.randomUUID().toString();
+  private static final String ACTION_NAME = "test-action";
   private static final String SESSION_ID = UUID.randomUUID().toString();
   private static final SessionName SESSION_NAME = SessionName.of(PROJECT_ID, SESSION_ID);
   private static final String CONTEXT_ID = "test-context-" + ID;
