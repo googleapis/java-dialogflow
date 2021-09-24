@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.BufferedWriter;
 
-public class Webhook implements HttpFunction {
+public class Example implements HttpFunction {
 
   public void service (HttpRequest request, HttpResponse response) throws Exception {
     JsonParser parser = new JsonParser();
