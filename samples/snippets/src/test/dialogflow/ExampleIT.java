@@ -32,7 +32,7 @@ import org.mockito.MockitoAnnotations;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-public class WebhookIT {
+public class ExampleIT {
 
     private ByteArrayOutputStream stdOut;
 
@@ -62,7 +62,7 @@ public class WebhookIT {
   @Test
   public void testWebhook() throws IOException {
     when(request.getReader()).thenReturn(getRequestJSONReader());
-    Webhook.handleWebhook()
+    Example.service()
     assertThat(stdOut.toString()).contains("Hello from a Java GCF Webhook");
 
   }
