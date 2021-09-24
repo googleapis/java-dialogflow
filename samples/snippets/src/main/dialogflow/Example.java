@@ -32,7 +32,10 @@ public class Example implements HttpFunction {
       responseText = '"' + "Sorry I didn't get that" + '"';
     }
 
-    o = parser.parse("{\"fulfillmentMessages\": [ { \"text\": { \"text\": [ " + responseText + " ] } } ] }").getAsJsonObject();
+    o = parser.parse(
+        "{\"fulfillmentMessages\": [ { \"text\": { \"text\": [ " + responseText + " ] } } ] }"
+        ).getAsJsonObject();
+        
     BufferedWriter writer = response.getWriter();
     writer.write(o.toString());
   }
