@@ -130,7 +130,7 @@ Dialogflow API uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
-Java 8 or above is required for using this client.
+Java 7 or above is required for using this client.
 
 Google's Java client libraries,
 [Google Cloud Client Libraries][cloudlibs]
