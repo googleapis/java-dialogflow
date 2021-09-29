@@ -58,7 +58,7 @@ public class ExampleIT {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException {
-    BufferedReader jsonReader = new BufferedReader(new StringReader('{"queryResult": { "intent": { "name": "projects", "displayName": "Default Welcome Intent" } } })');
+    BufferedReader jsonReader = new BufferedReader(new StringReader("{'queryResult': { 'intent': { 'name': 'projects', 'displayName': 'Default Welcome Intent' } } })");
 
     when(request.getReader()).thenReturn(jsonReader);
 
