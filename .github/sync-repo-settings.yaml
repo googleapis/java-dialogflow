@@ -2,7 +2,7 @@ rebaseMergeAllowed: false
 squashMergeAllowed: true
 mergeCommitAllowed: false
 branchProtectionRules:
-  - pattern: master
+  - pattern: main
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
     requiresCodeOwnerReviews: true
@@ -16,6 +16,7 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
+      - OwlBot Post Processor
   - pattern: java7
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -31,6 +32,7 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
+      - OwlBot Post Processor
 permissionRules:
   - team: yoshi-admins
     permission: admin
