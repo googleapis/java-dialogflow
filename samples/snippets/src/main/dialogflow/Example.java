@@ -16,7 +16,7 @@
 
 package dialogflow;
 
-// [START dialogflow_es_webhook]
+// [START dialogflow_webhook]
 
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
@@ -64,4 +64,4 @@ public class Example implements HttpFunction {
     writer.write(o.toString());
   }
 }
-// [END dialogflow_es_webhook]
+// [END dialogflow_webhook]
