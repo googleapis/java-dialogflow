@@ -27,7 +27,7 @@ import org.junit.Test;
 
 public class ListTrainingPhrasesTest {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private static String intentID = "7b5bd47e-6dd9-4b45-8624-565862bd2d85";
+  private static String intentID = "875138fa-991f-4c2b-b58c-dcbad1638556";
 
   private ByteArrayOutputStream stdOut;
 
@@ -46,6 +46,6 @@ public class ListTrainingPhrasesTest {
   @Test
   public void testListTrainingPhrases() throws IOException {
     ListTrainingPhrases.listTrainingPhrases(PROJECT_ID, intentID);
-    assertThat(stdOut.toString()).contains("Mountain View");
+    assertThat(stdOut.toString()).contains("one hour");
   }
 }
