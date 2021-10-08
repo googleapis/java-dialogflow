@@ -17,7 +17,11 @@
 package com.example.dialogflow;
 
 // [START dialogflow_list_training_phrases]
-import com.google.cloud.dialogflow.v2.*;
+import com.google.cloud.dialogflow.v2.GetIntentRequest;
+import com.google.cloud.dialogflow.v2.Intent;
+import com.google.cloud.dialogflow.v2.IntentName;
+import com.google.cloud.dialogflow.v2.IntentView;
+import com.google.cloud.dialogflow.v2.IntentsClient;
 import java.io.IOException;
 import java.util.List;
 
