@@ -46,6 +46,6 @@ public class ListTrainingPhrasesTest {
   @Test
   public void testListTrainingPhrases() throws IOException {
     ListTrainingPhrases.listTrainingPhrases(PROJECT_ID, intentID);
-    assertThat(stdOut.toString()).contains("one hour");
+    assertThat(stdOut.toString()).contains("What date?");
   }
 }
