@@ -100,32 +100,12 @@ public class AgentName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  /**
-   * @deprecated Please use {@link #ofProjectName()} instead
-   * @deprecated Please use {@link #ofProjectName()} instead
-   */
-  @Deprecated
-  @Deprecated
-  public static AgentName ofProjectAgentName(String project) {
-    return newBuilder().setProject(project).build();
-  }
-
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AgentName ofProjectLocationName(String project, String location) {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
   }
 
   /** @deprecated Please use {@link #ofProjectLocationName()} instead */
-  @Deprecated
-  public static AgentName ofProjectLocationAgentName(String project, String location) {
-    return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
-  }
-
-  /**
-   * @deprecated Please use {@link #ofProjectLocationName()} instead
-   * @deprecated Please use {@link #ofProjectLocationName()} instead
-   */
-  @Deprecated
   @Deprecated
   public static AgentName ofProjectLocationAgentName(String project, String location) {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
