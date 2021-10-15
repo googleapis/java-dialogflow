@@ -18,7 +18,7 @@ package dialogflow;
 
 // [START dialogflow_webhook]
 
-// TODO : add GSON dependency to Pom file (https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5)
+// TODO: add GSON dependency to Pom file (https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5)
 // TODO: Uncomment the line bellow before running cloud function
 // package com.example; 
 
