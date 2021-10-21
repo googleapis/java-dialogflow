@@ -20,7 +20,6 @@ for library in s.get_staging_dirs():
     # put any special-case replacements here
     # TODO: remove this for the next major version bump
     if 'formatProjectAgentName' not in open('owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java').read():
-        print("THIS IS RUNNING!!!!!")
         s.replace(
             'owl-bot-staging/v2beta1/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java',
             'public static String formatProjectName',
