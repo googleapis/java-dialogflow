@@ -136,7 +136,8 @@ public class MockConversationsImpl extends ConversationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CompleteConversation, expected %s or %s",
+                  "Unrecognized response type %s for method CompleteConversation, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Conversation.class.getName(),
                   Exception.class.getName())));

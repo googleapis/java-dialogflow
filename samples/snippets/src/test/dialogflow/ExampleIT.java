@@ -58,7 +58,8 @@ public class ExampleIT {
     BufferedReader jsonReader =
         new BufferedReader(
             new StringReader(
-                "{'queryResult': { 'intent': { 'name': 'projects', 'displayName': 'Default Welcome Intent' } } })"));
+                "{'queryResult': { 'intent': { 'name': 'projects', 'displayName': 'Default Welcome"
+                    + " Intent' } } })"));
 
     when(request.getReader()).thenReturn(jsonReader);
 
