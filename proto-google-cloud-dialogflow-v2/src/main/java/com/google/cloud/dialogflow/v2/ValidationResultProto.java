@@ -45,11 +45,10 @@ public final class ValidationResultProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "2google/cloud/dialogflow/v2/validation_"
-          + "result.proto\022\032google.cloud.dialogflow.v2\032\034google/api/annotations.proto\"\327\001\n"
+          + "2google/cloud/dialogflow/v2/validation_result.proto\022\032google.cloud.dialogflow.v2\032\034google/api/annotations.proto\"\327\001\n"
           + "\017ValidationError\022F\n"
-          + "\010severity\030\001 \001(\01624.google.cl"
-          + "oud.dialogflow.v2.ValidationError.Severity\022\017\n"
+          + "\010severity\030\001"
+          + " \001(\01624.google.cloud.dialogflow.v2.ValidationError.Severity\022\017\n"
           + "\007entries\030\003 \003(\t\022\025\n\r"
           + "error_message\030\004 \001(\t\"T\n"
           + "\010Severity\022\030\n"
