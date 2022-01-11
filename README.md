@@ -49,20 +49,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:24.1.2')
+implementation platform('com.google.cloud:libraries-bom:24.2.0')
 
 implementation 'com.google.cloud:google-cloud-dialogflow'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dialogflow:4.3.1'
+implementation 'com.google.cloud:google-cloud-dialogflow:4.4.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "4.3.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "4.4.0"
 ```
 
 ## Authentication
