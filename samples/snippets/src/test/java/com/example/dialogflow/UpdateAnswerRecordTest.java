@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.cloud.dialogflow.v2.AnswerRecord;
+import com.google.cloud.dialogflow.v2.AnswerRecordName;
 import com.google.cloud.dialogflow.v2.AnswerRecordsClient;
 import com.google.cloud.dialogflow.v2.LocationName;
-import com.google.cloud.dialogflow.v2.AnswerRecordsClient.ListAnswerRecordsPagedResponse;
 import java.io.IOException;
 import org.junit.After;
 import org.junit.Before;
@@ -54,9 +54,8 @@ public class UpdateAnswerRecordTest {
     try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
       LocationName parent = LocationName.of(PROJECT_ID, "global");
       answerRecordsClient.listAnswerRecords(LocationName.of(PROJECT_ID, "global"));
-      ListAnswerRecordsPagedResponse response = answerRecordsClient.listAnswerRecords(parent);
       for (AnswerRecord answerRecord : 
-      response.iterateAll()) {
+          answerRecordsClient.listAnswerRecords(parent).iterateAll()) {
         if (!answerRecord.getAnswerFeedback().getClicked()) {
           answerRecordId = answerRecord.getName().split("/")[5];
           return;
@@ -73,7 +72,8 @@ public class UpdateAnswerRecordTest {
 
   @Test
   public void testUpdateAnswerRecord() throws IOException {
-    AnswerRecord answerRecord = AnswerRecordManagement.updateAnswerRecord(PROJECT_ID, answerRecordId, true);
+    AnswerRecord answerRecord = AnswerRecordManagement.updateAnswerRecord(
+        PROJECT_ID, answerRecordId, true);
     assertEquals(true, answerRecord.getAnswerFeedback().getClicked());
   }
 }
