@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.cloud.dialogflow.v2.AnswerRecord;
-import com.google.cloud.dialogflow.v2.AnswerRecordName;
 import com.google.cloud.dialogflow.v2.AnswerRecordsClient;
 import com.google.cloud.dialogflow.v2.LocationName;
 import java.io.IOException;

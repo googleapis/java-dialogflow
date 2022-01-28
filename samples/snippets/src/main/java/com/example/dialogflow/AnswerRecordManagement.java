@@ -20,6 +20,7 @@ package com.example.dialogflow;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2.AnswerFeedback;
 import com.google.cloud.dialogflow.v2.AnswerRecord;
+import com.google.cloud.dialogflow.v2.AnswerRecordName;
 import com.google.cloud.dialogflow.v2.AnswerRecordsClient;
 import com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest;
 import com.google.protobuf.FieldMask;
@@ -34,12 +35,12 @@ public class AnswerRecordManagement {
       boolean clicked)
       throws ApiException, IOException {
     try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
-      String answerRecordName = 
-          "projects/" + projectId + "/locations/global/answerRecords/" + answerRecordId;
+      AnswerRecordName answerRecordName = 
+        AnswerRecordName.ofProjectLocationAnswerRecordName(projectId, "global", answerRecordId);
       AnswerFeedback answerFeedback = AnswerFeedback.newBuilder()
-          .setClicked(clicked).build();
+      .setClicked(clicked).build();
       AnswerRecord answerRecord = AnswerRecord.newBuilder()
-          .setName(answerRecordName)
+          .setName(answerRecordName.toString())
           .setAnswerFeedback(answerFeedback)
           .build();
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("answer_feedback").build();
