@@ -36,9 +36,8 @@ public class AnswerRecordManagement {
       throws ApiException, IOException {
     try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
       AnswerRecordName answerRecordName = 
-        AnswerRecordName.ofProjectLocationAnswerRecordName(projectId, "global", answerRecordId);
-      AnswerFeedback answerFeedback = AnswerFeedback.newBuilder()
-      .setClicked(clicked).build();
+          AnswerRecordName.ofProjectLocationAnswerRecordName(projectId, "global", answerRecordId);
+      AnswerFeedback answerFeedback = AnswerFeedback.newBuilder().setClicked(clicked).build();
       AnswerRecord answerRecord = AnswerRecord.newBuilder()
           .setName(answerRecordName.toString())
           .setAnswerFeedback(answerFeedback)

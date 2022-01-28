@@ -18,12 +18,14 @@ package com.example.dialogflow;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.dialogflow.v2.AnswerRecord;
+import com.google.cloud.dialogflow.v2.AnswerRecordName;
 import com.google.cloud.dialogflow.v2.AnswerRecordsClient;
 import com.google.cloud.dialogflow.v2.LocationName;
 import java.io.IOException;
-import org.junit.After;
+import java.util.Optional;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -41,6 +43,20 @@ public class UpdateAnswerRecordTest {
     assertNotNull(String.format(varName), String.format(varName));
   }
 
+  private static Optional<AnswerRecord> getUnclickedAnswerRecord() throws IOException {
+    try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
+      LocationName parent = LocationName.of(PROJECT_ID, "global");
+      answerRecordsClient.listAnswerRecords(LocationName.of(PROJECT_ID, "global"));
+      for (AnswerRecord answerRecord : 
+          answerRecordsClient.listAnswerRecords(parent).iterateAll()) {
+        if (!answerRecord.getAnswerFeedback().getClicked()) {
+          return Optional.of(answerRecord);
+        }
+      }
+      return Optional.empty();
+    }
+  }
+
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
@@ -49,24 +65,11 @@ public class UpdateAnswerRecordTest {
 
   @Before
   public void setUp() throws IOException {
-    // Get an unclicked answer record
-    try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
-      LocationName parent = LocationName.of(PROJECT_ID, "global");
-      answerRecordsClient.listAnswerRecords(LocationName.of(PROJECT_ID, "global"));
-      for (AnswerRecord answerRecord : 
-          answerRecordsClient.listAnswerRecords(parent).iterateAll()) {
-        if (!answerRecord.getAnswerFeedback().getClicked()) {
-          answerRecordId = answerRecord.getName().split("/")[5];
-          return;
-        }
-      }
-    }
-  }
-
-  @After
-  public void tearDown() throws IOException {
-    // Reset unclicked answer record
-    AnswerRecordManagement.updateAnswerRecord(PROJECT_ID, answerRecordId, false);
+    // Get an uncliked answer record
+    Optional<AnswerRecord> answerRecordOptional = getUnclickedAnswerRecord();
+    assertTrue(answerRecordOptional.isPresent());
+    answerRecordId = 
+        AnswerRecordName.parse(answerRecordOptional.get().getName()).getAnswerRecord();
   }
 
   @Test
