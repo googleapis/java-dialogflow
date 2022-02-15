@@ -31,12 +31,13 @@ public class AnswerRecordManagement {
   // Update whether the answer record was clicked.
   public static AnswerRecord updateAnswerRecord(
       String projectId, 
+      String location,
       String answerRecordId, 
       boolean clicked)
       throws ApiException, IOException {
     try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
       AnswerRecordName answerRecordName = 
-          AnswerRecordName.ofProjectLocationAnswerRecordName(projectId, "global", answerRecordId);
+          AnswerRecordName.ofProjectLocationAnswerRecordName(projectId, location, answerRecordId);
       AnswerFeedback answerFeedback = AnswerFeedback.newBuilder().setClicked(clicked).build();
       AnswerRecord answerRecord = AnswerRecord.newBuilder()
           .setName(answerRecordName.toString())
@@ -50,6 +51,7 @@ public class AnswerRecordManagement {
             .setUpdateMask(fieldMask)
             .build();
       AnswerRecord response = answerRecordsClient.updateAnswerRecord(request);
+      System.out.println("====================");
       System.out.format("AnswerRecord updated:\n");
       System.out.format("Name: %s \n", response.getName());
       System.out.format("Clicked: %s \n", response.getAnswerFeedback().getClicked());

@@ -26,7 +26,6 @@ import com.google.cloud.dialogflow.v2.AnswerRecordsClient;
 import com.google.cloud.dialogflow.v2.LocationName;
 import java.io.IOException;
 import java.util.Optional;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,21 +36,18 @@ import org.junit.runners.JUnit4;
 public class UpdateAnswerRecordTest {
     
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static String answerRecordId = "";
+  private static final String LOCATION = "global";
 
   private static void requireEnvVar(String varName) {
     assertNotNull(String.format(varName), String.format(varName));
   }
 
-  private static Optional<AnswerRecord> getUnclickedAnswerRecord() throws IOException {
+  private static Optional<AnswerRecord> getOneAnswerRecord() throws IOException {
     try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
-      LocationName parent = LocationName.of(PROJECT_ID, "global");
-      answerRecordsClient.listAnswerRecords(LocationName.of(PROJECT_ID, "global"));
+      LocationName locationName = LocationName.of(PROJECT_ID, LOCATION);
       for (AnswerRecord answerRecord : 
-          answerRecordsClient.listAnswerRecords(parent).iterateAll()) {
-        if (!answerRecord.getAnswerFeedback().getClicked()) {
-          return Optional.of(answerRecord);
-        }
+          answerRecordsClient.listAnswerRecords(locationName).iterateAll()) {
+            return Optional.of(answerRecord);
       }
       return Optional.empty();
     }
@@ -63,19 +59,26 @@ public class UpdateAnswerRecordTest {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
-  @Before
-  public void setUp() throws IOException {
-    // Get an uncliked answer record
-    Optional<AnswerRecord> answerRecordOptional = getUnclickedAnswerRecord();
-    assertTrue(answerRecordOptional.isPresent());
-    answerRecordId = 
-        AnswerRecordName.parse(answerRecordOptional.get().getName()).getAnswerRecord();
-  }
-
   @Test
   public void testUpdateAnswerRecord() throws IOException {
-    AnswerRecord answerRecord = AnswerRecordManagement.updateAnswerRecord(
-        PROJECT_ID, answerRecordId, true);
-    assertEquals(true, answerRecord.getAnswerFeedback().getClicked());
+    // Get one answer record
+    Optional<AnswerRecord> answerRecordOptional = getOneAnswerRecord();
+    assertTrue(answerRecordOptional.isPresent());
+
+    AnswerRecord originalAnswerRecord = answerRecordOptional.get();
+    String answerRecordId = AnswerRecordName.parse(originalAnswerRecord.getName()).getAnswerRecord();
+    boolean originalClickedValue = originalAnswerRecord.getAnswerFeedback().getClicked();
+    boolean newClickedValue = !originalClickedValue;
+
+    // Update clicked value
+    AnswerRecord updatedAnswerRecord = AnswerRecordManagement.updateAnswerRecord(
+        PROJECT_ID, LOCATION, answerRecordId, newClickedValue);
+    assertEquals(newClickedValue, updatedAnswerRecord.getAnswerFeedback().getClicked());
+
+    // Reset clicked value
+    AnswerRecord resetAnswerRecord = AnswerRecordManagement.updateAnswerRecord(
+        PROJECT_ID, LOCATION, answerRecordId, originalClickedValue);
+    assertEquals(originalClickedValue, resetAnswerRecord.getAnswerFeedback().getClicked());
+    assertEquals(originalAnswerRecord, resetAnswerRecord);
   }
 }
