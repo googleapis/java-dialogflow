@@ -28,6 +28,15 @@ import java.io.IOException;
 
 public class AnswerRecordManagement {
 
+  public static void main(String[] args) throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String location = "my-location";
+    String answerRecordId = "my-answer-record-id";
+    boolean isClicked = true;
+    updateAnswerRecord(projectId, location, answerRecordId, isClicked);
+  }
+
   // Update whether the answer record was clicked.
   public static AnswerRecord updateAnswerRecord(
       String projectId, 

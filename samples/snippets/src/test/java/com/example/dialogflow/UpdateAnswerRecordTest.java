@@ -39,7 +39,7 @@ public class UpdateAnswerRecordTest {
   private static final String LOCATION = "global";
 
   private static void requireEnvVar(String varName) {
-    assertNotNull(String.format(varName), String.format(varName));
+    assertNotNull(System.getenv(varName));
   }
 
   private static Optional<AnswerRecord> getOneAnswerRecord() throws IOException {
@@ -47,7 +47,7 @@ public class UpdateAnswerRecordTest {
       LocationName locationName = LocationName.of(PROJECT_ID, LOCATION);
       for (AnswerRecord answerRecord : 
           answerRecordsClient.listAnswerRecords(locationName).iterateAll()) {
-            return Optional.of(answerRecord);
+        return Optional.of(answerRecord);
       }
       return Optional.empty();
     }
@@ -66,7 +66,8 @@ public class UpdateAnswerRecordTest {
     assertTrue(answerRecordOptional.isPresent());
 
     AnswerRecord originalAnswerRecord = answerRecordOptional.get();
-    String answerRecordId = AnswerRecordName.parse(originalAnswerRecord.getName()).getAnswerRecord();
+    String answerRecordId = 
+        AnswerRecordName.parse(originalAnswerRecord.getName()).getAnswerRecord();
     boolean originalClickedValue = originalAnswerRecord.getAnswerFeedback().getClicked();
     boolean newClickedValue = !originalClickedValue;
 
