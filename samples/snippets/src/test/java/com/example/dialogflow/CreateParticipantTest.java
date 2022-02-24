@@ -27,7 +27,7 @@ public class CreateParticipantTest {
   private static final String LOCATION = "global";
 
   private static void requireEnvVar(String varName) {
-    assertNotNull(String.format(varName), String.format(varName));
+    assertNotNull(System.getenv(varName));
   }
 
   @BeforeClass

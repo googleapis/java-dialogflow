@@ -85,5 +85,5 @@ public class ParticipantManagement {
       return participant;
     }
   }
-  // [END dialogflow_create_participant]
+  // [END dialogflow_get_participant]
 }

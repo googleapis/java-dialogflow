@@ -27,7 +27,7 @@ public class CreateConversationProfileTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
   private static void requireEnvVar(String varName) {
-    assertNotNull(String.format(varName), String.format(varName));
+    assertNotNull(System.getenv(varName));
   }
 
   @BeforeClass
