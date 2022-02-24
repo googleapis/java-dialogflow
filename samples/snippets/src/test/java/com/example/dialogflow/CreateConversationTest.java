@@ -13,7 +13,9 @@ import com.google.cloud.dialogflow.v2.ConversationProfileName;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-
+import java.util.UUID;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,9 +25,9 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class CreateConversationTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String CONVERSATION_PROFILE_DISPLAY_NAME = 
-      "fake_conversation_profile_display_name_conversation";
+  private static final String CONVERSATION_PROFILE_DISPLAY_NAME = UUID.randomUUID().toString();
   private static final String LOCATION = "global";
+  private String conversationProfileId;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(System.getenv(varName));
@@ -37,17 +39,27 @@ public class CreateConversationTest {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
-  @Test
-  public void testCreateConversation() throws ApiException, IOException {
-    // Create a conversation profile
+  @Before
+  public void setUp() throws IOException {
+    // Create a conversation profile 
     ConversationProfile conversationProfile = 
         ConversationProfileManagement.createConversationProfileArticleFaq(
           PROJECT_ID, CONVERSATION_PROFILE_DISPLAY_NAME, LOCATION, 
           Optional.empty(), Optional.empty());
+    conversationProfileId = 
+      ConversationProfileName.parse(conversationProfile.getName()).getConversationProfile();
+  }
 
+  @After
+  public void tearDown() throws IOException {
+    // Delete the created conversation profile
+    ConversationProfileManagement.deleteConversationProfile(
+        PROJECT_ID, LOCATION, conversationProfileId);
+  }
+
+  @Test
+  public void testCreateConversation() throws ApiException, IOException {
     // Create a conversation
-    String conversationProfileId = 
-        ConversationProfileName.parse(conversationProfile.getName()).getConversationProfile();
     Conversation createdConversation = 
         ConversationManagement.createConversation(PROJECT_ID, LOCATION, conversationProfileId);
     assertEquals(LifecycleState.IN_PROGRESS, createdConversation.getLifecycleState());
@@ -69,9 +81,5 @@ public class CreateConversationTest {
         ConversationManagement.completeConversation(PROJECT_ID, LOCATION, conversationId);
     assertEquals(createdConversation.getName(), gotConversation.getName());
     assertEquals(LifecycleState.COMPLETED, completedConversation.getLifecycleState());
-
-    // Delete the conversation profile
-    ConversationProfileManagement.deleteConversationProfile(
-        PROJECT_ID, LOCATION, conversationProfileId);
   }
 }

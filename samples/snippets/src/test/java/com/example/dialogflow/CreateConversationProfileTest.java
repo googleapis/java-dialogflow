@@ -15,6 +15,7 @@ import com.google.cloud.dialogflow.v2.SuggestionFeature.Type;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,7 +39,7 @@ public class CreateConversationProfileTest {
 
   @Test
   public void testCreateConversationProfileArticleFaq() throws IOException {
-    String conversationProfileDisplayName = "fake_conversation_profile_display_name_article_faq";
+    String conversationProfileDisplayName = UUID.randomUUID().toString();
     String location = "global";
 
     // Check the conversation profile does not yet exists
@@ -48,8 +49,8 @@ public class CreateConversationProfileTest {
           conversationProfile.getDisplayName().equals(conversationProfileDisplayName)));
     
     // Create a conversation profile
-    String articleSuggestionKnowledgeBaseId = "fake-article-suggestion-knowledge-base-id";
-    String faqKnowledgeBaseId = "fake-faq-knowledge-base-id";
+    String articleSuggestionKnowledgeBaseId = UUID.randomUUID().toString();
+    String faqKnowledgeBaseId = UUID.randomUUID().toString();
     ConversationProfile createdConversationProfile = 
         ConversationProfileManagement.createConversationProfileArticleFaq(
           PROJECT_ID, 
@@ -109,7 +110,7 @@ public class CreateConversationProfileTest {
 
   @Test
   public void testCreateConversationProfileSmartReply() throws IOException {
-    String conversationProfileDisplayName = "fake_conversation_profile_display_name_smart_reply";
+    String conversationProfileDisplayName = UUID.randomUUID().toString();
     String location = "global";
 
     // Check the conversation profile does not yet exists
@@ -119,11 +120,11 @@ public class CreateConversationProfileTest {
           conversationProfile.getDisplayName().equals(conversationProfileDisplayName)));
     
     // Create a conversation profile
-    String smartReplyKnowledgeBaseId = "fake-smart-reply-knowledge-base-id";
-    String smartReplyDocumentId = "fake-smart-reply-document-id";
+    String smartReplyKnowledgeBaseId = UUID.randomUUID().toString();
+    String smartReplyDocumentId = UUID.randomUUID().toString();
     DocumentName smartReplyAllowlistName = DocumentName.ofProjectLocationKnowledgeBaseDocumentName(
         PROJECT_ID, location, smartReplyKnowledgeBaseId, smartReplyDocumentId);
-    String smartReplyModelId = "fake-smart-reply-model-id";
+    String smartReplyModelId = UUID.randomUUID().toString();
     ConversationModelName smartReplyModelName = 
         ConversationModelName.of(PROJECT_ID, location, smartReplyModelId);
     System.out.println(smartReplyModelName);
