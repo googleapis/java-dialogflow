@@ -76,7 +76,7 @@ public class ConversationProfileManagement {
     try (ConversationProfilesClient conversationProfilesClient = 
         ConversationProfilesClient.create()) {
       LocationName locationName = LocationName.of(projectId, location);
-      for (ConversationProfile conversationProfile: 
+      for (ConversationProfile conversationProfile : 
           conversationProfilesClient.listConversationProfiles(locationName).iterateAll()) {
         System.out.println("====================");
         System.out.format("Display name: %s\n", conversationProfile.getDisplayName());
