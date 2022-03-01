@@ -23,11 +23,10 @@ import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.ConversationName;
 import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.ConversationProfileName;
+import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
 import com.google.cloud.dialogflow.v2.Participant;
 import com.google.cloud.dialogflow.v2.Participant.Role;
-import com.google.cloud.dialogflow.v2.ParticipantName;
 import java.io.IOException;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.junit.After;
@@ -69,8 +68,12 @@ public class CreateParticipantTest {
   @After
   public void tearDown() throws IOException {
     // Delete the created conversation profile
-    ConversationProfileManagement.deleteConversationProfile(
-        PROJECT_ID, LOCATION, conversationProfileId);
+    try (ConversationProfilesClient conversationProfilesClient = ConversationProfilesClient.create()) {
+      ConversationProfileName conversationProfileName = 
+          ConversationProfileName.ofProjectLocationConversationProfileName(
+            PROJECT_ID, LOCATION, conversationProfileId);
+      conversationProfilesClient.deleteConversationProfile(conversationProfileName.toString());
+    }
   }
 
   @Test
@@ -85,20 +88,5 @@ public class CreateParticipantTest {
           ParticipantManagement.createParticipant(
             PROJECT_ID, LOCATION, conversationId, Role.END_USER);
     assertEquals(Role.END_USER, createdParticipant.getRole());
-
-    // List participants
-    List<Participant> participants = 
-        ParticipantManagement.listParticipants(PROJECT_ID, LOCATION, conversationId);
-    assertEquals(1, participants.size());
-    assertEquals(createdParticipant.getName(), participants.get(0).getName());
-
-    // Get the participant
-    String participantId = ParticipantName.parse(createdParticipant.getName()).getParticipant();
-    Participant gotParticipant = 
-        ParticipantManagement.getParticipant(PROJECT_ID, LOCATION, conversationId, participantId);
-    assertEquals(createdParticipant.getName(), gotParticipant.getName());
-    
-    // Complete the conversation
-    ConversationManagement.completeConversation(PROJECT_ID, LOCATION, conversationId);
   }
 }

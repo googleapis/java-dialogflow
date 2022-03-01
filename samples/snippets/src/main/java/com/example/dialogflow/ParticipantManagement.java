@@ -16,15 +16,14 @@
 
 package com.example.dialogflow;
 
+// [START dialogflow_create_participant]
+
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2.ConversationName;
 import com.google.cloud.dialogflow.v2.Participant;
 import com.google.cloud.dialogflow.v2.Participant.Role;
-import com.google.cloud.dialogflow.v2.ParticipantName;
 import com.google.cloud.dialogflow.v2.ParticipantsClient;
-import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.List;
 
 public class ParticipantManagement {
 
@@ -36,37 +35,10 @@ public class ParticipantManagement {
     Role role = Role.END_USER;
     
     // Create a participant
-    Participant participant = createParticipant(projectId, location, conversationId, role);
-
-    // Get the participant
-    String participantId = ParticipantName.parse(participant.getName()).getParticipant();
-    getParticipant(projectId, location, conversationId, participantId);
-
-    // List participants
-    listParticipants(projectId, location, conversationId);
+    createParticipant(projectId, location, conversationId, role);
   }
-
-  // [START dialogflow_list_participants]
-  public static List<Participant> listParticipants(
-      String projectId, String location, String conversationId) 
-      throws ApiException, IOException {
-    List<Participant> participants = Lists.newArrayList();
-    try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-      ConversationName conversationName = 
-          ConversationName.ofProjectLocationConversationName(projectId, location, conversationId);
-      for (Participant participant : 
-          participantsClient.listParticipants(conversationName).iterateAll()) {
-        System.out.println("====================");
-        System.out.format("Role: %s\n", participant.getRole());
-        System.out.format("Name: %s\n", participant.getName());
-        participants.add(participant);
-      }
-    }
-    return participants;
-  }
-  // [END dialogflow_list_participants]
   
-  // [START dialogflow_create_participant]
+  // Create a participant with given role
   public static Participant createParticipant(
       String projectId, String location, String conversationId, Role role) 
       throws ApiException, IOException {
@@ -83,23 +55,5 @@ public class ParticipantManagement {
       return newParticipant;
     }
   }
-  // [END dialogflow_create_participant]
-
-  // [START dialogflow_get_participant]
-  public static Participant getParticipant(
-      String projectId, String location, String conversationId, String participantId) 
-      throws ApiException, IOException {
-    try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-      ParticipantName participantName = 
-          ParticipantName.ofProjectLocationConversationParticipantName(
-            projectId, location, conversationId, participantId);
-      Participant participant = participantsClient.getParticipant(participantName);
-      System.out.println("====================");
-      System.out.println("Participant Got:");
-      System.out.format("Role: %s\n", participant.getRole());
-      System.out.format("Name: %s\n", participant.getName());
-      return participant;
-    }
-  }
-  // [END dialogflow_get_participant]
 }
+// [END dialogflow_create_participant]

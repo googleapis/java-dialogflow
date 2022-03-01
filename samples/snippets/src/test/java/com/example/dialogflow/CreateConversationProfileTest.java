@@ -17,14 +17,12 @@
 package com.example.dialogflow;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.dialogflow.v2.ConversationModelName;
 import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.ConversationProfileName;
-import com.google.cloud.dialogflow.v2.DocumentName;
+import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
 import com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionFeatureConfig;
 import com.google.cloud.dialogflow.v2.KnowledgeBaseName;
 import com.google.cloud.dialogflow.v2.SuggestionFeature.Type;
@@ -57,12 +55,6 @@ public class CreateConversationProfileTest {
   public void testCreateConversationProfileArticleFaq() throws IOException {
     String conversationProfileDisplayName = UUID.randomUUID().toString();
     String location = "global";
-
-    // Check the conversation profile does not yet exists
-    List<ConversationProfile> conversationProfiles = 
-        ConversationProfileManagement.listConversationProfiles(PROJECT_ID, location);
-    assertFalse(conversationProfiles.stream().anyMatch(conversationProfile -> 
-          conversationProfile.getDisplayName().equals(conversationProfileDisplayName)));
     
     // Create a conversation profile
     String articleSuggestionKnowledgeBaseId = UUID.randomUUID().toString();
@@ -96,95 +88,15 @@ public class CreateConversationProfileTest {
               featureConfig
                 .getQueryConfig().getKnowledgeBaseQuerySource().getKnowledgeBases(0)
             ).getKnowledgeBase().equals(faqKnowledgeBaseId)));
-      
-    // List conversation profiles
-    conversationProfiles = 
-        ConversationProfileManagement.listConversationProfiles(PROJECT_ID, location);
-    assertTrue(conversationProfiles.stream().anyMatch(conversationProfile -> 
-          conversationProfile.getDisplayName().equals(conversationProfileDisplayName)));
-
-    // Get the conversation profile
-    String conversationProfileId = ConversationProfileName.parse(
-        createdConversationProfile.getName()).getConversationProfile();
-    ConversationProfile gotConversationProfile = 
-        ConversationProfileManagement.getConversationProfile(
-          PROJECT_ID, location, conversationProfileId);
-    assertEquals(
-        createdConversationProfile.getDisplayName(), gotConversationProfile.getDisplayName());
-    assertEquals(createdConversationProfile.getName(), gotConversationProfile.getName());
 
     // Delete the conversation profile
-    ConversationProfileManagement.deleteConversationProfile(
-        PROJECT_ID, location, conversationProfileId);
-
-    // Verify the converstion profile is deleted
-    conversationProfiles = 
-        ConversationProfileManagement.listConversationProfiles(PROJECT_ID, location);
-    assertFalse(conversationProfiles.stream().anyMatch(conversationProfile -> 
-          conversationProfile.getDisplayName().equals(conversationProfileDisplayName)));
-  }
-
-  @Test
-  public void testCreateConversationProfileSmartReply() throws IOException {
-    String conversationProfileDisplayName = UUID.randomUUID().toString();
-    String location = "global";
-
-    // Check the conversation profile does not yet exists
-    List<ConversationProfile> conversationProfiles = 
-        ConversationProfileManagement.listConversationProfiles(PROJECT_ID, location);
-    assertFalse(conversationProfiles.stream().anyMatch(conversationProfile -> 
-          conversationProfile.getDisplayName().equals(conversationProfileDisplayName)));
-    
-    // Create a conversation profile
-    String smartReplyKnowledgeBaseId = UUID.randomUUID().toString();
-    String smartReplyDocumentId = UUID.randomUUID().toString();
-    DocumentName smartReplyAllowlistName = DocumentName.ofProjectLocationKnowledgeBaseDocumentName(
-        PROJECT_ID, location, smartReplyKnowledgeBaseId, smartReplyDocumentId);
-    String smartReplyModelId = UUID.randomUUID().toString();
-    ConversationModelName smartReplyModelName = 
-        ConversationModelName.of(PROJECT_ID, location, smartReplyModelId);
-    System.out.println(smartReplyModelName);
-    ConversationProfile createdConversationProfile = 
-        ConversationProfileManagement.createConversationProfileSmartReply(
-          PROJECT_ID, 
-          conversationProfileDisplayName, 
-          location,
-          smartReplyAllowlistName.toString(), 
-          smartReplyModelName.toString());
-    assertEquals(conversationProfileDisplayName, createdConversationProfile.getDisplayName());
-    List<SuggestionFeatureConfig> featureConfigsList = createdConversationProfile
-          .getHumanAgentAssistantConfig().getHumanAgentSuggestionConfig().getFeatureConfigsList();
-    assertEquals(1, featureConfigsList.size());
-    assertEquals(Type.SMART_REPLY, featureConfigsList.get(0).getSuggestionFeature().getType());
-    assertEquals(smartReplyAllowlistName.toString(), 
-        featureConfigsList.get(0).getQueryConfig().getDocumentQuerySource().getDocuments(0));
-    assertEquals(smartReplyModelName.toString(), 
-        featureConfigsList.get(0).getConversationModelConfig().getModel());
-      
-    // List conversation profiles
-    conversationProfiles = 
-        ConversationProfileManagement.listConversationProfiles(PROJECT_ID, location);
-    assertTrue(conversationProfiles.stream().anyMatch(conversationProfile -> 
-          conversationProfile.getDisplayName().equals(conversationProfileDisplayName)));
-
-    // Get the conversation profile
     String conversationProfileId = ConversationProfileName.parse(
         createdConversationProfile.getName()).getConversationProfile();
-    ConversationProfile gotConversationProfile = 
-        ConversationProfileManagement.getConversationProfile(
-          PROJECT_ID, location, conversationProfileId);
-    assertEquals(
-        createdConversationProfile.getDisplayName(), gotConversationProfile.getDisplayName());
-    assertEquals(createdConversationProfile.getName(), gotConversationProfile.getName());
-
-    // Delete the conversation profile
-    ConversationProfileManagement.deleteConversationProfile(
-        PROJECT_ID, location, conversationProfileId);
-
-    // Verify the converstion profile is deleted
-    conversationProfiles = 
-        ConversationProfileManagement.listConversationProfiles(PROJECT_ID, location);
-    assertFalse(conversationProfiles.stream().anyMatch(conversationProfile -> 
-          conversationProfile.getDisplayName().equals(conversationProfileDisplayName)));
+    try (ConversationProfilesClient conversationProfilesClient = ConversationProfilesClient.create()) {
+      ConversationProfileName conversationProfileName = 
+          ConversationProfileName.ofProjectLocationConversationProfileName(
+            PROJECT_ID, location, conversationProfileId);
+      conversationProfilesClient.deleteConversationProfile(conversationProfileName.toString());
+    }
   }
 }

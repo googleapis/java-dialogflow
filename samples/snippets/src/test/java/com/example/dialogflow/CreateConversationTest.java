@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
- package com.example.dialogflow;
+package com.example.dialogflow;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.Conversation.LifecycleState;
-import com.google.cloud.dialogflow.v2.ConversationName;
 import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.ConversationProfileName;
+import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
+
 import java.io.IOException;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.junit.After;
@@ -69,33 +68,19 @@ public class CreateConversationTest {
   @After
   public void tearDown() throws IOException {
     // Delete the created conversation profile
-    ConversationProfileManagement.deleteConversationProfile(
-        PROJECT_ID, LOCATION, conversationProfileId);
+    try (ConversationProfilesClient conversationProfilesClient = 
+        ConversationProfilesClient.create()) {
+      ConversationProfileName conversationProfileName = 
+          ConversationProfileName.ofProjectLocationConversationProfileName(
+            PROJECT_ID, LOCATION, conversationProfileId);
+      conversationProfilesClient.deleteConversationProfile(conversationProfileName.toString());
+    }
   }
 
   @Test
   public void testCreateConversation() throws ApiException, IOException {
-    // Create a conversation
     Conversation createdConversation = 
         ConversationManagement.createConversation(PROJECT_ID, LOCATION, conversationProfileId);
     assertEquals(LifecycleState.IN_PROGRESS, createdConversation.getLifecycleState());
-
-    // List conversations
-    List<Conversation> conversations = 
-        ConversationManagement.listConversations(PROJECT_ID, LOCATION);
-    assertTrue(conversations.stream().anyMatch(conversation -> 
-        conversation.getName().equals(createdConversation.getName())));
-
-    // Get the conversation
-    String conversationId = ConversationName.parse(createdConversation.getName()).getConversation();
-    Conversation gotConversation = 
-        ConversationManagement.getConversation(PROJECT_ID, LOCATION, conversationId);
-    assertEquals(createdConversation.getName(), gotConversation.getName());
-    
-    // Complete the conversation
-    Conversation completedConversation = 
-        ConversationManagement.completeConversation(PROJECT_ID, LOCATION, conversationId);
-    assertEquals(createdConversation.getName(), gotConversation.getName());
-    assertEquals(LifecycleState.COMPLETED, completedConversation.getLifecycleState());
   }
 }
