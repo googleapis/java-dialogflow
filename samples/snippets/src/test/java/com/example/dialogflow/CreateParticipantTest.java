@@ -68,7 +68,8 @@ public class CreateParticipantTest {
   @After
   public void tearDown() throws IOException {
     // Delete the created conversation profile
-    try (ConversationProfilesClient conversationProfilesClient = ConversationProfilesClient.create()) {
+    try (ConversationProfilesClient conversationProfilesClient = 
+        ConversationProfilesClient.create()) {
       ConversationProfileName conversationProfileName = 
           ConversationProfileName.ofProjectLocationConversationProfileName(
             PROJECT_ID, LOCATION, conversationProfileId);

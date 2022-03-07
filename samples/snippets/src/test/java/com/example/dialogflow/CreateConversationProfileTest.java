@@ -29,7 +29,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -42,7 +41,7 @@ public class CreateConversationProfileTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String LOCATION = "global";
-  private static String conversationProfileNameToDelete = "";
+  private static String conversationProfileNameToDelete = null;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(System.getenv(varName));
@@ -64,9 +63,9 @@ public class CreateConversationProfileTest {
 
   @After
   public void tearDown() throws IOException {
-    if (conversationProfileNameToDelete.length() > 0) {
+    if (conversationProfileNameToDelete != null) {
       deleteConversationProfile(conversationProfileNameToDelete);
-      conversationProfileNameToDelete = "";
+      conversationProfileNameToDelete = null;
     }
   }
 
@@ -110,6 +109,6 @@ public class CreateConversationProfileTest {
 
     // Delete the conversation profile
     deleteConversationProfile(conversationProfileNameToDelete);
-    conversationProfileNameToDelete = "";
+    conversationProfileNameToDelete = null;
   }
 }

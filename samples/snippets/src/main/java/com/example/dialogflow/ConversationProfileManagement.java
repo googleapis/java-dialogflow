@@ -47,11 +47,11 @@ public class ConversationProfileManagement {
     String articleSuggestionKnowledgeBaseId = "my-fake-article-suggestion-knowledge-base-id";
     String faqKnowledgeBaseId = "my-fake-faq-knowledge-base-id";
     createConversationProfileArticleFaq(
-      projectId, 
-      conversationProfileDisplayName, 
-      location,
-      Optional.of(articleSuggestionKnowledgeBaseId), 
-      Optional.of(faqKnowledgeBaseId));
+        projectId, 
+        conversationProfileDisplayName, 
+        location,
+        Optional.of(articleSuggestionKnowledgeBaseId), 
+        Optional.of(faqKnowledgeBaseId));
   }
   
   // Create a conversation profile with given values about article suggestion or faq

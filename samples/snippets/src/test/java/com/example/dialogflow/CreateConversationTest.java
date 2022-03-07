@@ -25,7 +25,6 @@ import com.google.cloud.dialogflow.v2.Conversation.LifecycleState;
 import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.ConversationProfileName;
 import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
-
 import java.io.IOException;
 import java.util.Optional;
 import java.util.UUID;
