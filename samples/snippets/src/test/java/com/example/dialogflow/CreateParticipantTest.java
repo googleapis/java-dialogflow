@@ -77,7 +77,7 @@ public class CreateParticipantTest {
   }
 
   @Test
-  public void testUCreateParticipant() throws IOException {
+  public void testCreateParticipant() throws IOException {
     // Create a conversation
     Conversation createdConversation = 
         ConversationManagement.createConversation(PROJECT_ID, LOCATION, conversationProfileId);

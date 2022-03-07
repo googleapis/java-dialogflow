@@ -21,7 +21,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.dialogflow.v2.ConversationProfile;
-import com.google.cloud.dialogflow.v2.ConversationProfileName;
 import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
 import com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionFeatureConfig;
 import com.google.cloud.dialogflow.v2.KnowledgeBaseName;
@@ -30,6 +29,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,9 +41,19 @@ import org.junit.runners.JUnit4;
 public class CreateConversationProfileTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String LOCATION = "global";
+  private static String conversationProfileNameToDelete = "";
 
   private static void requireEnvVar(String varName) {
     assertNotNull(System.getenv(varName));
+  }
+
+  private static void deleteConversationProfile(
+      String conversationProfileName) throws IOException {
+    try (ConversationProfilesClient conversationProfilesClient = 
+        ConversationProfilesClient.create()) {
+      conversationProfilesClient.deleteConversationProfile(conversationProfileName);
+    }
   }
 
   @BeforeClass
@@ -51,10 +62,17 @@ public class CreateConversationProfileTest {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
+  @After
+  public void tearDown() throws IOException {
+    if (conversationProfileNameToDelete.length() > 0) {
+      deleteConversationProfile(conversationProfileNameToDelete);
+      conversationProfileNameToDelete = "";
+    }
+  }
+
   @Test
   public void testCreateConversationProfileArticleFaq() throws IOException {
     String conversationProfileDisplayName = UUID.randomUUID().toString();
-    String location = "global";
     
     // Create a conversation profile
     String articleSuggestionKnowledgeBaseId = UUID.randomUUID().toString();
@@ -63,9 +81,10 @@ public class CreateConversationProfileTest {
         ConversationProfileManagement.createConversationProfileArticleFaq(
           PROJECT_ID, 
           conversationProfileDisplayName, 
-          location,
+          LOCATION,
           Optional.of(articleSuggestionKnowledgeBaseId), 
           Optional.of(faqKnowledgeBaseId));
+    conversationProfileNameToDelete = createdConversationProfile.getName();
     assertEquals(conversationProfileDisplayName, createdConversationProfile.getDisplayName());
     List<SuggestionFeatureConfig> featureConfigsList = createdConversationProfile
           .getHumanAgentAssistantConfig().getHumanAgentSuggestionConfig().getFeatureConfigsList();
@@ -90,13 +109,7 @@ public class CreateConversationProfileTest {
             ).getKnowledgeBase().equals(faqKnowledgeBaseId)));
 
     // Delete the conversation profile
-    String conversationProfileId = ConversationProfileName.parse(
-        createdConversationProfile.getName()).getConversationProfile();
-    try (ConversationProfilesClient conversationProfilesClient = ConversationProfilesClient.create()) {
-      ConversationProfileName conversationProfileName = 
-          ConversationProfileName.ofProjectLocationConversationProfileName(
-            PROJECT_ID, location, conversationProfileId);
-      conversationProfilesClient.deleteConversationProfile(conversationProfileName.toString());
-    }
+    deleteConversationProfile(conversationProfileNameToDelete);
+    conversationProfileNameToDelete = "";
   }
 }
