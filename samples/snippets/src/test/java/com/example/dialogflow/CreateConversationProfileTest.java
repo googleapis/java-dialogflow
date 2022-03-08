@@ -25,11 +25,14 @@ import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
 import com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionFeatureConfig;
 import com.google.cloud.dialogflow.v2.KnowledgeBaseName;
 import com.google.cloud.dialogflow.v2.SuggestionFeature.Type;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,6 +45,8 @@ public class CreateConversationProfileTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String LOCATION = "global";
   private static String conversationProfileNameToDelete = null;
+  private ByteArrayOutputStream bout;
+  private PrintStream out;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(System.getenv(varName));
@@ -60,12 +65,21 @@ public class CreateConversationProfileTest {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
+  @Before
+  public void setUp() {
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+  }
+
   @After
   public void tearDown() throws IOException {
     if (conversationProfileNameToDelete != null) {
       deleteConversationProfile(conversationProfileNameToDelete);
       conversationProfileNameToDelete = null;
     }
+
+    System.setOut(null);
   }
 
   @Test

@@ -26,7 +26,9 @@ import com.google.cloud.dialogflow.v2.ConversationProfileName;
 import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
 import com.google.cloud.dialogflow.v2.Participant;
 import com.google.cloud.dialogflow.v2.Participant.Role;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.Optional;
 import java.util.UUID;
 import org.junit.After;
@@ -42,6 +44,8 @@ public class CreateParticipantTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String CONVERSATION_PROFILE_DISPLAY_NAME = UUID.randomUUID().toString();
   private static final String LOCATION = "global";
+  private ByteArrayOutputStream bout;
+  private PrintStream out;
   private String conversationProfileId;
 
   private static void requireEnvVar(String varName) {
@@ -56,6 +60,10 @@ public class CreateParticipantTest {
 
   @Before
   public void setUp() throws IOException {
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+
     // Create a conversation profile
     ConversationProfile conversationProfile =
         ConversationProfileManagement.createConversationProfileArticleFaq(
@@ -78,6 +86,8 @@ public class CreateParticipantTest {
               PROJECT_ID, LOCATION, conversationProfileId);
       conversationProfilesClient.deleteConversationProfile(conversationProfileName.toString());
     }
+
+    System.setOut(null);
   }
 
   @Test
