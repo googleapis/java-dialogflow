@@ -32,29 +32,30 @@ public class ConversationManagement {
     String projectId = "my-project-id";
     String location = "my-location";
     String conversationProfileId = "my-conversation-profile-id";
-    
+
     // Create a conversation
     createConversation(projectId, location, conversationProfileId);
   }
 
   public static Conversation createConversation(
-      String projectId, String location, String conversationProfileId) 
+      String projectId, String location, String conversationProfileId)
       throws ApiException, IOException {
     try (ConversationsClient conversationsClient = ConversationsClient.create()) {
       LocationName locationName = LocationName.of(projectId, location);
-      ConversationProfileName conversationProfileName = 
+      ConversationProfileName conversationProfileName =
           ConversationProfileName.ofProjectLocationConversationProfileName(
-            projectId, location, conversationProfileId);
-      Conversation conversation = 
-          Conversation.newBuilder().setConversationProfile(
-            conversationProfileName.toString()).build();
-      Conversation newConversation = 
+              projectId, location, conversationProfileId);
+      Conversation conversation =
+          Conversation.newBuilder()
+              .setConversationProfile(conversationProfileName.toString())
+              .build();
+      Conversation newConversation =
           conversationsClient.createConversation(locationName, conversation);
       System.out.println("====================");
       System.out.println("Conversation Created:");
       System.out.format("Life Cycle State: %s\n", newConversation.getLifecycleState());
-      System.out.format("Conversation Profile Name: %s\n", 
-          newConversation.getConversationProfile());
+      System.out.format(
+          "Conversation Profile Name: %s\n", newConversation.getConversationProfile());
       System.out.format("Name: %s\n", newConversation.getName());
       return newConversation;
     }

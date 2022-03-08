@@ -47,78 +47,85 @@ public class ConversationProfileManagement {
     String articleSuggestionKnowledgeBaseId = "my-fake-article-suggestion-knowledge-base-id";
     String faqKnowledgeBaseId = "my-fake-faq-knowledge-base-id";
     createConversationProfileArticleFaq(
-        projectId, 
-        conversationProfileDisplayName, 
+        projectId,
+        conversationProfileDisplayName,
         location,
-        Optional.of(articleSuggestionKnowledgeBaseId), 
+        Optional.of(articleSuggestionKnowledgeBaseId),
         Optional.of(faqKnowledgeBaseId));
   }
-  
+
   // Create a conversation profile with given values about article suggestion or faq
   public static ConversationProfile createConversationProfileArticleFaq(
-      String projectId, 
-      String displayName, 
+      String projectId,
+      String displayName,
       String location,
-      Optional<String> articleSuggestionKnowledgeBaseId, 
-      Optional<String> faqKnowledgeBaseId) throws ApiException, IOException {
-    try (ConversationProfilesClient conversationProfilesClient = 
+      Optional<String> articleSuggestionKnowledgeBaseId,
+      Optional<String> faqKnowledgeBaseId)
+      throws ApiException, IOException {
+    try (ConversationProfilesClient conversationProfilesClient =
         ConversationProfilesClient.create()) {
       SuggestionConfig.Builder suggestionConfigBuilder = SuggestionConfig.newBuilder();
 
       // Add knowledge base for article suggestion
       if (articleSuggestionKnowledgeBaseId.isPresent()) {
-        KnowledgeBaseName articleSuggestionKbName = 
+        KnowledgeBaseName articleSuggestionKbName =
             KnowledgeBaseName.of(projectId, articleSuggestionKnowledgeBaseId.get());
-        SuggestionFeatureConfig articleSuggestionFeatureConfig = 
+        SuggestionFeatureConfig articleSuggestionFeatureConfig =
             SuggestionFeatureConfig.newBuilder()
-              .setSuggestionFeature(
-                SuggestionFeature.newBuilder().setType(Type.ARTICLE_SUGGESTION).build())
-              .setSuggestionTriggerSettings(
-                SuggestionTriggerSettings.newBuilder()
-                  .setNoSmalltalk(true).setOnlyEndUser(true).build())
-              .setQueryConfig(
-                SuggestionQueryConfig.newBuilder()
-                  .setKnowledgeBaseQuerySource(
-                    KnowledgeBaseQuerySource.newBuilder()
-                    .addKnowledgeBases(articleSuggestionKbName.toString()))
-                  .setMaxResults(3).build())
-              .build();
+                .setSuggestionFeature(
+                    SuggestionFeature.newBuilder().setType(Type.ARTICLE_SUGGESTION).build())
+                .setSuggestionTriggerSettings(
+                    SuggestionTriggerSettings.newBuilder()
+                        .setNoSmalltalk(true)
+                        .setOnlyEndUser(true)
+                        .build())
+                .setQueryConfig(
+                    SuggestionQueryConfig.newBuilder()
+                        .setKnowledgeBaseQuerySource(
+                            KnowledgeBaseQuerySource.newBuilder()
+                                .addKnowledgeBases(articleSuggestionKbName.toString()))
+                        .setMaxResults(3)
+                        .build())
+                .build();
         suggestionConfigBuilder.addFeatureConfigs(articleSuggestionFeatureConfig);
       }
 
       // Add knowledge base for faq
       if (faqKnowledgeBaseId.isPresent()) {
         KnowledgeBaseName faqKbName = KnowledgeBaseName.of(projectId, faqKnowledgeBaseId.get());
-        SuggestionFeatureConfig faqFeatureConfig = SuggestionFeatureConfig.newBuilder()
-            .setSuggestionFeature(
-              SuggestionFeature.newBuilder().setType(Type.FAQ).build())
-            .setSuggestionTriggerSettings(
-              SuggestionTriggerSettings.newBuilder()
-                .setNoSmalltalk(true).setOnlyEndUser(true).build())
-            .setQueryConfig(
-              SuggestionQueryConfig.newBuilder()
-                .setKnowledgeBaseQuerySource(
-                  KnowledgeBaseQuerySource.newBuilder()
-                  .addKnowledgeBases(faqKbName.toString()))
-                .setMaxResults(3).build())
-            .build();
-        suggestionConfigBuilder.addFeatureConfigs(faqFeatureConfig); 
+        SuggestionFeatureConfig faqFeatureConfig =
+            SuggestionFeatureConfig.newBuilder()
+                .setSuggestionFeature(SuggestionFeature.newBuilder().setType(Type.FAQ).build())
+                .setSuggestionTriggerSettings(
+                    SuggestionTriggerSettings.newBuilder()
+                        .setNoSmalltalk(true)
+                        .setOnlyEndUser(true)
+                        .build())
+                .setQueryConfig(
+                    SuggestionQueryConfig.newBuilder()
+                        .setKnowledgeBaseQuerySource(
+                            KnowledgeBaseQuerySource.newBuilder()
+                                .addKnowledgeBases(faqKbName.toString()))
+                        .setMaxResults(3)
+                        .build())
+                .build();
+        suggestionConfigBuilder.addFeatureConfigs(faqFeatureConfig);
       }
-      
+
       LocationName locationName = LocationName.of(projectId, location);
-      ConversationProfile conversationProfile = 
+      ConversationProfile conversationProfile =
           conversationProfilesClient.createConversationProfile(
-            CreateConversationProfileRequest.newBuilder()
-              .setParent(locationName.toString())
-              .setConversationProfile(
-                ConversationProfile.newBuilder()
-                  .setDisplayName(displayName)
-                  .setLanguageCode("en-US")
-                  .setHumanAgentAssistantConfig(
-                    HumanAgentAssistantConfig.newBuilder()
-                      .setHumanAgentSuggestionConfig(suggestionConfigBuilder.build()))
-                .build())
-              .build());
+              CreateConversationProfileRequest.newBuilder()
+                  .setParent(locationName.toString())
+                  .setConversationProfile(
+                      ConversationProfile.newBuilder()
+                          .setDisplayName(displayName)
+                          .setLanguageCode("en-US")
+                          .setHumanAgentAssistantConfig(
+                              HumanAgentAssistantConfig.newBuilder()
+                                  .setHumanAgentSuggestionConfig(suggestionConfigBuilder.build()))
+                          .build())
+                  .build());
       System.out.println("====================");
       System.out.println("Conversation Profile created:");
       System.out.format("Display name: %s\n", conversationProfile.getDisplayName());

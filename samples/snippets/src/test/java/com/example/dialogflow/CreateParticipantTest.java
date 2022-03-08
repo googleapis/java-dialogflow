@@ -57,22 +57,25 @@ public class CreateParticipantTest {
   @Before
   public void setUp() throws IOException {
     // Create a conversation profile
-    ConversationProfile conversationProfile = 
+    ConversationProfile conversationProfile =
         ConversationProfileManagement.createConversationProfileArticleFaq(
-          PROJECT_ID, CONVERSATION_PROFILE_DISPLAY_NAME, LOCATION, 
-          Optional.empty(), Optional.empty());
-    conversationProfileId = 
-      ConversationProfileName.parse(conversationProfile.getName()).getConversationProfile();
+            PROJECT_ID,
+            CONVERSATION_PROFILE_DISPLAY_NAME,
+            LOCATION,
+            Optional.empty(),
+            Optional.empty());
+    conversationProfileId =
+        ConversationProfileName.parse(conversationProfile.getName()).getConversationProfile();
   }
 
   @After
   public void tearDown() throws IOException {
     // Delete the created conversation profile
-    try (ConversationProfilesClient conversationProfilesClient = 
+    try (ConversationProfilesClient conversationProfilesClient =
         ConversationProfilesClient.create()) {
-      ConversationProfileName conversationProfileName = 
+      ConversationProfileName conversationProfileName =
           ConversationProfileName.ofProjectLocationConversationProfileName(
-            PROJECT_ID, LOCATION, conversationProfileId);
+              PROJECT_ID, LOCATION, conversationProfileId);
       conversationProfilesClient.deleteConversationProfile(conversationProfileName.toString());
     }
   }
@@ -80,13 +83,13 @@ public class CreateParticipantTest {
   @Test
   public void testCreateParticipant() throws IOException {
     // Create a conversation
-    Conversation createdConversation = 
+    Conversation createdConversation =
         ConversationManagement.createConversation(PROJECT_ID, LOCATION, conversationProfileId);
-    
+
     // Create a participant
     String conversationId = ConversationName.parse(createdConversation.getName()).getConversation();
-    Participant createdParticipant = 
-          ParticipantManagement.createParticipant(
+    Participant createdParticipant =
+        ParticipantManagement.createParticipant(
             PROJECT_ID, LOCATION, conversationId, Role.END_USER);
     assertEquals(Role.END_USER, createdParticipant.getRole());
   }

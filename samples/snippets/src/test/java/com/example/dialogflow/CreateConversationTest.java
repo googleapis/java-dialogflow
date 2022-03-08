@@ -55,30 +55,33 @@ public class CreateConversationTest {
 
   @Before
   public void setUp() throws IOException {
-    // Create a conversation profile 
-    ConversationProfile conversationProfile = 
+    // Create a conversation profile
+    ConversationProfile conversationProfile =
         ConversationProfileManagement.createConversationProfileArticleFaq(
-          PROJECT_ID, CONVERSATION_PROFILE_DISPLAY_NAME, LOCATION, 
-          Optional.empty(), Optional.empty());
-    conversationProfileId = 
-      ConversationProfileName.parse(conversationProfile.getName()).getConversationProfile();
+            PROJECT_ID,
+            CONVERSATION_PROFILE_DISPLAY_NAME,
+            LOCATION,
+            Optional.empty(),
+            Optional.empty());
+    conversationProfileId =
+        ConversationProfileName.parse(conversationProfile.getName()).getConversationProfile();
   }
 
   @After
   public void tearDown() throws IOException {
     // Delete the created conversation profile
-    try (ConversationProfilesClient conversationProfilesClient = 
+    try (ConversationProfilesClient conversationProfilesClient =
         ConversationProfilesClient.create()) {
-      ConversationProfileName conversationProfileName = 
+      ConversationProfileName conversationProfileName =
           ConversationProfileName.ofProjectLocationConversationProfileName(
-            PROJECT_ID, LOCATION, conversationProfileId);
+              PROJECT_ID, LOCATION, conversationProfileId);
       conversationProfilesClient.deleteConversationProfile(conversationProfileName.toString());
     }
   }
 
   @Test
   public void testCreateConversation() throws ApiException, IOException {
-    Conversation createdConversation = 
+    Conversation createdConversation =
         ConversationManagement.createConversation(PROJECT_ID, LOCATION, conversationProfileId);
     assertEquals(LifecycleState.IN_PROGRESS, createdConversation.getLifecycleState());
   }

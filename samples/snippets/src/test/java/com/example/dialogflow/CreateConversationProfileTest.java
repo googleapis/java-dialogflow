@@ -47,9 +47,8 @@ public class CreateConversationProfileTest {
     assertNotNull(System.getenv(varName));
   }
 
-  private static void deleteConversationProfile(
-      String conversationProfileName) throws IOException {
-    try (ConversationProfilesClient conversationProfilesClient = 
+  private static void deleteConversationProfile(String conversationProfileName) throws IOException {
+    try (ConversationProfilesClient conversationProfilesClient =
         ConversationProfilesClient.create()) {
       conversationProfilesClient.deleteConversationProfile(conversationProfileName);
     }
@@ -72,40 +71,52 @@ public class CreateConversationProfileTest {
   @Test
   public void testCreateConversationProfileArticleFaq() throws IOException {
     String conversationProfileDisplayName = UUID.randomUUID().toString();
-    
+
     // Create a conversation profile
     String articleSuggestionKnowledgeBaseId = UUID.randomUUID().toString();
     String faqKnowledgeBaseId = UUID.randomUUID().toString();
-    ConversationProfile createdConversationProfile = 
+    ConversationProfile createdConversationProfile =
         ConversationProfileManagement.createConversationProfileArticleFaq(
-          PROJECT_ID, 
-          conversationProfileDisplayName, 
-          LOCATION,
-          Optional.of(articleSuggestionKnowledgeBaseId), 
-          Optional.of(faqKnowledgeBaseId));
+            PROJECT_ID,
+            conversationProfileDisplayName,
+            LOCATION,
+            Optional.of(articleSuggestionKnowledgeBaseId),
+            Optional.of(faqKnowledgeBaseId));
     conversationProfileNameToDelete = createdConversationProfile.getName();
     assertEquals(conversationProfileDisplayName, createdConversationProfile.getDisplayName());
-    List<SuggestionFeatureConfig> featureConfigsList = createdConversationProfile
-          .getHumanAgentAssistantConfig().getHumanAgentSuggestionConfig().getFeatureConfigsList();
+    List<SuggestionFeatureConfig> featureConfigsList =
+        createdConversationProfile
+            .getHumanAgentAssistantConfig()
+            .getHumanAgentSuggestionConfig()
+            .getFeatureConfigsList();
     assertEquals(2, featureConfigsList.size());
-    assertTrue(featureConfigsList
-          .stream()
-          .filter(featureConfig -> 
-            featureConfig.getSuggestionFeature().getType().equals(Type.ARTICLE_SUGGESTION))
-          .anyMatch(featureConfig -> 
-            KnowledgeBaseName.parse(
-              featureConfig
-                .getQueryConfig().getKnowledgeBaseQuerySource().getKnowledgeBases(0)
-            ).getKnowledgeBase().equals(articleSuggestionKnowledgeBaseId)));
-    assertTrue(featureConfigsList
-          .stream()
-          .filter(featureConfig -> 
-            featureConfig.getSuggestionFeature().getType().equals(Type.FAQ))
-          .anyMatch(featureConfig -> 
-            KnowledgeBaseName.parse(
-              featureConfig
-                .getQueryConfig().getKnowledgeBaseQuerySource().getKnowledgeBases(0)
-            ).getKnowledgeBase().equals(faqKnowledgeBaseId)));
+    assertTrue(
+        featureConfigsList.stream()
+            .filter(
+                featureConfig ->
+                    featureConfig.getSuggestionFeature().getType().equals(Type.ARTICLE_SUGGESTION))
+            .anyMatch(
+                featureConfig ->
+                    KnowledgeBaseName.parse(
+                            featureConfig
+                                .getQueryConfig()
+                                .getKnowledgeBaseQuerySource()
+                                .getKnowledgeBases(0))
+                        .getKnowledgeBase()
+                        .equals(articleSuggestionKnowledgeBaseId)));
+    assertTrue(
+        featureConfigsList.stream()
+            .filter(
+                featureConfig -> featureConfig.getSuggestionFeature().getType().equals(Type.FAQ))
+            .anyMatch(
+                featureConfig ->
+                    KnowledgeBaseName.parse(
+                            featureConfig
+                                .getQueryConfig()
+                                .getKnowledgeBaseQuerySource()
+                                .getKnowledgeBases(0))
+                        .getKnowledgeBase()
+                        .equals(faqKnowledgeBaseId)));
 
     // Delete the conversation profile
     deleteConversationProfile(conversationProfileNameToDelete);

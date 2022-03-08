@@ -33,20 +33,20 @@ public class ParticipantManagement {
     String location = "my-location";
     String conversationId = "my-conversation-id";
     Role role = Role.END_USER;
-    
+
     // Create a participant
     createParticipant(projectId, location, conversationId, role);
   }
-  
+
   // Create a participant with given role
   public static Participant createParticipant(
-      String projectId, String location, String conversationId, Role role) 
+      String projectId, String location, String conversationId, Role role)
       throws ApiException, IOException {
     try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-      ConversationName conversationName = 
+      ConversationName conversationName =
           ConversationName.ofProjectLocationConversationName(projectId, location, conversationId);
       Participant participant = Participant.newBuilder().setRole(role).build();
-      Participant newParticipant = 
+      Participant newParticipant =
           participantsClient.createParticipant(conversationName, participant);
       System.out.println("====================");
       System.out.println("Participant Created:");
