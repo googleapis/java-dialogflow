@@ -1,5 +1,48 @@
 # Changelog
 
+### [4.5.9](https://github.com/googleapis/java-dialogflow/compare/v4.5.8...v4.5.9) (2022-03-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.10 ([#891](https://github.com/googleapis/java-dialogflow/issues/891)) ([1a789b1](https://github.com/googleapis/java-dialogflow/commit/1a789b17619d5dd0096112083af306c56247b24f))
+
+### [4.5.8](https://github.com/googleapis/java-dialogflow/compare/v4.5.7...v4.5.8) (2022-03-10)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.9 ([#886](https://github.com/googleapis/java-dialogflow/issues/886)) ([53f2a9c](https://github.com/googleapis/java-dialogflow/commit/53f2a9c00fa57b22e174a4a6a5a40977714b54e4))
+
+### [4.5.7](https://github.com/googleapis/java-dialogflow/compare/v4.5.6...v4.5.7) (2022-03-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.8 ([#883](https://github.com/googleapis/java-dialogflow/issues/883)) ([8acc807](https://github.com/googleapis/java-dialogflow/commit/8acc80789516754363e8cc9af9cbf3537f0cb8dd))
+
+### [4.5.6](https://github.com/googleapis/java-dialogflow/compare/v4.5.5...v4.5.6) (2022-03-03)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.6 ([#872](https://github.com/googleapis/java-dialogflow/issues/872)) ([a7506fc](https://github.com/googleapis/java-dialogflow/commit/a7506fcae4b9f8294a371fa41c5d4ba19bfbc9d1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#873](https://github.com/googleapis/java-dialogflow/issues/873)) ([583aa83](https://github.com/googleapis/java-dialogflow/commit/583aa83983484322297092bec814aaf4863d4125))
+
+### [4.5.5](https://github.com/googleapis/java-dialogflow/compare/v4.5.4...v4.5.5) (2022-03-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.5 ([#867](https://github.com/googleapis/java-dialogflow/issues/867)) ([775349e](https://github.com/googleapis/java-dialogflow/commit/775349eb61205b50c4b39703f7e8db9db4c59ca0))
+
+### [4.5.4](https://github.com/googleapis/java-dialogflow/compare/v4.5.3...v4.5.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#862](https://github.com/googleapis/java-dialogflow/issues/862)) ([e3f4858](https://github.com/googleapis/java-dialogflow/commit/e3f4858b3d7b664e91c4598abe4c520b057197d2))
+
 ### [4.5.3](https://github.com/googleapis/java-dialogflow/compare/v4.5.2...v4.5.3) (2022-02-15)
 
 
