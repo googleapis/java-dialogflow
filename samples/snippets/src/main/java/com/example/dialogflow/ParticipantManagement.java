@@ -33,7 +33,7 @@ public class ParticipantManagement {
     String location = "my-location";
 
     // Set conversation id for the new participant,
-    // See com.example.dialogflow.ConversationManagement sample code 
+    // See com.example.dialogflow.ConversationManagement sample code
     // for how to create a conversation.
     String conversationId = "my-conversation-id";
     Role role = Role.END_USER;

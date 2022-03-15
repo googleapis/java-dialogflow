@@ -53,8 +53,8 @@ public class CreateConversationTest {
   // Extract the name of a newly created resource from latest "Name: %s\n" in sample code output
   private static String getResourceNameFromOutputString(String output) {
     return output.substring(
-      output.lastIndexOf(NAME_PREFIX_IN_OUTPUT) + NAME_PREFIX_IN_OUTPUT.length(), 
-      output.length() - 1);
+        output.lastIndexOf(NAME_PREFIX_IN_OUTPUT) + NAME_PREFIX_IN_OUTPUT.length(),
+        output.length() - 1);
   }
 
   @BeforeClass
@@ -79,8 +79,8 @@ public class CreateConversationTest {
         Optional.empty());
     String output = bout.toString();
     assertThat(output).contains(NAME_PREFIX_IN_OUTPUT);
-    conversationProfileName = ConversationProfileName.parse(
-      getResourceNameFromOutputString(output));
+    conversationProfileName =
+        ConversationProfileName.parse(getResourceNameFromOutputString(output));
   }
 
   @After
@@ -101,7 +101,8 @@ public class CreateConversationTest {
 
     String output = bout.toString();
     assertThat(output).contains("Life Cycle State: IN_PROGRESS");
-    assertThat(output).contains(
-        String.format("Conversation Profile Name: %s", conversationProfileName.toString()));
+    assertThat(output)
+        .contains(
+            String.format("Conversation Profile Name: %s", conversationProfileName.toString()));
   }
 }

@@ -46,12 +46,12 @@ public class ConversationProfileManagement {
     String conversationProfileDisplayName = "my-conversation-profile-display-name";
 
     // Set knowledge base id for Article Suggestion feature.
-    // See details about how to create a knowledge base here, 
+    // See details about how to create a knowledge base here,
     // https://cloud.google.com/agent-assist/docs/article-suggestion.
     String articleSuggestionKnowledgeBaseId = "my-article-suggestion-knowledge-base-id";
 
-    // Set knowledge base id for FAQ Assist feature. 
-    // See details about how to create a knowledge base here, 
+    // Set knowledge base id for FAQ Assist feature.
+    // See details about how to create a knowledge base here,
     // https://cloud.google.com/agent-assist/docs/faq.
     String faqKnowledgeBaseId = "my-faq-knowledge-base-id";
 
@@ -77,7 +77,7 @@ public class ConversationProfileManagement {
       KnowledgeBaseName knowledgeBaseName) {
     return SuggestionQueryConfig.newBuilder()
         .setKnowledgeBaseQuerySource(
-          KnowledgeBaseQuerySource.newBuilder().addKnowledgeBases(knowledgeBaseName.toString()))
+            KnowledgeBaseQuerySource.newBuilder().addKnowledgeBases(knowledgeBaseName.toString()))
         .setMaxResults(3)
         .build();
   }
@@ -131,14 +131,14 @@ public class ConversationProfileManagement {
 
       LocationName locationName = LocationName.of(projectId, location);
       // Set a conversation profile with target configurations
-      ConversationProfile targetConversationProfile = 
+      ConversationProfile targetConversationProfile =
           ConversationProfile.newBuilder()
-            .setDisplayName(displayName)
-            .setLanguageCode("en-US")
-            .setHumanAgentAssistantConfig(
-              HumanAgentAssistantConfig.newBuilder()
-                  .setHumanAgentSuggestionConfig(suggestionConfigBuilder.build()))
-            .build();
+              .setDisplayName(displayName)
+              .setLanguageCode("en-US")
+              .setHumanAgentAssistantConfig(
+                  HumanAgentAssistantConfig.newBuilder()
+                      .setHumanAgentSuggestionConfig(suggestionConfigBuilder.build()))
+              .build();
 
       // Create a conversation profile
       ConversationProfile createdConversationProfile =

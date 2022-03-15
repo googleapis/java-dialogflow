@@ -54,8 +54,8 @@ public class CreateParticipantTest {
   // Extract the name of a newly created resource from latest "Name: %s\n" in sample code output
   private static String getResourceNameFromOutputString(String output) {
     return output.substring(
-      output.lastIndexOf(NAME_PREFIX_IN_OUTPUT) + NAME_PREFIX_IN_OUTPUT.length(), 
-      output.length() - 1);
+        output.lastIndexOf(NAME_PREFIX_IN_OUTPUT) + NAME_PREFIX_IN_OUTPUT.length(),
+        output.length() - 1);
   }
 
   @BeforeClass
@@ -80,8 +80,8 @@ public class CreateParticipantTest {
         Optional.empty());
     String output = bout.toString();
     assertThat(output).contains(NAME_PREFIX_IN_OUTPUT);
-    conversationProfileName = ConversationProfileName.parse(
-      getResourceNameFromOutputString(output));
+    conversationProfileName =
+        ConversationProfileName.parse(getResourceNameFromOutputString(output));
   }
 
   @After
@@ -100,8 +100,8 @@ public class CreateParticipantTest {
     // Create a conversation
     ConversationManagement.createConversation(
         PROJECT_ID, LOCATION, conversationProfileName.getConversationProfile());
-    ConversationName conversationName = ConversationName.parse(
-        getResourceNameFromOutputString(bout.toString()));
+    ConversationName conversationName =
+        ConversationName.parse(getResourceNameFromOutputString(bout.toString()));
 
     // Create a participant
     ParticipantManagement.createParticipant(

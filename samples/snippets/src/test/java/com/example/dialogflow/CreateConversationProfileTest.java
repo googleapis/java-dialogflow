@@ -51,8 +51,8 @@ public class CreateConversationProfileTest {
   // Extract the name of a newly created resource from latest "Name: %s\n" in sample code output
   private static String getResourceNameFromOutputString(String output) {
     return output.substring(
-      output.lastIndexOf(NAME_PREFIX_IN_OUTPUT) + NAME_PREFIX_IN_OUTPUT.length(), 
-      output.length() - 1);
+        output.lastIndexOf(NAME_PREFIX_IN_OUTPUT) + NAME_PREFIX_IN_OUTPUT.length(),
+        output.length() - 1);
   }
 
   private static void deleteConversationProfile(String conversationProfileName) throws IOException {
