@@ -31,13 +31,18 @@ public class ConversationManagement {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
     String location = "my-location";
+
+    // Set conversation profile id for the new conversation.
+    // See com.example.dialogflow.ConversationProfileManagement sample code for how to create a
+    // conversation profile. You can also create a conversation profile using Agent Assist console,
+    // https://cloud.google.com/agent-assist/docs/conversation-profile.
     String conversationProfileId = "my-conversation-profile-id";
 
     // Create a conversation
     createConversation(projectId, location, conversationProfileId);
   }
 
-  public static Conversation createConversation(
+  public static void createConversation(
       String projectId, String location, String conversationProfileId)
       throws ApiException, IOException {
     try (ConversationsClient conversationsClient = ConversationsClient.create()) {
@@ -57,7 +62,6 @@ public class ConversationManagement {
       System.out.format(
           "Conversation Profile Name: %s\n", newConversation.getConversationProfile());
       System.out.format("Name: %s\n", newConversation.getName());
-      return newConversation;
     }
   }
 }

@@ -16,19 +16,13 @@
 
 package com.example.dialogflow;
 
-import static org.junit.Assert.assertEquals;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
-import com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionFeatureConfig;
-import com.google.cloud.dialogflow.v2.KnowledgeBaseName;
-import com.google.cloud.dialogflow.v2.SuggestionFeature.Type;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.junit.After;
@@ -44,12 +38,21 @@ public class CreateConversationProfileTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String LOCATION = "global";
+  private static final String NAME_PREFIX_IN_OUTPUT = "Name: ";
   private static String conversationProfileNameToDelete = null;
   private ByteArrayOutputStream bout;
-  private PrintStream out;
+  private PrintStream newOutputStream;
+  private PrintStream originalOutputStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(System.getenv(varName));
+  }
+
+  // Extract the name of a newly created resource from latest "Name: %s\n" in sample code output
+  private static String getResourceNameFromOutputString(String output) {
+    return output.substring(
+      output.lastIndexOf(NAME_PREFIX_IN_OUTPUT) + NAME_PREFIX_IN_OUTPUT.length(), 
+      output.length() - 1);
   }
 
   private static void deleteConversationProfile(String conversationProfileName) throws IOException {
@@ -67,9 +70,10 @@ public class CreateConversationProfileTest {
 
   @Before
   public void setUp() {
+    originalOutputStream = System.out;
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    newOutputStream = new PrintStream(bout);
+    System.setOut(newOutputStream);
   }
 
   @After
@@ -79,7 +83,7 @@ public class CreateConversationProfileTest {
       conversationProfileNameToDelete = null;
     }
 
-    System.setOut(null);
+    System.setOut(originalOutputStream);
   }
 
   @Test
@@ -89,48 +93,16 @@ public class CreateConversationProfileTest {
     // Create a conversation profile
     String articleSuggestionKnowledgeBaseId = UUID.randomUUID().toString();
     String faqKnowledgeBaseId = UUID.randomUUID().toString();
-    ConversationProfile createdConversationProfile =
-        ConversationProfileManagement.createConversationProfileArticleFaq(
-            PROJECT_ID,
-            conversationProfileDisplayName,
-            LOCATION,
-            Optional.of(articleSuggestionKnowledgeBaseId),
-            Optional.of(faqKnowledgeBaseId));
-    conversationProfileNameToDelete = createdConversationProfile.getName();
-    assertEquals(conversationProfileDisplayName, createdConversationProfile.getDisplayName());
-    List<SuggestionFeatureConfig> featureConfigsList =
-        createdConversationProfile
-            .getHumanAgentAssistantConfig()
-            .getHumanAgentSuggestionConfig()
-            .getFeatureConfigsList();
-    assertEquals(2, featureConfigsList.size());
-    assertTrue(
-        featureConfigsList.stream()
-            .filter(
-                featureConfig ->
-                    featureConfig.getSuggestionFeature().getType().equals(Type.ARTICLE_SUGGESTION))
-            .anyMatch(
-                featureConfig ->
-                    KnowledgeBaseName.parse(
-                            featureConfig
-                                .getQueryConfig()
-                                .getKnowledgeBaseQuerySource()
-                                .getKnowledgeBases(0))
-                        .getKnowledgeBase()
-                        .equals(articleSuggestionKnowledgeBaseId)));
-    assertTrue(
-        featureConfigsList.stream()
-            .filter(
-                featureConfig -> featureConfig.getSuggestionFeature().getType().equals(Type.FAQ))
-            .anyMatch(
-                featureConfig ->
-                    KnowledgeBaseName.parse(
-                            featureConfig
-                                .getQueryConfig()
-                                .getKnowledgeBaseQuerySource()
-                                .getKnowledgeBases(0))
-                        .getKnowledgeBase()
-                        .equals(faqKnowledgeBaseId)));
+    ConversationProfileManagement.createConversationProfileArticleFaq(
+        PROJECT_ID,
+        conversationProfileDisplayName,
+        LOCATION,
+        Optional.of(articleSuggestionKnowledgeBaseId),
+        Optional.of(faqKnowledgeBaseId));
+
+    String output = bout.toString();
+    conversationProfileNameToDelete = getResourceNameFromOutputString(output);
+    assertThat(output).contains(conversationProfileDisplayName);
 
     // Delete the conversation profile
     deleteConversationProfile(conversationProfileNameToDelete);

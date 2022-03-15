@@ -31,6 +31,10 @@ public class ParticipantManagement {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
     String location = "my-location";
+
+    // Set conversation id for the new participant,
+    // See com.example.dialogflow.ConversationManagement sample code 
+    // for how to create a conversation.
     String conversationId = "my-conversation-id";
     Role role = Role.END_USER;
 
@@ -39,7 +43,7 @@ public class ParticipantManagement {
   }
 
   // Create a participant with given role
-  public static Participant createParticipant(
+  public static void createParticipant(
       String projectId, String location, String conversationId, Role role)
       throws ApiException, IOException {
     try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
@@ -52,7 +56,6 @@ public class ParticipantManagement {
       System.out.println("Participant Created:");
       System.out.format("Role: %s\n", newParticipant.getRole());
       System.out.format("Name: %s\n", newParticipant.getName());
-      return newParticipant;
     }
   }
 }

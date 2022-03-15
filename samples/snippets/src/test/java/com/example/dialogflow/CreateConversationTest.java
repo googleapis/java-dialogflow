@@ -16,13 +16,10 @@
 
 package com.example.dialogflow;
 
-import static org.junit.Assert.assertEquals;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.api.gax.rpc.ApiException;
-import com.google.cloud.dialogflow.v2.Conversation;
-import com.google.cloud.dialogflow.v2.Conversation.LifecycleState;
-import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.ConversationProfileName;
 import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
 import java.io.ByteArrayOutputStream;
@@ -43,12 +40,21 @@ public class CreateConversationTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String CONVERSATION_PROFILE_DISPLAY_NAME = UUID.randomUUID().toString();
   private static final String LOCATION = "global";
+  private static final String NAME_PREFIX_IN_OUTPUT = "Name: ";
+  private ConversationProfileName conversationProfileName;
   private ByteArrayOutputStream bout;
-  private PrintStream out;
-  private String conversationProfileId;
+  private PrintStream newOutputStream;
+  private PrintStream originalOutputStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(System.getenv(varName));
+  }
+
+  // Extract the name of a newly created resource from latest "Name: %s\n" in sample code output
+  private static String getResourceNameFromOutputString(String output) {
+    return output.substring(
+      output.lastIndexOf(NAME_PREFIX_IN_OUTPUT) + NAME_PREFIX_IN_OUTPUT.length(), 
+      output.length() - 1);
   }
 
   @BeforeClass
@@ -59,20 +65,22 @@ public class CreateConversationTest {
 
   @Before
   public void setUp() throws IOException {
+    originalOutputStream = System.out;
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    newOutputStream = new PrintStream(bout);
+    System.setOut(newOutputStream);
 
     // Create a conversation profile
-    ConversationProfile conversationProfile =
-        ConversationProfileManagement.createConversationProfileArticleFaq(
-            PROJECT_ID,
-            CONVERSATION_PROFILE_DISPLAY_NAME,
-            LOCATION,
-            Optional.empty(),
-            Optional.empty());
-    conversationProfileId =
-        ConversationProfileName.parse(conversationProfile.getName()).getConversationProfile();
+    ConversationProfileManagement.createConversationProfileArticleFaq(
+        PROJECT_ID,
+        CONVERSATION_PROFILE_DISPLAY_NAME,
+        LOCATION,
+        Optional.empty(),
+        Optional.empty());
+    String output = bout.toString();
+    assertThat(output).contains(NAME_PREFIX_IN_OUTPUT);
+    conversationProfileName = ConversationProfileName.parse(
+      getResourceNameFromOutputString(output));
   }
 
   @After
@@ -80,19 +88,20 @@ public class CreateConversationTest {
     // Delete the created conversation profile
     try (ConversationProfilesClient conversationProfilesClient =
         ConversationProfilesClient.create()) {
-      ConversationProfileName conversationProfileName =
-          ConversationProfileName.ofProjectLocationConversationProfileName(
-              PROJECT_ID, LOCATION, conversationProfileId);
       conversationProfilesClient.deleteConversationProfile(conversationProfileName.toString());
     }
 
-    System.setOut(null);
+    System.setOut(originalOutputStream);
   }
 
   @Test
   public void testCreateConversation() throws ApiException, IOException {
-    Conversation createdConversation =
-        ConversationManagement.createConversation(PROJECT_ID, LOCATION, conversationProfileId);
-    assertEquals(LifecycleState.IN_PROGRESS, createdConversation.getLifecycleState());
+    String conversationProfileId = conversationProfileName.getConversationProfile();
+    ConversationManagement.createConversation(PROJECT_ID, LOCATION, conversationProfileId);
+
+    String output = bout.toString();
+    assertThat(output).contains("Life Cycle State: IN_PROGRESS");
+    assertThat(output).contains(
+        String.format("Conversation Profile Name: %s", conversationProfileName.toString()));
   }
 }
