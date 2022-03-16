@@ -1,5 +1,87 @@
 # Changelog
 
+### [4.5.9](https://github.com/googleapis/java-dialogflow/compare/v4.5.8...v4.5.9) (2022-03-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.10 ([#891](https://github.com/googleapis/java-dialogflow/issues/891)) ([1a789b1](https://github.com/googleapis/java-dialogflow/commit/1a789b17619d5dd0096112083af306c56247b24f))
+
+### [4.5.8](https://github.com/googleapis/java-dialogflow/compare/v4.5.7...v4.5.8) (2022-03-10)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.9 ([#886](https://github.com/googleapis/java-dialogflow/issues/886)) ([53f2a9c](https://github.com/googleapis/java-dialogflow/commit/53f2a9c00fa57b22e174a4a6a5a40977714b54e4))
+
+### [4.5.7](https://github.com/googleapis/java-dialogflow/compare/v4.5.6...v4.5.7) (2022-03-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.8 ([#883](https://github.com/googleapis/java-dialogflow/issues/883)) ([8acc807](https://github.com/googleapis/java-dialogflow/commit/8acc80789516754363e8cc9af9cbf3537f0cb8dd))
+
+### [4.5.6](https://github.com/googleapis/java-dialogflow/compare/v4.5.5...v4.5.6) (2022-03-03)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.6 ([#872](https://github.com/googleapis/java-dialogflow/issues/872)) ([a7506fc](https://github.com/googleapis/java-dialogflow/commit/a7506fcae4b9f8294a371fa41c5d4ba19bfbc9d1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#873](https://github.com/googleapis/java-dialogflow/issues/873)) ([583aa83](https://github.com/googleapis/java-dialogflow/commit/583aa83983484322297092bec814aaf4863d4125))
+
+### [4.5.5](https://github.com/googleapis/java-dialogflow/compare/v4.5.4...v4.5.5) (2022-03-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.5 ([#867](https://github.com/googleapis/java-dialogflow/issues/867)) ([775349e](https://github.com/googleapis/java-dialogflow/commit/775349eb61205b50c4b39703f7e8db9db4c59ca0))
+
+### [4.5.4](https://github.com/googleapis/java-dialogflow/compare/v4.5.3...v4.5.4) (2022-02-28)
+
+
+### Dependencies
+
+* update actions/setup-java action to v3 ([#862](https://github.com/googleapis/java-dialogflow/issues/862)) ([e3f4858](https://github.com/googleapis/java-dialogflow/commit/e3f4858b3d7b664e91c4598abe4c520b057197d2))
+
+### [4.5.3](https://github.com/googleapis/java-dialogflow/compare/v4.5.2...v4.5.3) (2022-02-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.4 ([#854](https://github.com/googleapis/java-dialogflow/issues/854)) ([c005fac](https://github.com/googleapis/java-dialogflow/commit/c005fac8da3b9967631b48c80251a38e01e5f59e))
+
+### [4.5.2](https://github.com/googleapis/java-dialogflow/compare/v4.5.1...v4.5.2) (2022-02-11)
+
+
+### Dependencies
+
+* update actions/github-script action to v6 ([#850](https://github.com/googleapis/java-dialogflow/issues/850)) ([d1de52c](https://github.com/googleapis/java-dialogflow/commit/d1de52c2dae08b7bbd629d73fe10d3cc1848642b))
+* update dependency com.google.cloud:google-cloud-core to v2.5.3 ([#847](https://github.com/googleapis/java-dialogflow/issues/847)) ([6aba0bd](https://github.com/googleapis/java-dialogflow/commit/6aba0bdbdb6a301c7518ffaa3a3306f86a5686e6))
+
+### [4.5.1](https://github.com/googleapis/java-dialogflow/compare/v4.5.0...v4.5.1) (2022-02-10)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.0 ([#838](https://github.com/googleapis/java-dialogflow/issues/838)) ([25a4a51](https://github.com/googleapis/java-dialogflow/commit/25a4a519851d403b5bf49687969656ed0ee37b6b))
+* update dependency com.google.cloud:google-cloud-core to v2.5.1 ([#845](https://github.com/googleapis/java-dialogflow/issues/845)) ([6c26082](https://github.com/googleapis/java-dialogflow/commit/6c26082731aa1526c37a1a6096dc8ca1b2769029))
+
+## [4.5.0](https://github.com/googleapis/java-dialogflow/compare/v4.4.0...v4.5.0) (2022-02-03)
+
+
+### Features
+
+* added conversation process config, ImportDocument and SuggestSmartReplies API ([#825](https://github.com/googleapis/java-dialogflow/issues/825)) ([0de595c](https://github.com/googleapis/java-dialogflow/commit/0de595c26d2c414f4c10692fc72d369269e21fc7))
+* added option to configure the number of sentences in the suggestion context ([#808](https://github.com/googleapis/java-dialogflow/issues/808)) ([89ad722](https://github.com/googleapis/java-dialogflow/commit/89ad722de598003480dada779bf6d292827183ad))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-dialogflow/issues/1339)) ([#830](https://github.com/googleapis/java-dialogflow/issues/830)) ([3b928b6](https://github.com/googleapis/java-dialogflow/commit/3b928b6a134d13dd4450744489e46d129e5a985f))
+* update actions/github-script action to v5 ([#829](https://github.com/googleapis/java-dialogflow/issues/829)) ([7c41754](https://github.com/googleapis/java-dialogflow/commit/7c417541f25f67a91112ae5cedc535d04e01de92))
+* update dependency com.google.cloud:google-cloud-core to v2.4.0 ([#833](https://github.com/googleapis/java-dialogflow/issues/833)) ([806ed41](https://github.com/googleapis/java-dialogflow/commit/806ed41326b6c2c7443f323aaa2f1ec053f198b1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#834](https://github.com/googleapis/java-dialogflow/issues/834)) ([a1de498](https://github.com/googleapis/java-dialogflow/commit/a1de4981ef16be780e6cc4bf0a4ca000f9ce7854))
+
 ## [4.4.0](https://www.github.com/googleapis/java-dialogflow/compare/v4.3.1...v4.4.0) (2022-01-07)
 
 
