@@ -16,7 +16,7 @@
 
 package com.example.dialogflow;
 
-// [START dialogflow_create_conversation_profile_article_faq]
+// [START dialogflow_create_conversation_profile_article_suggestion]
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2.ConversationProfile;
@@ -50,18 +50,12 @@ public class ConversationProfileManagement {
     // https://cloud.google.com/agent-assist/docs/article-suggestion.
     String articleSuggestionKnowledgeBaseId = "my-article-suggestion-knowledge-base-id";
 
-    // Set knowledge base id for FAQ Assist feature.
-    // See details about how to create a knowledge base here,
-    // https://cloud.google.com/agent-assist/docs/faq.
-    String faqKnowledgeBaseId = "my-faq-knowledge-base-id";
-
     // Create a conversation profile
-    createConversationProfileArticleFaq(
+    createConversationProfileArticleSuggestion(
         projectId,
         conversationProfileDisplayName,
         location,
-        Optional.of(articleSuggestionKnowledgeBaseId),
-        Optional.of(faqKnowledgeBaseId));
+        Optional.of(articleSuggestionKnowledgeBaseId));
   }
 
   // Set suggestion trigger with no_smalltalk and only_send_user both true, which means that
@@ -82,13 +76,12 @@ public class ConversationProfileManagement {
         .build();
   }
 
-  // Create a conversation profile with given values about Article Suggestion or FAQ Assist.
-  public static void createConversationProfileArticleFaq(
+  // Create a conversation profile with given values about Article Suggestion.
+  public static void createConversationProfileArticleSuggestion(
       String projectId,
       String displayName,
       String location,
-      Optional<String> articleSuggestionKnowledgeBaseId,
-      Optional<String> faqKnowledgeBaseId)
+      Optional<String> articleSuggestionKnowledgeBaseId)
       throws ApiException, IOException {
     try (ConversationProfilesClient conversationProfilesClient =
         ConversationProfilesClient.create()) {
@@ -111,22 +104,6 @@ public class ConversationProfileManagement {
 
         // Add Article Suggestion feature to agent assistance configuration
         suggestionConfigBuilder.addFeatureConfigs(articleSuggestionFeatureConfig);
-      }
-
-      // Add knowledge base for FAQ Assist feature
-      if (faqKnowledgeBaseId.isPresent()) {
-        KnowledgeBaseName faqKbName = KnowledgeBaseName.of(projectId, faqKnowledgeBaseId.get());
-
-        // Build configuration for FAQ Assist feature
-        SuggestionFeatureConfig faqFeatureConfig =
-            SuggestionFeatureConfig.newBuilder()
-                .setSuggestionFeature(SuggestionFeature.newBuilder().setType(Type.FAQ).build())
-                .setSuggestionTriggerSettings(buildSuggestionTriggerSettings())
-                .setQueryConfig(buildSuggestionQueryConfig(faqKbName))
-                .build();
-
-        // Add FAQ Assist feature to agent assistance configuration
-        suggestionConfigBuilder.addFeatureConfigs(faqFeatureConfig);
       }
 
       LocationName locationName = LocationName.of(projectId, location);
@@ -154,4 +131,4 @@ public class ConversationProfileManagement {
     }
   }
 }
-// [END dialogflow_create_conversation_profile_article_faq]
+// [END dialogflow_create_conversation_profile_article_suggestion]

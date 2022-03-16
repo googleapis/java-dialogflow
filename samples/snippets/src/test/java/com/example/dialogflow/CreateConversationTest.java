@@ -71,11 +71,10 @@ public class CreateConversationTest {
     System.setOut(newOutputStream);
 
     // Create a conversation profile
-    ConversationProfileManagement.createConversationProfileArticleFaq(
+    ConversationProfileManagement.createConversationProfileArticleSuggestion(
         PROJECT_ID,
         CONVERSATION_PROFILE_DISPLAY_NAME,
         LOCATION,
-        Optional.empty(),
         Optional.empty());
     String output = bout.toString();
     assertThat(output).contains(NAME_PREFIX_IN_OUTPUT);

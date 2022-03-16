@@ -87,18 +87,16 @@ public class CreateConversationProfileTest {
   }
 
   @Test
-  public void testCreateConversationProfileArticleFaq() throws IOException {
+  public void testCreateConversationProfileArticleSuggestion() throws IOException {
     String conversationProfileDisplayName = UUID.randomUUID().toString();
 
     // Create a conversation profile
     String articleSuggestionKnowledgeBaseId = UUID.randomUUID().toString();
-    String faqKnowledgeBaseId = UUID.randomUUID().toString();
-    ConversationProfileManagement.createConversationProfileArticleFaq(
+    ConversationProfileManagement.createConversationProfileArticleSuggestion(
         PROJECT_ID,
         conversationProfileDisplayName,
         LOCATION,
-        Optional.of(articleSuggestionKnowledgeBaseId),
-        Optional.of(faqKnowledgeBaseId));
+        Optional.of(articleSuggestionKnowledgeBaseId));
 
     String output = bout.toString();
     conversationProfileNameToDelete = getResourceNameFromOutputString(output);
