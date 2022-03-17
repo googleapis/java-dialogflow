@@ -73,10 +73,7 @@ public class CreateParticipantTest {
 
     // Create a conversation profile
     ConversationProfileManagement.createConversationProfileArticleSuggestion(
-        PROJECT_ID,
-        CONVERSATION_PROFILE_DISPLAY_NAME,
-        LOCATION,
-        Optional.empty());
+        PROJECT_ID, CONVERSATION_PROFILE_DISPLAY_NAME, LOCATION, Optional.empty());
     String output = bout.toString();
     assertThat(output).contains(NAME_PREFIX_IN_OUTPUT);
     conversationProfileName =
