@@ -34,8 +34,8 @@ public class AnswerRecordManagement {
     String location = "my-location";
 
     // Set id of the answer record to be updated.
-    // Answer records are created when there's a human agent assistant suggestion generated.
-    // See details about how to generate an answer record by getting ariticle suggestion here,
+    // Answer records are created when a suggestion for the human agent assistant is generated.
+    // See details about how to generate an answer record by getting article suggestion here:
     // https://cloud.google.com/agent-assist/docs/article-suggestion.
     String answerRecordId = "my-answer-record-id";
 
@@ -48,6 +48,8 @@ public class AnswerRecordManagement {
   public static void updateAnswerRecord(
       String projectId, String location, String answerRecordId, boolean clicked)
       throws ApiException, IOException {
+    // Initialize a client for managing AnswerRecords. This client only needs to be created
+    // once, and can be reused for multiple requests.
     try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
       AnswerRecordName answerRecordName =
           AnswerRecordName.ofProjectLocationAnswerRecordName(projectId, location, answerRecordId);
@@ -57,6 +59,7 @@ public class AnswerRecordManagement {
               .setName(answerRecordName.toString())
               .setAnswerFeedback(answerFeedback)
               .build();
+      // Add a mask to control which field gets updated.
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("answer_feedback").build();
 
       UpdateAnswerRecordRequest request =
