@@ -22,7 +22,7 @@ import static junit.framework.TestCase.assertNotNull;
 import com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest;
 import com.google.cloud.dialogflow.v2.KnowledgeBase;
 import com.google.cloud.dialogflow.v2.KnowledgeBasesClient;
-import com.google.cloud.dialogflow.v2.ProjectName;
+import com.google.cloud.dialogflow.v2.LocationName;
 import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -41,6 +41,7 @@ import org.junit.runners.JUnit4;
 public class CreateDocumentTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String LOCATION = "global";
   private static String KNOWLEDGE_DISPLAY_NAME = UUID.randomUUID().toString();
   private static String DOCUMENT_DISPLAY_NAME = UUID.randomUUID().toString();
   private String knowledgeBaseName;
@@ -69,8 +70,8 @@ public class CreateDocumentTest {
     try (KnowledgeBasesClient client = KnowledgeBasesClient.create()) {
       KnowledgeBase knowledgeBase =
           KnowledgeBase.newBuilder().setDisplayName(KNOWLEDGE_DISPLAY_NAME).build();
-      ProjectName projectName = ProjectName.of(PROJECT_ID);
-      KnowledgeBase response = client.createKnowledgeBase(projectName, knowledgeBase);
+      LocationName parent = LocationName.of(PROJECT_ID, LOCATION);
+      KnowledgeBase response = client.createKnowledgeBase(parent, knowledgeBase);
       // Save the full name for deletion
       knowledgeBaseName = response.getName();
     }
