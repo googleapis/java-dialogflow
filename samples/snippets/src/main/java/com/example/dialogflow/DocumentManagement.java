@@ -58,7 +58,7 @@ public class DocumentManagement {
       Document createdDocument = response.get(180, TimeUnit.SECONDS);
       System.out.format("Created Document:\n");
       System.out.format(" - Display Name: %s\n", createdDocument.getDisplayName());
-      System.out.format(" - Knowledge ID: %s\n", createdDocument.getName());
+      System.out.format(" - Document Name: %s\n", createdDocument.getName());
       System.out.format(" - MIME Type: %s\n", createdDocument.getMimeType());
       System.out.format(" - Knowledge Types:\n");
       for (KnowledgeType knowledgeTypeId : document.getKnowledgeTypesList()) {
