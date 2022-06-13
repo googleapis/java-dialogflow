@@ -19,10 +19,10 @@ package com.example.dialogflow;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
-import com.google.cloud.dialogflow.v2beta1.ProjectName;
+import com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest;
+import com.google.cloud.dialogflow.v2.KnowledgeBase;
+import com.google.cloud.dialogflow.v2.KnowledgeBasesClient;
+import com.google.cloud.dialogflow.v2.ProjectName;
 import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

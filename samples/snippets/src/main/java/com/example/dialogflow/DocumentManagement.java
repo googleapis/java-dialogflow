@@ -20,11 +20,11 @@ package com.example.dialogflow;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiException;
-import com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest;
-import com.google.cloud.dialogflow.v2beta1.Document;
-import com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType;
-import com.google.cloud.dialogflow.v2beta1.DocumentsClient;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
+import com.google.cloud.dialogflow.v2.CreateDocumentRequest;
+import com.google.cloud.dialogflow.v2.Document;
+import com.google.cloud.dialogflow.v2.Document.KnowledgeType;
+import com.google.cloud.dialogflow.v2.DocumentsClient;
+import com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -32,7 +32,7 @@ import java.util.concurrent.TimeoutException;
 
 public class DocumentManagement {
 
-  public static Document createDocument(
+  public static void createDocument(
       String knowledgeBaseName,
       String displayName,
       String mimeType,
@@ -65,7 +65,6 @@ public class DocumentManagement {
         System.out.format("  - %s \n", knowledgeTypeId.getValueDescriptor());
       }
       System.out.format(" - Source: %s \n", document.getContentUri());
-      return createdDocument;
     }
   }
 }
