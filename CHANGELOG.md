@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.9.1](https://github.com/googleapis/java-dialogflow/compare/v4.9.0...v4.9.1) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.20 ([#1030](https://github.com/googleapis/java-dialogflow/issues/1030)) ([86aad23](https://github.com/googleapis/java-dialogflow/commit/86aad238bab432a62a0ad58811479d6f0ae1a431))
+
 ## [4.9.0](https://github.com/googleapis/java-dialogflow/compare/v4.8.7...v4.9.0) (2022-10-05)
 
 
