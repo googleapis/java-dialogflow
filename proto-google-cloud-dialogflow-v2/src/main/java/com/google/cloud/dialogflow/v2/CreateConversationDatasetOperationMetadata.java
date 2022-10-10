@@ -39,7 +39,9 @@ public final class CreateConversationDatasetOperationMetadata
     super(builder);
   }
 
-  private CreateConversationDatasetOperationMetadata() {}
+  private CreateConversationDatasetOperationMetadata() {
+    conversationDataset_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -68,6 +70,59 @@ public final class CreateConversationDatasetOperationMetadata
                 .class);
   }
 
+  public static final int CONVERSATION_DATASET_FIELD_NUMBER = 1;
+  private volatile java.lang.Object conversationDataset_;
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the conversation dataset that will be created. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/conversationDatasets/&lt;Conversation Dataset Id&gt;`
+   * </pre>
+   *
+   * <code>string conversation_dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The conversationDataset.
+   */
+  @java.lang.Override
+  public java.lang.String getConversationDataset() {
+    java.lang.Object ref = conversationDataset_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      conversationDataset_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the conversation dataset that will be created. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/conversationDatasets/&lt;Conversation Dataset Id&gt;`
+   * </pre>
+   *
+   * <code>string conversation_dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for conversationDataset.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getConversationDatasetBytes() {
+    java.lang.Object ref = conversationDataset_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      conversationDataset_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -82,6 +137,9 @@ public final class CreateConversationDatasetOperationMetadata
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationDataset_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, conversationDataset_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -91,6 +149,9 @@ public final class CreateConversationDatasetOperationMetadata
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversationDataset_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, conversationDataset_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -108,6 +169,7 @@ public final class CreateConversationDatasetOperationMetadata
     com.google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata other =
         (com.google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata) obj;
 
+    if (!getConversationDataset().equals(other.getConversationDataset())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -119,6 +181,8 @@ public final class CreateConversationDatasetOperationMetadata
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + CONVERSATION_DATASET_FIELD_NUMBER;
+    hash = (53 * hash) + getConversationDataset().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -261,6 +325,8 @@ public final class CreateConversationDatasetOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      conversationDataset_ = "";
+
       return this;
     }
 
@@ -292,6 +358,7 @@ public final class CreateConversationDatasetOperationMetadata
         buildPartial() {
       com.google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata result =
           new com.google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata(this);
+      result.conversationDataset_ = conversationDataset_;
       onBuilt();
       return result;
     }
@@ -346,6 +413,10 @@ public final class CreateConversationDatasetOperationMetadata
       if (other
           == com.google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata
               .getDefaultInstance()) return this;
+      if (!other.getConversationDataset().isEmpty()) {
+        conversationDataset_ = other.conversationDataset_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -372,6 +443,12 @@ public final class CreateConversationDatasetOperationMetadata
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                conversationDataset_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -386,6 +463,122 @@ public final class CreateConversationDatasetOperationMetadata
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private java.lang.Object conversationDataset_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the conversation dataset that will be created. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/conversationDatasets/&lt;Conversation Dataset Id&gt;`
+     * </pre>
+     *
+     * <code>string conversation_dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The conversationDataset.
+     */
+    public java.lang.String getConversationDataset() {
+      java.lang.Object ref = conversationDataset_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        conversationDataset_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the conversation dataset that will be created. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/conversationDatasets/&lt;Conversation Dataset Id&gt;`
+     * </pre>
+     *
+     * <code>string conversation_dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for conversationDataset.
+     */
+    public com.google.protobuf.ByteString getConversationDatasetBytes() {
+      java.lang.Object ref = conversationDataset_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        conversationDataset_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the conversation dataset that will be created. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/conversationDatasets/&lt;Conversation Dataset Id&gt;`
+     * </pre>
+     *
+     * <code>string conversation_dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The conversationDataset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversationDataset(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      conversationDataset_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the conversation dataset that will be created. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/conversationDatasets/&lt;Conversation Dataset Id&gt;`
+     * </pre>
+     *
+     * <code>string conversation_dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConversationDataset() {
+
+      conversationDataset_ = getDefaultInstance().getConversationDataset();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the conversation dataset that will be created. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/conversationDatasets/&lt;Conversation Dataset Id&gt;`
+     * </pre>
+     *
+     * <code>string conversation_dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for conversationDataset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversationDatasetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      conversationDataset_ = value;
+      onChanged();
       return this;
     }
 
