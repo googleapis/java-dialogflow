@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dialogflow-parent</artifactId>
-    <version>4.9.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+    <version>4.10.0</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dialogflow</site.installationModule>
