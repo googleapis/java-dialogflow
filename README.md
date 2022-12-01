@@ -56,7 +56,7 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.4')
+implementation platform('com.google.cloud:libraries-bom:26.1.5')
 
 implementation 'com.google.cloud:google-cloud-dialogflow'
 ```
@@ -113,10 +113,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-dialogflow/tr
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
-| Conversation Management | [source code](https://github.com/googleapis/java-dialogflow/blob/main/samples/snippets/src/main/java/com/example/dialogflow/ConversationManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/ConversationManagement.java) |
-| Conversation Profile Management | [source code](https://github.com/googleapis/java-dialogflow/blob/main/samples/snippets/src/main/java/com/example/dialogflow/ConversationProfileManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/ConversationProfileManagement.java) |
 | List Training Phrases | [source code](https://github.com/googleapis/java-dialogflow/blob/main/samples/snippets/src/main/java/com/example/dialogflow/ListTrainingPhrases.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/ListTrainingPhrases.java) |
-| Participant Management | [source code](https://github.com/googleapis/java-dialogflow/blob/main/samples/snippets/src/main/java/com/example/dialogflow/ParticipantManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/ParticipantManagement.java) |
 
 
 
