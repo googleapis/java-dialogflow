@@ -1,5 +1,22 @@
 # Changelog
 
+## [4.10.0](https://github.com/googleapis/java-dialogflow/compare/v4.9.1...v4.10.0) (2023-07-05)
+
+
+### Features
+
+* Include conversation dataset name to be created with dataset creation metadata ([#1032](https://github.com/googleapis/java-dialogflow/issues/1032)) ([701558d](https://github.com/googleapis/java-dialogflow/commit/701558d607a3f6242dc74f4dd4c674915c11728c))
+
+
+### Documentation
+
+* Clarify SuggestionFeature enums which are specific to chat agents ([701558d](https://github.com/googleapis/java-dialogflow/commit/701558d607a3f6242dc74f4dd4c674915c11728c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.6 ([#1050](https://github.com/googleapis/java-dialogflow/issues/1050)) ([85f1f7f](https://github.com/googleapis/java-dialogflow/commit/85f1f7f62b8a96bff1347fcf575249a59a93246f))
+
 ## [4.9.1](https://github.com/googleapis/java-dialogflow/compare/v4.9.0...v4.9.1) (2022-10-07)
 
 
